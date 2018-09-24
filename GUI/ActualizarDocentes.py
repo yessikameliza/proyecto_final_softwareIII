@@ -26,7 +26,7 @@ class Ui_MainWindow(object):
 "font: 75 8pt \"Segoe Print\";")
         self.tipo.setObjectName("tipo")
         self.comboAsignatura = QtWidgets.QComboBox(self.groupBox)
-        self.comboAsignatura.setGeometry(QtCore.QRect(180, 310, 171, 31))
+        self.comboAsignatura.setGeometry(QtCore.QRect(180, 360, 171, 31))
         self.comboAsignatura.setStyleSheet("background-color: rgb(255, 255, 255);\n"
 "color: rgb(0, 0, 0);")
         self.comboAsignatura.setObjectName("comboAsignatura")
@@ -43,7 +43,7 @@ class Ui_MainWindow(object):
         self.nombre.setStyleSheet("font: 75 8pt \"Segoe Print\";")
         self.nombre.setObjectName("nombre")
         self.asignatura_4 = QtWidgets.QLabel(self.groupBox)
-        self.asignatura_4.setGeometry(QtCore.QRect(10, 310, 131, 31))
+        self.asignatura_4.setGeometry(QtCore.QRect(10, 360, 131, 31))
         self.asignatura_4.setStyleSheet("font: 75 8pt \"Segoe Print\";")
         self.asignatura_4.setObjectName("asignatura_4")
         self.txtIdent = QtWidgets.QTextEdit(self.groupBox)
@@ -63,7 +63,7 @@ class Ui_MainWindow(object):
 "background-color: rgb(255, 255, 255);")
         self.txtTelefono.setObjectName("txtTelefono")
         self.btnAgregar = QtWidgets.QPushButton(self.groupBox)
-        self.btnAgregar.setGeometry(QtCore.QRect(360, 310, 41, 31))
+        self.btnAgregar.setGeometry(QtCore.QRect(360, 360, 41, 31))
         self.btnAgregar.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
 "color: rgb(255, 255, 255);\n"
 "background-color: rgb(0, 204, 102);")
@@ -98,6 +98,15 @@ class Ui_MainWindow(object):
 "color: rgb(255, 255, 255);\n"
 "background-color: rgb(0, 204, 102);")
         self.btnLimpiar.setObjectName("btnLimpiar")
+        self.comboEstado = QtWidgets.QComboBox(self.groupBox)
+        self.comboEstado.setGeometry(QtCore.QRect(180, 310, 221, 31))
+        self.comboEstado.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"color: rgb(0, 0, 0);")
+        self.comboEstado.setObjectName("comboEstado")
+        self.asignatura_5 = QtWidgets.QLabel(self.groupBox)
+        self.asignatura_5.setGeometry(QtCore.QRect(10, 310, 131, 31))
+        self.asignatura_5.setStyleSheet("font: 75 8pt \"Segoe Print\";")
+        self.asignatura_5.setObjectName("asignatura_5")
         self.codigo = QtWidgets.QLabel(self.centralwidget)
         self.codigo.setGeometry(QtCore.QRect(30, 120, 191, 31))
         self.codigo.setStyleSheet("font: 75 10pt \"Segoe Print\";\n"
@@ -156,6 +165,7 @@ class Ui_MainWindow(object):
         self.btnAgregar.setText(_translate("MainWindow", "+"))
         self.btnActualizar.setText(_translate("MainWindow", "ACTUALIZAR"))
         self.btnLimpiar.setText(_translate("MainWindow", "LIMPIAR"))
+        self.asignatura_5.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; color:#ffffff;\">Estado:</span></p></body></html>"))
         self.codigo.setText(_translate("MainWindow", "<html><head/><body><p>Ingrese identificación del</p><p/><p><br/></p></body></html>"))
         self.btnBuscar.setText(_translate("MainWindow", "BUSCAR"))
         self.btnRegresar.setText(_translate("MainWindow", "REGRESAR"))
