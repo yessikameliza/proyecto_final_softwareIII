@@ -11,7 +11,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(531, 530)
+        MainWindow.resize(531, 573)
         MainWindow.setStyleSheet("background-color: rgb(0, 51, 51)")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -27,7 +27,7 @@ class Ui_MainWindow(object):
 "background-color: rgb(255, 255, 255);")
         self.txtCodigo.setObjectName("txtCodigo")
         self.nombre = QtWidgets.QLabel(self.centralwidget)
-        self.nombre.setGeometry(QtCore.QRect(40, 200, 91, 21))
+        self.nombre.setGeometry(QtCore.QRect(40, 190, 91, 21))
         self.nombre.setStyleSheet("font: 75 8pt \"Segoe Print\";")
         self.nombre.setObjectName("nombre")
         self.codigo = QtWidgets.QLabel(self.centralwidget)
@@ -35,49 +35,49 @@ class Ui_MainWindow(object):
         self.codigo.setStyleSheet("font: 75 8pt \"Segoe Print\";")
         self.codigo.setObjectName("codigo")
         self.txtNombre = QtWidgets.QTextEdit(self.centralwidget)
-        self.txtNombre.setGeometry(QtCore.QRect(260, 200, 221, 31))
+        self.txtNombre.setGeometry(QtCore.QRect(260, 190, 221, 31))
         self.txtNombre.setStyleSheet("color: rgb(0, 0, 0);\n"
 "font: 10pt \"MS Shell Dlg 2\";\n"
 "background-color: rgb(255, 255, 255);")
         self.txtNombre.setObjectName("txtNombre")
         self.numCreditos = QtWidgets.QLabel(self.centralwidget)
-        self.numCreditos.setGeometry(QtCore.QRect(40, 260, 171, 61))
+        self.numCreditos.setGeometry(QtCore.QRect(40, 250, 171, 61))
         self.numCreditos.setStyleSheet("font: 75 8pt \"Segoe Print\";")
         self.numCreditos.setObjectName("numCreditos")
         self.txtNumHorSemestre = QtWidgets.QTextEdit(self.centralwidget)
-        self.txtNumHorSemestre.setGeometry(QtCore.QRect(260, 310, 221, 31))
+        self.txtNumHorSemestre.setGeometry(QtCore.QRect(260, 290, 221, 31))
         self.txtNumHorSemestre.setStyleSheet("color: rgb(0, 0, 0);\n"
 "font: 10pt \"MS Shell Dlg 2\";\n"
 "background-color: rgb(255, 255, 255);")
         self.txtNumHorSemestre.setObjectName("txtNumHorSemestre")
         self.numHorasSemestre = QtWidgets.QLabel(self.centralwidget)
-        self.numHorasSemestre.setGeometry(QtCore.QRect(40, 310, 211, 61))
+        self.numHorasSemestre.setGeometry(QtCore.QRect(40, 300, 211, 41))
         self.numHorasSemestre.setStyleSheet("font: 75 8pt \"Segoe Print\";")
         self.numHorasSemestre.setObjectName("numHorasSemestre")
         self.btnAceptar = QtWidgets.QPushButton(self.centralwidget)
-        self.btnAceptar.setGeometry(QtCore.QRect(260, 450, 101, 31))
+        self.btnAceptar.setGeometry(QtCore.QRect(260, 480, 101, 31))
         self.btnAceptar.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
 "color: rgb(255, 255, 255);\n"
 "background-color: rgb(0, 204, 102);")
         self.btnAceptar.setObjectName("btnAceptar")
         self.btnLimpiar = QtWidgets.QPushButton(self.centralwidget)
-        self.btnLimpiar.setGeometry(QtCore.QRect(370, 450, 111, 31))
+        self.btnLimpiar.setGeometry(QtCore.QRect(370, 480, 111, 31))
         self.btnLimpiar.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
 "color: rgb(255, 255, 255);\n"
 "background-color: rgb(0, 204, 102);")
         self.btnLimpiar.setObjectName("btnLimpiar")
         self.btnRegresar = QtWidgets.QPushButton(self.centralwidget)
-        self.btnRegresar.setGeometry(QtCore.QRect(40, 450, 101, 31))
+        self.btnRegresar.setGeometry(QtCore.QRect(40, 480, 101, 31))
         self.btnRegresar.setStyleSheet("font: 75 10pt \"Segoe Print\";\n"
 "color: rgb(255, 255, 255);\n"
 "background-color: rgb(0, 204, 102);")
         self.btnRegresar.setObjectName("btnRegresar")
         self.semestre = QtWidgets.QLabel(self.centralwidget)
-        self.semestre.setGeometry(QtCore.QRect(40, 370, 211, 61))
+        self.semestre.setGeometry(QtCore.QRect(40, 410, 211, 31))
         self.semestre.setStyleSheet("font: 75 8pt \"Segoe Print\";")
         self.semestre.setObjectName("semestre")
         self.boxSemestre = QtWidgets.QSpinBox(self.centralwidget)
-        self.boxSemestre.setGeometry(QtCore.QRect(260, 370, 71, 22))
+        self.boxSemestre.setGeometry(QtCore.QRect(260, 410, 71, 22))
         self.boxSemestre.setStyleSheet("background-color: rgb(255, 255, 255);\n"
 "color: rgb(0, 0, 0);")
         self.boxSemestre.setMinimum(1)
@@ -85,13 +85,24 @@ class Ui_MainWindow(object):
         self.boxSemestre.setProperty("value", 1)
         self.boxSemestre.setObjectName("boxSemestre")
         self.boxCreditos = QtWidgets.QSpinBox(self.centralwidget)
-        self.boxCreditos.setGeometry(QtCore.QRect(260, 260, 71, 22))
+        self.boxCreditos.setGeometry(QtCore.QRect(260, 250, 71, 22))
         self.boxCreditos.setStyleSheet("background-color: rgb(255, 255, 255);\n"
 "color: rgb(0, 0, 0);")
         self.boxCreditos.setMinimum(1)
         self.boxCreditos.setMaximum(6)
         self.boxCreditos.setProperty("value", 1)
         self.boxCreditos.setObjectName("boxCreditos")
+        self.semestre_2 = QtWidgets.QLabel(self.centralwidget)
+        self.semestre_2.setGeometry(QtCore.QRect(40, 350, 211, 31))
+        self.semestre_2.setStyleSheet("font: 10pt \"Segoe Print\";\n"
+"color: rgb(255, 255, 255);")
+        self.semestre_2.setObjectName("semestre_2")
+        self.txtCodReq = QtWidgets.QTextEdit(self.centralwidget)
+        self.txtCodReq.setGeometry(QtCore.QRect(260, 350, 221, 31))
+        self.txtCodReq.setStyleSheet("color: rgb(0, 0, 0);\n"
+"font: 10pt \"MS Shell Dlg 2\";\n"
+"background-color: rgb(255, 255, 255);")
+        self.txtCodReq.setObjectName("txtCodReq")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 531, 21))
@@ -116,4 +127,5 @@ class Ui_MainWindow(object):
         self.btnLimpiar.setText(_translate("MainWindow", "LIMPIAR"))
         self.btnRegresar.setText(_translate("MainWindow", "REGRESAR"))
         self.semestre.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; color:#ffffff;\">Semestre:</span></p><p><br/></p><p><br/></p></body></html>"))
+        self.semestre_2.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:11pt;\">Cod. Requisito:</span></p></body></html>"))
 
