@@ -3,7 +3,7 @@
 import sqlite3
 
 # Conectamos a la base de datos
-conexion = sqlite3.connect("dBProyectoFinal.sqlite3")
+conexion = sqlite3.connect("DateBases.sqlite3")
 
 # Seleccionamos el cursor para realizar la consulta
 consulta = conexion.cursor()
@@ -22,29 +22,29 @@ id_Semester INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
 num_semester INTEGER NOT NULL)"""
 sql6 = """CREATE TABLE IF NOT EXISTS hour( 
 id_Hour INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-hour_ini VARCHAR(2) NOT NULL,
-hour_fin VARCHAR(2) NOT NULL)"""
+hour_ini VARCHAR(10) NOT NULL,
+hour_fin VARCHAR(10) NOT NULL)"""
 sql7 = """CREATE TABLE IF NOT EXISTS block( 
 id_block INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
 TypeBlock VARCHAR(2) NOT NULL)"""
 sql2 = """CREATE TABLE IF NOT EXISTS matter( 
 id_Matter INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
 codigo VARCHAR(50) NOT NULL,
-name VARCHAR(5) NOT NULL,
+name VARCHAR(500) NOT NULL,
 ubi_Semester INTEGER NOT NULL,
 numCredit VARCHAR(10) NOT NULL,
 codRequisite VARCHAR(50) NOT NULL,
-id_block INTEGER NOT NULL,
+id_block INTEGER,
 FOREIGN KEY (id_block) REFERENCES block (id_block)
 ON DELETE CASCADE ON UPDATE NO ACTION)"""
 sql4 = """CREATE TABLE IF NOT EXISTS city( 
 id_city INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-name_City VARCHAR(2) NOT NULL)"""
+name_City VARCHAR(200) NOT NULL)"""
 sql5 = """CREATE TABLE IF NOT EXISTS date( 
 id_Date INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
 Date VARCHAR(50) NOT NULL,
 origin VARCHAR(100) NOT NULL,
-id_block INTEGER NOT NULL,
+id_block INTEGER,
 FOREIGN KEY (id_block) REFERENCES block (id_block)
 ON DELETE CASCADE ON UPDATE NO ACTION)"""
 sql8 = """ CREATE TABLE IF NOT EXISTS matter_date(
