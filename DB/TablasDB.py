@@ -37,6 +37,8 @@ codRequisite VARCHAR(50) NOT NULL,
 id_block INTEGER,
 FOREIGN KEY (id_block) REFERENCES block (id_block)
 ON DELETE CASCADE ON UPDATE NO ACTION)"""
+#sql13 = """ALTER TABLE matter ADD COLUMN numHoursSem INTEGER"""
+sql14 = """ALTER TABLE docent ADD COLUMN identification VARCHAR(100)"""
 sql4 = """CREATE TABLE IF NOT EXISTS city( 
 id_city INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
 name_City VARCHAR(200) NOT NULL)"""
@@ -91,7 +93,8 @@ sql12 = """ CREATE TABLE IF NOT EXISTS docent_city(
 if (consulta.execute(sql) and consulta.execute(sql3) and consulta.execute(sql4) and consulta.execute(sql6)
         and consulta.execute(sql7) and consulta.execute(sql8) and
         consulta.execute(sql9) and consulta.execute(sql10) and consulta.execute(sql11) and
-        consulta.execute(sql2) and consulta.execute(sql5) and consulta.execute(sql12)):
+        consulta.execute(sql2) and consulta.execute(sql5) and consulta.execute(sql12)
+        and consulta.execute(sql14)):
     print("Tabla creada con éxito")
 else:
     print("Ha ocurrido un error al crear la tabla")
