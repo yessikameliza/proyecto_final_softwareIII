@@ -11,7 +11,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(722, 566)
+        MainWindow.resize(722, 647)
         MainWindow.setStyleSheet("background-color: rgb(0, 51, 51)")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -38,7 +38,7 @@ class Ui_MainWindow(object):
 "background-color: rgb(0, 204, 102);")
         self.btnBuscar.setObjectName("btnBuscar")
         self.groupBox = QtWidgets.QGroupBox(self.centralwidget)
-        self.groupBox.setGeometry(QtCore.QRect(260, 100, 441, 401))
+        self.groupBox.setGeometry(QtCore.QRect(260, 110, 441, 421))
         self.groupBox.setStyleSheet("font: 75 14pt \"Segoe Print\";\n"
 "color: rgb(255, 255, 255);")
         self.groupBox.setObjectName("groupBox")
@@ -47,11 +47,11 @@ class Ui_MainWindow(object):
         self.codigo_2.setStyleSheet("font: 75 8pt \"Segoe Print\";")
         self.codigo_2.setObjectName("codigo_2")
         self.semestre = QtWidgets.QLabel(self.groupBox)
-        self.semestre.setGeometry(QtCore.QRect(10, 280, 211, 61))
+        self.semestre.setGeometry(QtCore.QRect(10, 290, 211, 31))
         self.semestre.setStyleSheet("font: 75 8pt \"Segoe Print\";")
         self.semestre.setObjectName("semestre")
         self.boxSemestre = QtWidgets.QSpinBox(self.groupBox)
-        self.boxSemestre.setGeometry(QtCore.QRect(220, 280, 71, 22))
+        self.boxSemestre.setGeometry(QtCore.QRect(220, 290, 71, 22))
         self.boxSemestre.setStyleSheet("background-color: rgb(255, 255, 255);\n"
 "color: rgb(0, 0, 0);")
         self.boxSemestre.setMinimum(1)
@@ -59,25 +59,25 @@ class Ui_MainWindow(object):
         self.boxSemestre.setProperty("value", 1)
         self.boxSemestre.setObjectName("boxSemestre")
         self.numCreditos = QtWidgets.QLabel(self.groupBox)
-        self.numCreditos.setGeometry(QtCore.QRect(10, 170, 171, 61))
+        self.numCreditos.setGeometry(QtCore.QRect(10, 150, 171, 61))
         self.numCreditos.setStyleSheet("font: 75 8pt \"Segoe Print\";")
         self.numCreditos.setObjectName("numCreditos")
         self.numHorasSemestre = QtWidgets.QLabel(self.groupBox)
-        self.numHorasSemestre.setGeometry(QtCore.QRect(10, 220, 211, 61))
+        self.numHorasSemestre.setGeometry(QtCore.QRect(10, 200, 211, 61))
         self.numHorasSemestre.setStyleSheet("font: 75 8pt \"Segoe Print\";")
         self.numHorasSemestre.setObjectName("numHorasSemestre")
         self.nombre = QtWidgets.QLabel(self.groupBox)
-        self.nombre.setGeometry(QtCore.QRect(10, 110, 91, 21))
+        self.nombre.setGeometry(QtCore.QRect(10, 100, 91, 21))
         self.nombre.setStyleSheet("font: 75 8pt \"Segoe Print\";")
         self.nombre.setObjectName("nombre")
         self.txtNumHorSemestre = QtWidgets.QTextEdit(self.groupBox)
-        self.txtNumHorSemestre.setGeometry(QtCore.QRect(220, 220, 201, 31))
+        self.txtNumHorSemestre.setGeometry(QtCore.QRect(220, 190, 201, 31))
         self.txtNumHorSemestre.setStyleSheet("color: rgb(0, 0, 0);\n"
 "font: 10pt \"MS Shell Dlg 2\";\n"
 "background-color: rgb(255, 255, 255);")
         self.txtNumHorSemestre.setObjectName("txtNumHorSemestre")
         self.boxCreditos = QtWidgets.QSpinBox(self.groupBox)
-        self.boxCreditos.setGeometry(QtCore.QRect(220, 170, 71, 22))
+        self.boxCreditos.setGeometry(QtCore.QRect(220, 150, 71, 22))
         self.boxCreditos.setStyleSheet("background-color: rgb(255, 255, 255);\n"
 "color: rgb(0, 0, 0);")
         self.boxCreditos.setMinimum(1)
@@ -91,23 +91,34 @@ class Ui_MainWindow(object):
 "background-color: rgb(255, 255, 255);")
         self.txtCodigo.setObjectName("txtCodigo")
         self.txtNombre = QtWidgets.QTextEdit(self.groupBox)
-        self.txtNombre.setGeometry(QtCore.QRect(220, 110, 201, 31))
+        self.txtNombre.setGeometry(QtCore.QRect(220, 100, 201, 31))
         self.txtNombre.setStyleSheet("color: rgb(0, 0, 0);\n"
 "font: 10pt \"MS Shell Dlg 2\";\n"
 "background-color: rgb(255, 255, 255);")
         self.txtNombre.setObjectName("txtNombre")
         self.btnLimpiar = QtWidgets.QPushButton(self.groupBox)
-        self.btnLimpiar.setGeometry(QtCore.QRect(340, 340, 81, 31))
+        self.btnLimpiar.setGeometry(QtCore.QRect(340, 350, 81, 31))
         self.btnLimpiar.setStyleSheet("font: 75 11pt \"Segoe Print\";\n"
 "color: rgb(255, 255, 255);\n"
 "background-color: rgb(0, 204, 102);")
         self.btnLimpiar.setObjectName("btnLimpiar")
         self.btnActualizar = QtWidgets.QPushButton(self.groupBox)
-        self.btnActualizar.setGeometry(QtCore.QRect(220, 340, 111, 31))
+        self.btnActualizar.setGeometry(QtCore.QRect(220, 350, 111, 31))
         self.btnActualizar.setStyleSheet("font: 75 11pt \"Segoe Print\";\n"
 "color: rgb(255, 255, 255);\n"
 "background-color: rgb(0, 204, 102);")
         self.btnActualizar.setObjectName("btnActualizar")
+        self.semestre_2 = QtWidgets.QLabel(self.groupBox)
+        self.semestre_2.setGeometry(QtCore.QRect(10, 240, 131, 31))
+        self.semestre_2.setStyleSheet("font: 10pt \"Segoe Print\";\n"
+"color: rgb(255, 255, 255);")
+        self.semestre_2.setObjectName("semestre_2")
+        self.txtCodRequis = QtWidgets.QTextEdit(self.groupBox)
+        self.txtCodRequis.setGeometry(QtCore.QRect(220, 240, 201, 31))
+        self.txtCodRequis.setStyleSheet("color: rgb(0, 0, 0);\n"
+"font: 10pt \"MS Shell Dlg 2\";\n"
+"background-color: rgb(255, 255, 255);")
+        self.txtCodRequis.setObjectName("txtCodRequis")
         self.btnRegresar = QtWidgets.QPushButton(self.centralwidget)
         self.btnRegresar.setGeometry(QtCore.QRect(40, 450, 101, 31))
         self.btnRegresar.setStyleSheet("font: 75 10pt \"Segoe Print\";\n"
@@ -140,5 +151,6 @@ class Ui_MainWindow(object):
         self.nombre.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; color:#ffffff;\">Nombre:</span></p></body></html>"))
         self.btnLimpiar.setText(_translate("MainWindow", "LIMPIAR"))
         self.btnActualizar.setText(_translate("MainWindow", "ACTUALIZAR"))
+        self.semestre_2.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:11pt;\">Cod. Requisito:</span></p></body></html>"))
         self.btnRegresar.setText(_translate("MainWindow", "REGRESAR"))
 
