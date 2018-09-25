@@ -1,22 +1,22 @@
 # enconding: utf-8
 # IMPORTANTE convertir el script a la codificación UTF-8
 import sqlite3
-from logica.Persistence import Persistence
+from logica.Persistence import matter
+
 # Establecer la conexión
 conexion = sqlite3.connect("DateBases.sqlite3")
 
 # Seleccionar el cursor para iniciar una consulta
 consulta = conexion.cursor()
-persistence = Persistence()
 
 print("**** Programa para insertar datos en bases de datos sqlite3 ****")
 # TypeBlock = input("tipo de bloque: ")
-codigo = input("Introduzca el codigo: ")
-name = input("Introduzca el nombre: ")
-ubi_Semester = input("Introduzca un número ubicacion semestral: ")
-numCredit = input("Introduzca un número creditos: ")
-codRequisite = input("Introduzca codigo requisito : ")
-numHoursSem = input("Introduzca el numero de horas por semestre :")
+codigo = matter.codigo
+name = matter.name
+ubi_Semester = matter.ubi_Semester
+numCredit = matter.numCredit
+codRequisite = matter.codRequisite
+numHoursSem = matter.numHoursSem
 # Capturar excepciones para los números enteros y decimal
 # Sólo números enteros
 try:
@@ -33,15 +33,18 @@ argumentos = (codigo, name, ubi_Semester, numCredit, codRequisite, numHoursSem)
 # VALUES (?)"""
 sql = """INSERT INTO matter (codigo, name, ubi_Semester, numCredit, codRequisite, numHoursSem)
 VALUES (?, ?, ?, ?, ?, ?)"""
-
-
+sql2 = """SELECT * FROM matter WHERE codigo = codigo """
+consulta.execute(sql2)
 
 # Realizar la consulta
-if consulta.execute(sql, argumentos):
+filas = consulta.fetchall()
+if filas is None:
+    if consulta.execute(sql, argumentos):
         print("Tabla creada con éxito")
+    else:
+        print("Ha ocurrido un error al crear la tabla")
 else:
-    print("Ha ocurrido un error al crear la tabla")
-
+    print("la materia ya existe")
 # Cerrar la consulta
 consulta.close()
 
