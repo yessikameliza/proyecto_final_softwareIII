@@ -9,6 +9,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from GUI.registroFechas import Ui_Form
 from GUI.registroDocentes import registroDocentes
+from GUI.registroAsignaturas import registroAsignaturas
 
 class Ui_MainWindow(QtWidgets.QMainWindow):
     def setupUi(self, MainWindow):
@@ -374,10 +375,11 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.retranslateUi(MainWindow)
         self.btnRegistrarDocentes.clicked.connect(self.ventanaRegistroDocente)
         self.btnRegistrarFechas.clicked.connect(self.ventanaRegistroFecha)
-
+        self.actionRegistrar_Asignaturas_2.triggered.connect(self.ventanaRegAsi)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def ventanaRegistroDocente(self):
+
             self.ventana = QtWidgets.QMainWindow()
             self.ui = registroDocentes()
             self.ui.setupUi(self.ventana)
@@ -386,6 +388,12 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
     def ventanaRegistroFecha(self):
             self.ventana = QtWidgets.QMainWindow()
             self.ui = Ui_Form()
+            self.ui.setupUi(self.ventana)
+            self.ventana.show()
+
+    def ventanaRegAsi(self):
+            self.ventana = QtWidgets.QMainWindow()
+            self.ui = registroAsignaturas()
             self.ui.setupUi(self.ventana)
             self.ventana.show()
 
