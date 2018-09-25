@@ -3,53 +3,56 @@
 import sqlite3
 from logica.Persistence import matter
 
-# Establecer la conexión
-conexion = sqlite3.connect("DateBases.sqlite3")
 
-# Seleccionar el cursor para iniciar una consulta
-consulta = conexion.cursor()
+def insertarMatter():
+    conexion = sqlite3.connect("DateBases.sqlite3")
 
-print("**** Programa para insertar datos en bases de datos sqlite3 ****")
-# TypeBlock = input("tipo de bloque: ")
-codigo = matter.codigo
-name = matter.name
-ubi_Semester = matter.ubi_Semester
-numCredit = matter.numCredit
-codRequisite = matter.codRequisite
-numHoursSem = matter.numHoursSem
-# Capturar excepciones para los números enteros y decimal
-# Sólo números enteros
-try:
-    ubi_Semester = int(ubi_Semester)
-except ValueError:
-    print(ubi_Semester, "no es un número entero")
-    exit()
+    # Seleccionar el cursor para iniciar una consulta
+    consulta = conexion.cursor()
 
-# Valor de los argumentos
-argumentos = (codigo, name, ubi_Semester, numCredit, codRequisite, numHoursSem)
-# argumentos2 = TypeBlock
-# consulta SQL con argumentos ?, ?, ?, ?, ?
-# sql2 = """INSERT INTO block (TypeBlock)
-# VALUES (?)"""
-sql = """INSERT INTO matter (codigo, name, ubi_Semester, numCredit, codRequisite, numHoursSem)
-VALUES (?, ?, ?, ?, ?, ?)"""
-sql2 = """SELECT * FROM matter WHERE codigo = codigo """
-consulta.execute(sql2)
+    print("**** Programa para insertar datos en bases de datos sqlite3 ****")
+    # TypeBlock = input("tipo de bloque: ")
+    codigo = matter.codigo
+    name = matter.name
+    ubi_Semester = matter.ubi_Semester
+    numCredit = matter.numCredit
+    codRequisite = matter.codRequisite
+    numHoursSem = matter.numHoursSem
+    # Capturar excepciones para los números enteros y decimal
+    # Sólo números enteros
+    try:
+        ubi_Semester = int(ubi_Semester)
+    except ValueError:
+        print(ubi_Semester, "no es un número entero")
+        exit()
 
-# Realizar la consulta
-filas = consulta.fetchall()
-if filas is None:
-    if consulta.execute(sql, argumentos):
-        print("Tabla creada con éxito")
+    # Valor de los argumentos
+    argumentos = (codigo, name, ubi_Semester, numCredit, codRequisite, numHoursSem)
+    # argumentos2 = TypeBlock
+    # consulta SQL con argumentos ?, ?, ?, ?, ?
+    # sql2 = """INSERT INTO block (TypeBlock)
+    # VALUES (?)"""
+    sql = """INSERT INTO matter (codigo, name, ubi_Semester, numCredit, codRequisite, numHoursSem)
+    VALUES (?, ?, ?, ?, ?, ?)"""
+    sql2 = """SELECT * FROM matter WHERE codigo = codigo """
+    consulta.execute(sql2)
+
+    # Realizar la consulta
+    filas = consulta.fetchall()
+    if filas is None:
+        if consulta.execute(sql, argumentos):
+            print("Tabla creada con éxito")
+        else:
+            print("Ha ocurrido un error al crear la tabla")
     else:
-        print("Ha ocurrido un error al crear la tabla")
-else:
-    print("la materia ya existe")
-# Cerrar la consulta
-consulta.close()
+        print("la materia ya existe")
 
-# Guardar los cambios en la base de datos
-conexion.commit()
 
-# Cerrar la conexión
-conexion.close()
+    # Cerrar la consulta
+    consulta.close()
+
+    # Guardar los cambios en la base de datos
+    conexion.commit()
+
+    # Cerrar la conexión
+    conexion.close()
