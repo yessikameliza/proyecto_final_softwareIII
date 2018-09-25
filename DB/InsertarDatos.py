@@ -1,12 +1,14 @@
 # enconding: utf-8
 # IMPORTANTE convertir el script a la codificación UTF-8
 import sqlite3
-
+from logica.Persistence import Persistence
 # Establecer la conexión
 conexion = sqlite3.connect("DateBases.sqlite3")
 
 # Seleccionar el cursor para iniciar una consulta
 consulta = conexion.cursor()
+persistence = Persistence()
+
 print("**** Programa para insertar datos en bases de datos sqlite3 ****")
 # TypeBlock = input("tipo de bloque: ")
 codigo = input("Introduzca el codigo: ")
