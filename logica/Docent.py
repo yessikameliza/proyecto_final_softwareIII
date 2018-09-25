@@ -1,7 +1,6 @@
 class Docent:
 
-    def __init__(self, id_Docent, name, limitHours, contract, phone, identification):
-        self.id_Docent = id_Docent
+    def __init__(self, name, limitHours, contract, phone, identification):
         self.name = name
         self.limitHours = limitHours
         self.contract = contract
