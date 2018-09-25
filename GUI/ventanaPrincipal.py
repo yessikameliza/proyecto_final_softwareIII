@@ -7,7 +7,9 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from GUI.registroFechas import Ui_Form
 from GUI.registroDocentes import registroDocentes
+
 class Ui_MainWindow(QtWidgets.QMainWindow):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -41,13 +43,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.groupBox.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
 "color: rgb(255, 255, 255);")
         self.groupBox.setObjectName("groupBox")
-        self.btnRegistrarIntHora = QtWidgets.QPushButton(self.groupBox)
-        self.btnRegistrarIntHora.setGeometry(QtCore.QRect(40, 80, 241, 31))
-        self.btnRegistrarIntHora.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
-"color: rgb(255, 255, 255);\n"
-"background-color: rgb(0, 204, 102);\n"
-"")
-        self.btnRegistrarIntHora.setObjectName("btnRegistrarIntHora")
+
         self.btnRegistrarDocentes = QtWidgets.QPushButton(self.groupBox)
         self.btnRegistrarDocentes.setGeometry(QtCore.QRect(40, 40, 241, 31))
         self.btnRegistrarDocentes.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
@@ -377,6 +373,8 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
 
         self.retranslateUi(MainWindow)
         self.btnRegistrarDocentes.clicked.connect(self.ventanaRegistroDocente)
+        self.btnRegistrarFechas.clicked.connect(self.ventanaRegistroFecha)
+
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def ventanaRegistroDocente(self):
@@ -384,13 +382,18 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             self.ui = registroDocentes()
             self.ui.setupUi(self.ventana)
             self.ventana.show()
-            self.close()
+
+    def ventanaRegistroFecha(self):
+            self.ventana = QtWidgets.QMainWindow()
+            self.ui = Ui_Form()
+            self.ui.setupUi(self.ventana)
+            self.ventana.show()
+
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.label.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:22pt; font-weight:600; color:#ffffff;\">¡Bienvenido a SS MEWIN!</span></p><p align=\"center\"><span style=\" font-size:16pt; color:#ffffff;\">Programador de horarios</span></p></body></html>"))
         self.groupBox.setTitle(_translate("MainWindow", "Menú de opciones"))
-        self.btnRegistrarIntHora.setText(_translate("MainWindow", "Registrar intensidad horaria"))
         self.btnRegistrarDocentes.setText(_translate("MainWindow", "Registrar Docentes"))
         self.btnRegistrarFechas.setText(_translate("MainWindow", "Registrar fechas"))
         self.groupBox_3.setTitle(_translate("MainWindow", "Generar horario"))
