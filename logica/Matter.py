@@ -1,6 +1,5 @@
-class Matter:
-    def __init__(self, id_Matter, name, ubi_Semester , numCredit, codRequisite, numHoursSem):
-        self.id_Docent = id_Matter
+class Matter(object):
+    def __init__(self, name, ubi_Semester, numCredit, codRequisite, numHoursSem):
         self.name = name
         self.ubi_Semester = ubi_Semester
         self.numCredit = numCredit
