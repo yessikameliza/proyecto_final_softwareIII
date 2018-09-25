@@ -7,7 +7,7 @@ conexion = sqlite3.connect("DateBases.sqlite3")
 consulta = conexion.cursor()
 
 # Extrayendo todas las filas
-sql = "SELECT numHoursSem FROM matter"
+sql = "SELECT numHoursSem FROM matte"
 if consulta.execute(sql):
     filas = consulta.fetchall()
     for fila in filas:
