@@ -12,6 +12,8 @@ from GUI.registroDocentes import registroDocentes
 from GUI.registroAsignaturas import registroAsignaturas
 from GUI.ActualizarAsignaturas import actualizarAsignatura
 from GUI.eliminarAsignatura import eliminarAsignatura
+from GUI.ActualizarDocentes import actualizarDocente
+from GUI.eliminarDocente import eliminarDocente
 
 class Ui_MainWindow(QtWidgets.QMainWindow):
     def setupUi(self, MainWindow):
@@ -380,6 +382,8 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.actionRegistrar_Asignaturas_2.triggered.connect(self.ventanaRegAsi)
         self.actionModificar_Asignaturas.triggered.connect(self.ventanaModAsig)
         self.actionEliminar_Asignaturas.triggered.connect(self.ventanaElimAsig)
+        self.actionActualizar_Docente.triggered.connect(self.ventanaActDoc)
+        self.actionEliminar_docente.triggered.connect(self.ventanaElimDoc)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def ventanaRegistroDocente(self):
@@ -409,6 +413,17 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
     def ventanaElimAsig(self):
             self.ventana = QtWidgets.QMainWindow()
             self.ui = eliminarAsignatura()
+            self.ui.setupUi(self.ventana)
+            self.ventana.show()
+    def ventanaActDoc(self):
+            self.ventana = QtWidgets.QMainWindow()
+            self.ui = actualizarDocente()
+            self.ui.setupUi(self.ventana)
+            self.ventana.show()
+
+    def ventanaElimDoc(self):
+            self.ventana = QtWidgets.QMainWindow()
+            self.ui = eliminarDocente()
             self.ui.setupUi(self.ventana)
             self.ventana.show()
 
