@@ -55,7 +55,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
 "background-color: rgb(0, 204, 102);\n"
 "")
         self.btnRegistrarDocentes.setObjectName("btnRegistrarDocentes")
-        self.btnRegistrarDocentes.clicked.connect(self.ventanaRegistroDocente)
+
 
         self.btnRegistrarFechas = QtWidgets.QPushButton(self.groupBox)
         self.btnRegistrarFechas.setGeometry(QtCore.QRect(40, 122, 241, 31))
@@ -376,13 +376,15 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.menubar.addAction(self.menuDocentes.menuAction())
 
         self.retranslateUi(MainWindow)
+        self.btnRegistrarDocentes.clicked.connect(self.ventanaRegistroDocente)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def ventanaRegistroDocente(self):
             self.ventana = QtWidgets.QMainWindow()
-            self.ui = registroDocentes
+            self.ui = registroDocentes()
             self.ui.setupUi(self.ventana)
             self.ventana.show()
+            self.close()
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
