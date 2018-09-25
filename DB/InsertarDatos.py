@@ -1,20 +1,20 @@
 # enconding: utf-8
 # IMPORTANTE convertir el script a la codificación UTF-8
 import sqlite3
+
 # Establecer la conexión
 conexion = sqlite3.connect("DateBases.sqlite3")
 
 # Seleccionar el cursor para iniciar una consulta
 consulta = conexion.cursor()
 print("**** Programa para insertar datos en bases de datos sqlite3 ****")
-#TypeBlock = input("tipo de bloque: ")
+# TypeBlock = input("tipo de bloque: ")
 codigo = input("Introduzca el codigo: ")
 name = input("Introduzca el nombre: ")
 ubi_Semester = input("Introduzca un número ubicacion semestral: ")
 numCredit = input("Introduzca un número creditos: ")
 codRequisite = input("Introduzca codigo requisito : ")
-
-
+numHoursSem = input("Introduzca el numero de horas por semestre :")
 # Capturar excepciones para los números enteros y decimal
 # Sólo números enteros
 try:
@@ -23,19 +23,20 @@ except ValueError:
     print(ubi_Semester, "no es un número entero")
     exit()
 
-
-
 # Valor de los argumentos
-argumentos = (codigo, name, ubi_Semester, numCredit, codRequisite)
-#argumentos2 = TypeBlock
+argumentos = (codigo, name, ubi_Semester, numCredit, codRequisite, numHoursSem)
+# argumentos2 = TypeBlock
 # consulta SQL con argumentos ?, ?, ?, ?, ?
-#sql2 = """INSERT INTO block (TypeBlock)
-#VALUES (?)"""
-sql = """INSERT INTO matter (codigo, name, ubi_Semester, numCredit, codRequisite)
-VALUES (?, ?, ?, ?, ?)"""
+# sql2 = """INSERT INTO block (TypeBlock)
+# VALUES (?)"""
+sql = """INSERT INTO matter (codigo, name, ubi_Semester, numCredit, codRequisite, numHoursSem)
+VALUES (?, ?, ?, ?, ?, ?)"""
+
+
+
 # Realizar la consulta
 if consulta.execute(sql, argumentos):
-    print("Tabla creada con éxito")
+        print("Tabla creada con éxito")
 else:
     print("Ha ocurrido un error al crear la tabla")
 
