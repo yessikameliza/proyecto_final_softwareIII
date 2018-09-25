@@ -7,8 +7,8 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
-class Ui_MainWindow(object):
+from GUI.registroDocentes import registroDocentes
+class Ui_MainWindow(QtWidgets.QMainWindow):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1267, 854)
@@ -55,6 +55,8 @@ class Ui_MainWindow(object):
 "background-color: rgb(0, 204, 102);\n"
 "")
         self.btnRegistrarDocentes.setObjectName("btnRegistrarDocentes")
+        self.btnRegistrarDocentes.clicked.connect(self.ventanaRegistroDocente)
+
         self.btnRegistrarFechas = QtWidgets.QPushButton(self.groupBox)
         self.btnRegistrarFechas.setGeometry(QtCore.QRect(40, 122, 241, 31))
         self.btnRegistrarFechas.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
@@ -376,6 +378,11 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
+    def ventanaRegistroDocente(self):
+            self.ventana = QtWidgets.QMainWindow()
+            self.ui = registroDocentes
+            self.ui.setupUi(self.ventana)
+            self.ventana.show()
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
@@ -461,4 +468,3 @@ class Ui_MainWindow(object):
         self.actionVer_fechas_alternas.setText(_translate("MainWindow", "Ver fechas alternas"))
         self.actionActualizar_Docente.setText(_translate("MainWindow", "Actualizar docente"))
         self.actionEliminar_docente.setText(_translate("MainWindow", "Eliminar docente"))
-
