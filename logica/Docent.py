@@ -1,8 +1,12 @@
+class Docent:
 
-class Docente:
-     id_Docent:int = 0
+    def __init__(self, id_Docent, name, limitHours, contract, phone, identification):
+        self.id_Docent = id_Docent
+        self.name = name
+        self.limitHours = limitHours
+        self.contract = contract
+        self.phone = phone
+        self.identification = identification
 
 
 
-    def __init__(self):
-        return 'hola mundo'
