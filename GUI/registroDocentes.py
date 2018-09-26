@@ -152,7 +152,7 @@ class registroDocentes(object):
         self.txtTipo.toPlainText()
         self.txtLimHoras.toPlainText()
         self.txtTelefono.toPlainText()
-        
+
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Registro docentes"))
