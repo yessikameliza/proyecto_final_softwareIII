@@ -37,8 +37,9 @@ codRequisite VARCHAR(50) NOT NULL,
 id_block INTEGER,
 FOREIGN KEY (id_block) REFERENCES block (id_block)
 ON DELETE CASCADE ON UPDATE NO ACTION)"""
-sql13 = """ALTER TABLE matter ADD COLUMN numHoursSem INTEGER"""
-sql15 = """ALTER TABLE docent ADD COLUMN identification VARCHAR(100)"""
+#sql13 = """ALTER TABLE matter ADD COLUMN numHoursSem INTEGER"""
+sql13 = """ALTER TABLE date ADD COLUMN idents VARCHAR(100)"""
+#sql15 = """ALTER TABLE docent ADD COLUMN identification VARCHAR(100)"""
 sql14 = """CREATE TABLE IF NOT EXISTS admin( 
 id_Admin INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
 user VARCHAR(200) NOT NULL,
@@ -98,7 +99,7 @@ if (consulta.execute(sql) and consulta.execute(sql3) and consulta.execute(sql4) 
         and consulta.execute(sql7) and consulta.execute(sql8) and
         consulta.execute(sql9) and consulta.execute(sql10) and consulta.execute(sql11) and
         consulta.execute(sql2) and consulta.execute(sql5) and consulta.execute(sql12)
-        and consulta.execute(sql14) and consulta.execute(sql15) and consulta.execute(sql13)):
+        and consulta.execute(sql14) and consulta.execute(sql13)):
     print("Tabla creada con éxito")
 else:
     print("Ha ocurrido un error al crear la tabla")
