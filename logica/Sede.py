@@ -1,4 +1,6 @@
-class Sede:
-    def __init__(self, id_Sede, nameSede):
-        self.id_Sede = id_Sede
+# coding: utf-8
+class Sede(object):
+    nameSede: str
+
+    def __init__(self, nameSede):
         self.nameSede = nameSede

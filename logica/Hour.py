@@ -1,5 +1,8 @@
-class Hour:
-    def __init__(self, id_Hour, hourIni, hourFin):
-        self.id_Hour = id_Hour
+# coding: utf-8
+class Hour(object):
+    hourIni: str
+    hourFin: str
+
+    def __init__(self, hourIni, hourFin):
         self.hourIni = hourIni
         self.hourFin = hourFin

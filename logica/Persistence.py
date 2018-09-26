@@ -1,9 +1,8 @@
+# coding: utf-8
 from logica.Matter import Matter
 from logica.Docent import Docent
 from DB.InsertarDatos import insertMatter
 from DB.InsertarDatos import insertDocent
-
-
 
 
 def register_Matter(codigo, name, ubi_Semester, numCredit, codRequisite, numHoursSem):
