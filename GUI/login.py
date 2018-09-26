@@ -5,10 +5,10 @@
 # Created by: PyQt5 UI code generator 5.11.2
 #
 # WARNING! All changes made in this file will be lost!
-
+import sys
 from PyQt5 import QtCore, QtGui, QtWidgets
 from GUI.ventanaPrincipal import Ui_MainWindow
-from PyQt5.QtWidgets import QMessageBox, QMainWindow
+from PyQt5.QtWidgets import QMessageBox, QMainWindow, QApplication
 class Login(QMainWindow):
     message_box: QMessageBox
     def setupUi(self, Form):
@@ -32,8 +32,10 @@ class Login(QMainWindow):
 "background-color: rgb(0, 51, 51)\n"
 "")
         self.txtUsuario.setObjectName("nomUsuario")
+        self.txtUsuario.setText("Ingrese nombre de usuario")
         self.txtContrasena = QtWidgets.QTextEdit(self.frame)
         self.txtContrasena.setGeometry(QtCore.QRect(30, 90, 211, 31))
+        self.txtContrasena.setText("Ingrese contraseña")
         self.txtContrasena.setStyleSheet("color: rgb(255, 255, 255);\n"
 "background-color: rgb(0, 51, 51)\n"
 "")
@@ -52,9 +54,11 @@ class Login(QMainWindow):
         self.label_3.setGeometry(QtCore.QRect(30, 70, 91, 16))
         self.label_3.setStyleSheet("font: 75 10pt \"Segoe Print\";")
         self.label_3.setObjectName("label_3")
-        self.btnAgregar.clicked.connect(self.ingresar)
         self.retranslateUi(Form)
+        self.btnAgregar.clicked.connect(self.ingresar)
+
         QtCore.QMetaObject.connectSlotsByName(Form)
+
 
     def ingresar(self):
         usuario = self.txtUsuario.toPlainText()
@@ -68,11 +72,11 @@ class Login(QMainWindow):
             self.ui = Ui_MainWindow()
             self.ui.setupUi(self.ventana)
             self.ventana.show()
-            self.close()
 
          else:
-            print("marica")
+
             self.mostrarMensaje("Alerta", "El usuario o la contraseña son incorrectos", "", QMessageBox.Warning, False)
+
 
     def mostrarMensaje(self, titulo: str, texto: str, texto_informativo: str, tipo_mensaje: QMessageBox, estado: bool):
 
