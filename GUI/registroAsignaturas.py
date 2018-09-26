@@ -7,7 +7,7 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+from logica.Persistence import register_Matter
 
 class registroAsignaturas(object):
     def setupUi(self, MainWindow):
@@ -129,12 +129,15 @@ class registroAsignaturas(object):
         self.boxCreditos.clear()
 
     def registrarMaterias(self):
-        cod = self.txtCodigo.toPlainText()
-        nombre= self.txtNombre.toPlainText()
-        numCred = self.boxCreditos.text()
+        cod = str(self.txtCodigo.toPlainText())
+        nombre = str(self.txtNombre.toPlainText())
+        numCred = str(self.boxCreditos.text())
         numHorSem = self.txtNumHorSemestre.toPlainText()
-        codReq = self.txtCodReq.toPlainText()
+        codReq = str(self.txtCodReq.toPlainText())
         sem = self.boxSemestre.text()
+        semes = int(sem)
+        numHoras = int(numHorSem)
+        register_Matter(cod, nombre, semes, numCred, codReq, numHoras)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
