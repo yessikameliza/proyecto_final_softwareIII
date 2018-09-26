@@ -144,8 +144,6 @@ class registroDocentes(QtWidgets.QMainWindow):
 
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
-<<<<<<< HEAD
-=======
 
     def limpiar(self):
         self.txtNombre.clear()
@@ -155,7 +153,7 @@ class registroDocentes(QtWidgets.QMainWindow):
         self.txtTipo.clear()
         self.comboEstado.clear()
         self.comboAsignatura.clear()
->>>>>>> b0367710d1b319600e621dbee7c5b89208d12adb
+
     def ventaAcep(self):
         nomb = self.txtNombre.toPlainText()
         tipo = self.txtTipo.toPlainText()

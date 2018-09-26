@@ -8,7 +8,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from GUI.ventanaPrincipal import Ui_MainWindow
-from PyQt5.QtWidgets import QMessageBox, QMainWindow
+from PyQt5.QtWidgets import QMessageBox, QMainWindow, QApplication
 from GUI.excpecion1 import LoginException
 class Login(QMainWindow):
     message_box: QMessageBox
