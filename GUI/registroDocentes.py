@@ -138,10 +138,24 @@ class registroDocentes(QtWidgets.QMainWindow):
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
         self.btnAceptar.clicked.connect(self.ventaAcep)
+        self.btnLimpiar.clicked.connect(self.limpiar)
+
         self.retranslateUi(MainWindow)
 
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
+<<<<<<< HEAD
+=======
+
+    def limpiar(self):
+        self.txtNombre.clear()
+        self.txtIdent.clear()
+        self.txtTelefono.clear()
+        self.txtLimHoras.clear()
+        self.txtTipo.clear()
+        self.comboEstado.clear()
+        self.comboAsignatura.clear()
+>>>>>>> b0367710d1b319600e621dbee7c5b89208d12adb
     def ventaAcep(self):
         nomb = self.txtNombre.toPlainText()
         tipo = self.txtTipo.toPlainText()
