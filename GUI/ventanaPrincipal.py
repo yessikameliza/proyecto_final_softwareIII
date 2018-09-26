@@ -397,7 +397,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             self.ui = Ui_Form()
             self.ui.setupUi(self.ventana)
             self.ventana.show()
-
+            self.close()
     def ventanaRegAsi(self):
             self.ventana = QtWidgets.QMainWindow()
             self.ui = registroAsignaturas()

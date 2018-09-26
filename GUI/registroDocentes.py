@@ -8,7 +8,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from logica.Persistence import register_Docent
-class registroDocentes(object):
+class registroDocentes(QtWidgets.QMainWindow):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("Registro de docentes")
         MainWindow.resize(538, 777)
@@ -134,17 +134,21 @@ class registroDocentes(object):
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
-
+        self.btnAceptar.clicked.connect(self.ventaAcep)
         self.retranslateUi(MainWindow)
-        self.btnAceptar.clicked.connect(self.acep)
+
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
-    def acep(self):
-        nom = self.txtNombre.text()
-        tip = self.txtIdent.text()
-        tel = self.txtTelefono.text()
-        lim = self.txtLimHoras.text()
 
+    def ventaAcep(self):
+        nomb = self.txtNombre.toPlainText()
+        tipo = self.txtTipo.toPlainText()
+        lim = self.txtLimHoras.toPlainText()
+        tel = self.txtTelefono.toPlainText()
+        iden = self.txtIdent.toPlainText()
+        esta = self.comboEstado.currentText()
+        register_Docent(nomb, esta, lim, tipo, tel, iden)
+        print(esta)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
