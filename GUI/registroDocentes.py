@@ -13,6 +13,7 @@ class registroDocentes(object):
         MainWindow.setObjectName("Registro de docentes")
         MainWindow.resize(538, 777)
         MainWindow.setStyleSheet("background-color: rgb(0, 51, 51)")
+        a = 540
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
@@ -39,6 +40,7 @@ class registroDocentes(object):
 "font: 10pt \"MS Shell Dlg 2\";\n"
 "background-color: rgb(255, 255, 255);")
         self.txtNombre.setObjectName("txtNombre")
+
         self.txtIdent = QtWidgets.QTextEdit(self.centralwidget)
         self.txtIdent.setGeometry(QtCore.QRect(250, 220, 241, 31))
         self.txtIdent.setStyleSheet("color: rgb(0, 0, 0);\n"
@@ -73,6 +75,8 @@ class registroDocentes(object):
         self.comboAsignatura.setStyleSheet("background-color: rgb(255, 255, 255);\n"
 "color: rgb(0, 0, 0);")
         self.comboAsignatura.setObjectName("comboAsignatura")
+        items = ('', 'materia1', 'materia2')
+        self.comboAsignatura.addItems(items)
         self.btnAgregar = QtWidgets.QPushButton(self.centralwidget)
         self.btnAgregar.setGeometry(QtCore.QRect(430, 480, 61, 31))
         self.btnAgregar.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
@@ -119,6 +123,9 @@ class registroDocentes(object):
 "color: rgb(0, 0, 0);")
         self.comboEstado.setCurrentText("")
         self.comboEstado.setObjectName("comboEstado")
+        items = ('', 'ACTIVO', 'INACTIVO')
+        self.comboEstado.addItems(items)
+
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 538, 21))
@@ -129,8 +136,23 @@ class registroDocentes(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
+        self.btnAgregar.clicked.connect(self.agregarCombo)
+        self.btnAceptar.clicked.connect(self.registrar)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
+    def agregarCombo(self):
+        self.comboAsignatura = QtWidgets.QComboBox(self.centralwidget)
+        self.comboAsignatura.setGeometry(QtCore.QRect(250, 540, 241, 31))
+        self.comboAsignatura.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+                                           "color: rgb(0, 0, 0);")
+        self.comboAsignatura.setObjectName("comboAsignatura")
+    def registrar(self):
+        self.txtNombre.toPlainText()
+        self.txtIdent.toPlainText()
+        self.txtTipo.toPlainText()
+        self.txtLimHoras.toPlainText()
+        self.txtTelefono.toPlainText()
+        
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Registro docentes"))
