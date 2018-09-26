@@ -2,7 +2,7 @@
 # IMPORTANTE codificar el script en UTF-8
 import sqlite3
 
-conexion = sqlite3.connect("DB\DateBases.sqlite3")
+conexion = sqlite3.connect("dd.sqlite3")
 
 consulta = conexion.cursor()
 sql2 = """UPDATE matter SET numHoursSem = 16 where id_Matter = 1"""
