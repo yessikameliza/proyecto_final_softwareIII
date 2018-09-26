@@ -10,7 +10,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 class Ui_Form(object):
     def setupUi(self, Form):
-        Form.setObjectName("Form")
+        Form.setObjectName("Registro de fechas")
         Form.resize(1379, 743)
         Form.setStyleSheet("background-color: rgb(0, 51, 51)")
         self.groupBox = QtWidgets.QGroupBox(Form)
@@ -195,7 +195,7 @@ class Ui_Form(object):
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
-        Form.setWindowTitle(_translate("Form", "Form"))
+        Form.setWindowTitle(_translate("Form", "Registro de fechas"))
         self.groupBox.setTitle(_translate("Form", "FECHAS"))
         item = self.tableWidget_3.verticalHeaderItem(0)
         item.setText(_translate("Form", "1"))
