@@ -8,7 +8,7 @@ class Docent (object):
     phone: str
     identification: str
 
-    def __init__(self, name, state, limitHours, contract, phone, identification):
+    def __init__(self, name: str, state: str, limitHours: int, contract: str, phone: str, identification: str):
         self.state = state
         self.name = name
         self.limitHours = limitHours

@@ -8,7 +8,7 @@ from logica.Docent import Docent
 
 
 def insertMatter(matter: Matter):
-    conexion = sqlite3.connect("DateBases.sqlite3")
+    conexion = sqlite3.connect("DB/DateBases.sqlite3")
 
     # Seleccionar el cursor para iniciar una consulta
     consulta = conexion.cursor()
@@ -60,21 +60,13 @@ def insertMatter(matter: Matter):
     conexion.close()
 
 
-def insertDocent(docent: Docent):
+def insertDocent(name: str, state: str, limitHours: int, contract: str, phone: str, identification: str):
     conexion = sqlite3.connect("DateBases.sqlite3")
 
     # Seleccionar el cursor para iniciar una consulta
     consulta = conexion.cursor()
 
-    print("**** Programa para insertar datos en bases de datos sqlite3 ****")
     # TypeBlock = input("tipo de bloque: ")
-
-    name = docent.name
-    state = docent.state
-    limitHours = docent.limitHours
-    contract = docent.contract
-    phone = docent.phone
-    identification = docent.identification
     # Capturar excepciones para los números enteros y decimal
     # Sólo números enteros
     # Valor de los argumentos
@@ -83,20 +75,18 @@ def insertDocent(docent: Docent):
     # consulta SQL con argumentos ?, ?, ?, ?, ?
     # sql2 = """INSERT INTO block (TypeBlock)
     # VALUES (?)"""
-    sql = """INSERT INTO docent (name, state, limitHours, contract, phone, identification)
+    sql = """INSERT INTO docent (name, estate, limitHoras, contract, phone, identification)
     VALUES (?, ?, ?, ?, ?, ?)"""
     sql2 = """SELECT * FROM docent WHERE identification = identification """
-    consulta.execute(sql2)
+    # consulta.execute(sql2)
 
     # Realizar la consulta
-    filas = consulta.fetchall()
-    if filas is None:
-        if consulta.execute(sql, argumentos):
-            print("Tabla creada con éxito")
-        else:
-            print("Ha ocurrido un error al crear la tabla")
+    # filas = consulta.fetchall()
+    # if filas is None:
+    if consulta.execute(sql, argumentos):
+        print("Tabla creada con éxito")
     else:
-        print("el docente ya existe")
+        print("Ha ocurrido un error al crear la tabla")
 
     # Cerrar la consulta
     consulta.close()
@@ -109,7 +99,7 @@ def insertDocent(docent: Docent):
 
 
 def insertDate(date: Date):
-    conexion = sqlite3.connect("DateBases.sqlite3")
+    conexion = sqlite3.connect("DB\DateBases.sqlite3")
 
     # Seleccionar el cursor para iniciar una consulta
     consulta = conexion.cursor()

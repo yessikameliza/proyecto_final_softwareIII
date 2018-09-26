@@ -1,4 +1,4 @@
-
+# coding: utf-8
 from PyQt5.QtWidgets import QApplication, QMainWindow
 from GUI.ventanaPrincipal import Ui_MainWindow
 
