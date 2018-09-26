@@ -144,7 +144,7 @@ class registroDocentes(object):
         tip = self.txtIdent.text()
         tel = self.txtTelefono.text()
         lim = self.txtLimHoras.text()
-         
+
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
