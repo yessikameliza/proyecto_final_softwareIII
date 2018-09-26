@@ -388,7 +388,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
     def ventanaRegistroDocente(self):
             self.ventana = QtWidgets.QMainWindow()
-            self.ui = registroDocentes()
+            self.ui = registroDocentes(Ui_MainWindow)
             self.ui.setupUi(self.ventana)
             self.ventana.show()
 

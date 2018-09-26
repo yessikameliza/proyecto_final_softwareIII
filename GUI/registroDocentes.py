@@ -12,7 +12,7 @@ from PyQt5.QtWidgets import QMessageBox
 from logica.Persistence import register_Docent
 
 
-class registroDocentes(QtWidgets.QMainWindow):
+class registroDocentes(object):
     message_box: QMessageBox
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("Registro de docentes")
@@ -141,11 +141,11 @@ class registroDocentes(QtWidgets.QMainWindow):
         MainWindow.setStatusBar(self.statusbar)
         self.btnAceptar.clicked.connect(self.ventaAcep)
         self.btnLimpiar.clicked.connect(self.limpiar)
+        self.btnRegresar.clicked.connect(self.regresar)
 
         self.retranslateUi(MainWindow)
 
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
-
 
     def limpiar(self):
         self.txtNombre.clear()

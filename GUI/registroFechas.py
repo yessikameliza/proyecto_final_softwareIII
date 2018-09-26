@@ -9,6 +9,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 class Ui_Form(object):
+
     def setupUi(self, Form):
         Form.setObjectName("Registro de fechas")
         Form.resize(1379, 743)
@@ -191,7 +192,22 @@ class Ui_Form(object):
         self.tableWidget_2.horizontalHeader().setDefaultSectionSize(137)
 
         self.retranslateUi(Form)
+        self.pushButton.clicked.connect(self.registrarFechas)
         QtCore.QMetaObject.connectSlotsByName(Form)
+
+    def registrarFechas(self, column):
+
+        for row in range(self.tableWidget.rowCount()):
+            text = self.tableWidget.item(row, 0).text()
+            print(text)
+
+        self.registrarFechas(0)
+        self.registrarFechas()
+        self.registrarFechas()
+        self.registrarFechas()
+        self.registrarFechas()
+
+
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
