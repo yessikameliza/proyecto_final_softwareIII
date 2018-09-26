@@ -111,9 +111,17 @@ class registroAsignaturas(object):
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
-
+        self.btnAceptar.clicked.connect(self.registrarMaterias)
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def registrarMaterias(self):
+        cod = self.txtCodigo.toPlainText()
+        nombre= self.txtNombre.toPlainText()
+        numCred = self.boxCreditos.text()
+        numHorSem = self.txtNumHorSemestre.toPlainText()
+        codReq = self.txtCodReq.toPlainText()
+        sem = self.boxSemestre.text()
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
