@@ -68,6 +68,7 @@ def insertDocent(docent: Docent):
     # TypeBlock = input("tipo de bloque: ")
 
     name = docent.name
+    state = docent.state
     limitHours = docent.limitHours
     contract = docent.contract
     phone = docent.phone
@@ -75,12 +76,12 @@ def insertDocent(docent: Docent):
     # Capturar excepciones para los números enteros y decimal
     # Sólo números enteros
     # Valor de los argumentos
-    argumentos = (name, limitHours, contract, phone, identification)
+    argumentos = (name, state, limitHours, contract, phone, identification)
     # argumentos2 = TypeBlock
     # consulta SQL con argumentos ?, ?, ?, ?, ?
     # sql2 = """INSERT INTO block (TypeBlock)
     # VALUES (?)"""
-    sql = """INSERT INTO docent (name, limitHours, contract, phone, identification)
+    sql = """INSERT INTO docent (name, state, limitHours, contract, phone, identification)
     VALUES (?, ?, ?, ?, ?, ?)"""
     sql2 = """SELECT * FROM docent WHERE identification = identification """
     consulta.execute(sql2)
