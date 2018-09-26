@@ -136,12 +136,15 @@ class registroDocentes(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-        self.btnAceptar.clicked.connect(self.registrar)
+        self.btnAceptar.clicked.connect(self.acep)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
-    def registrar(self):
-       nom = self.txtNombre.text()
-       print(nom)
+    def acep(self):
+        nom = self.txtNombre.text()
+        tip = self.txtIdent.text()
+        tel = self.txtTelefono.text()
+        lim = self.txtLimHoras.text()
+         
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
