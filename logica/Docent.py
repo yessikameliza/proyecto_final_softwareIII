@@ -1,6 +1,7 @@
 class Docent:
 
-    def __init__(self, name, limitHours, contract, phone, identification):
+    def __init__(self, name, state,limitHours, contract, phone, identification):
+        self.state = state
         self.name = name
         self.limitHours = limitHours
         self.contract = contract

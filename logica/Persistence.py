@@ -17,9 +17,10 @@ def register_Matter(codigo, name, ubi_Semester, numCredit, codRequisite, numHour
     insertMatter(matter)
 
 
-def register_Docent(name, limitHours, contract, phone, identification):
+def register_Docent(name, state, limitHours, contract, phone, identification):
     docent = Docent()
     docent.name = name
+    docent.state = state
     docent.limitHours = limitHours
     docent.contract = contract
     docent.phone = phone
