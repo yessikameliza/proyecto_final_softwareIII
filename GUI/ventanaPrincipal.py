@@ -384,8 +384,8 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.actionEliminar_Asignaturas.triggered.connect(self.ventanaElimAsig)
         self.actionActualizar_Docente.triggered.connect(self.ventanaActDoc)
         self.actionEliminar_docente.triggered.connect(self.ventanaElimDoc)
-        QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
     def ventanaRegistroDocente(self):
             self.ventana = QtWidgets.QMainWindow()
             self.ui = registroDocentes()

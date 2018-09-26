@@ -8,6 +8,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
+
 class registroAsignaturas(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("Registro de asignaturas")
@@ -112,8 +113,20 @@ class registroAsignaturas(object):
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
         self.btnAceptar.clicked.connect(self.registrarMaterias)
+        self.btnLimpiar.clicked.connect(self.limpiar)
+
+
         self.retranslateUi(MainWindow)
+
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def limpiar(self):
+        self.txtNombre.clear()
+        self.txtCodReq.clear()
+        self.txtNumHorSemestre.clear()
+        self.txtCodigo.clear()
+        self.boxSemestre.clear()
+        self.boxCreditos.clear()
 
     def registrarMaterias(self):
         cod = self.txtCodigo.toPlainText()
