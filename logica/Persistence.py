@@ -5,14 +5,14 @@ from DB.InsertarDatos import insertDocent
 from logica.Date import Date
 
 
-def register_Matter(codigo, name, ubi_Semester, numCredit, codRequisite, numHoursSem):
-    matter = Matter()
-    matter.codigo = codigo
-    matter.name = name
-    matter.ubi_Semester = ubi_Semester
-    matter.numCredit = numCredit
-    matter.codRequisite = codRequisite
-    matter.numHoursSem = numHoursSem
+def register_Matter(codigo: str, name: str, ubi_Semester: int, numCredit: str, codRequisite: str, numHoursSem: int):
+
+    cod = str(codigo)
+    nam = str(name)
+    ubi_Semeste = srt(ubi_Semester)
+    numCredi = str(numCredit)
+    codRequisite = str(codRequisite)
+    numHoursSem = int(numHoursSem)
     insertMatter(matter)
 
 
