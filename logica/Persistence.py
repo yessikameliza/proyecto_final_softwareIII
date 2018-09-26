@@ -37,7 +37,7 @@ def register_Date(date: str, origin: str, ident: str):
     idents = str(ident)
     insertDate(datee, orige, idents)
 
-def searchMatter(codigo: str):
+def searchhMatter(codigo: str):
    return searchMatter(codigo)
 
 def update_Matter(codigo: str, name: str, ubi_Semester: int, numCredit: str, codRequisite: str, numHoursSem: int):
