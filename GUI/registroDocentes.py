@@ -7,7 +7,7 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+from logica.Persistence import register_Docent
 class registroDocentes(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("Registro de docentes")
@@ -136,22 +136,12 @@ class registroDocentes(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-        self.btnAgregar.clicked.connect(self.agregarCombo)
         self.btnAceptar.clicked.connect(self.registrar)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
-    def agregarCombo(self):
-        self.comboAsignatura = QtWidgets.QComboBox(self.centralwidget)
-        self.comboAsignatura.setGeometry(QtCore.QRect(250, 540, 241, 31))
-        self.comboAsignatura.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-                                           "color: rgb(0, 0, 0);")
-        self.comboAsignatura.setObjectName("comboAsignatura")
     def registrar(self):
-        self.txtNombre.toPlainText()
-        self.txtIdent.toPlainText()
-        self.txtTipo.toPlainText()
-        self.txtLimHoras.toPlainText()
-        self.txtTelefono.toPlainText()
+       nom = self.txtNombre.text()
+       print(nom)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
