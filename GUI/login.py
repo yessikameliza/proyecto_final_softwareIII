@@ -9,7 +9,6 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from GUI.ventanaPrincipal import Ui_MainWindow
 from PyQt5.QtWidgets import QMessageBox, QMainWindow
-from GUI.excpecion1 import LoginException
 class Login(QMainWindow):
     message_box: QMessageBox
     def setupUi(self, Form):
@@ -68,10 +67,8 @@ class Login(QMainWindow):
             self.ventana = QtWidgets.QMainWindow()
             self.ui = Ui_MainWindow()
             self.ui.setupUi(self.ventana)
-            self.hide()
-            self.close()
             self.ventana.show()
-            self.hide()
+            self.close()
 
          else:
             print("marica")

@@ -8,10 +8,13 @@
 import sys
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QMessageBox
 from logica.Persistence import register_Docent
 
 
 class registroDocentes(QtWidgets.QMainWindow):
+    message_box: QMessageBox
+
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("Registro de docentes")
         MainWindow.resize(538, 777)
@@ -144,8 +147,6 @@ class registroDocentes(QtWidgets.QMainWindow):
 
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
-
-
     def limpiar(self):
         self.txtNombre.clear()
         self.txtIdent.clear()
@@ -156,6 +157,7 @@ class registroDocentes(QtWidgets.QMainWindow):
         self.comboAsignatura.clear()
 
     def ventaAcep(self):
+
         nomb = self.txtNombre.toPlainText()
         tipo = self.txtTipo.toPlainText()
         lim = self.txtLimHoras.toPlainText()
@@ -169,7 +171,7 @@ class registroDocentes(QtWidgets.QMainWindow):
         ident = str(iden)
         print(limit)
         register_Docent(name, esta, limit, type, phone, ident)
-
+        self.mostrarMensaje("Información", "¡Datos registrados con exito!", "", QMessageBox.Warning, False)
 
     # Back up the reference to the exceptionhook
     sys._excepthook = sys.excepthook
@@ -183,6 +185,26 @@ class registroDocentes(QtWidgets.QMainWindow):
 
     # Set the exception hook to our wrapping function
     sys.excepthook = my_exception_hook
+
+    def mostrarMensaje(self, titulo: str, texto: str, texto_informativo: str, tipo_mensaje: QMessageBox, estado: bool):
+
+        self.message_box = QMessageBox()
+        self.message_box.setWindowTitle(titulo)
+        self.message_box.setText(texto)
+
+        if len(texto_informativo) > 0:
+            self.message_box.setInformativeText(texto_informativo)
+
+        if estado:
+            btn_si = self.message_box.addButton('Si', QMessageBox.ActionRole)
+            btn_no = self.message_box.addButton('No', QMessageBox.ActionRole)
+            self.message_box.setDefaultButton(btn_si, btn_no)
+        else:
+            btn_aceptar = self.message_box.addButton('Aceptar', QMessageBox.ActionRole)
+            self.message_box.setDefaultButton(btn_aceptar)
+        if tipo_mensaje is not None:
+            self.message_box.setIcon(tipo_mensaje)
+            self.message_box.exec_()
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
