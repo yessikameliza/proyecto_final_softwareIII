@@ -7,7 +7,7 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+from logica.Persistence import searchMatter
 class actualizarAsignatura(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("Actualizar Asignaturas")
@@ -135,7 +135,20 @@ class actualizarAsignatura(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
+        self.btnBuscar.clicked.connect(self.buscar)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+    def buscar(self):
+        codBuscar = self.txtCodigoBuscar.toPlainText()
+        res = searchMatter(codBuscar)
+        for ress in res:
+            self.txtCodigo.setText(ress[1])
+            self.txtNombre.setText(ress[2])
+            self.boxSemestre.setProperty("value", ress[3])
+            self.boxCreditos.setProperty("value", ress[4])
+            self.txtCodRequis.setText(ress[5])
+            self.txtNumHorSemestre.setText(ress[6])
+
+
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
