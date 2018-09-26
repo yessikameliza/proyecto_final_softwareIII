@@ -3,7 +3,7 @@ from logica.Matter import Matter
 from DB.InsertarDatos import insertMatter
 from DB.InsertarDatos import insertDocent
 from DB.InsertarDatos import insertDate
-
+from DB.Seleccionar_Datos import searchMatter
 
 def register_Matter(codigo: str, name: str, ubi_Semester: int, numCredit: str, codRequisite: str, numHoursSem: int):
     cod = str(codigo)
@@ -36,3 +36,8 @@ def register_Date(date: str, origin: str, ident: str):
     orige = str(origin)
     idents = str(ident)
     insertDate(datee, orige, idents)
+
+def searchMatter(codigo: str):
+   return searchMatter(codigo)
+
+def update_Matter(codigo: str, name: str, ubi_Semester: int, numCredit: str, codRequisite: str, numHoursSem: int):
