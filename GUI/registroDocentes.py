@@ -14,6 +14,7 @@ from logica.Persistence import register_Docent
 
 class registroDocentes(object):
     message_box: QMessageBox
+
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("Registro de docentes")
         MainWindow.resize(538, 777)
@@ -173,7 +174,6 @@ class registroDocentes(object):
         register_Docent(name, esta, limit, type, phone, ident)
         self.mostrarMensaje("Información", "¡Datos registrados con exito!", "", QMessageBox.Warning, False)
 
-
     # Back up the reference to the exceptionhook
     sys._excepthook = sys.excepthook
 
@@ -186,6 +186,7 @@ class registroDocentes(object):
 
     # Set the exception hook to our wrapping function
     sys.excepthook = my_exception_hook
+
     def mostrarMensaje(self, titulo: str, texto: str, texto_informativo: str, tipo_mensaje: QMessageBox, estado: bool):
 
         self.message_box = QMessageBox()
