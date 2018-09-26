@@ -1,10 +1,9 @@
+# coding: utf-8
 from logica.Matter import Matter
 from logica.Docent import Docent
 from DB.InsertarDatos import insertMatter
 from DB.InsertarDatos import insertDocent
-
-
-
+from logica.Date import Date
 
 def register_Matter(codigo, name, ubi_Semester, numCredit, codRequisite, numHoursSem):
     matter = Matter()
@@ -26,3 +25,9 @@ def register_Docent(name, state, limitHours, contract, phone, identification):
     docent.phone = phone
     docent.identification = identification
     insertDocent(docent)
+
+def register_Date(date, origin):
+    dateInst = Date()
+    dateInst.date = date
+    dateInst.origin = origin
+

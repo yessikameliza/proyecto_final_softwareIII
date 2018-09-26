@@ -1,6 +1,8 @@
 # enconding: utf-8
 # IMPORTANTE convertir el script a la codificación UTF-8
 import sqlite3
+
+from logica.Date import Date
 from logica.Matter import Matter
 from logica.Docent import Docent
 
@@ -94,7 +96,39 @@ def insertDocent(docent: Docent):
         else:
             print("Ha ocurrido un error al crear la tabla")
     else:
-        print("la materia ya existe")
+        print("el docente ya existe")
+
+    # Cerrar la consulta
+    consulta.close()
+
+    # Guardar los cambios en la base de datos
+    conexion.commit()
+
+    # Cerrar la conexión
+    conexion.close()
+
+
+def insertDate(date: Date):
+    conexion = sqlite3.connect("DateBases.sqlite3")
+
+    # Seleccionar el cursor para iniciar una consulta
+    consulta = conexion.cursor()
+    print("**** Programa para insertar datos en bases de datos sqlite3 ****")
+    datee = date.date
+    origin = date.origin
+    # Capturar excepciones para los números enteros y decimal
+    # Sólo números enteros
+    # Valor de los argumentos
+    argumentos = (datee, origin)
+
+    sql = """INSERT INTO date (name, state)
+    VALUES (?, ?)"""
+
+    # Realizar la consulta
+    if consulta.execute(sql, argumentos):
+        print("Tabla creada con éxito")
+    else:
+        print("Ha ocurrido un error al crear la tabla")
 
     # Cerrar la consulta
     consulta.close()
