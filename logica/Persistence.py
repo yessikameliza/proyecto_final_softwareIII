@@ -1,10 +1,11 @@
 # coding: utf-8
-from logica.Matter import Matter
 from DB.InsertarDatos import insertMatter
 from DB.InsertarDatos import insertDocent
 from DB.InsertarDatos import insertDate
 from DB.Seleccionar_Datos import searchMatter
 from DB.ActualizarDatos import upDate_Matter
+
+
 def register_Matter(codigo: str, name: str, ubi_Semester: int, numCredit: str, codRequisite: str, numHoursSem: int):
     cod = str(codigo)
     nam = str(name)
@@ -37,8 +38,10 @@ def register_Date(date: str, origin: str, ident: str):
     idents = str(ident)
     insertDate(datee, orige, idents)
 
+
 def searchhMatter(codigo: str):
-   return searchMatter(codigo)
+    return searchMatter(codigo)
+
 
 def update_Matter(codigo: str, name: str, ubi_Semester: int, numCredit: str, codRequisite: str, numHoursSem: int):
     upDate_Matter(codigo, name, ubi_Semester, numCredit, codRequisite, numHoursSem)

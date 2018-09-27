@@ -8,7 +8,8 @@ def upDate_Matter(codigo: str, name: str, ubi_Semester: int, numCredit: str, cod
     consulta = conexion.cursor()
     sql2 = """UPDATE matter
      SET name = %s,
-     SET ubi_S
+     SET ubi_Semester
+     SET num
      
      where codigo = %s""" % codigo
 
