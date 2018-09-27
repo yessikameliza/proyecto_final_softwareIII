@@ -6,7 +6,7 @@ from DB.Seleccionar_Datos import searchMatter
 from DB.ActualizarDatos import upDate_Matter
 from DB.EliminarDatos import deleteMatter
 from DB.Seleccionar_Datos import searchDocent
-
+from DB.ActualizarDatos import updateDocent
 
 def register_Matter(codigo: str, name: str, ubi_Semester: int, numCredit: str, codRequisite: str, numHoursSem: int):
     cod = str(codigo)
@@ -55,3 +55,6 @@ def delete_Matter(codigo: str):
 
 def search_Docent(ident: str):
     return searchDocent(ident)
+
+def update_Docent(name: str, state: str, limitHours: int, contract: str, phone: str, identification: str):
+    updateDocent(name, state, limitHours, contract, phone, identification)
