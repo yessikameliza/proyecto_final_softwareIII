@@ -10,7 +10,7 @@ from DB.ActualizarDatos import updateDocent
 from DB.EliminarDatos import deleteDate
 from DB.Seleccionar_Datos import obtenerFechas
 from DB.EliminarDatos import deleteDocent
-
+from DB.Seleccionar_Datos import obtenerMatter
 
 def register_Matter(codigo: str, name: str, ubi_Semester: int, numCredit: str, codRequisite: str, numHoursSem: int):
     cod = str(codigo)
@@ -75,3 +75,6 @@ def delete_Date():
 
 def obtener_Fecha(idents: str):
     return obtenerFechas(idents)
+
+def obtener_Matter():
+    return obtenerMatter()

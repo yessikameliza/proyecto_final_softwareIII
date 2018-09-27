@@ -59,3 +59,20 @@ def obtenerFechas(idents: str):
     conexion.commit()
     conexion.close()
     return filaa
+
+def obtenerMatter():
+    conexion = sqlite3.connect("dataBases.sqlite3")
+    consulta = conexion.cursor()
+
+    # Extrayendo todas las filas
+    filaa: list = None
+    sql = "SELECT * FROM matter"
+    if consulta.execute(sql):
+        files = consulta.fetchall()
+        filaa = files
+
+    consulta.close()
+
+    conexion.commit()
+    conexion.close()
+    return filaa
