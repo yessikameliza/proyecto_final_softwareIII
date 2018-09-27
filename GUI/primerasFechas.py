@@ -158,12 +158,12 @@ class PrimerasFechas(object):
 
     def tabla1(self):
         res = obtener_Fecha("Primeras fechas")
-        print("entroooooo primeras")
+
         print(res)
         col: int = 0
         rows: int = 0
         for it in res:
-            print(it, "fechas ver")
+
             item = self.tableWidgetPrimerasFechas.item(rows, col)
             item.setText(it)
             print("rows", rows, "col ", col)
@@ -171,15 +171,6 @@ class PrimerasFechas(object):
                 col = col + 1
                 rows = -1
             rows = rows + 1
-
-
-
-
-    def auxiliar(self, texto: str, col, rows):
-        for col in range(6):
-            for rows in range(6):
-                print(col, "co")
-                print(rows, "r")
 
 
     def retranslateUi(self, Form):

@@ -200,7 +200,8 @@ class actualizarDocente(object):
             self.txtTipo.setText(str(fila[4]))
             self.txtTelefono.setText(str(fila[5]))
             if str(fila[2]) == "ACTIVO":
-             self.comboEstado.setItemText(0, str(fila[2]))
+             self.comboEstado.setItemText(1, str(fila[2]))
+
             else:
              self.comboEstado.setItemText(1, str(fila[2]))
 

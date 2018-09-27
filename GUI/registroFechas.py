@@ -443,10 +443,9 @@ class Ui_Form(object):
 
         for row in range(self.tableWidget.rowCount()):
             text = self.tableWidget.item(row, column).text()
-            print(text)
+
             print(column, "colun")
             if column == 0 or column == 2 or column == 4:
-                print(text, "entro a ver text guardar")
                 register_Date(text, "Encuentros tutoriales", "Primeras fechas")
             else:
                 register_Date(text, "Habilitaciones", "Primeras fechas")
@@ -455,20 +454,19 @@ class Ui_Form(object):
 
         for row2 in range(self.tableWidget_2.rowCount()):
             text2 = self.tableWidget_2.item(row2, column).text()
-
-        if column == 0 or column == 2 or column == 4:
-            register_Date(text2, "Encuentros tutoriales", "Fechas alternas")
-        else:
-            register_Date(text2, "Habilitaciones", "Fechas alternas")
+            if column == 0 or column == 2 or column == 4:
+                register_Date(text2, "Encuentros tutoriales", "Fechas alternas")
+            else:
+                register_Date(text2, "Habilitaciones", "Fechas alternas")
 
     def tabla3(self, column):
         for row3 in range(self.tableWidget_3.rowCount()):
             text3 = self.tableWidget_3.item(row3, column).text()
 
-        if column == 0 or column == 2 or column == 4:
-            register_Date(text3, "Encuentros tutoriales", "Pereira domingos")
-        else:
-            register_Date(text3, "Habilitaciones", "Pereira domingos")
+            if column == 0 or column == 2 or column == 4:
+                 register_Date(text3, "Encuentros tutoriales", "Pereira domingos")
+            else:
+                 register_Date(text3, "Habilitaciones", "Pereira domingos")
 
     def eliminarFechas(self):
         delete_Date()
