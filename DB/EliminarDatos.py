@@ -40,7 +40,7 @@ def deleteDocent(identification: str):
     if consulta.execute(sql1):
         files = consulta.fetchall()
         for fila in files:
-            if str(fila[1]) == identification:
+            if str(fila[6]) == identification:
                 id = int(fila[0])
 
     if not None == id:
