@@ -150,7 +150,7 @@ class PrimerasFechas(object):
         self.retranslateUi(Form)
         self.btnVer.clicked.connect(self.mostrar)
         QtCore.QMetaObject.connectSlotsByName(Form)
-           
+
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
