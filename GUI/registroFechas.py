@@ -8,7 +8,11 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from logica.Persistence import register_Date
+from logica.Persistence import delete_Date
+from PyQt5.QtWidgets import QMessageBox
 class Ui_Form(object):
+
+    message_box: QMessageBox
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.resize(1379, 743)
@@ -409,7 +413,7 @@ class Ui_Form(object):
 
         self.retranslateUi(Form)
         self.pushButton.clicked.connect(self.registrarFechas)
-
+        self.pushButton_3.clicked.connect(self.eliminarFechas)
         QtCore.QMetaObject.connectSlotsByName(Form)
     def registrarFechas(self):
         self.tabla1(0)
@@ -430,7 +434,7 @@ class Ui_Form(object):
         self.tabla3(3)
         self.tabla3(4)
         self.tabla3(5)
-
+        self.mostrarMensaje("Información", "¡Fechas registradas exitosamente!", "", QMessageBox.Warning, False)
     def tabla1(self, column):
 
         for row in range(self.tableWidget.rowCount()):
@@ -459,6 +463,31 @@ class Ui_Form(object):
             register_Date(text3, "Encuentros tutoriales", "Pereira domingos")
         else:
             register_Date(text3, "Habilitaciones", "Pereira domingos")
+
+    def eliminarFechas(self):
+        delete_Date()
+        self.mostrarMensaje("Información", "¡Fechas eliminadas!", "", QMessageBox.Warning, False)
+
+    def mostrarMensaje(self, titulo: str, texto: str, texto_informativo: str, tipo_mensaje: QMessageBox,
+                           estado: bool):
+
+            self.message_box = QMessageBox()
+            self.message_box.setWindowTitle(titulo)
+            self.message_box.setText(texto)
+
+            if len(texto_informativo) > 0:
+                self.message_box.setInformativeText(texto_informativo)
+
+            if estado:
+                btn_si = self.message_box.addButton('Si', QMessageBox.ActionRole)
+                btn_no = self.message_box.addButton('No', QMessageBox.ActionRole)
+                self.message_box.setDefaultButton(btn_si, btn_no)
+            else:
+                btn_aceptar = self.message_box.addButton('Aceptar', QMessageBox.ActionRole)
+                self.message_box.setDefaultButton(btn_aceptar)
+            if tipo_mensaje is not None:
+                self.message_box.setIcon(tipo_mensaje)
+                self.message_box.exec_()
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
