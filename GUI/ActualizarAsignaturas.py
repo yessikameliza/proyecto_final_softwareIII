@@ -11,8 +11,12 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from logica.Persistence import searchhMatter
 from logica.Persistence import update_Matter
 
+from PyQt5.QtWidgets import QMessageBox
 
 class actualizarAsignatura(object):
+
+    message_box: QMessageBox
+
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("Actualizar Asignaturas")
         MainWindow.resize(722, 647)
@@ -146,6 +150,7 @@ class actualizarAsignatura(object):
     def buscar(self):
         codBuscar = str(self.txtCodigoBuscar.toPlainText())
         res: Any = searchhMatter(codBuscar)
+
         if not None == res:
             print(res[1], res[2])
             self.txtCodigo.setText(str(res[1]))
@@ -154,8 +159,11 @@ class actualizarAsignatura(object):
             self.boxCreditos.setProperty("value", str(res[4]))
             self.txtCodRequis.setText(str(res[5]))
             self.txtNumHorSemestre.setText(str(res[7]))
+            self.mostrarMensaje("Información", "¡Los datos se han registrado con exito!", "", QMessageBox.Warning, False)
         else:
+            self.mostrarMensaje("Alerta", "¡El código ingresado no existe!", "", QMessageBox.Warning, False)
             print("no existe")
+
     def actualizar(self):
         cod = str(self.txtCodigo.toPlainText())
         nom = str(self.txtNombre.toPlainText())
@@ -165,6 +173,28 @@ class actualizarAsignatura(object):
         numHoursSem: str = self.txtNumHorSemestre.toPlainText()
         num: int = int(numHoursSem)
         update_Matter(cod, nom, ubiSemestre, numCreditos, codRequisito, num)
+        self.mostrarMensaje("Información", "¡Se han actualizado los datos correctamente!", "", QMessageBox.Warning, False)
+
+
+    def mostrarMensaje(self, titulo: str, texto: str, texto_informativo: str, tipo_mensaje: QMessageBox, estado: bool):
+
+        self.message_box = QMessageBox()
+        self.message_box.setWindowTitle(titulo)
+        self.message_box.setText(texto)
+
+        if len(texto_informativo) > 0:
+            self.message_box.setInformativeText(texto_informativo)
+
+        if estado:
+            btn_si = self.message_box.addButton('Si', QMessageBox.ActionRole)
+            btn_no = self.message_box.addButton('No', QMessageBox.ActionRole)
+            self.message_box.setDefaultButton(btn_si, btn_no)
+        else:
+            btn_aceptar = self.message_box.addButton('Aceptar', QMessageBox.ActionRole)
+            self.message_box.setDefaultButton(btn_aceptar)
+        if tipo_mensaje is not None:
+            self.message_box.setIcon(tipo_mensaje)
+            self.message_box.exec_()
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate

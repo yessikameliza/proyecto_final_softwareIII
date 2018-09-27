@@ -7,8 +7,10 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QMessageBox
 from logica.Persistence import delete_Matter
 class eliminarAsignatura(object):
+    message_box: QMessageBox
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("Eliminar Asignaturas")
         MainWindow.resize(536, 328)
@@ -62,14 +64,41 @@ class eliminarAsignatura(object):
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
-
-        self.retranslateUi(MainWindow)
         self.btnEliminar.clicked.connect(self.eliminar)
+        self.btnLimpiar.clicked.connect(self.limpiar)
+        self.retranslateUi(MainWindow)
+
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def limpiar(self):
+        self.txtCodtBuscar.clear()
 
     def eliminar(self):
         cod = self.txtCodtBuscar.toPlainText()
         delete_Matter(cod)
+        self.mostrarMensaje("Información", "¡La asignatura se ha eliminado con exito!", "", QMessageBox.Warning, False)
+
+    def mostrarMensaje(self, titulo: str, texto: str, texto_informativo: str, tipo_mensaje: QMessageBox,
+                           estado: bool):
+
+            self.message_box = QMessageBox()
+            self.message_box.setWindowTitle(titulo)
+            self.message_box.setText(texto)
+
+            if len(texto_informativo) > 0:
+                self.message_box.setInformativeText(texto_informativo)
+
+            if estado:
+                btn_si = self.message_box.addButton('Si', QMessageBox.ActionRole)
+                btn_no = self.message_box.addButton('No', QMessageBox.ActionRole)
+                self.message_box.setDefaultButton(btn_si, btn_no)
+            else:
+                btn_aceptar = self.message_box.addButton('Aceptar', QMessageBox.ActionRole)
+                self.message_box.setDefaultButton(btn_aceptar)
+            if tipo_mensaje is not None:
+                self.message_box.setIcon(tipo_mensaje)
+                self.message_box.exec_()
+
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate

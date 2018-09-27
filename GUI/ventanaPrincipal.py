@@ -14,6 +14,9 @@ from GUI.ActualizarAsignaturas import actualizarAsignatura
 from GUI.eliminarAsignatura import eliminarAsignatura
 from GUI.ActualizarDocentes import actualizarDocente
 from GUI.eliminarDocente import eliminarDocente
+from GUI.primerasFechas import PrimerasFechas
+from GUI.fechasAlternas import FechasAlternas
+
 
 class Ui_MainWindow(QtWidgets.QMainWindow):
     def setupUi(self, MainWindow):
@@ -354,6 +357,15 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         font.setFamily("Segoe Print")
         self.actionVer_fechas_alternas.setFont(font)
         self.actionVer_fechas_alternas.setObjectName("actionVer_fechas_alternas")
+
+        self.actionVer_fechas_pereira = QtWidgets.QAction(MainWindow)
+        font = QtGui.QFont()
+        font.setFamily("Segoe Print")
+        self.actionVer_fechas_pereira.setFont(font)
+        self.actionVer_fechas_pereira.setObjectName("actionVer_fechas_pereira")
+
+
+
         self.actionActualizar_Docente = QtWidgets.QAction(MainWindow)
         font = QtGui.QFont()
         font.setFamily("Segoe Print")
@@ -367,6 +379,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.menuOpciones.addSeparator()
         self.menuOpciones.addAction(self.actionGenerar_reportes)
         self.menuOpciones.addAction(self.actionVer_fechas_alternas)
+        self.menuOpciones.addAction(self.actionVer_fechas_pereira)
         self.menuAsignaturas.addAction(self.actionRegistrar_Asignaturas_2)
         self.menuAsignaturas.addAction(self.actionModificar_Asignaturas)
         self.menuAsignaturas.addAction(self.actionEliminar_Asignaturas)
@@ -376,6 +389,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.menubar.addAction(self.menuAsignaturas.menuAction())
         self.menubar.addAction(self.menuDocentes.menuAction())
 
+
         self.retranslateUi(MainWindow)
         self.btnRegistrarDocentes.clicked.connect(self.ventanaRegistroDocente)
         self.btnRegistrarFechas.clicked.connect(self.ventanaRegistroFecha)
@@ -384,8 +398,10 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.actionEliminar_Asignaturas.triggered.connect(self.ventanaElimAsig)
         self.actionActualizar_Docente.triggered.connect(self.ventanaActDoc)
         self.actionEliminar_docente.triggered.connect(self.ventanaElimDoc)
-
+        self.actionGenerar_reportes.triggered.connect(self.ventanaPrimerasFecha)
+        self.actionVer_fechas_alternas.triggered.connect(self.ventanaFechasAlternas)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
     def ventanaRegistroDocente(self):
             self.ventana = QtWidgets.QMainWindow()
             self.ui = registroDocentes()
@@ -426,6 +442,18 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             self.ui = eliminarDocente()
             self.ui.setupUi(self.ventana)
             self.ventana.show()
+
+    def ventanaPrimerasFecha(self):
+        self.ventana = QtWidgets.QMainWindow()
+        self.ui = PrimerasFechas()
+        self.ui.setupUi(self.ventana)
+        self.ventana.show()
+
+    def ventanaFechasAlternas(self):
+        self.ventana = QtWidgets.QMainWindow()
+        self.ui = FechasAlternas()
+        self.ui.setupUi(self.ventana)
+        self.ventana.show()
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
@@ -509,5 +537,6 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.actionModificar_Asignaturas.setText(_translate("MainWindow", "Modificar asignaturas"))
         self.actionEliminar_Asignaturas.setText(_translate("MainWindow", "Eliminar asignaturas"))
         self.actionVer_fechas_alternas.setText(_translate("MainWindow", "Ver fechas alternas"))
+        self.actionVer_fechas_pereira.setText(_translate("MainWindow", "Ver fechas pereira domingos"))
         self.actionActualizar_Docente.setText(_translate("MainWindow", "Actualizar docente"))
         self.actionEliminar_docente.setText(_translate("MainWindow", "Eliminar docente"))
