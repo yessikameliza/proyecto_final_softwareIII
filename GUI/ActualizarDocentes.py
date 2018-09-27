@@ -186,7 +186,7 @@ class actualizarDocente(object):
         if not None == fila:
             self.txtIdent.setText(str(fila[6]))
             self.txtNombre.setText(str(fila[1]))
-            self.comboEstado.setItemText("value", str(fila[2]))
+            self.comboEstado.setItemText(0, str(fila[2]))
             self.txtLimHoras.setText(str(fila[3]))
             self.txtTipo.setText(str(fila[4]))
             self.txtTelefono.setText(str(fila[5]))
