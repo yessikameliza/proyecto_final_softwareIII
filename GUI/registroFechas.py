@@ -7,7 +7,7 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+from logica.Persistence import register_Date
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
@@ -409,8 +409,8 @@ class Ui_Form(object):
 
         self.retranslateUi(Form)
         self.pushButton.clicked.connect(self.registrarFechas)
-        QtCore.QMetaObject.connectSlotsByName(Form)
 
+        QtCore.QMetaObject.connectSlotsByName(Form)
     def registrarFechas(self):
         self.tabla1(0)
         self.tabla1(1)

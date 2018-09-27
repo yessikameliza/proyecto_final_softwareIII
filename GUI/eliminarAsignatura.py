@@ -62,10 +62,14 @@ class eliminarAsignatura(object):
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
-
+        self.btnEliminar.clicked.connect(self.eliminar)
+        self.btnLimpiar.clicked.connect(self.limpiar)
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
-
+    def eliminar(self):
+        cod = str(self.txtCodtBuscar.toPlainText())
+    def limpiar(self):
+        self.txtCodtBuscar.clear()
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Eliminar asignaturas"))

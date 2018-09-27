@@ -10,7 +10,11 @@ from typing import Any
 from PyQt5 import QtCore, QtGui, QtWidgets
 from logica.Persistence import searchhMatter
 from logica.Persistence import update_Matter
+from PyQt5.QtWidgets import QMessageBox
 class actualizarAsignatura(object):
+
+    message_box: QMessageBox
+
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("Actualizar Asignaturas")
         MainWindow.resize(722, 647)
@@ -138,18 +142,23 @@ class actualizarAsignatura(object):
 
         self.retranslateUi(MainWindow)
         self.btnBuscar.clicked.connect(self.buscar)
-        self.btnActualizar.clicked.connect(self.actualizar())
+        self.btnActualizar.clicked.connect(self.actualizar)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
     def buscar(self):
         codBuscar = str(self.txtCodigoBuscar.toPlainText())
         res: Any = searchhMatter(codBuscar)
         print(res[1], res[2])
-        self.txtCodigo.setText(str(res[1]))
-        self.txtNombre.setText(str(res[2]))
-        self.boxSemestre.setProperty("value", str(res[3]))
-        self.boxCreditos.setProperty("value", str(res[4]))
-        self.txtCodRequis.setText(str(res[5]))
-        self.txtNumHorSemestre.setText(str(res[7]))
+        if res is None:
+             self.mostrarMensaje("Alerta", "¡El código ingresado no existe!", "", QMessageBox.Warning, False)
+        else:
+             self.txtCodigo.setText(str(res[1]))
+             self.txtNombre.setText(str(res[2]))
+             self.boxSemestre.setProperty("value", str(res[3]))
+             self.boxCreditos.setProperty("value", str(res[4]))
+             self.txtCodRequis.setText(str(res[5]))
+             self.txtNumHorSemestre.setText(str(res[7]))
+
     def actualizar(self):
         cod = str(self.txtCodigo.toPlainText())
         nom = str(self.txtNombre.toPlainText())
@@ -158,6 +167,26 @@ class actualizarAsignatura(object):
         codRequisito = self.txtCodRequis.toPlainText()
         numHoursSem = int(self.txtNumHorSemestre.toPlainText())
         update_Matter(cod, nom, ubiSemestre, numCreditos, codRequisito, numHoursSem)
+
+    def mostrarMensaje(self, titulo: str, texto: str, texto_informativo: str, tipo_mensaje: QMessageBox, estado: bool):
+
+        self.message_box = QMessageBox()
+        self.message_box.setWindowTitle(titulo)
+        self.message_box.setText(texto)
+
+        if len(texto_informativo) > 0:
+            self.message_box.setInformativeText(texto_informativo)
+
+        if estado:
+            btn_si = self.message_box.addButton('Si', QMessageBox.ActionRole)
+            btn_no = self.message_box.addButton('No', QMessageBox.ActionRole)
+            self.message_box.setDefaultButton(btn_si, btn_no)
+        else:
+            btn_aceptar = self.message_box.addButton('Aceptar', QMessageBox.ActionRole)
+            self.message_box.setDefaultButton(btn_aceptar)
+        if tipo_mensaje is not None:
+            self.message_box.setIcon(tipo_mensaje)
+            self.message_box.exec_()
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate

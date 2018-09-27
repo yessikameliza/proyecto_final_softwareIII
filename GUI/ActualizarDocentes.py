@@ -148,9 +148,11 @@ class actualizarDocente(object):
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
-
+        self.btnBuscar.clicked.connect(self.buscar)
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+    def buscar(self):
+        cod = self.txtIdentBuscar.toPlainText()
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
