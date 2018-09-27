@@ -13,7 +13,7 @@ def upDate_Matter(codigo: str, name: str, ubi_Semester: int, numCredit: str, cod
      SET numCredit = %s
      SET codRequisite = &s
      SET numHoursSem = %i
-     where codigo = %s""" % codigo, name, ubi_Semester, numCredit, codRequisite, numHoursSem
+     where codigo = %s""" % codigo, name, ubi_Semester, numCredit, codRequisite, numHoursSem, codigo
 
     consulta.execute(sql2)
     consulta.close()
