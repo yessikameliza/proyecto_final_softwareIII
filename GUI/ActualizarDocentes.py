@@ -10,6 +10,7 @@ from typing import Any
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMessageBox
 from logica.Persistence import search_Docent
+from logica.Persistence import update_Docent
 class actualizarDocente(object):
     message_box: QMessageBox
     def setupUi(self, MainWindow):
@@ -154,8 +155,16 @@ class actualizarDocente(object):
         self.retranslateUi(MainWindow)
         self.btnBuscar.clicked.connect(self.buscar)
         self.btnActualizar.clicked.connect(self.actualiza)
+        self.btnLimpiar.clicked.connect(self.limpiar)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
+    def limpiar(self):
+        self.txtNombre.clear()
+        self.txtTipo.clear()
+        self.txtLimHoras.clear()
+        self.txtTelefono.clear()
+        self.txtIdent.clear()
+        self.comboEstado.clear()
     def actualiza(self):
         nomb = str(self.txtNombre.toPlainText())
         tipo = str(self.txtTipo.toPlainText())
@@ -163,6 +172,12 @@ class actualizarDocente(object):
         tel = str(self.txtTelefono.toPlainText())
         iden = str(self.txtIdent.toPlainText())
         esta = str(self.comboEstado.currentText())
+
+        if len(nomb) == 0 | len(tipo) == 0 | len(lim) == 0 | len(tel) ==0 | len(iden) == 0 | len(esta) == 0:
+            self.mostrarMensaje("Alerta", "¡Hay espacios vacios, digite todos los campos!", "", QMessageBox.Warning, False)
+        else:
+            update_Docent(nomb, esta, lim, tipo, tel, iden)
+            self.mostrarMensaje("Información", "¡Se han actualizado los datos correctamente!", "", QMessageBox.Warning, False)
 
     def buscar(self):
         id = self.txtIdentBuscar.toPlainText()

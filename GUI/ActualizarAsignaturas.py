@@ -145,8 +145,15 @@ class actualizarAsignatura(object):
         self.retranslateUi(MainWindow)
         self.btnBuscar.clicked.connect(self.buscar)
         self.btnActualizar.clicked.connect(self.actualizar)
+        self.btnLimpiar.clicked.connect(self.limpiar)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
-
+    def limpiar(self):
+        self.txtCodigo.clear()
+        self.txtNombre.clear()
+        self.boxSemestre.clear()
+        self.boxCreditos.clear()
+        self.txtCodRequis.clear()
+        self.txtNumHorSemestre.clear()
     def buscar(self):
         codBuscar = str(self.txtCodigoBuscar.toPlainText())
         res: Any = searchhMatter(codBuscar)
@@ -159,7 +166,6 @@ class actualizarAsignatura(object):
             self.boxCreditos.setProperty("value", str(res[4]))
             self.txtCodRequis.setText(str(res[5]))
             self.txtNumHorSemestre.setText(str(res[7]))
-            self.mostrarMensaje("Información", "¡Los datos se han registrado con exito!", "", QMessageBox.Warning, False)
         else:
             self.mostrarMensaje("Alerta", "¡El código ingresado no existe!", "", QMessageBox.Warning, False)
             print("no existe")
@@ -172,7 +178,13 @@ class actualizarAsignatura(object):
         codRequisito = self.txtCodRequis.toPlainText()
         numHoursSem: str = self.txtNumHorSemestre.toPlainText()
         num: int = int(numHoursSem)
-        update_Matter(cod, nom, ubiSemestre, numCreditos, codRequisito, num)
+
+        if len(cod) == 0 | len(nom) == 0 | len(ubiSemestre) == 0 | len(numCreditos) == 0 | len(codRequisito) == 0 | len(numHoursSem) == 0:
+            self.mostrarMensaje("Alerta", "¡Hay espacios vacios, digite todos los campos!", "", QMessageBox.Warning,
+                                False)
+        else:
+            update_Matter(cod, nom, ubiSemestre, numCreditos, codRequisito, num)
+
         self.mostrarMensaje("Información", "¡Se han actualizado los datos correctamente!", "", QMessageBox.Warning, False)
 
 

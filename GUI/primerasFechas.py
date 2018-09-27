@@ -151,6 +151,10 @@ class PrimerasFechas(object):
         self.btnVer.clicked.connect(self.mostrar)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
+    def mostrar(self):
+
+        for row in range(self.tableWidgetPrimerasFechas.rowCount()):
+               self.tableWidgetPrimerasFechas.item(0, 0)
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))

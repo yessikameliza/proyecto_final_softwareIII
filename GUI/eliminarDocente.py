@@ -7,8 +7,11 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from logica.Persistence import delete_Docent
+from PyQt5.QtWidgets import QMessageBox
 
 class eliminarDocente(object):
+    message_box = QMessageBox
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(534, 321)
@@ -68,7 +71,13 @@ class eliminarDocente(object):
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
     def eliminar(self):
         iden = str(self.txtIdentBuscar.toPlainText())
-
+        res = delete_Docent(iden)
+        if not None == res:
+            self.mostrarMensaje("Información", "¡El docente se ha eliminado con exito!", "", QMessageBox.Warning,
+                                False)
+        else:
+            self.mostrarMensaje("Alerta", "¡Identificación no encontrada!", "", QMessageBox.Warning,
+                                False)
     def limpiar(self):
         self.txtIdentBuscar.clear()
     def retranslateUi(self, MainWindow):

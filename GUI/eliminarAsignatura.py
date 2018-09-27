@@ -75,8 +75,12 @@ class eliminarAsignatura(object):
 
     def eliminar(self):
         cod = self.txtCodtBuscar.toPlainText()
-        delete_Matter(cod)
-        self.mostrarMensaje("Información", "¡La asignatura se ha eliminado con exito!", "", QMessageBox.Warning, False)
+        res = delete_Matter(cod)
+        if not None == res:
+          self.mostrarMensaje("Información", "¡La asignatura se ha eliminado con exito!", "", QMessageBox.Warning, False)
+        else:
+            self.mostrarMensaje("Alerta", "¡Codigo no encontrado¡", "", QMessageBox.Warning,
+                                False)
 
     def mostrarMensaje(self, titulo: str, texto: str, texto_informativo: str, tipo_mensaje: QMessageBox,
                            estado: bool):
