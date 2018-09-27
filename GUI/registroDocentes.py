@@ -142,7 +142,7 @@ class registroDocentes(object):
         MainWindow.setStatusBar(self.statusbar)
         self.btnAceptar.clicked.connect(self.ventaAcep)
         self.btnLimpiar.clicked.connect(self.limpiar)
-        self.btnRegresar.clicked.connect(self.regresar)
+
 
         self.retranslateUi(MainWindow)
 

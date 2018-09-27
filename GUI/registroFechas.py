@@ -7,7 +7,7 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+from logica.Persistence import register_Date
 class Ui_Form(object):
 
     def setupUi(self, Form):
@@ -193,19 +193,54 @@ class Ui_Form(object):
 
         self.retranslateUi(Form)
         self.pushButton.clicked.connect(self.registrarFechas)
+
         QtCore.QMetaObject.connectSlotsByName(Form)
 
-    def registrarFechas(self, column):
+    def registrarFechas(self):
+        self.tabla1(0)
+        self.tabla1(1)
+        self.tabla1(2)
+        self.tabla1(3)
+        self.tabla1(4)
+        self.tabla1(5)
+        self.tabla2(0)
+        self.tabla2(1)
+        self.tabla2(2)
+        self.tabla2(3)
+        self.tabla2(4)
+        self.tabla2(5)
+        self.tabla3(0)
+        self.tabla3(1)
+        self.tabla3(2)
+        self.tabla3(3)
+        self.tabla3(4)
+        self.tabla3(5)
+
+    def tabla1(self, column):
 
         for row in range(self.tableWidget.rowCount()):
-            text = self.tableWidget.item(row, 0).text()
-            print(text)
+            text = self.tableWidget.item(row, column).text()
+        if column == 0 and column == 2 and column == 4:
+            register_Date(text, "Encuentros tutoriales", "Primeras fechas")
+        else:
+            register_Date(text, "Habilitaciones", "Primeras fechas")
 
-        self.registrarFechas(0)
-        self.registrarFechas()
-        self.registrarFechas()
-        self.registrarFechas()
-        self.registrarFechas()
+    def tabla2(self, column):
+
+        for row2 in range(self.tableWidget_2.rowCount()):
+            text2 = self.tableWidget_2.item(row2, column).text()
+        if column == 0 and column == 2 and column == 4:
+            register_Date(text2, "Encuentros tutoriales", "Fechas alternas")
+        else:
+            register_Date(text2, "Habilitaciones", "Fechas alternas")
+
+    def tabla3(self, column):
+        for row3 in range(self.tableWidget_3.rowCount()):
+            text3 = self.tableWidget_3.item(row3, column).text()
+        if column == 0 and column == 2 and column == 4:
+            register_Date(text3, "Encuentros tutoriales", "Pereira domingos")
+        else:
+            register_Date(text3, "Habilitaciones", "Pereira domingos")
 
 
 
