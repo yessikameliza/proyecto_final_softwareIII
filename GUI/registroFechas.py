@@ -8,6 +8,9 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
+from logica.Persistence import register_Date
+
+
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")

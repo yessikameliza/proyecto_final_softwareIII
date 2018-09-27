@@ -140,7 +140,7 @@ class actualizarAsignatura(object):
 
         self.retranslateUi(MainWindow)
         self.btnBuscar.clicked.connect(self.buscar)
-        self.btnActualizar.clicked.connect(self.actualizar())
+        self.btnActualizar.clicked.connect(self.actualizar)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def buscar(self):
@@ -160,8 +160,9 @@ class actualizarAsignatura(object):
         ubiSemestre = int(self.boxSemestre.text())
         numCreditos = self.boxCreditos.text()
         codRequisito = self.txtCodRequis.toPlainText()
-        numHoursSem = self.txtNumHorSemestre.toPlainText()
-        update_Matter(cod, nom, ubiSemestre, numCreditos, codRequisito, numHoursSem)
+        numHoursSem: str = self.txtNumHorSemestre.toPlainText()
+        num: int = int(numHoursSem)
+        update_Matter(cod, nom, ubiSemestre, numCreditos, codRequisito, num)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
