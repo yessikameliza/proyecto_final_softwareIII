@@ -441,6 +441,8 @@ class Ui_Form(object):
             text = self.tableWidget.item(row, column).text()
 
         if column == 0 or column == 2 or column == 4:
+
+
             register_Date(text, "Encuentros tutoriales", "Primeras fechas")
         else:
             register_Date(text, "Habilitaciones", "Primeras fechas")

@@ -7,7 +7,7 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+from logica.Persistence import obtener_Fecha
 class FechasAlternas(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
@@ -148,7 +148,23 @@ class FechasAlternas(object):
         self.label_3.setObjectName("label_3")
 
         self.retranslateUi(Form)
+        self.btnVer.clicked.connect(self.mostrar)
         QtCore.QMetaObject.connectSlotsByName(Form)
+
+    def mostrar(self):
+        self.tabla1()
+
+    def tabla1(self):
+        res = obtener_Fecha("Fechas alternas")
+
+        for it in res:
+            self.auxiliar(str(res[it]))
+
+    def auxiliar(self, texto):
+        for col in range(5):
+            for rows in range(5):
+                item = self.tableWidgetFechasAlternas.item(rows, col)
+                item.setText(texto)
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
