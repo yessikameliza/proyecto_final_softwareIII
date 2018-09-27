@@ -158,7 +158,7 @@ class PrimerasFechas(object):
 
     def tabla1(self):
         res = obtener_Fecha("Primeras fechas")
-        
+
         print(res)
         col: int = 0
         rows: int = 0

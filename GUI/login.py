@@ -65,7 +65,7 @@ class Login(QMainWindow):
         if len(usuario) == 0 | len(contra) == 0:
             self.mostrarMensaje("Alerta", "Ingrese usuario y/o contraseña", "", QMessageBox.Warning, False)
         else:
-         if usuario == 'alex' and contra == '123':
+         if usuario == 'admin' and contra == '12345':
             print('alex')
             self.ventana = QtWidgets.QMainWindow()
             self.ui = Ui_MainWindow()
