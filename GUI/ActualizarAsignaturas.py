@@ -9,6 +9,7 @@ from typing import Any
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from logica.Persistence import searchhMatter
+from logica.Persistence import update_Matter
 class actualizarAsignatura(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("Actualizar Asignaturas")
@@ -148,8 +149,14 @@ class actualizarAsignatura(object):
         self.boxCreditos.setProperty("value", str(res[4]))
         self.txtCodRequis.setText(str(res[5]))
         self.txtNumHorSemestre.setText(str(res[7]))
-
-
+    def actualizar(self):
+        cod = str(self.txtCodigo.toPlainText())
+        nom = str(self.txtNombre.toPlainText())
+        ubiSemestre = int(self.boxSemestre.text())
+        numCreditos = self.boxCreditos.text()
+        codRequisito = self.txtCodRequis.toPlainText()
+        numHoursSem = int(self.txtNumHorSemestre.toPlainText())
+        update_Matter(cod, nom, ubiSemestre, numCreditos, codRequisito, numHoursSem)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
