@@ -8,6 +8,7 @@ from DB.EliminarDatos import deleteMatter
 from DB.Seleccionar_Datos import searchDocent
 from DB.ActualizarDatos import updateDocent
 
+
 def register_Matter(codigo: str, name: str, ubi_Semester: int, numCredit: str, codRequisite: str, numHoursSem: int):
     cod = str(codigo)
     nam = str(name)
@@ -50,14 +51,16 @@ def update_Matter(codigo: str, name: str, ubi_Semester: int, numCredit: str, cod
 
 
 def delete_Matter(codigo: str):
-    deleteMatter(codigo)
+    return deleteMatter(codigo)
 
 
 def search_Docent(ident: str):
     return searchDocent(ident)
 
+
 def update_Docent(name: str, state: str, limitHours: int, contract: str, phone: str, identification: str):
     updateDocent(name, state, limitHours, contract, phone, identification)
 
-def delete_Docent(identification:str):
-    deleteDocent(identification)
+
+def delete_Docent(identification: str):
+    return deleteDocent(identification)
