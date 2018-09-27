@@ -8,6 +8,8 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from logica.Persistence import obtener_Fecha
+
+
 class PrimerasFechas(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
@@ -16,8 +18,8 @@ class PrimerasFechas(object):
         self.tableWidgetPrimerasFechas = QtWidgets.QTableWidget(Form)
         self.tableWidgetPrimerasFechas.setGeometry(QtCore.QRect(40, 130, 851, 211))
         self.tableWidgetPrimerasFechas.setStyleSheet("font: 9pt \"Segoe Print\";\n"
-"color: rgb(0, 0, 0);\n"
-"background-color: rgb(255, 255, 255);")
+                                                     "color: rgb(0, 0, 0);\n"
+                                                     "background-color: rgb(255, 255, 255);")
         self.tableWidgetPrimerasFechas.setInputMethodHints(QtCore.Qt.ImhNone)
         self.tableWidgetPrimerasFechas.setObjectName("tableWidgetPrimerasFechas")
         self.tableWidgetPrimerasFechas.setColumnCount(6)
@@ -122,29 +124,29 @@ class PrimerasFechas(object):
         self.label_5 = QtWidgets.QLabel(Form)
         self.label_5.setGeometry(QtCore.QRect(340, 30, 261, 41))
         self.label_5.setStyleSheet("font: 75 20pt \"Segoe Print\";\n"
-"color: rgb(255, 255, 255);")
+                                   "color: rgb(255, 255, 255);")
         self.label_5.setObjectName("label_5")
         self.label_3 = QtWidgets.QLabel(Form)
         self.label_3.setGeometry(QtCore.QRect(150, 100, 121, 16))
         self.label_3.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
-"color: rgb(255, 255, 255);")
+                                   "color: rgb(255, 255, 255);")
         self.label_3.setObjectName("label_3")
         self.label_4 = QtWidgets.QLabel(Form)
         self.label_4.setGeometry(QtCore.QRect(430, 100, 121, 16))
         self.label_4.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
-"color: rgb(255, 255, 255);")
+                                   "color: rgb(255, 255, 255);")
         self.label_4.setObjectName("label_4")
         self.label_6 = QtWidgets.QLabel(Form)
         self.label_6.setGeometry(QtCore.QRect(710, 100, 121, 16))
         self.label_6.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
-"color: rgb(255, 255, 255);")
+                                   "color: rgb(255, 255, 255);")
         self.label_6.setObjectName("label_6")
         self.btnVer = QtWidgets.QPushButton(Form)
         self.btnVer.setGeometry(QtCore.QRect(390, 370, 181, 41))
         self.btnVer.setStyleSheet("font: 11pt \"Segoe Print\";\n"
-"color: rgb(255, 255, 255);\n"
-"background-color: rgb(0, 204, 102);\n"
-"")
+                                  "color: rgb(255, 255, 255);\n"
+                                  "background-color: rgb(0, 204, 102);\n"
+                                  "")
         self.btnVer.setObjectName("btnVer")
 
         self.retranslateUi(Form)
@@ -156,15 +158,28 @@ class PrimerasFechas(object):
 
     def tabla1(self):
         res = obtener_Fecha("Primeras fechas")
-
+        print("entroooooo primeras")
+        print(res)
+        col: int = 0
+        rows: int = 0
         for it in res:
-            self.auxiliar(str(res[it]))
+            print(it, "fechas ver")
+            item = self.tableWidgetPrimerasFechas.item(rows, col)
+            item.setText(it)
+            print("rows", rows, "col ", col)
+            if 5 == rows:
+                col = col + 1
+                rows = -1
+            rows = rows + 1
 
-    def auxiliar(self, texto):
-        for col in range(5):
-            for rows in range(5):
-                item = self.tableWidgetPrimerasFechas.item(rows, col)
-                item.setText(texto)
+
+
+
+    def auxiliar(self, texto: str, col, rows):
+        for col in range(6):
+            for rows in range(6):
+                print(col, "co")
+                print(rows, "r")
 
 
     def retranslateUi(self, Form):
@@ -274,4 +289,3 @@ class PrimerasFechas(object):
         self.label_4.setText(_translate("Form", "BLOQUE B"))
         self.label_6.setText(_translate("Form", "BLOQUE C"))
         self.btnVer.setText(_translate("Form", "VER"))
-
