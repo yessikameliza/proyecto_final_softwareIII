@@ -154,7 +154,10 @@ class PrimerasFechas(object):
     def mostrar(self):
 
         for row in range(self.tableWidgetPrimerasFechas.rowCount()):
-               self.tableWidgetPrimerasFechas.item(0, 0)
+               self.tableWidgetPrimerasFechas.setItem(row, 0, "holas")
+
+
+
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))

@@ -80,6 +80,27 @@ class eliminarDocente(object):
                                 False)
     def limpiar(self):
         self.txtIdentBuscar.clear()
+
+        def mostrarMensaje(self, titulo: str, texto: str, texto_informativo: str, tipo_mensaje: QMessageBox,
+                           estado: bool):
+
+            self.message_box = QMessageBox()
+            self.message_box.setWindowTitle(titulo)
+            self.message_box.setText(texto)
+
+            if len(texto_informativo) > 0:
+                self.message_box.setInformativeText(texto_informativo)
+
+            if estado:
+                btn_si = self.message_box.addButton('Si', QMessageBox.ActionRole)
+                btn_no = self.message_box.addButton('No', QMessageBox.ActionRole)
+                self.message_box.setDefaultButton(btn_si, btn_no)
+            else:
+                btn_aceptar = self.message_box.addButton('Aceptar', QMessageBox.ActionRole)
+                self.message_box.setDefaultButton(btn_aceptar)
+            if tipo_mensaje is not None:
+                self.message_box.setIcon(tipo_mensaje)
+                self.message_box.exec_()
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Eliminar docente"))
