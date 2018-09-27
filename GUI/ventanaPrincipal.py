@@ -16,6 +16,7 @@ from GUI.ActualizarDocentes import actualizarDocente
 from GUI.eliminarDocente import eliminarDocente
 from GUI.primerasFechas import PrimerasFechas
 from GUI.fechasAlternas import FechasAlternas
+from GUI.pereiraDomingos import FechasPereira
 
 
 class Ui_MainWindow(QtWidgets.QMainWindow):
@@ -400,7 +401,14 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.actionEliminar_docente.triggered.connect(self.ventanaElimDoc)
         self.actionGenerar_reportes.triggered.connect(self.ventanaPrimerasFecha)
         self.actionVer_fechas_alternas.triggered.connect(self.ventanaFechasAlternas)
+        self.actionVer_fechas_pereira.triggered.connect(self.ventanaFechasPereira)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def ventanaFechasPereira(self):
+            self.ventana = QtWidgets.QMainWindow()
+            self.ui = FechasPereira()
+            self.ui.setupUi(self.ventana)
+            self.ventana.show()
 
     def ventanaRegistroDocente(self):
             self.ventana = QtWidgets.QMainWindow()

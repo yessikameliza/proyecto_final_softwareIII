@@ -148,6 +148,7 @@ class PrimerasFechas(object):
         self.btnVer.setObjectName("btnVer")
 
         self.retranslateUi(Form)
+        self.btnVer.clicked.connect(self.mostrar)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
     def retranslateUi(self, Form):

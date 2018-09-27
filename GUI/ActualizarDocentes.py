@@ -151,10 +151,19 @@ class actualizarDocente(object):
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
-        self.btnBuscar.clicked.connect(self.buscar)
         self.retranslateUi(MainWindow)
         self.btnBuscar.clicked.connect(self.buscar)
+        self.btnActualizar.clicked.connect(self.actualiza)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def actualiza(self):
+        nomb = str(self.txtNombre.toPlainText())
+        tipo = str(self.txtTipo.toPlainText())
+        lim = int(self.txtLimHoras.toPlainText())
+        tel = str(self.txtTelefono.toPlainText())
+        iden = str(self.txtIdent.toPlainText())
+        esta = str(self.comboEstado.currentText())
+
     def buscar(self):
         id = self.txtIdentBuscar.toPlainText()
         fila:Any = search_Docent(id)
