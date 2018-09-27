@@ -10,9 +10,11 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from logica.Persistence import register_Date
 from logica.Persistence import delete_Date
 from PyQt5.QtWidgets import QMessageBox
-class Ui_Form(object):
 
+
+class Ui_Form(object):
     message_box: QMessageBox
+
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.resize(1379, 743)
@@ -20,13 +22,13 @@ class Ui_Form(object):
         self.groupBox = QtWidgets.QGroupBox(Form)
         self.groupBox.setGeometry(QtCore.QRect(60, 120, 1211, 571))
         self.groupBox.setStyleSheet("color: rgb(255, 255, 255);\n"
-"font: 9pt \"Segoe Print\";\n"
-"")
+                                    "font: 9pt \"Segoe Print\";\n"
+                                    "")
         self.groupBox.setObjectName("groupBox")
         self.tableWidget_3 = QtWidgets.QTableWidget(self.groupBox)
         self.tableWidget_3.setGeometry(QtCore.QRect(120, 390, 851, 161))
         self.tableWidget_3.setStyleSheet("color: rgb(0, 0, 0);\n"
-"background-color: rgb(255, 255, 255);")
+                                         "background-color: rgb(255, 255, 255);")
         self.tableWidget_3.setObjectName("tableWidget_3")
         self.tableWidget_3.setColumnCount(6)
         self.tableWidget_3.setRowCount(6)
@@ -130,27 +132,27 @@ class Ui_Form(object):
         self.label_6 = QtWidgets.QLabel(self.groupBox)
         self.label_6.setGeometry(QtCore.QRect(20, 110, 111, 21))
         self.label_6.setStyleSheet("font: 75 11pt \"Segoe Print\";\n"
-"color: rgb(255, 255, 255);")
+                                   "color: rgb(255, 255, 255);")
         self.label_6.setObjectName("label_6")
         self.label_7 = QtWidgets.QLabel(self.groupBox)
         self.label_7.setGeometry(QtCore.QRect(20, 130, 91, 21))
         self.label_7.setStyleSheet("font: 75 11pt \"Segoe Print\";\n"
-"color: rgb(255, 255, 255);")
+                                   "color: rgb(255, 255, 255);")
         self.label_7.setObjectName("label_7")
         self.label_8 = QtWidgets.QLabel(self.groupBox)
         self.label_8.setGeometry(QtCore.QRect(20, 300, 91, 21))
         self.label_8.setStyleSheet("font: 75 11pt \"Segoe Print\";\n"
-"color: rgb(255, 255, 255);")
+                                   "color: rgb(255, 255, 255);")
         self.label_8.setObjectName("label_8")
         self.label_9 = QtWidgets.QLabel(self.groupBox)
         self.label_9.setGeometry(QtCore.QRect(20, 320, 91, 21))
         self.label_9.setStyleSheet("font: 75 11pt \"Segoe Print\";\n"
-"color: rgb(255, 255, 255);")
+                                   "color: rgb(255, 255, 255);")
         self.label_9.setObjectName("label_9")
         self.tableWidget = QtWidgets.QTableWidget(self.groupBox)
         self.tableWidget.setGeometry(QtCore.QRect(120, 50, 851, 161))
         self.tableWidget.setStyleSheet("color: rgb(0, 0, 0);\n"
-"background-color: rgb(255, 255, 255);")
+                                       "background-color: rgb(255, 255, 255);")
         self.tableWidget.setInputMethodHints(QtCore.Qt.ImhNone)
         self.tableWidget.setObjectName("tableWidget")
         self.tableWidget.setColumnCount(6)
@@ -255,27 +257,27 @@ class Ui_Form(object):
         self.label = QtWidgets.QLabel(self.groupBox)
         self.label.setGeometry(QtCore.QRect(250, 20, 121, 16))
         self.label.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
-"color: rgb(255, 255, 255);")
+                                 "color: rgb(255, 255, 255);")
         self.label.setObjectName("label")
         self.label_2 = QtWidgets.QLabel(self.groupBox)
         self.label_2.setGeometry(QtCore.QRect(500, 20, 121, 16))
         self.label_2.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
-"color: rgb(255, 255, 255);")
+                                   "color: rgb(255, 255, 255);")
         self.label_2.setObjectName("label_2")
         self.label_3 = QtWidgets.QLabel(self.groupBox)
         self.label_3.setGeometry(QtCore.QRect(740, 20, 121, 16))
         self.label_3.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
-"color: rgb(255, 255, 255);")
+                                   "color: rgb(255, 255, 255);")
         self.label_3.setObjectName("label_3")
         self.label_10 = QtWidgets.QLabel(self.groupBox)
         self.label_10.setGeometry(QtCore.QRect(20, 450, 91, 21))
         self.label_10.setStyleSheet("font: 75 11pt \"Segoe Print\";\n"
-"color: rgb(255, 255, 255);")
+                                    "color: rgb(255, 255, 255);")
         self.label_10.setObjectName("label_10")
         self.label_11 = QtWidgets.QLabel(self.groupBox)
         self.label_11.setGeometry(QtCore.QRect(20, 470, 91, 21))
         self.label_11.setStyleSheet("font: 75 11pt \"Segoe Print\";\n"
-"color: rgb(255, 255, 255);")
+                                    "color: rgb(255, 255, 255);")
         self.label_11.setObjectName("label_11")
         self.groupBox_2 = QtWidgets.QGroupBox(self.groupBox)
         self.groupBox_2.setGeometry(QtCore.QRect(990, 130, 191, 301))
@@ -283,33 +285,33 @@ class Ui_Form(object):
         self.pushButton = QtWidgets.QPushButton(self.groupBox_2)
         self.pushButton.setGeometry(QtCore.QRect(10, 70, 171, 51))
         self.pushButton.setStyleSheet("background-color: rgb(0, 204, 102);\n"
-"")
+                                      "")
         self.pushButton.setObjectName("pushButton")
         self.pushButton_2 = QtWidgets.QPushButton(self.groupBox_2)
         self.pushButton_2.setGeometry(QtCore.QRect(10, 210, 171, 51))
         self.pushButton_2.setStyleSheet("background-color: rgb(0, 204, 102);\n"
-"")
+                                        "")
         self.pushButton_2.setObjectName("pushButton_2")
         self.pushButton_3 = QtWidgets.QPushButton(self.groupBox_2)
         self.pushButton_3.setGeometry(QtCore.QRect(10, 140, 171, 51))
         self.pushButton_3.setStyleSheet("background-color: rgb(0, 204, 102);\n"
-"")
+                                        "")
         self.pushButton_3.setObjectName("pushButton_3")
         self.label_4 = QtWidgets.QLabel(Form)
         self.label_4.setGeometry(QtCore.QRect(480, 70, 251, 41))
         self.label_4.setStyleSheet("font: 75 20pt \"Segoe Print\";\n"
-"color: rgb(255, 255, 255);")
+                                   "color: rgb(255, 255, 255);")
         self.label_4.setObjectName("label_4")
         self.label_5 = QtWidgets.QLabel(Form)
         self.label_5.setGeometry(QtCore.QRect(380, 30, 501, 41))
         self.label_5.setStyleSheet("font: 75 20pt \"Segoe Print\";\n"
-"color: rgb(255, 255, 255);")
+                                   "color: rgb(255, 255, 255);")
         self.label_5.setObjectName("label_5")
         self.tableWidget_2 = QtWidgets.QTableWidget(Form)
         self.tableWidget_2.setGeometry(QtCore.QRect(180, 340, 851, 161))
         self.tableWidget_2.setStyleSheet("font: 9pt \"Segoe Print\";\n"
-"color: rgb(0, 0, 0);\n"
-"background-color: rgb(255, 255, 255);")
+                                         "color: rgb(0, 0, 0);\n"
+                                         "background-color: rgb(255, 255, 255);")
         self.tableWidget_2.setObjectName("tableWidget_2")
         self.tableWidget_2.setColumnCount(6)
         self.tableWidget_2.setRowCount(6)
@@ -415,6 +417,7 @@ class Ui_Form(object):
         self.pushButton.clicked.connect(self.registrarFechas)
         self.pushButton_3.clicked.connect(self.eliminarFechas)
         QtCore.QMetaObject.connectSlotsByName(Form)
+
     def registrarFechas(self):
         self.tabla1(0)
         self.tabla1(1)
@@ -435,36 +438,35 @@ class Ui_Form(object):
         self.tabla3(4)
         self.tabla3(5)
         self.mostrarMensaje("Información", "¡Fechas registradas exitosamente!", "", QMessageBox.Warning, False)
+
     def tabla1(self, column):
 
         for row in range(self.tableWidget.rowCount()):
             text = self.tableWidget.item(row, column).text()
 
-        if column == 0 or column == 2 or column == 4:
-
-
-            register_Date(text, "Encuentros tutoriales", "Primeras fechas")
-        else:
-            register_Date(text, "Habilitaciones", "Primeras fechas")
+            print(column, "colun")
+            if column == 0 or column == 2 or column == 4:
+                register_Date(text, "Encuentros tutoriales", "Primeras fechas")
+            else:
+                register_Date(text, "Habilitaciones", "Primeras fechas")
 
     def tabla2(self, column):
 
         for row2 in range(self.tableWidget_2.rowCount()):
             text2 = self.tableWidget_2.item(row2, column).text()
-
-        if column == 0 or column == 2 or column == 4:
-            register_Date(text2, "Encuentros tutoriales", "Fechas alternas")
-        else:
-            register_Date(text2, "Habilitaciones", "Fechas alternas")
+            if column == 0 or column == 2 or column == 4:
+                register_Date(text2, "Encuentros tutoriales", "Fechas alternas")
+            else:
+                register_Date(text2, "Habilitaciones", "Fechas alternas")
 
     def tabla3(self, column):
         for row3 in range(self.tableWidget_3.rowCount()):
             text3 = self.tableWidget_3.item(row3, column).text()
 
-        if column == 0 or column == 2 or column == 4:
-            register_Date(text3, "Encuentros tutoriales", "Pereira domingos")
-        else:
-            register_Date(text3, "Habilitaciones", "Pereira domingos")
+            if column == 0 or column == 2 or column == 4:
+                 register_Date(text3, "Encuentros tutoriales", "Pereira domingos")
+            else:
+                 register_Date(text3, "Habilitaciones", "Pereira domingos")
 
     def eliminarFechas(self):
         delete_Date()
@@ -474,25 +476,25 @@ class Ui_Form(object):
         self.mostrarMensaje("Información", "¡Fechas eliminadas!", "", QMessageBox.Warning, False)
 
     def mostrarMensaje(self, titulo: str, texto: str, texto_informativo: str, tipo_mensaje: QMessageBox,
-                           estado: bool):
+                       estado: bool):
 
-            self.message_box = QMessageBox()
-            self.message_box.setWindowTitle(titulo)
-            self.message_box.setText(texto)
+        self.message_box = QMessageBox()
+        self.message_box.setWindowTitle(titulo)
+        self.message_box.setText(texto)
 
-            if len(texto_informativo) > 0:
-                self.message_box.setInformativeText(texto_informativo)
+        if len(texto_informativo) > 0:
+            self.message_box.setInformativeText(texto_informativo)
 
-            if estado:
-                btn_si = self.message_box.addButton('Si', QMessageBox.ActionRole)
-                btn_no = self.message_box.addButton('No', QMessageBox.ActionRole)
-                self.message_box.setDefaultButton(btn_si, btn_no)
-            else:
-                btn_aceptar = self.message_box.addButton('Aceptar', QMessageBox.ActionRole)
-                self.message_box.setDefaultButton(btn_aceptar)
-            if tipo_mensaje is not None:
-                self.message_box.setIcon(tipo_mensaje)
-                self.message_box.exec_()
+        if estado:
+            btn_si = self.message_box.addButton('Si', QMessageBox.ActionRole)
+            btn_no = self.message_box.addButton('No', QMessageBox.ActionRole)
+            self.message_box.setDefaultButton(btn_si, btn_no)
+        else:
+            btn_aceptar = self.message_box.addButton('Aceptar', QMessageBox.ActionRole)
+            self.message_box.setDefaultButton(btn_aceptar)
+        if tipo_mensaje is not None:
+            self.message_box.setIcon(tipo_mensaje)
+            self.message_box.exec_()
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
@@ -810,4 +812,3 @@ class Ui_Form(object):
         item = self.tableWidget_2.item(5, 5)
         item.setText(_translate("Form", "0"))
         self.tableWidget_2.setSortingEnabled(__sortingEnabled)
-

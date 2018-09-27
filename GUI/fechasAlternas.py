@@ -156,15 +156,17 @@ class FechasAlternas(object):
 
     def tabla1(self):
         res = obtener_Fecha("Fechas alternas")
-
+        col: int = 0
+        rows: int = 0
         for it in res:
-            self.auxiliar(str(res[it]))
-
-    def auxiliar(self, texto):
-        for col in range(5):
-            for rows in range(5):
-                item = self.tableWidgetFechasAlternas.item(rows, col)
-                item.setText(texto)
+            print(it, "fechas ver")
+            item = self.tableWidgetFechasAlternas.item(rows, col)
+            item.setText(it)
+            print("rows", rows, "col ", col)
+            if 5 == rows:
+                col = col + 1
+                rows = -1
+            rows = rows + 1
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate

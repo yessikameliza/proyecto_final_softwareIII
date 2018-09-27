@@ -202,6 +202,7 @@ class actualizarDocente(object):
             self.comboAsignatura.setText("materia1")
             if str(fila[2]) == "ACTIVO":
              self.comboEstado.setItemText(1, str(fila[2]))
+             self.comboEstado.set
             else:
              self.comboEstado.setItemText(2, str(fila[2]))
 
