@@ -138,6 +138,7 @@ class actualizarAsignatura(object):
 
         self.retranslateUi(MainWindow)
         self.btnBuscar.clicked.connect(self.buscar)
+        self.btnActualizar.clicked.connect(self.actualizar())
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
     def buscar(self):
         codBuscar = str(self.txtCodigoBuscar.toPlainText())
