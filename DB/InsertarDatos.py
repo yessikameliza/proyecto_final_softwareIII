@@ -60,14 +60,14 @@ def insertDocent(name: str, state: str, limitHours: int, contract: str, phone: s
     # VALUES (?)"""
     sql = """INSERT INTO docent (name, estate, limitHoras, contract, phone, identification)
     VALUES (?, ?, ?, ?, ?, ?)"""
-    sql2 = """SELECT * FROM docent WHERE identification = identification """
+    #sql2 = """SELECT * FROM docent WHERE identification = identification """
     # consulta.execute(sql2)
 
     # Realizar la consulta
     # filas = consulta.fetchall()
     # if filas is None:
     if consulta.execute(sql, argumentos):
-        print("Tabla creada con éxito")
+        print("docente insertado")
     else:
         print("Ha ocurrido un error al crear la tabla")
 
