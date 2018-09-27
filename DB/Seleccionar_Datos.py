@@ -1,7 +1,7 @@
 # enconding: utf-8
 # IMPORTANTE codificar el script en UTF-8
 import sqlite3
-from typing import Any
+from typing import Any, List
 
 
 def searchMatter(codi: str):
@@ -23,6 +23,8 @@ def searchMatter(codi: str):
     conexion.commit()
     conexion.close()
     return filaa
+
+
 def searchDocent(ident: str):
     conexion = sqlite3.connect("dataBases.sqlite3")
     consulta = conexion.cursor()
@@ -42,23 +44,30 @@ def searchDocent(ident: str):
     conexion.commit()
     conexion.close()
     return filaa
+
+
 def obtenerFechas(idents: str):
     conexion = sqlite3.connect("dataBases.sqlite3")
     consulta = conexion.cursor()
 
     # Extrayendo todas las filas
-    filaa: list = None
-    arg = idents
-    sql = "SELECT * FROM date WHERE idents = ?"
-    if consulta.execute(sql, arg):
+    filaa= []
+
+    sql = "SELECT * FROM date"
+    if consulta.execute(sql):
         files = consulta.fetchall()
-        filaa=files
+        i = 0
+        for fila in files:
+            if str(fila[4]) == idents:
+                print("entro aquí")
+                filaa.append(fila[1])
+                i = i + 1
 
     consulta.close()
-
     conexion.commit()
     conexion.close()
     return filaa
+
 
 def obtenerMatter():
     conexion = sqlite3.connect("dataBases.sqlite3")

@@ -92,12 +92,12 @@ def insertDate(date: str, origin: str, idents: str):
     # Sólo números enteros
     # Valor de los argumentos
     argumentos = (date, origin, idents)
-
     sql = """INSERT INTO date (Date, origin, idents)
     VALUES (?, ?, ?)"""
 
     # Realizar la consulta
     if consulta.execute(sql, argumentos):
+        print(date)
         print("Tabla creada con éxito")
     else:
         print("Ha ocurrido un error al crear la tabla")
