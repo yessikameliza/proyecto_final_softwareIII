@@ -33,6 +33,7 @@ class actualizarDocente(object):
         self.comboAsignatura.setGeometry(QtCore.QRect(180, 360, 171, 31))
         self.comboAsignatura.setStyleSheet("background-color: rgb(255, 255, 255);\n"
 "color: rgb(0, 0, 0);")
+
         self.comboAsignatura.setObjectName("comboAsignatura")
         self.identifi = QtWidgets.QLabel(self.groupBox)
         self.identifi.setGeometry(QtCore.QRect(10, 110, 141, 31))
@@ -107,7 +108,9 @@ class actualizarDocente(object):
         self.comboEstado.setStyleSheet("background-color: rgb(255, 255, 255);\n"
 "color: rgb(0, 0, 0);")
         self.comboEstado.setObjectName("comboEstado")
+        self.comboEstado.setCurrentText("")
         items = ('', 'ACTIVO', 'INACTIVO')
+        self.comboEstado.addItems(items)
         self.asignatura_5 = QtWidgets.QLabel(self.groupBox)
         self.asignatura_5.setGeometry(QtCore.QRect(10, 310, 131, 31))
         self.asignatura_5.setStyleSheet("font: 75 8pt \"Segoe Print\";")
@@ -186,8 +189,7 @@ class actualizarDocente(object):
         if not None == fila:
             self.txtIdent.setText(str(fila[6]))
             self.txtNombre.setText(str(fila[1]))
-            self.comboEstado.setItemText("value", str(fila[2]))
-
+            self.comboEstado.setItemText(0, str(fila[2]))
             self.txtLimHoras.setText(str(fila[3]))
             self.txtTipo.setText(str(fila[4]))
             self.txtTelefono.setText(str(fila[5]))
