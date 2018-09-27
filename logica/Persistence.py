@@ -58,3 +58,6 @@ def search_Docent(ident: str):
 
 def update_Docent(name: str, state: str, limitHours: int, contract: str, phone: str, identification: str):
     updateDocent(name, state, limitHours, contract, phone, identification)
+
+def delete_Docent(identification:str):
+    deleteDocent(identification)
