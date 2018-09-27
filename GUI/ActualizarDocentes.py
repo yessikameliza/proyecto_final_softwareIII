@@ -11,6 +11,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMessageBox
 from logica.Persistence import search_Docent
 from logica.Persistence import update_Docent
+from logica.Persistence import obtener_Matter
 class actualizarDocente(object):
     message_box: QMessageBox
     def setupUi(self, MainWindow):
@@ -33,8 +34,13 @@ class actualizarDocente(object):
         self.comboAsignatura.setGeometry(QtCore.QRect(180, 360, 171, 31))
         self.comboAsignatura.setStyleSheet("background-color: rgb(255, 255, 255);\n"
 "color: rgb(0, 0, 0);")
-        items = ('', 'materia1', 'materia2')
-        self.comboEstado.addItems(items)
+
+        res = obtener_Matter()
+        for aux in res:
+            aux2 = str((aux[2]))
+            print(aux2)
+            self.comboAsignatura.addItem(aux2)
+
         self.comboAsignatura.setObjectName("comboAsignatura")
         self.identifi = QtWidgets.QLabel(self.groupBox)
         self.identifi.setGeometry(QtCore.QRect(10, 110, 141, 31))

@@ -466,6 +466,9 @@ class Ui_Form(object):
 
     def eliminarFechas(self):
         delete_Date()
+        self.tableWidget.clear()
+        self.tableWidget_2.clear()
+        self.tableWidget_3.clear()
         self.mostrarMensaje("Información", "¡Fechas eliminadas!", "", QMessageBox.Warning, False)
 
     def mostrarMensaje(self, titulo: str, texto: str, texto_informativo: str, tipo_mensaje: QMessageBox,

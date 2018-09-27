@@ -10,11 +10,12 @@ import sys
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMessageBox
 from logica.Persistence import register_Docent
-
+from logica.Persistence import obtener_Matter
 
 class registroDocentes(object):
     message_box: QMessageBox
-
+    aux2 = " "
+    con = 0
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("Registro de docentes")
         MainWindow.resize(538, 777)
@@ -81,8 +82,14 @@ class registroDocentes(object):
         self.comboAsignatura.setStyleSheet("background-color: rgb(255, 255, 255);\n"
                                            "color: rgb(0, 0, 0);")
         self.comboAsignatura.setObjectName("comboAsignatura")
-        items = ('', 'materia1', 'materia2')
-        self.comboAsignatura.addItems(items)
+        res = obtener_Matter()
+
+        for aux in res:
+            aux2 = str((aux[2]))
+            print(aux2)
+            self.comboAsignatura.addItem(aux2)
+
+
         self.btnAgregar = QtWidgets.QPushButton(self.centralwidget)
         self.btnAgregar.setGeometry(QtCore.QRect(430, 480, 61, 31))
         self.btnAgregar.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
