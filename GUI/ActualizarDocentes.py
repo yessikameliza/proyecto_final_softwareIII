@@ -5,10 +5,13 @@
 # Created by: PyQt5 UI code generator 5.11.2
 #
 # WARNING! All changes made in this file will be lost!
+from typing import Any
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+from PyQt5.QtWidgets import QMessageBox
+from logica.Persistence import search_Docent
 class actualizarDocente(object):
+    message_box: QMessageBox
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(687, 640)
@@ -150,10 +153,41 @@ class actualizarDocente(object):
         MainWindow.setStatusBar(self.statusbar)
         self.btnBuscar.clicked.connect(self.buscar)
         self.retranslateUi(MainWindow)
+        self.btnBuscar.clicked.connect(self.buscar)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
     def buscar(self):
-        cod = self.txtIdentBuscar.toPlainText()
+        id = self.txtIdentBuscar.toPlainText()
+        fila:Any = search_Docent(id)
+        if not None == fila:
+            self.txtIdent.setText(str(fila[6]))
+            self.txtNombre.setText(str(fila[1]))
+            self.comboEstado.setProperty("value", str(fila[2]))
+            self.txtLimHoras.setText(str(fila[3]))
+            self.txtTipo.setText(str(fila[4]))
+            self.txtTelefono.setText(str(fila[5]))
+        else:
+            print("no existe el docente")
+            self.mostrarMensaje("Alerta", "¡La identificación ingresada no existe!", "", QMessageBox.Warning, False)
 
+    def mostrarMensaje(self, titulo: str, texto: str, texto_informativo: str, tipo_mensaje: QMessageBox, estado: bool):
+
+        self.message_box = QMessageBox()
+        self.message_box.setWindowTitle(titulo)
+        self.message_box.setText(texto)
+
+        if len(texto_informativo) > 0:
+            self.message_box.setInformativeText(texto_informativo)
+
+        if estado:
+            btn_si = self.message_box.addButton('Si', QMessageBox.ActionRole)
+            btn_no = self.message_box.addButton('No', QMessageBox.ActionRole)
+            self.message_box.setDefaultButton(btn_si, btn_no)
+        else:
+            btn_aceptar = self.message_box.addButton('Aceptar', QMessageBox.ActionRole)
+            self.message_box.setDefaultButton(btn_aceptar)
+        if tipo_mensaje is not None:
+            self.message_box.setIcon(tipo_mensaje)
+            self.message_box.exec_()
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Actualizar docentes"))

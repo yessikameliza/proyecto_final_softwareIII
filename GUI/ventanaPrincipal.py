@@ -14,6 +14,8 @@ from GUI.ActualizarAsignaturas import actualizarAsignatura
 from GUI.eliminarAsignatura import eliminarAsignatura
 from GUI.ActualizarDocentes import actualizarDocente
 from GUI.eliminarDocente import eliminarDocente
+from GUI.primerasFechas import PrimerasFechas
+
 
 class Ui_MainWindow(QtWidgets.QMainWindow):
     def setupUi(self, MainWindow):
@@ -384,8 +386,13 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.actionEliminar_Asignaturas.triggered.connect(self.ventanaElimAsig)
         self.actionActualizar_Docente.triggered.connect(self.ventanaActDoc)
         self.actionEliminar_docente.triggered.connect(self.ventanaElimDoc)
-
+        self.actionGenerar_reportes.triggered.connect(self.ventanaPrimerasFechas)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+    def ventanaPrimerasFechas(self):
+            self.ventana = QtWidgets.QMainWindow()
+            self.ui = PrimerasFechas()
+            self.ui.setupUi(self.ventana)
+            self.ventana.show()
     def ventanaRegistroDocente(self):
             self.ventana = QtWidgets.QMainWindow()
             self.ui = registroDocentes()

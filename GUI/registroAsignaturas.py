@@ -139,8 +139,11 @@ class registroAsignaturas(object):
         sem = self.boxSemestre.text()
         semes = int(sem)
         numHoras = int(numHorSem)
-        register_Matter(cod, nombre, semes, numCred, codReq, numHoras)
-        self.mostrarMensaje("Información", "¡Datos registrados con exito!", "", QMessageBox.Warning, False)
+        if len(cod) == 0 | len(nombre) == 0 | len(numCred) == 0 | len(numHoras) == 0 | len(codReq) == 0 | len(sem) == 0:
+            self.mostrarMensaje("Alerta", "¡Hay campos vacios!", "", QMessageBox.Warning, False)
+        else:
+            register_Matter(cod, nombre, semes, numCred, codReq, numHoras)
+            self.mostrarMensaje("Información", "¡Datos registrados con exito!", "", QMessageBox.Warning, False)
 
     def mostrarMensaje(self, titulo: str, texto: str, texto_informativo: str, tipo_mensaje: QMessageBox, estado: bool):
 

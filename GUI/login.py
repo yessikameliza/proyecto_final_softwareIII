@@ -59,7 +59,6 @@ class Login(QMainWindow):
 
         QtCore.QMetaObject.connectSlotsByName(Form)
 
-
     def ingresar(self):
         usuario = self.txtUsuario.toPlainText()
         contra = self.txtContrasena.toPlainText()
@@ -72,9 +71,7 @@ class Login(QMainWindow):
             self.ui = Ui_MainWindow()
             self.ui.setupUi(self.ventana)
             self.ventana.show()
-
          else:
-
             self.mostrarMensaje("Alerta", "El usuario o la contraseña son incorrectos", "", QMessageBox.Warning, False)
 
 

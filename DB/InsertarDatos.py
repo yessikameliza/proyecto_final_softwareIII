@@ -44,7 +44,7 @@ def insertMatter(codigo: str, name: str, ubi_Semester: int, numCredit: str, codR
 
 
 def insertDocent(name: str, state: str, limitHours: int, contract: str, phone: str, identification: str):
-    conexion = sqlite3.connect("dd.sqlite3")
+    conexion = sqlite3.connect("dataBases.sqlite3")
 
     # Seleccionar el cursor para iniciar una consulta
     consulta = conexion.cursor()
