@@ -33,7 +33,8 @@ class actualizarDocente(object):
         self.comboAsignatura.setGeometry(QtCore.QRect(180, 360, 171, 31))
         self.comboAsignatura.setStyleSheet("background-color: rgb(255, 255, 255);\n"
 "color: rgb(0, 0, 0);")
-
+        items = ('', 'materia1', 'materia2')
+        self.comboEstado.addItems(items)
         self.comboAsignatura.setObjectName("comboAsignatura")
         self.identifi = QtWidgets.QLabel(self.groupBox)
         self.identifi.setGeometry(QtCore.QRect(10, 110, 141, 31))
@@ -189,10 +190,14 @@ class actualizarDocente(object):
         if not None == fila:
             self.txtIdent.setText(str(fila[6]))
             self.txtNombre.setText(str(fila[1]))
-            self.comboEstado.setItemText(0, str(fila[2]))
             self.txtLimHoras.setText(str(fila[3]))
             self.txtTipo.setText(str(fila[4]))
             self.txtTelefono.setText(str(fila[5]))
+            if str(fila[2]) == "ACTIVO":
+             self.comboEstado.setItemText(1, str(fila[2]))
+            else:
+             self.comboEstado.setItemText(2, str(fila[2]))
+
         else:
             print("no existe el docente")
             self.mostrarMensaje("Alerta", "¡La identificación ingresada no existe!", "", QMessageBox.Warning, False)
