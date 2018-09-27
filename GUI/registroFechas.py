@@ -413,7 +413,7 @@ class Ui_Form(object):
 
         self.retranslateUi(Form)
         self.pushButton.clicked.connect(self.registrarFechas)
-        self.pushButton_3.clicked.connec(self.eliminarFechas)
+        self.pushButton_3.clicked.connect(self.eliminarFechas)
         QtCore.QMetaObject.connectSlotsByName(Form)
     def registrarFechas(self):
         self.tabla1(0)
@@ -468,7 +468,7 @@ class Ui_Form(object):
         delete_Date()
         self.mostrarMensaje("Información", "¡Fechas eliminadas!", "", QMessageBox.Warning, False)
 
-        def mostrarMensaje(self, titulo: str, texto: str, texto_informativo: str, tipo_mensaje: QMessageBox,
+    def mostrarMensaje(self, titulo: str, texto: str, texto_informativo: str, tipo_mensaje: QMessageBox,
                            estado: bool):
 
             self.message_box = QMessageBox()
