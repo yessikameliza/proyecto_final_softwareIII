@@ -116,7 +116,7 @@ class actualizarDocente(object):
 "color: rgb(0, 0, 0);")
         self.comboEstado.setObjectName("comboEstado")
         self.comboEstado.setCurrentText("")
-        items = ('', 'ACTIVO', 'INACTIVO')
+        items = ('ACTIVO', 'INACTIVO')
         self.comboEstado.addItems(items)
         self.asignatura_5 = QtWidgets.QLabel(self.groupBox)
         self.asignatura_5.setGeometry(QtCore.QRect(10, 310, 131, 31))
@@ -199,11 +199,10 @@ class actualizarDocente(object):
             self.txtLimHoras.setText(str(fila[3]))
             self.txtTipo.setText(str(fila[4]))
             self.txtTelefono.setText(str(fila[5]))
-            self.comboAsignatura.setText("materia1")
             if str(fila[2]) == "ACTIVO":
-             self.comboEstado.setItemText(1, str(fila[2]))
+             self.comboEstado.setItemText(0, str(fila[2]))
             else:
-             self.comboEstado.setItemText(2, str(fila[2]))
+             self.comboEstado.setItemText(1, str(fila[2]))
 
         else:
             print("no existe el docente")
