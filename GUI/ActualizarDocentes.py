@@ -33,6 +33,7 @@ class actualizarDocente(object):
         self.comboAsignatura.setGeometry(QtCore.QRect(180, 360, 171, 31))
         self.comboAsignatura.setStyleSheet("background-color: rgb(255, 255, 255);\n"
 "color: rgb(0, 0, 0);")
+
         self.comboAsignatura.setObjectName("comboAsignatura")
         self.identifi = QtWidgets.QLabel(self.groupBox)
         self.identifi.setGeometry(QtCore.QRect(10, 110, 141, 31))
@@ -107,7 +108,9 @@ class actualizarDocente(object):
         self.comboEstado.setStyleSheet("background-color: rgb(255, 255, 255);\n"
 "color: rgb(0, 0, 0);")
         self.comboEstado.setObjectName("comboEstado")
+        self.comboEstado.setCurrentText("")
         items = ('', 'ACTIVO', 'INACTIVO')
+        self.comboEstado.addItems(items)
         self.asignatura_5 = QtWidgets.QLabel(self.groupBox)
         self.asignatura_5.setGeometry(QtCore.QRect(10, 310, 131, 31))
         self.asignatura_5.setStyleSheet("font: 75 8pt \"Segoe Print\";")
@@ -213,6 +216,7 @@ class actualizarDocente(object):
         if tipo_mensaje is not None:
             self.message_box.setIcon(tipo_mensaje)
             self.message_box.exec_()
+
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Actualizar docentes"))

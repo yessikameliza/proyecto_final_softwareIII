@@ -154,7 +154,8 @@ class PrimerasFechas(object):
     def mostrar(self):
 
         for row in range(self.tableWidgetPrimerasFechas.rowCount()):
-               self.tableWidgetPrimerasFechas.setItem(row, 0, "holas")
+               item = self.tableWidgetPrimerasFechas.item(row, 0)
+
 
 
 
