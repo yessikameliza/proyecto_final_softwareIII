@@ -5,9 +5,10 @@
 # Created by: PyQt5 UI code generator 5.11.2
 #
 # WARNING! All changes made in this file will be lost!
+from typing import Any
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+from logica.Persistence import search_Docent
 class actualizarDocente(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -150,7 +151,20 @@ class actualizarDocente(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
+        self.btnBuscar.clicked.connect(self.buscar)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+    def buscar(self):
+        id = self.txtIdentBuscar.toPlainText()
+        fila:Any = search_Docent(id)
+        if not None == fila:
+            self.txtIdent.setText(str(fila[6]))
+            self.txtNombre.setText(str(fila[1]))
+            self.comboEstado.setProperty("value", str(fila[2]))
+            self.txtLimHoras.setText(str(fila[3]))
+            self.txtTipo.setText(str(fila[4]))
+            self.txtTelefono.setText(str(fila[5]))
+        else:
+            print("no existe el docente")
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate

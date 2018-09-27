@@ -146,14 +146,16 @@ class actualizarAsignatura(object):
     def buscar(self):
         codBuscar = str(self.txtCodigoBuscar.toPlainText())
         res: Any = searchhMatter(codBuscar)
-        print(res[1], res[2])
-        self.txtCodigo.setText(str(res[1]))
-        self.txtNombre.setText(str(res[2]))
-        self.boxSemestre.setProperty("value", str(res[3]))
-        self.boxCreditos.setProperty("value", str(res[4]))
-        self.txtCodRequis.setText(str(res[5]))
-        self.txtNumHorSemestre.setText(str(res[7]))
-
+        if not None == res:
+            print(res[1], res[2])
+            self.txtCodigo.setText(str(res[1]))
+            self.txtNombre.setText(str(res[2]))
+            self.boxSemestre.setProperty("value", str(res[3]))
+            self.boxCreditos.setProperty("value", str(res[4]))
+            self.txtCodRequis.setText(str(res[5]))
+            self.txtNumHorSemestre.setText(str(res[7]))
+        else:
+            print("no existe")
     def actualizar(self):
         cod = str(self.txtCodigo.toPlainText())
         nom = str(self.txtNombre.toPlainText())

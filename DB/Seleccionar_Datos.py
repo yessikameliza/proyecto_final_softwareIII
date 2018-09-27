@@ -23,3 +23,22 @@ def searchMatter(codi: str):
     conexion.commit()
     conexion.close()
     return filaa
+def searchDocent(ident: str):
+    conexion = sqlite3.connect("dataBases.sqlite3")
+    consulta = conexion.cursor()
+
+    # Extrayendo todas las filas
+    filaa: Any = None
+    sql = "SELECT * FROM docent"
+    if consulta.execute(sql):
+        files = consulta.fetchall()
+        for fila in files:
+            if str(fila[6]) == ident:
+                print("entro aquí")
+                filaa = fila
+
+    consulta.close()
+
+    conexion.commit()
+    conexion.close()
+    return filaa

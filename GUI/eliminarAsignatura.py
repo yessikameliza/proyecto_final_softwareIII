@@ -7,7 +7,7 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+from logica.Persistence import delete_Matter
 class eliminarAsignatura(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("Eliminar Asignaturas")
@@ -64,7 +64,12 @@ class eliminarAsignatura(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
+        self.btnEliminar.clicked.connect(self.eliminar)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def eliminar(self):
+        cod = self.txtCodtBuscar.toPlainText()
+        delete_Matter(cod)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate

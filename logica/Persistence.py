@@ -4,6 +4,8 @@ from DB.InsertarDatos import insertDocent
 from DB.InsertarDatos import insertDate
 from DB.Seleccionar_Datos import searchMatter
 from DB.ActualizarDatos import upDate_Matter
+from DB.EliminarDatos import deleteMatter
+from DB.Seleccionar_Datos import searchDocent
 
 
 def register_Matter(codigo: str, name: str, ubi_Semester: int, numCredit: str, codRequisite: str, numHoursSem: int):
@@ -45,3 +47,11 @@ def searchhMatter(codigo: str):
 
 def update_Matter(codigo: str, name: str, ubi_Semester: int, numCredit: str, codRequisite: str, numHoursSem: int):
     upDate_Matter(codigo, name, ubi_Semester, numCredit, codRequisite, numHoursSem)
+
+
+def delete_Matter(codigo: str):
+    deleteMatter(codigo)
+
+
+def search_Docent(ident: str):
+    return searchDocent(ident)
