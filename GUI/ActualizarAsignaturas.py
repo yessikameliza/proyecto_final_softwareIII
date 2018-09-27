@@ -5,9 +5,11 @@
 # Created by: PyQt5 UI code generator 5.11.2
 #
 # WARNING! All changes made in this file will be lost!
+from typing import Any
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from logica.Persistence import searchMatter
+from logica.Persistence import searchhMatter
+from logica.Persistence import update_Matter
 class actualizarAsignatura(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("Actualizar Asignaturas")
@@ -138,17 +140,23 @@ class actualizarAsignatura(object):
         self.btnBuscar.clicked.connect(self.buscar)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
     def buscar(self):
-        codBuscar = self.txtCodigoBuscar.toPlainText()
-        res = searchMatter(codBuscar)
-        for ress in res:
-            self.txtCodigo.setText(ress[1])
-            self.txtNombre.setText(ress[2])
-            self.boxSemestre.setProperty("value", ress[3])
-            self.boxCreditos.setProperty("value", ress[4])
-            self.txtCodRequis.setText(ress[5])
-            self.txtNumHorSemestre.setText(ress[6])
-
-
+        codBuscar = str(self.txtCodigoBuscar.toPlainText())
+        res: Any = searchhMatter(codBuscar)
+        print(res[1], res[2])
+        self.txtCodigo.setText(str(res[1]))
+        self.txtNombre.setText(str(res[2]))
+        self.boxSemestre.setProperty("value", str(res[3]))
+        self.boxCreditos.setProperty("value", str(res[4]))
+        self.txtCodRequis.setText(str(res[5]))
+        self.txtNumHorSemestre.setText(str(res[7]))
+    def actualizar(self):
+        cod = str(self.txtCodigo.toPlainText())
+        nom = str(self.txtNombre.toPlainText())
+        ubiSemestre = int(self.boxSemestre.text())
+        numCreditos = self.boxCreditos.text()
+        codRequisito = self.txtCodRequis.toPlainText()
+        numHoursSem = int(self.txtNumHorSemestre.toPlainText())
+        update_Matter(cod, nom, ubiSemestre, numCreditos, codRequisito, numHoursSem)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
