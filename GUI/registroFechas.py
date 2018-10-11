@@ -18,10 +18,10 @@ class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.resize(1379, 743)
-        Form.setStyleSheet("background-color: rgb(0, 51, 51)")
+        Form.setStyleSheet("background-color: rgb(0, 204, 102)")
         self.groupBox = QtWidgets.QGroupBox(Form)
         self.groupBox.setGeometry(QtCore.QRect(60, 120, 1211, 571))
-        self.groupBox.setStyleSheet("color: rgb(255, 255, 255);\n"
+        self.groupBox.setStyleSheet("color: rgb(0, 0, 0);\n"
                                     "font: 9pt \"Segoe Print\";\n"
                                     "")
         self.groupBox.setObjectName("groupBox")
@@ -132,22 +132,22 @@ class Ui_Form(object):
         self.label_6 = QtWidgets.QLabel(self.groupBox)
         self.label_6.setGeometry(QtCore.QRect(20, 110, 111, 21))
         self.label_6.setStyleSheet("font: 75 11pt \"Segoe Print\";\n"
-                                   "color: rgb(255, 255, 255);")
+                                   "color: rgb(0, 0, 0);")
         self.label_6.setObjectName("label_6")
         self.label_7 = QtWidgets.QLabel(self.groupBox)
         self.label_7.setGeometry(QtCore.QRect(20, 130, 91, 21))
         self.label_7.setStyleSheet("font: 75 11pt \"Segoe Print\";\n"
-                                   "color: rgb(255, 255, 255);")
+                                   "color: rgb(0, 0, 0);")
         self.label_7.setObjectName("label_7")
         self.label_8 = QtWidgets.QLabel(self.groupBox)
         self.label_8.setGeometry(QtCore.QRect(20, 300, 91, 21))
         self.label_8.setStyleSheet("font: 75 11pt \"Segoe Print\";\n"
-                                   "color: rgb(255, 255, 255);")
+                                   "color: rgb(0, 0, 0);")
         self.label_8.setObjectName("label_8")
         self.label_9 = QtWidgets.QLabel(self.groupBox)
         self.label_9.setGeometry(QtCore.QRect(20, 320, 91, 21))
         self.label_9.setStyleSheet("font: 75 11pt \"Segoe Print\";\n"
-                                   "color: rgb(255, 255, 255);")
+                                   "color: rgb(0, 0, 0);")
         self.label_9.setObjectName("label_9")
         self.tableWidget = QtWidgets.QTableWidget(self.groupBox)
         self.tableWidget.setGeometry(QtCore.QRect(120, 50, 851, 161))
@@ -257,55 +257,72 @@ class Ui_Form(object):
         self.label = QtWidgets.QLabel(self.groupBox)
         self.label.setGeometry(QtCore.QRect(250, 20, 121, 16))
         self.label.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
-                                 "color: rgb(255, 255, 255);")
+                                 "color: rgb(0, 0, 0);")
         self.label.setObjectName("label")
         self.label_2 = QtWidgets.QLabel(self.groupBox)
         self.label_2.setGeometry(QtCore.QRect(500, 20, 121, 16))
         self.label_2.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
-                                   "color: rgb(255, 255, 255);")
+                                   "color: rgb(0, 0, 0);")
         self.label_2.setObjectName("label_2")
         self.label_3 = QtWidgets.QLabel(self.groupBox)
         self.label_3.setGeometry(QtCore.QRect(740, 20, 121, 16))
         self.label_3.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
-                                   "color: rgb(255, 255, 255);")
+                                   "color: rgb(0, 0, 0);")
         self.label_3.setObjectName("label_3")
         self.label_10 = QtWidgets.QLabel(self.groupBox)
         self.label_10.setGeometry(QtCore.QRect(20, 450, 91, 21))
         self.label_10.setStyleSheet("font: 75 11pt \"Segoe Print\";\n"
-                                    "color: rgb(255, 255, 255);")
+                                    "color: rgb(0, 0, 0);")
         self.label_10.setObjectName("label_10")
         self.label_11 = QtWidgets.QLabel(self.groupBox)
         self.label_11.setGeometry(QtCore.QRect(20, 470, 91, 21))
         self.label_11.setStyleSheet("font: 75 11pt \"Segoe Print\";\n"
-                                    "color: rgb(255, 255, 255);")
+                                    "color: rgb(0, 0, 0);")
         self.label_11.setObjectName("label_11")
         self.groupBox_2 = QtWidgets.QGroupBox(self.groupBox)
         self.groupBox_2.setGeometry(QtCore.QRect(990, 130, 191, 301))
+
         self.groupBox_2.setObjectName("groupBox_2")
+
+
+
+
+
+
         self.pushButton = QtWidgets.QPushButton(self.groupBox_2)
         self.pushButton.setGeometry(QtCore.QRect(10, 70, 171, 51))
-        self.pushButton.setStyleSheet("background-color: rgb(0, 204, 102);\n"
-                                      "")
+        self.pushButton.setStyleSheet("font: 75 10pt \"Segoe Print\";\n"
+"color: rgb(255, 255, 255);\n"
+"background-color: rgb(0, 51, 51);\n"
+"\n"
+"")
         self.pushButton.setObjectName("pushButton")
         self.pushButton_2 = QtWidgets.QPushButton(self.groupBox_2)
         self.pushButton_2.setGeometry(QtCore.QRect(10, 210, 171, 51))
-        self.pushButton_2.setStyleSheet("background-color: rgb(0, 204, 102);\n"
-                                        "")
+        self.pushButton_2.setStyleSheet("font: 75 10pt \"Segoe Print\";\n"
+"color: rgb(255, 255, 255);\n"
+"background-color: rgb(0, 51, 51);\n"
+"\n"
+"")
         self.pushButton_2.setObjectName("pushButton_2")
         self.pushButton_3 = QtWidgets.QPushButton(self.groupBox_2)
         self.pushButton_3.setGeometry(QtCore.QRect(10, 140, 171, 51))
-        self.pushButton_3.setStyleSheet("background-color: rgb(0, 204, 102);\n"
-                                        "")
+        self.pushButton_3.setStyleSheet("font: 75 10pt \"Segoe Print\";\n"
+"color: rgb(255, 255, 255);\n"
+"background-color: rgb(0, 51, 51);\n"
+"\n"
+"")
+
         self.pushButton_3.setObjectName("pushButton_3")
         self.label_4 = QtWidgets.QLabel(Form)
         self.label_4.setGeometry(QtCore.QRect(480, 70, 251, 41))
         self.label_4.setStyleSheet("font: 75 20pt \"Segoe Print\";\n"
-                                   "color: rgb(255, 255, 255);")
+                                   "color: rgb(0, 0, 0);")
         self.label_4.setObjectName("label_4")
         self.label_5 = QtWidgets.QLabel(Form)
         self.label_5.setGeometry(QtCore.QRect(380, 30, 501, 41))
         self.label_5.setStyleSheet("font: 75 20pt \"Segoe Print\";\n"
-                                   "color: rgb(255, 255, 255);")
+                                   "color: rgb(0, 0, 0);")
         self.label_5.setObjectName("label_5")
         self.tableWidget_2 = QtWidgets.QTableWidget(Form)
         self.tableWidget_2.setGeometry(QtCore.QRect(180, 340, 851, 161))
@@ -711,8 +728,8 @@ class Ui_Form(object):
         self.pushButton.setText(_translate("Form", "REGISTRAR FECHAS"))
         self.pushButton_2.setText(_translate("Form", "ELIMINAR FECHAS"))
         self.pushButton_3.setText(_translate("Form", "ACTUALIZAR FECHAS"))
-        self.label_4.setText(_translate("Form", "Registro de fechas"))
-        self.label_5.setText(_translate("Form", "Programación encuentros tutoriales"))
+        self.label_4.setText(_translate("Form", "<html><head/><body><p align=\"center\"><span style=\"  font-weight:600; color:#000000;\">Registro de fechas</span></p></body></html>"))
+        self.label_5.setText(_translate("Form", "<html><head/><body><p align=\"center\"><span style=\"  font-weight:600; color:#000000;\">Programación encuentros tutoriales</span></p></body></html>"))
         item = self.tableWidget_2.verticalHeaderItem(0)
         item.setText(_translate("Form", "1"))
         item = self.tableWidget_2.verticalHeaderItem(1)

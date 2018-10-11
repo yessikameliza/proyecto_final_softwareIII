@@ -12,11 +12,11 @@ class FechasAlternas(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.resize(906, 405)
-        Form.setStyleSheet("background-color: rgb(0, 51, 51)")
+        Form.setStyleSheet("background-color: rgb(0, 204, 102)")
         self.label_6 = QtWidgets.QLabel(Form)
-        self.label_6.setGeometry(QtCore.QRect(690, 90, 121, 16))
+        self.label_6.setGeometry(QtCore.QRect(690, 90, 200, 30))
         self.label_6.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
-"color: rgb(255, 255, 255);")
+"color: rgb(0, 0, 0);")
         self.label_6.setObjectName("label_6")
         self.tableWidgetFechasAlternas = QtWidgets.QTableWidget(Form)
         self.tableWidgetFechasAlternas.setGeometry(QtCore.QRect(30, 120, 851, 211))
@@ -125,24 +125,24 @@ class FechasAlternas(object):
         self.tableWidgetFechasAlternas.setItem(5, 5, item)
         self.tableWidgetFechasAlternas.horizontalHeader().setDefaultSectionSize(137)
         self.label_4 = QtWidgets.QLabel(Form)
-        self.label_4.setGeometry(QtCore.QRect(420, 90, 121, 16))
+        self.label_4.setGeometry(QtCore.QRect(420, 90, 200, 30))
         self.label_4.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
-"color: rgb(255, 255, 255);")
+"color: rgb(0, 0, 0);")
         self.label_4.setObjectName("label_4")
         self.label_5 = QtWidgets.QLabel(Form)
         self.label_5.setGeometry(QtCore.QRect(370, 20, 261, 41))
         self.label_5.setStyleSheet("font: 75 20pt \"Segoe Print\";\n"
-"color: rgb(255, 255, 255);")
+"color: rgb(0, 0, 0);")
         self.label_5.setObjectName("label_5")
         self.btnVer = QtWidgets.QPushButton(Form)
         self.btnVer.setGeometry(QtCore.QRect(380, 350, 181, 41))
         self.btnVer.setStyleSheet("font: 11pt \"Segoe Print\";\n"
 "color: rgb(255, 255, 255);\n"
-"background-color: rgb(0, 204, 102);\n"
+"background-color: rgb(0, 51, 51);\n"
 "")
         self.btnVer.setObjectName("btnVer")
         self.label_3 = QtWidgets.QLabel(Form)
-        self.label_3.setGeometry(QtCore.QRect(140, 90, 121, 16))
+        self.label_3.setGeometry(QtCore.QRect(140, 90, 200, 30))
         self.label_3.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
 "color: rgb(255, 255, 255);")
         self.label_3.setObjectName("label_3")
@@ -171,7 +171,7 @@ class FechasAlternas(object):
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
-        self.label_6.setText(_translate("Form", "BLOQUE C"))
+        self.label_6.setText(_translate("Form", "<html><head/><body><p><span style=\" font-weight:600; color:#000000;\">BLOQUE C</span></p></body></html>"))
         item = self.tableWidgetFechasAlternas.verticalHeaderItem(0)
         item.setText(_translate("Form", "1"))
         item = self.tableWidgetFechasAlternas.verticalHeaderItem(1)
@@ -271,8 +271,8 @@ class FechasAlternas(object):
         item = self.tableWidgetFechasAlternas.item(5, 5)
         item.setText(_translate("Form", "0"))
         self.tableWidgetFechasAlternas.setSortingEnabled(__sortingEnabled)
-        self.label_4.setText(_translate("Form", "BLOQUE B"))
-        self.label_5.setText(_translate("Form", "Fechas alternas"))
+        self.label_4.setText(_translate("Form", "<html><head/><body><p><span style=\" font-weight:600; color:#000000;\">BLOQUE B</span></p></body></html>"))
+        self.label_5.setText(_translate("Form", "<html><head/><body><p><span style=\" font-weight:600; color:#000000;\">Fechas alternas</span></p></body></html>"))
         self.btnVer.setText(_translate("Form", "VER"))
-        self.label_3.setText(_translate("Form", "BLOQUE A"))
+        self.label_3.setText(_translate("Form", "<html><head/><body><p><span style=\" font-weight:600; color:#000000;\">BLOQUE A</span></p></body></html>"))
 

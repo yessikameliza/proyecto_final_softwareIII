@@ -28,7 +28,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.centralwidget.setObjectName("centralwidget")
         self.frame = QtWidgets.QFrame(self.centralwidget)
         self.frame.setGeometry(QtCore.QRect(0, 0, 1411, 121))
-        self.frame.setStyleSheet("background-color: rgb(0, 51, 51);")
+        self.frame.setStyleSheet("background-color: rgb(0, 204, 102);")
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")
@@ -43,21 +43,21 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         sizePolicy.setVerticalStretch(11)
         sizePolicy.setHeightForWidth(self.frame_3.sizePolicy().hasHeightForWidth())
         self.frame_3.setSizePolicy(sizePolicy)
-        self.frame_3.setStyleSheet("background-color: rgb(0, 51, 51);")
+        self.frame_3.setStyleSheet("background-color: rgb(0, 204, 102);")
         self.frame_3.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_3.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_3.setObjectName("frame_3")
         self.groupBox = QtWidgets.QGroupBox(self.frame_3)
         self.groupBox.setGeometry(QtCore.QRect(20, 10, 311, 381))
-        self.groupBox.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
-"color: rgb(255, 255, 255);")
+        self.groupBox.setStyleSheet("font: 75 14pt \"Segoe Print\";\n"
+"color: rgb(0, 0, 0);")
         self.groupBox.setObjectName("groupBox")
 
         self.btnRegistrarDocentes = QtWidgets.QPushButton(self.groupBox)
         self.btnRegistrarDocentes.setGeometry(QtCore.QRect(40, 40, 241, 31))
         self.btnRegistrarDocentes.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
 "color: rgb(255, 255, 255);\n"
-"background-color: rgb(0, 204, 102);\n"
+"background-color: rgb(0, 51, 51);\n"
 "")
         self.btnRegistrarDocentes.setObjectName("btnRegistrarDocentes")
 
@@ -66,18 +66,18 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.btnRegistrarFechas.setGeometry(QtCore.QRect(40, 122, 241, 31))
         self.btnRegistrarFechas.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
 "color: rgb(255, 255, 255);\n"
-"background-color: rgb(0, 204, 102);\n"
+"background-color: rgb(0, 51, 51);\n"
 "")
         self.btnRegistrarFechas.setObjectName("btnRegistrarFechas")
         self.groupBox_3 = QtWidgets.QGroupBox(self.groupBox)
         self.groupBox_3.setGeometry(QtCore.QRect(20, 160, 271, 191))
-        self.groupBox_3.setStyleSheet("font: 75 12pt \"Segoe Print\";")
+        self.groupBox_3.setStyleSheet("font: 75 14pt \"Segoe Print\";")
         self.groupBox_3.setObjectName("groupBox_3")
         self.btnGenerarHorArmen = QtWidgets.QPushButton(self.groupBox_3)
         self.btnGenerarHorArmen.setGeometry(QtCore.QRect(20, 110, 241, 31))
         self.btnGenerarHorArmen.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
 "color: rgb(255, 255, 255);\n"
-"background-color: rgb(0, 204, 102);\n"
+"background-color: rgb(0, 51, 51);\n"
 "\n"
 "")
         self.btnGenerarHorArmen.setObjectName("btnGenerarHorArmen")
@@ -85,7 +85,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.btnGenerarHorPer.setGeometry(QtCore.QRect(20, 150, 241, 31))
         self.btnGenerarHorPer.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
 "color: rgb(255, 255, 255);\n"
-"background-color: rgb(0, 204, 102);\n"
+"background-color: rgb(0, 51, 51);\n"
 "\n"
 "")
         self.btnGenerarHorPer.setObjectName("btnGenerarHorPer")
@@ -93,7 +93,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.btnGenerarHorBuga.setGeometry(QtCore.QRect(20, 70, 241, 31))
         self.btnGenerarHorBuga.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
 "color: rgb(255, 255, 255);\n"
-"background-color: rgb(0, 204, 102);\n"
+"background-color: rgb(0, 51, 51);\n"
 "\n"
 "")
         self.btnGenerarHorBuga.setObjectName("btnGenerarHorBuga")
@@ -118,8 +118,8 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.spinSemestre.setObjectName("spinSemestre")
         self.groupBox_4 = QtWidgets.QGroupBox(self.frame_3)
         self.groupBox_4.setGeometry(QtCore.QRect(370, 10, 861, 381))
-        self.groupBox_4.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
-"color: rgb(255, 255, 255);")
+        self.groupBox_4.setStyleSheet("font: 75 14pt \"Segoe Print\";\n"
+"color: rgb(0, 0, 0);")
         self.groupBox_4.setObjectName("groupBox_4")
         self.tablaHorario = QtWidgets.QTableWidget(self.groupBox_4)
         self.tablaHorario.setGeometry(QtCore.QRect(30, 30, 731, 331))
@@ -226,7 +226,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.tablaHorario.verticalHeader().setDefaultSectionSize(55)
         self.btnImprimir = QtWidgets.QPushButton(self.groupBox_4)
         self.btnImprimir.setGeometry(QtCore.QRect(770, 170, 81, 41))
-        self.btnImprimir.setStyleSheet("background-color: rgb(0, 204, 102);")
+        self.btnImprimir.setStyleSheet("background-color: rgb(0, 51, 51);")
         self.btnImprimir.setObjectName("btnImprimir")
         self.frame_2 = QtWidgets.QFrame(self.centralwidget)
         self.frame_2.setGeometry(QtCore.QRect(0, 120, 1411, 151))
@@ -466,7 +466,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.label.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:22pt; font-weight:600; color:#ffffff;\">¡Bienvenido a SS MEWIN!</span></p><p align=\"center\"><span style=\" font-size:16pt; color:#ffffff;\">Programador de horarios</span></p></body></html>"))
+        self.label.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:22pt; font-weight:600; color:#000000;\">¡Bienvenido a SS MEWIN!</span></p><p align=\"center\"><span style=\" font-size:16pt; color:#000000;\">Programador de horarios</span></p></body></html>"))
         self.groupBox.setTitle(_translate("MainWindow", "Menú de opciones"))
         self.btnRegistrarDocentes.setText(_translate("MainWindow", "Registrar Docentes"))
         self.btnRegistrarFechas.setText(_translate("MainWindow", "Registrar fechas"))

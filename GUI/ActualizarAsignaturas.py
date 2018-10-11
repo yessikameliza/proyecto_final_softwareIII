@@ -20,7 +20,7 @@ class actualizarAsignatura(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("Actualizar Asignaturas")
         MainWindow.resize(722, 647)
-        MainWindow.setStyleSheet("background-color: rgb(0, 51, 51)")
+        MainWindow.setStyleSheet("background-color: rgb(0, 204, 102)")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
@@ -37,18 +37,18 @@ class actualizarAsignatura(object):
         self.codigo = QtWidgets.QLabel(self.centralwidget)
         self.codigo.setGeometry(QtCore.QRect(20, 150, 221, 31))
         self.codigo.setStyleSheet("font: 75 10pt \"Segoe Print\";\n"
-                                  "color: rgb(255, 255, 255);")
+                                  "color: rgb(0, 0, 0);")
         self.codigo.setObjectName("codigo")
         self.btnBuscar = QtWidgets.QPushButton(self.centralwidget)
         self.btnBuscar.setGeometry(QtCore.QRect(30, 250, 101, 31))
         self.btnBuscar.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
                                      "color: rgb(255, 255, 255);\n"
-                                     "background-color: rgb(0, 204, 102);")
+                                     "background-color: rgb(0, 51, 51);")
         self.btnBuscar.setObjectName("btnBuscar")
         self.groupBox = QtWidgets.QGroupBox(self.centralwidget)
         self.groupBox.setGeometry(QtCore.QRect(260, 110, 441, 421))
         self.groupBox.setStyleSheet("font: 75 14pt \"Segoe Print\";\n"
-                                    "color: rgb(255, 255, 255);")
+                                    "color: rgb(0, 0, 0);")
         self.groupBox.setObjectName("groupBox")
         self.codigo_2 = QtWidgets.QLabel(self.groupBox)
         self.codigo_2.setGeometry(QtCore.QRect(10, 50, 91, 31))
@@ -108,13 +108,13 @@ class actualizarAsignatura(object):
         self.btnLimpiar.setGeometry(QtCore.QRect(340, 350, 81, 31))
         self.btnLimpiar.setStyleSheet("font: 75 11pt \"Segoe Print\";\n"
                                       "color: rgb(255, 255, 255);\n"
-                                      "background-color: rgb(0, 204, 102);")
+                                      "background-color: rgb(0, 55, 55);")
         self.btnLimpiar.setObjectName("btnLimpiar")
         self.btnActualizar = QtWidgets.QPushButton(self.groupBox)
         self.btnActualizar.setGeometry(QtCore.QRect(220, 350, 111, 31))
         self.btnActualizar.setStyleSheet("font: 75 11pt \"Segoe Print\";\n"
                                          "color: rgb(255, 255, 255);\n"
-                                         "background-color: rgb(0, 204, 102);")
+                                         "background-color: rgb(0, 55, 55);")
         self.btnActualizar.setObjectName("btnActualizar")
         self.semestre_2 = QtWidgets.QLabel(self.groupBox)
         self.semestre_2.setGeometry(QtCore.QRect(10, 240, 131, 31))
@@ -131,7 +131,7 @@ class actualizarAsignatura(object):
         self.btnRegresar.setGeometry(QtCore.QRect(40, 450, 101, 31))
         self.btnRegresar.setStyleSheet("font: 75 10pt \"Segoe Print\";\n"
                                        "color: rgb(255, 255, 255);\n"
-                                       "background-color: rgb(0, 204, 102);")
+                                       "background-color: rgb(0, 55, 55);")
         self.btnRegresar.setObjectName("btnRegresar")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
@@ -212,23 +212,23 @@ class actualizarAsignatura(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Actualizar asignaturas"))
         self.label.setText(_translate("MainWindow",
-                                      "<html><head/><body><p align=\"center\"><span style=\" font-size:24pt; color:#ffffff;\">Actualizar  asignaturas</span></p><p align=\"center\"><br/></p></body></html>"))
+                                      "<html><head/><body><p align=\"center\"><span style=\" font-size:24pt; font-weight:600; color:#000000;\">Actualizar  asignaturas</span></p><p align=\"center\"><br/></p></body></html>"))
         self.codigo.setText(_translate("MainWindow",
-                                       "<html><head/><body><p>Ingrese código de la asignatura:</p><p><br/></p></body></html>"))
+                                       "<html><head/><body><p align=\"center\"><span style=\" font-size:10pt; font-weight:600; color:#000000;\">Ingrese código de la asignatura:</p><p><br/></p></body></html>"))
         self.btnBuscar.setText(_translate("MainWindow", "BUSCAR"))
         self.groupBox.setTitle(_translate("MainWindow", "Actualizar datos"))
         self.codigo_2.setText(_translate("MainWindow",
-                                         "<html><head/><body><p><span style=\" font-size:12pt; color:#ffffff;\">Codigo:</span></p><p><br/></p></body></html>"))
+                                         "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#000000;\">Codigo:</span></p><p><br/></p></body></html>"))
         self.semestre.setText(_translate("MainWindow",
-                                         "<html><head/><body><p><span style=\" font-size:12pt; color:#ffffff;\">Semestre:</span></p><p><br/></p><p><br/></p></body></html>"))
+                                         "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#000000;\">Semestre:</span></p><p><br/></p><p><br/></p></body></html>"))
         self.numCreditos.setText(_translate("MainWindow",
-                                            "<html><head/><body><p><span style=\" font-size:12pt; color:#ffffff;\">Numero de creditos:</span></p><p><br/></p></body></html>"))
+                                            "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#000000;\">Numero de creditos:</span></p><p><br/></p></body></html>"))
         self.numHorasSemestre.setText(_translate("MainWindow",
-                                                 "<html><head/><body><p><span style=\" font-size:12pt; color:#ffffff;\">Num. horas por semestre:</span></p><p><br/></p></body></html>"))
+                                                 "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#000000;\">Num. horas por semestre:</span></p><p><br/></p></body></html>"))
         self.nombre.setText(_translate("MainWindow",
-                                       "<html><head/><body><p><span style=\" font-size:12pt; color:#ffffff;\">Nombre:</span></p></body></html>"))
+                                       "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#000000;\">Nombre:</span></p></body></html>"))
         self.btnLimpiar.setText(_translate("MainWindow", "LIMPIAR"))
         self.btnActualizar.setText(_translate("MainWindow", "ACTUALIZAR"))
         self.semestre_2.setText(_translate("MainWindow",
-                                           "<html><head/><body><p><span style=\" font-size:11pt;\">Cod. Requisito:</span></p></body></html>"))
+                                           "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#000000;\">Cod. Requisito:</span></p></body></html>"))
         self.btnRegresar.setText(_translate("MainWindow", "REGRESAR"))

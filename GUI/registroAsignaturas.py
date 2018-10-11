@@ -15,7 +15,7 @@ class registroAsignaturas(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("Registro de asignaturas")
         MainWindow.resize(531, 573)
-        MainWindow.setStyleSheet("background-color: rgb(0, 51, 51)")
+        MainWindow.setStyleSheet("background-color: rgb(0, 204, 102)")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
@@ -61,19 +61,19 @@ class registroAsignaturas(object):
         self.btnAceptar.setGeometry(QtCore.QRect(260, 480, 101, 31))
         self.btnAceptar.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
 "color: rgb(255, 255, 255);\n"
-"background-color: rgb(0, 204, 102);")
+"background-color: rgb(0, 51, 51);")
         self.btnAceptar.setObjectName("btnAceptar")
         self.btnLimpiar = QtWidgets.QPushButton(self.centralwidget)
         self.btnLimpiar.setGeometry(QtCore.QRect(370, 480, 111, 31))
         self.btnLimpiar.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
 "color: rgb(255, 255, 255);\n"
-"background-color: rgb(0, 204, 102);")
+"background-color: rgb(0, 51, 51);")
         self.btnLimpiar.setObjectName("btnLimpiar")
         self.btnRegresar = QtWidgets.QPushButton(self.centralwidget)
         self.btnRegresar.setGeometry(QtCore.QRect(40, 480, 101, 31))
         self.btnRegresar.setStyleSheet("font: 75 10pt \"Segoe Print\";\n"
 "color: rgb(255, 255, 255);\n"
-"background-color: rgb(0, 204, 102);")
+"background-color: rgb(0, 51, 51);")
         self.btnRegresar.setObjectName("btnRegresar")
         self.semestre = QtWidgets.QLabel(self.centralwidget)
         self.semestre.setGeometry(QtCore.QRect(40, 410, 211, 31))
@@ -167,14 +167,14 @@ class registroAsignaturas(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Registro asignaturas"))
-        self.label.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:24pt; color:#ffffff;\">Registro de asignaturas</span></p><p align=\"center\"><br/></p></body></html>"))
-        self.nombre.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; color:#ffffff;\">Nombre:</span></p></body></html>"))
-        self.codigo.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; color:#ffffff;\">Codigo:</span></p><p><br/></p></body></html>"))
-        self.numCreditos.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; color:#ffffff;\">Numero de creditos:</span></p><p><br/></p></body></html>"))
-        self.numHorasSemestre.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; color:#ffffff;\">Num. horas por semestre:</span></p><p><br/></p></body></html>"))
+        self.label.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:24pt; font-weight:600; color:#000000;\">Registro de asignaturas</span></p><p align=\"center\"><br/></p></body></html>"))
+        self.nombre.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#000000;\">Nombre:</span></p></body></html>"))
+        self.codigo.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#000000;\">Codigo:</span></p><p><br/></p></body></html>"))
+        self.numCreditos.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#000000;\">Numero de creditos:</span></p><p><br/></p></body></html>"))
+        self.numHorasSemestre.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#000000;\">Num. horas por semestre:</span></p><p><br/></p></body></html>"))
         self.btnAceptar.setText(_translate("MainWindow", "ACEPTAR"))
         self.btnLimpiar.setText(_translate("MainWindow", "LIMPIAR"))
         self.btnRegresar.setText(_translate("MainWindow", "REGRESAR"))
-        self.semestre.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; color:#ffffff;\">Semestre:</span></p><p><br/></p><p><br/></p></body></html>"))
-        self.semestre_2.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:11pt;\">Cod. Requisito:</span></p></body></html>"))
+        self.semestre.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#000000;\">Semestre:</span></p><p><br/></p><p><br/></p></body></html>"))
+        self.semestre_2.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:11pt; font-weight:600; color:#000000; \">Cod. Requisito:</span></p></body></html>"))
 

@@ -14,7 +14,7 @@ class PrimerasFechas(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.resize(926, 440)
-        Form.setStyleSheet("background-color: rgb(0, 51, 51)")
+        Form.setStyleSheet("background-color: rgb(0, 204, 102)")
         self.tableWidgetPrimerasFechas = QtWidgets.QTableWidget(Form)
         self.tableWidgetPrimerasFechas.setGeometry(QtCore.QRect(40, 130, 851, 211))
         self.tableWidgetPrimerasFechas.setStyleSheet("font: 9pt \"Segoe Print\";\n"
@@ -124,28 +124,28 @@ class PrimerasFechas(object):
         self.label_5 = QtWidgets.QLabel(Form)
         self.label_5.setGeometry(QtCore.QRect(340, 30, 261, 41))
         self.label_5.setStyleSheet("font: 75 20pt \"Segoe Print\";\n"
-                                   "color: rgb(255, 255, 255);")
+                                   "color: rgb(0, 0, 0);")
         self.label_5.setObjectName("label_5")
         self.label_3 = QtWidgets.QLabel(Form)
-        self.label_3.setGeometry(QtCore.QRect(150, 100, 121, 16))
+        self.label_3.setGeometry(QtCore.QRect(150, 100, 200, 30))
         self.label_3.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
-                                   "color: rgb(255, 255, 255);")
+                                   "color: rgb(0, 0, 0);")
         self.label_3.setObjectName("label_3")
         self.label_4 = QtWidgets.QLabel(Form)
-        self.label_4.setGeometry(QtCore.QRect(430, 100, 121, 16))
+        self.label_4.setGeometry(QtCore.QRect(430, 100, 200, 30))
         self.label_4.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
-                                   "color: rgb(255, 255, 255);")
+                                   "color: rgb(0, 0, 0);")
         self.label_4.setObjectName("label_4")
         self.label_6 = QtWidgets.QLabel(Form)
-        self.label_6.setGeometry(QtCore.QRect(710, 100, 121, 16))
+        self.label_6.setGeometry(QtCore.QRect(710, 100, 200, 30))
         self.label_6.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
-                                   "color: rgb(255, 255, 255);")
+                                   "color: rgb(0, 0, 0);")
         self.label_6.setObjectName("label_6")
         self.btnVer = QtWidgets.QPushButton(Form)
         self.btnVer.setGeometry(QtCore.QRect(390, 370, 181, 41))
         self.btnVer.setStyleSheet("font: 11pt \"Segoe Print\";\n"
                                   "color: rgb(255, 255, 255);\n"
-                                  "background-color: rgb(0, 204, 102);\n"
+                                  "background-color: rgb(0, 51, 51);\n"
                                   "")
         self.btnVer.setObjectName("btnVer")
 
@@ -275,8 +275,8 @@ class PrimerasFechas(object):
         item = self.tableWidgetPrimerasFechas.item(5, 5)
         item.setText(_translate("Form", "0"))
         self.tableWidgetPrimerasFechas.setSortingEnabled(__sortingEnabled)
-        self.label_5.setText(_translate("Form", "Primeras fechas"))
-        self.label_3.setText(_translate("Form", "BLOQUE A"))
-        self.label_4.setText(_translate("Form", "BLOQUE B"))
-        self.label_6.setText(_translate("Form", "BLOQUE C"))
+        self.label_5.setText(_translate("Form", "<html><head/><body><p><span style=\" font-size:20pt; font-weight:600; color:#000000;\">Primeras fechas</span></p></body></html>"))
+        self.label_3.setText(_translate("Form", "<html><head/><body><p><span style=\" font-size:10pt; font-weight:600; color:#000000;\">BLOQUE A</span></p></body></html>"))
+        self.label_4.setText(_translate("Form", "<html><head/><body><p><span style=\" font-size:10pt; font-weight:600; color:#000000;\">BLOQUE B</span></p></body></html>"))
+        self.label_6.setText(_translate("Form", "<html><head/><body><p><span style=\" font-size:10pt; font-weight:600; color:#000000;\">BLOQUE C</span></p></body></html>"))
         self.btnVer.setText(_translate("Form", "VER"))
