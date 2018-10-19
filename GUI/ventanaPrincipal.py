@@ -28,7 +28,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.centralwidget.setObjectName("centralwidget")
         self.frame = QtWidgets.QFrame(self.centralwidget)
         self.frame.setGeometry(QtCore.QRect(0, 0, 1411, 121))
-        self.frame.setStyleSheet("background-color: rgb(0, 204, 102);")
+        self.frame.setStyleSheet("background-color: rgb(128, 195, 161);")
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")
@@ -43,7 +43,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         sizePolicy.setVerticalStretch(11)
         sizePolicy.setHeightForWidth(self.frame_3.sizePolicy().hasHeightForWidth())
         self.frame_3.setSizePolicy(sizePolicy)
-        self.frame_3.setStyleSheet("background-color: rgb(0, 204, 102);")
+        self.frame_3.setStyleSheet("background-color: rgb(128, 195, 161);")
         self.frame_3.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_3.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_3.setObjectName("frame_3")
@@ -226,7 +226,11 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.tablaHorario.verticalHeader().setDefaultSectionSize(55)
         self.btnImprimir = QtWidgets.QPushButton(self.groupBox_4)
         self.btnImprimir.setGeometry(QtCore.QRect(770, 170, 81, 41))
-        self.btnImprimir.setStyleSheet("background-color: rgb(0, 51, 51);")
+        self.btnImprimir.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
+            "color: rgb(255, 255, 255);\n"
+            "background-color: rgb(0, 51, 51);\n"
+            "\n""")
+
         self.btnImprimir.setObjectName("btnImprimir")
         self.frame_2 = QtWidgets.QFrame(self.centralwidget)
         self.frame_2.setGeometry(QtCore.QRect(0, 120, 1411, 151))

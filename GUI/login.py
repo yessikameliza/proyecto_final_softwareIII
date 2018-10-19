@@ -14,7 +14,7 @@ class Login(QMainWindow):
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.resize(376, 373)
-        Form.setStyleSheet("background-color: rgb(0, 204, 102)")
+        Form.setStyleSheet("background-color: rgb(128, 195, 161)")
         self.label = QtWidgets.QLabel(Form)
         self.label.setGeometry(QtCore.QRect(40, 30, 281, 61))
         self.label.setStyleSheet("\n"
@@ -29,7 +29,7 @@ class Login(QMainWindow):
         self.txtUsuario = QtWidgets.QTextEdit(self.frame)
         self.txtUsuario.setGeometry(QtCore.QRect(30, 30, 211, 31))
         self.txtUsuario.setStyleSheet("color: rgb(0, 0, 0);\n"
-"background-color: rgb(0, 204, 102)\n"
+"background-color: rgb(128, 195, 161)\n"
 "")
         self.txtUsuario.setObjectName("nomUsuario")
         self.txtUsuario.setText("Ingrese nombre de usuario")
@@ -37,7 +37,7 @@ class Login(QMainWindow):
         self.txtContrasena.setGeometry(QtCore.QRect(30, 90, 211, 31))
         self.txtContrasena.setText("Ingrese contraseña")
         self.txtContrasena.setStyleSheet("color: rgb(0, 0, 0);\n"
-"background-color: rgb(0, 204, 102)\n"
+"background-color: rgb(128, 195, 161)\n"
 "")
         self.txtContrasena.setObjectName("Contraseña")
         self.btnAgregar = QtWidgets.QPushButton(self.frame)
