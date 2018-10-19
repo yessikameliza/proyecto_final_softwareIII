@@ -20,7 +20,7 @@ class actualizarAsignatura(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("Actualizar Asignaturas")
         MainWindow.resize(722, 647)
-        MainWindow.setStyleSheet("background-color: rgb(0, 204, 102)")
+        MainWindow.setStyleSheet("background-color: rgb(128, 195, 161)")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)

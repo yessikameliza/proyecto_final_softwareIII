@@ -13,7 +13,7 @@ class FechasPereira(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.resize(906, 425)
-        Form.setStyleSheet("background-color: rgb(0, 204, 102)")
+        Form.setStyleSheet("background-color: rgb(128, 195, 161)")
         self.label_4 = QtWidgets.QLabel(Form)
         self.label_4.setGeometry(QtCore.QRect(410, 100, 200, 30))
         self.label_4.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"

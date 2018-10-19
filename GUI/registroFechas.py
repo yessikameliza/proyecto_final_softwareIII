@@ -18,7 +18,7 @@ class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.resize(1379, 743)
-        Form.setStyleSheet("background-color: rgb(0, 204, 102)")
+        Form.setStyleSheet("background-color: rgb(128, 195, 161)")
         self.groupBox = QtWidgets.QGroupBox(Form)
         self.groupBox.setGeometry(QtCore.QRect(60, 120, 1211, 571))
         self.groupBox.setStyleSheet("color: rgb(0, 0, 0);\n"

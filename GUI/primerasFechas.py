@@ -14,7 +14,7 @@ class PrimerasFechas(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.resize(926, 440)
-        Form.setStyleSheet("background-color: rgb(0, 204, 102)")
+        Form.setStyleSheet("background-color: rgb(128, 195, 161)")
         self.tableWidgetPrimerasFechas = QtWidgets.QTableWidget(Form)
         self.tableWidgetPrimerasFechas.setGeometry(QtCore.QRect(40, 130, 851, 211))
         self.tableWidgetPrimerasFechas.setStyleSheet("font: 9pt \"Segoe Print\";\n"

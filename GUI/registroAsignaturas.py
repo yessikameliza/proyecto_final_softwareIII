@@ -15,7 +15,7 @@ class registroAsignaturas(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("Registro de asignaturas")
         MainWindow.resize(531, 573)
-        MainWindow.setStyleSheet("background-color: rgb(0, 204, 102)")
+        MainWindow.setStyleSheet("background-color: rgb(128, 195, 161)")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)

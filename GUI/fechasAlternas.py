@@ -12,7 +12,7 @@ class FechasAlternas(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.resize(906, 405)
-        Form.setStyleSheet("background-color: rgb(0, 204, 102)")
+        Form.setStyleSheet("background-color: rgb(128, 195, 161)")
         self.label_6 = QtWidgets.QLabel(Form)
         self.label_6.setGeometry(QtCore.QRect(690, 90, 200, 30))
         self.label_6.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
