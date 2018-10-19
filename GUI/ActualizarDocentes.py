@@ -17,13 +17,13 @@ class actualizarDocente(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(687, 640)
-        MainWindow.setStyleSheet("background-color: rgb(0, 51, 51)")
+        MainWindow.setStyleSheet("background-color: rgb(0, 204, 102)")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.groupBox = QtWidgets.QGroupBox(self.centralwidget)
         self.groupBox.setGeometry(QtCore.QRect(250, 90, 421, 501))
         self.groupBox.setStyleSheet("font: 75 14pt \"Segoe Print\";\n"
-"color: rgb(255, 255, 255);")
+"color: rgb(0, 0, 0);")
         self.groupBox.setObjectName("groupBox")
         self.tipo = QtWidgets.QLabel(self.groupBox)
         self.tipo.setGeometry(QtCore.QRect(10, 160, 71, 31))
@@ -78,7 +78,7 @@ class actualizarDocente(object):
         self.btnAgregar.setGeometry(QtCore.QRect(360, 360, 41, 31))
         self.btnAgregar.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
 "color: rgb(255, 255, 255);\n"
-"background-color: rgb(0, 204, 102);")
+"background-color: rgb(0, 51, 51);")
         self.btnAgregar.setObjectName("btnAgregar")
         self.txtNombre = QtWidgets.QTextEdit(self.groupBox)
         self.txtNombre.setGeometry(QtCore.QRect(180, 60, 221, 31))
@@ -102,13 +102,13 @@ class actualizarDocente(object):
         self.btnActualizar.setGeometry(QtCore.QRect(180, 450, 111, 31))
         self.btnActualizar.setStyleSheet("font: 75 11pt \"Segoe Print\";\n"
 "color: rgb(255, 255, 255);\n"
-"background-color: rgb(0, 204, 102);")
+"background-color: rgb(0, 51, 51);")
         self.btnActualizar.setObjectName("btnActualizar")
         self.btnLimpiar = QtWidgets.QPushButton(self.groupBox)
         self.btnLimpiar.setGeometry(QtCore.QRect(300, 450, 101, 31))
         self.btnLimpiar.setStyleSheet("font: 75 11pt \"Segoe Print\";\n"
 "color: rgb(255, 255, 255);\n"
-"background-color: rgb(0, 204, 102);")
+"background-color: rgb(0, 51, 51);")
         self.btnLimpiar.setObjectName("btnLimpiar")
         self.comboEstado = QtWidgets.QComboBox(self.groupBox)
         self.comboEstado.setGeometry(QtCore.QRect(180, 310, 221, 31))
@@ -137,13 +137,13 @@ class actualizarDocente(object):
         self.btnBuscar.setGeometry(QtCore.QRect(30, 230, 101, 31))
         self.btnBuscar.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
 "color: rgb(255, 255, 255);\n"
-"background-color: rgb(0, 204, 102);")
+"background-color: rgb(0, 51, 51);")
         self.btnBuscar.setObjectName("btnBuscar")
         self.btnRegresar = QtWidgets.QPushButton(self.centralwidget)
         self.btnRegresar.setGeometry(QtCore.QRect(40, 540, 101, 31))
         self.btnRegresar.setStyleSheet("font: 75 10pt \"Segoe Print\";\n"
 "color: rgb(255, 255, 255);\n"
-"background-color: rgb(0, 204, 102);")
+"background-color: rgb(0, 51, 51);")
         self.btnRegresar.setObjectName("btnRegresar")
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(170, 10, 381, 61))
@@ -233,19 +233,19 @@ class actualizarDocente(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Actualizar docentes"))
         self.groupBox.setTitle(_translate("MainWindow", "Actualizar datos"))
-        self.tipo.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; color:#ffffff;\">Tipo:</span></p></body></html>"))
-        self.identifi.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; color:#ffffff;\">Identificacíon:</span></p></body></html>"))
-        self.asignatura_2.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; color:#ffffff;\">Limite de horas:</span></p><p><br/></p></body></html>"))
-        self.nombre.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; color:#ffffff;\">Nombre:</span></p></body></html>"))
-        self.asignatura_4.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; color:#ffffff;\">Asignatura:</span></p></body></html>"))
-        self.asignatura_3.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; color:#ffffff;\">Telefono:</span></p></body></html>"))
+        self.tipo.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#000000;\">Tipo:</span></p></body></html>"))
+        self.identifi.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;pt; color:#000000;\">Identificacíon:</span></p></body></html>"))
+        self.asignatura_2.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#000000;\">Limite de horas:</span></p><p><br/></p></body></html>"))
+        self.nombre.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#000000;\">Nombre:</span></p></body></html>"))
+        self.asignatura_4.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#000000;\">Asignatura:</span></p></body></html>"))
+        self.asignatura_3.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#000000;\">Telefono:</span></p></body></html>"))
         self.btnAgregar.setText(_translate("MainWindow", "+"))
         self.btnActualizar.setText(_translate("MainWindow", "ACTUALIZAR"))
         self.btnLimpiar.setText(_translate("MainWindow", "LIMPIAR"))
-        self.asignatura_5.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; color:#ffffff;\">Estado:</span></p></body></html>"))
-        self.codigo.setText(_translate("MainWindow", "<html><head/><body><p>Ingrese identificación del</p><p/><p><br/></p></body></html>"))
+        self.asignatura_5.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#000000;\">Estado:</span></p></body></html>"))
+        self.codigo.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:9pt; font-weight:600; color:#000000;\">Ingrese identificación del</span></p></body></html>"))
         self.btnBuscar.setText(_translate("MainWindow", "BUSCAR"))
         self.btnRegresar.setText(_translate("MainWindow", "REGRESAR"))
-        self.label.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:24pt; color:#ffffff;\">Actualizar docentes</span></p><p align=\"center\"><br/></p><p align=\"center\"><br/></p></body></html>"))
-        self.codigo_2.setText(_translate("MainWindow", "<html><head/><body><p>docente</p><p><br/></p></body></html>"))
+        self.label.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:24pt; font-weight:600; color:#000000;\">Actualizar docentes</span></p><p align=\"center\"><br/></p><p align=\"center\"><br/></p></body></html>"))
+        self.codigo_2.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:9pt; font-weight:600; color:#000000;\">docente</span></p></body></html>"))
 

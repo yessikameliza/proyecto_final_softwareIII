@@ -14,7 +14,7 @@ class eliminarAsignatura(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("Eliminar Asignaturas")
         MainWindow.resize(536, 328)
-        MainWindow.setStyleSheet("background-color: rgb(0, 51, 51)")
+        MainWindow.setStyleSheet("background-color: rgb(0, 204, 102)")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.txtCodtBuscar = QtWidgets.QTextEdit(self.centralwidget)
@@ -32,19 +32,19 @@ class eliminarAsignatura(object):
         self.btnEliminar.setGeometry(QtCore.QRect(180, 260, 91, 31))
         self.btnEliminar.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
 "color: rgb(255, 255, 255);\n"
-"background-color: rgb(0, 204, 102);")
+"background-color: rgb(0, 51, 51);")
         self.btnEliminar.setObjectName("btnEliminar")
         self.btnRegresar = QtWidgets.QPushButton(self.centralwidget)
         self.btnRegresar.setGeometry(QtCore.QRect(10, 260, 101, 31))
         self.btnRegresar.setStyleSheet("font: 75 10pt \"Segoe Print\";\n"
 "color: rgb(255, 255, 255);\n"
-"background-color: rgb(0, 204, 102);")
+"background-color: rgb(0, 51, 51);")
         self.btnRegresar.setObjectName("btnRegresar")
         self.btnLimpiar = QtWidgets.QPushButton(self.centralwidget)
         self.btnLimpiar.setGeometry(QtCore.QRect(290, 260, 91, 31))
         self.btnLimpiar.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
 "color: rgb(255, 255, 255);\n"
-"background-color: rgb(0, 204, 102);")
+"background-color: rgb(0, 51, 51);")
         self.btnLimpiar.setObjectName("btnLimpiar")
         self.codigo_2 = QtWidgets.QLabel(self.centralwidget)
         self.codigo_2.setGeometry(QtCore.QRect(240, 150, 71, 21))
@@ -107,10 +107,10 @@ class eliminarAsignatura(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Eliminar asignaturas"))
-        self.label.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:24pt; color:#ffffff;\">Eliminar asignaturas</span></p><p align=\"center\"><br/></p><p align=\"center\"><br/></p></body></html>"))
+        self.label.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:24pt; font-weight:600; color:#000000;\">Eliminar asignaturas</span></p><p align=\"center\"><br/></p><p align=\"center\"><br/></p></body></html>"))
         self.btnEliminar.setText(_translate("MainWindow", "ELIMINAR"))
         self.btnRegresar.setText(_translate("MainWindow", "REGRESAR"))
         self.btnLimpiar.setText(_translate("MainWindow", "LIMPIAR"))
-        self.codigo_2.setText(_translate("MainWindow", "<html><head/><body><p>asignatura</p></body></html>"))
-        self.codigo.setText(_translate("MainWindow", "<html><head/><body><p>Ingrese codigo de la</p><p><br/></p></body></html>"))
+        self.codigo_2.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:9pt; font-weight:600; color:#000000;\">asignatura</span></p></body></html>"))
+        self.codigo.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:9pt; font-weight:600; color:#000000;\">Ingrese codigo de la</span></p></body></html>"))
 

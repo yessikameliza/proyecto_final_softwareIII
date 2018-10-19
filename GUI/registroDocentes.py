@@ -19,7 +19,7 @@ class registroDocentes(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("Registro de docentes")
         MainWindow.resize(538, 777)
-        MainWindow.setStyleSheet("background-color: rgb(0, 51, 51)")
+        MainWindow.setStyleSheet("background-color: rgb(0, 204, 102)")
         a = 540
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -69,13 +69,13 @@ class registroDocentes(object):
         self.btnAceptar.setGeometry(QtCore.QRect(260, 640, 101, 31))
         self.btnAceptar.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
                                       "color: rgb(255, 255, 255);\n"
-                                      "background-color: rgb(0, 204, 102);")
+                                      "background-color: rgb(0, 51, 51);")
         self.btnAceptar.setObjectName("btnAceptar")
         self.btnLimpiar = QtWidgets.QPushButton(self.centralwidget)
         self.btnLimpiar.setGeometry(QtCore.QRect(390, 640, 101, 31))
         self.btnLimpiar.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
                                       "color: rgb(255, 255, 255);\n"
-                                      "background-color: rgb(0, 204, 102);")
+                                      "background-color: rgb(0, 51, 51);")
         self.btnLimpiar.setObjectName("btnLimpiar")
         self.comboAsignatura = QtWidgets.QComboBox(self.centralwidget)
         self.comboAsignatura.setGeometry(QtCore.QRect(250, 480, 171, 31))
@@ -100,7 +100,7 @@ class registroDocentes(object):
         self.btnRegresar.setGeometry(QtCore.QRect(60, 640, 101, 31))
         self.btnRegresar.setStyleSheet("font: 75 10pt \"Segoe Print\";\n"
                                        "color: rgb(255, 255, 255);\n"
-                                       "background-color: rgb(0, 204, 102);")
+                                       "background-color: rgb(0, 51, 51);")
         self.btnRegresar.setObjectName("btnRegresar")
         self.txtLimHoras = QtWidgets.QTextEdit(self.centralwidget)
         self.txtLimHoras.setGeometry(QtCore.QRect(250, 320, 241, 31))
@@ -221,22 +221,22 @@ class registroDocentes(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Registro docentes"))
         self.label.setText(_translate("MainWindow",
-                                      "<html><head/><body><p align=\"center\"><span style=\" font-size:24pt; color:#ffffff;\">Registro de Docentes</span></p></body></html>"))
+                                      "<html><head/><body><p align=\"center\"><span style=\" font-size:24pt; font-weight:600; color:#000000;\">Registro de Docentes</span></p></body></html>"))
         self.nombre.setText(_translate("MainWindow",
-                                       "<html><head/><body><p><span style=\" font-size:12pt; color:#ffffff;\">Nombre:</span></p></body></html>"))
+                                       "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#000000;\">Nombre:</span></p></body></html>"))
         self.identifi.setText(_translate("MainWindow",
-                                         "<html><head/><body><p><span style=\" font-size:12pt; color:#ffffff;\">Identificacíon:</span></p></body></html>"))
+                                         "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#000000;\">Identificacíon:</span></p></body></html>"))
         self.tipo.setText(_translate("MainWindow",
-                                     "<html><head/><body><p><span style=\" font-size:12pt; color:#ffffff;\">Tipo:</span></p></body></html>"))
+                                     "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#000000;\">Tipo:</span></p></body></html>"))
         self.btnAceptar.setText(_translate("MainWindow", "ACEPTAR"))
         self.btnLimpiar.setText(_translate("MainWindow", "LIMPIAR"))
         self.btnAgregar.setText(_translate("MainWindow", "+"))
         self.btnRegresar.setText(_translate("MainWindow", "REGRESAR"))
         self.asignatura_2.setText(_translate("MainWindow",
-                                             "<html><head/><body><p><span style=\" font-size:12pt; color:#ffffff;\">Limite de horas:</span></p><p><br/></p></body></html>"))
+                                             "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#000000;\">Limite de horas:</span></p><p><br/></p></body></html>"))
         self.asignatura_3.setText(_translate("MainWindow",
-                                             "<html><head/><body><p><span style=\" font-size:12pt; color:#ffffff;\">Telefono:</span></p></body></html>"))
+                                             "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#000000;\">Telefono:</span></p></body></html>"))
         self.asignatura_4.setText(_translate("MainWindow",
-                                             "<html><head/><body><p><span style=\" font-size:12pt; color:#ffffff;\">Asignatura:</span></p></body></html>"))
+                                             "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#000000;\">Asignatura:</span></p></body></html>"))
         self.asignatura_5.setText(_translate("MainWindow",
-                                             "<html><head/><body><p><span style=\" font-size:12pt; color:#ffffff;\">Estado:</span></p><p><br/></p></body></html>"))
+                                             "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#000000;\">Estado:</span></p><p><br/></p></body></html>"))
