@@ -65,6 +65,7 @@ def deleteDate():
     sql1 = "SELECT * FROM date"
     if consulta.execute(sql1):
         files = consulta.fetchall()
+        print(files, "holaaa")
         if files is None:
             id = -1
         else:

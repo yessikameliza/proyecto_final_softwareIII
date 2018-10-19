@@ -163,7 +163,6 @@ class PrimerasFechas(object):
         col: int = 0
         rows: int = 0
         for it in res:
-
             item = self.tableWidgetPrimerasFechas.item(rows, col)
             item.setText(it)
             print("rows", rows, "col ", col)
