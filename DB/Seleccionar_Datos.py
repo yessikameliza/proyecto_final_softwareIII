@@ -85,3 +85,39 @@ def obtenerMatter():
     conexion.commit()
     conexion.close()
     return filaa
+
+def buscarMaterPorSemester(semester):
+    conexion = sqlite3.connect("dataBases.sqlite3")
+    consulta = conexion.cursor()
+
+    # Extrayendo todas las filas
+    filaa: list = []
+    sql = "SELECT * FROM matter"
+    if consulta.execute(sql):
+        files = consulta.fetchall()
+        for fila in files:
+            if str(fila[3]) == semester:
+                filaa.append(fila)
+
+    consulta.close()
+
+    conexion.commit()
+    conexion.close()
+    return filaa
+
+def buscarhorainiciofin():
+    conexion = sqlite3.connect("dataBases.sqlite3")
+    consulta = conexion.cursor()
+
+    # Extrayendo todas las filas
+    filaa: list = []
+    sql = "SELECT * FROM hour"
+    if consulta.execute(sql):
+        files = consulta.fetchall()
+        for fila in files:
+               filaa.append(fila[1]+"-"+fila[2])
+
+    consulta.close()
+    conexion.commit()
+    conexion.close()
+    return filaa
