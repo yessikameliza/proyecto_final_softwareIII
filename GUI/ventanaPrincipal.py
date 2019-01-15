@@ -17,6 +17,7 @@ from GUI.eliminarDocente import eliminarDocente
 from GUI.primerasFechas import PrimerasFechas
 from GUI.fechasAlternas import FechasAlternas
 from GUI.pereiraDomingos import FechasPereira
+from logica.Persistence import geneHours
 
 
 class Ui_MainWindow(QtWidgets.QMainWindow):
@@ -50,24 +51,23 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.groupBox = QtWidgets.QGroupBox(self.frame_3)
         self.groupBox.setGeometry(QtCore.QRect(20, 10, 311, 381))
         self.groupBox.setStyleSheet("font: 75 14pt \"Segoe Print\";\n"
-"color: rgb(0, 0, 0);")
+                                    "color: rgb(0, 0, 0);")
         self.groupBox.setObjectName("groupBox")
 
         self.btnRegistrarDocentes = QtWidgets.QPushButton(self.groupBox)
         self.btnRegistrarDocentes.setGeometry(QtCore.QRect(40, 40, 241, 31))
         self.btnRegistrarDocentes.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
-"color: rgb(255, 255, 255);\n"
-"background-color: rgb(0, 51, 51);\n"
-"")
+                                                "color: rgb(255, 255, 255);\n"
+                                                "background-color: rgb(0, 51, 51);\n"
+                                                "")
         self.btnRegistrarDocentes.setObjectName("btnRegistrarDocentes")
-
 
         self.btnRegistrarFechas = QtWidgets.QPushButton(self.groupBox)
         self.btnRegistrarFechas.setGeometry(QtCore.QRect(40, 122, 241, 31))
         self.btnRegistrarFechas.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
-"color: rgb(255, 255, 255);\n"
-"background-color: rgb(0, 51, 51);\n"
-"")
+                                              "color: rgb(255, 255, 255);\n"
+                                              "background-color: rgb(0, 51, 51);\n"
+                                              "")
         self.btnRegistrarFechas.setObjectName("btnRegistrarFechas")
         self.groupBox_3 = QtWidgets.QGroupBox(self.groupBox)
         self.groupBox_3.setGeometry(QtCore.QRect(20, 160, 271, 191))
@@ -76,26 +76,26 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.btnGenerarHorArmen = QtWidgets.QPushButton(self.groupBox_3)
         self.btnGenerarHorArmen.setGeometry(QtCore.QRect(20, 110, 241, 31))
         self.btnGenerarHorArmen.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
-"color: rgb(255, 255, 255);\n"
-"background-color: rgb(0, 51, 51);\n"
-"\n"
-"")
+                                              "color: rgb(255, 255, 255);\n"
+                                              "background-color: rgb(0, 51, 51);\n"
+                                              "\n"
+                                              "")
         self.btnGenerarHorArmen.setObjectName("btnGenerarHorArmen")
         self.btnGenerarHorPer = QtWidgets.QPushButton(self.groupBox_3)
         self.btnGenerarHorPer.setGeometry(QtCore.QRect(20, 150, 241, 31))
         self.btnGenerarHorPer.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
-"color: rgb(255, 255, 255);\n"
-"background-color: rgb(0, 51, 51);\n"
-"\n"
-"")
+                                            "color: rgb(255, 255, 255);\n"
+                                            "background-color: rgb(0, 51, 51);\n"
+                                            "\n"
+                                            "")
         self.btnGenerarHorPer.setObjectName("btnGenerarHorPer")
         self.btnGenerarHorBuga = QtWidgets.QPushButton(self.groupBox_3)
         self.btnGenerarHorBuga.setGeometry(QtCore.QRect(20, 70, 241, 31))
         self.btnGenerarHorBuga.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
-"color: rgb(255, 255, 255);\n"
-"background-color: rgb(0, 51, 51);\n"
-"\n"
-"")
+                                             "color: rgb(255, 255, 255);\n"
+                                             "background-color: rgb(0, 51, 51);\n"
+                                             "\n"
+                                             "")
         self.btnGenerarHorBuga.setObjectName("btnGenerarHorBuga")
         self.label_4 = QtWidgets.QLabel(self.groupBox_3)
         self.label_4.setGeometry(QtCore.QRect(20, 40, 221, 21))
@@ -111,7 +111,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.spinSemestre = QtWidgets.QSpinBox(self.groupBox_3)
         self.spinSemestre.setGeometry(QtCore.QRect(190, 40, 71, 22))
         self.spinSemestre.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"color: rgb(0, 0, 0);")
+                                        "color: rgb(0, 0, 0);")
         self.spinSemestre.setMinimum(1)
         self.spinSemestre.setMaximum(6)
         self.spinSemestre.setProperty("value", 1)
@@ -119,15 +119,15 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.groupBox_4 = QtWidgets.QGroupBox(self.frame_3)
         self.groupBox_4.setGeometry(QtCore.QRect(370, 10, 861, 381))
         self.groupBox_4.setStyleSheet("font: 75 14pt \"Segoe Print\";\n"
-"color: rgb(0, 0, 0);")
+                                      "color: rgb(0, 0, 0);")
         self.groupBox_4.setObjectName("groupBox_4")
         self.tablaHorario = QtWidgets.QTableWidget(self.groupBox_4)
         self.tablaHorario.setGeometry(QtCore.QRect(30, 30, 731, 331))
         self.tablaHorario.setSizeIncrement(QtCore.QSize(15, 8))
         self.tablaHorario.setBaseSize(QtCore.QSize(22, 18))
         self.tablaHorario.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"font: 75 9pt \"Segoe Print\";\n"
-"color: rgb(0, 0, 0);")
+                                        "font: 75 9pt \"Segoe Print\";\n"
+                                        "color: rgb(0, 0, 0);")
         self.tablaHorario.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.tablaHorario.setLineWidth(2)
         self.tablaHorario.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustToContents)
@@ -227,9 +227,9 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.btnImprimir = QtWidgets.QPushButton(self.groupBox_4)
         self.btnImprimir.setGeometry(QtCore.QRect(770, 170, 81, 41))
         self.btnImprimir.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
-            "color: rgb(255, 255, 255);\n"
-            "background-color: rgb(0, 51, 51);\n"
-            "\n""")
+                                       "color: rgb(255, 255, 255);\n"
+                                       "background-color: rgb(0, 51, 51);\n"
+                                       "\n""")
 
         self.btnImprimir.setObjectName("btnImprimir")
         self.frame_2 = QtWidgets.QFrame(self.centralwidget)
@@ -240,7 +240,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.groupBox_2 = QtWidgets.QGroupBox(self.frame_2)
         self.groupBox_2.setGeometry(QtCore.QRect(60, 10, 1171, 141))
         self.groupBox_2.setStyleSheet("\n"
-"font: 75 12pt \"Segoe Print\";")
+                                      "font: 75 12pt \"Segoe Print\";")
         self.groupBox_2.setObjectName("groupBox_2")
         self.tablaInfoAcademica = QtWidgets.QTableWidget(self.groupBox_2)
         self.tablaInfoAcademica.setGeometry(QtCore.QRect(60, 30, 1061, 101))
@@ -369,8 +369,6 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.actionVer_fechas_pereira.setFont(font)
         self.actionVer_fechas_pereira.setObjectName("actionVer_fechas_pereira")
 
-
-
         self.actionActualizar_Docente = QtWidgets.QAction(MainWindow)
         font = QtGui.QFont()
         font.setFamily("Segoe Print")
@@ -393,8 +391,6 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.menubar.addAction(self.menuOpciones.menuAction())
         self.menubar.addAction(self.menuAsignaturas.menuAction())
         self.menubar.addAction(self.menuDocentes.menuAction())
-
-
         self.retranslateUi(MainWindow)
         self.btnRegistrarDocentes.clicked.connect(self.ventanaRegistroDocente)
         self.btnRegistrarFechas.clicked.connect(self.ventanaRegistroFecha)
@@ -409,51 +405,53 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def ventanaFechasPereira(self):
-            self.ventana = QtWidgets.QMainWindow()
-            self.ui = FechasPereira()
-            self.ui.setupUi(self.ventana)
-            self.ventana.show()
+        self.ventana = QtWidgets.QMainWindow()
+        self.ui = FechasPereira()
+        self.ui.setupUi(self.ventana)
+        self.ventana.show()
 
     def ventanaRegistroDocente(self):
-            self.ventana = QtWidgets.QMainWindow()
-            self.ui = registroDocentes()
-            self.ui.setupUi(self.ventana)
-            self.ventana.show()
+        self.ventana = QtWidgets.QMainWindow()
+        self.ui = registroDocentes()
+        self.ui.setupUi(self.ventana)
+        self.ventana.show()
 
     def ventanaRegistroFecha(self):
-            self.ventana = QtWidgets.QMainWindow()
-            self.ui = Ui_Form()
-            self.ui.setupUi(self.ventana)
-            self.ventana.show()
-            self.close()
+        self.ventana = QtWidgets.QMainWindow()
+        self.ui = Ui_Form()
+        self.ui.setupUi(self.ventana)
+        self.ventana.show()
+        self.close()
+
     def ventanaRegAsi(self):
-            self.ventana = QtWidgets.QMainWindow()
-            self.ui = registroAsignaturas()
-            self.ui.setupUi(self.ventana)
-            self.ventana.show()
+        self.ventana = QtWidgets.QMainWindow()
+        self.ui = registroAsignaturas()
+        self.ui.setupUi(self.ventana)
+        self.ventana.show()
 
     def ventanaModAsig(self):
-            self.ventana = QtWidgets.QMainWindow()
-            self.ui = actualizarAsignatura()
-            self.ui.setupUi(self.ventana)
-            self.ventana.show()
+        self.ventana = QtWidgets.QMainWindow()
+        self.ui = actualizarAsignatura()
+        self.ui.setupUi(self.ventana)
+        self.ventana.show()
 
     def ventanaElimAsig(self):
-            self.ventana = QtWidgets.QMainWindow()
-            self.ui = eliminarAsignatura()
-            self.ui.setupUi(self.ventana)
-            self.ventana.show()
+        self.ventana = QtWidgets.QMainWindow()
+        self.ui = eliminarAsignatura()
+        self.ui.setupUi(self.ventana)
+        self.ventana.show()
+
     def ventanaActDoc(self):
-            self.ventana = QtWidgets.QMainWindow()
-            self.ui = actualizarDocente()
-            self.ui.setupUi(self.ventana)
-            self.ventana.show()
+        self.ventana = QtWidgets.QMainWindow()
+        self.ui = actualizarDocente()
+        self.ui.setupUi(self.ventana)
+        self.ventana.show()
 
     def ventanaElimDoc(self):
-            self.ventana = QtWidgets.QMainWindow()
-            self.ui = eliminarDocente()
-            self.ui.setupUi(self.ventana)
-            self.ventana.show()
+        self.ventana = QtWidgets.QMainWindow()
+        self.ui = eliminarDocente()
+        self.ui.setupUi(self.ventana)
+        self.ventana.show()
 
     def ventanaPrimerasFecha(self):
         self.ventana = QtWidgets.QMainWindow()
@@ -467,10 +465,28 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.ui.setupUi(self.ventana)
         self.ventana.show()
 
+    def generarHPrimerSA(self, _translate):
+        semester: int = 1
+        hours: list = geneHours(semester, "Armenia")
+        i: int = 1
+        j: int = 0
+        for h in hours:
+            if i <= 6:
+                item = self.tablaHorario.item(i, j)
+                item.setText(_translate("MainWindow", h))
+                i = i + 2
+            else:
+                j = j + 1
+                i = 1
+                item = self.tablaHorario.item(i, j)
+                item.setText(_translate("MainWindow", h))
+                i = i + 2
+
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.label.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:22pt; font-weight:600; color:#000000;\">¡Bienvenido a SS MEWIN!</span></p><p align=\"center\"><span style=\" font-size:16pt; color:#000000;\">Programador de horarios</span></p></body></html>"))
+        self.label.setText(_translate("MainWindow",
+                                      "<html><head/><body><p align=\"center\"><span style=\" font-size:22pt; font-weight:600; color:#000000;\">¡Bienvenido a SS MEWIN!</span></p><p align=\"center\"><span style=\" font-size:16pt; color:#000000;\">Programador de horarios</span></p></body></html>"))
         self.groupBox.setTitle(_translate("MainWindow", "Menú de opciones"))
         self.btnRegistrarDocentes.setText(_translate("MainWindow", "Registrar Docentes"))
         self.btnRegistrarFechas.setText(_translate("MainWindow", "Registrar fechas"))
@@ -480,6 +496,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.btnGenerarHorBuga.setText(_translate("MainWindow", "Generar horario Buga"))
         self.label_4.setText(_translate("MainWindow", "Semestre a generar:"))
         self.groupBox_4.setTitle(_translate("MainWindow", "Información de horario"))
+        self.btnGenerarHorArmen.clicked.connect(lambda: self.generarHPrimerSA(_translate))
         item = self.tablaHorario.horizontalHeaderItem(0)
         item.setText(_translate("MainWindow", "BLOQUE A"))
         item = self.tablaHorario.horizontalHeaderItem(1)
