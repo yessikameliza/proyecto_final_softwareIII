@@ -105,35 +105,30 @@ def insertDate(date: str, origin: str, idBlock: int, idents: str):
 
     # Cerrar la conexión
     conexion.close()
-
-def insertHour():
+def insertarhora():
     conexion = sqlite3.connect("dataBase.sqlite3")
-
     # Seleccionar el cursor para iniciar una consulta
     consulta = conexion.cursor()
     print("**** Programa para insertar datos en bases de datos sqlite3 ****")
     horaInicio = input("Introduzca la hora inicio: ")
     horaFin = input("Introduzca la hora fin: ")
     argumentos = (horaInicio, horaFin)
-    sql = """
-    INSERT
-    INTO
-    hour(hour_ini, hour_fin)
+    sql = """INSERT INTO hour(hour_ini, hour_fin)
     VALUES(?, ?)"""
-     # Realizar la consulta
+    # Realizar la consulta
     if consulta.execute(sql, argumentos):
         print("Tabla creada con éxito")
     else:
         print("Ha ocurrido un error al crear la tabla")
     # Cerrar la consulta
     consulta.close()
-    #Guardar los cambios en la base de datos
+    # Guardar los cambios en la base de datos
     conexion.commit()
 
     # Cerrar la conexión
     conexion.close()
 
-def insertarB():
+def insertarBlock():
     conexion = sqlite3.connect("dataBase.sqlite3")
     # Seleccionar el cursor para iniciar una consulta
     consulta = conexion.cursor()
@@ -142,7 +137,7 @@ def insertarB():
     horaInicio = input("Introduzca el bloque ")
     argumentos = (num, horaInicio)
     sql = """INSERT INTO block(id_block, TypeBlock)
-        VALUES(?, ?)"""
+            VALUES(?, ?)"""
     # Realizar la consulta
     if consulta.execute(sql, argumentos):
         print("Tabla creada con éxito")
