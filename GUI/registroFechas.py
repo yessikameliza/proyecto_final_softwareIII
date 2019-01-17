@@ -486,10 +486,32 @@ class Ui_Form(object):
 
     def eliminarFechas(self):
         delete_Date()
-        self.tableWidget.clear()
-        self.tableWidget_2.clear()
-        self.tableWidget_3.clear()
+        self.ponerCeros()
         self.mostrarMensaje("Información", "¡Fechas eliminadas!", "", QMessageBox.Warning, False)
+        self.pushButton.setEnabled(True)
+
+    def ponerCeros(self):
+        self.tabla111()
+        self.tabla222()
+        self.tabla333()
+
+    def tabla111(self):
+        for row in range(self.tableWidget.rowCount()):
+           for col in range(self.tableWidget.columnCount()):
+               item = self.tableWidget.item(row, col)
+               item.setText("0")
+
+    def tabla222(self):
+        for row in range(self.tableWidget_2.rowCount()):
+           for col in range(self.tableWidget_2.columnCount()):
+               item = self.tableWidget_2.item(row, col)
+               item.setText("0")
+
+    def tabla333(self):
+        for row in range(self.tableWidget_3.rowCount()):
+           for col in range(self.tableWidget_3.columnCount()):
+               item = self.tableWidget_3.item(row, col)
+               item.setText("0")
 
     def actualizarFechas(self):
         delete_Date()

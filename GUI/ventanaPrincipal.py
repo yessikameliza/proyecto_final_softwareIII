@@ -533,7 +533,6 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 rows = -1
             rows = rows + 2
             print(rows)
-        self.mostrarMensaje("Información", "¡Funciona el botón!", "", QMessageBox.Warning, False)
 
     def mostrarMensaje(self, titulo: str, texto: str, texto_informativo: str, tipo_mensaje: QMessageBox,
                            estado: bool):
