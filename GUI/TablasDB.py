@@ -3,7 +3,7 @@
 import sqlite3
 
 # Conectamos a la base de datos
-conexion = sqlite3.connect("dataBases.sqlite3")
+conexion = sqlite3.connect("dataBase.sqlite3")
 
 # Seleccionamos el cursor para realizar la consulta
 consulta = conexion.cursor()
@@ -37,9 +37,9 @@ codRequisite VARCHAR(50) NOT NULL,
 id_block INTEGER,
 FOREIGN KEY (id_block) REFERENCES block (id_block)
 ON DELETE CASCADE ON UPDATE NO ACTION)"""
-#sql13 = """ALTER TABLE matter ADD COLUMN numHoursSem INTEGER"""
-#sql13 = """ALTER TABLE date ADD COLUMN idents VARCHAR(100)"""
-sql15 = """ALTER TABLE docent ADD COLUMN identification VARCHAR(100)"""
+sql30 = """ALTER TABLE matter ADD COLUMN numHoursSem INTEGER"""
+sql20 = """ALTER TABLE date ADD COLUMN idents VARCHAR(100)"""
+sql40 = """ALTER TABLE docent ADD COLUMN identification VARCHAR(100)"""
 sql14 = """CREATE TABLE IF NOT EXISTS admin( 
 id_Admin INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
 user VARCHAR(200) NOT NULL,
@@ -95,11 +95,12 @@ sql12 = """ CREATE TABLE IF NOT EXISTS docent_city(
  FOREIGN KEY (id_city) REFERENCES city (id_city) 
  ON DELETE CASCADE ON UPDATE NO ACTION)"""
 # Ejecutamos la consulta
-if (consulta.execute(sql) and consulta.execute(sql3) and consulta.execute(sql4) and consulta.execute(sql6)
-        and consulta.execute(sql7) and consulta.execute(sql8) and
+if (consulta.execute(sql) and consulta.execute(sql3) and consulta.execute(sql4) and consulta.execute(sql6) and
+        consulta.execute(sql7) and consulta.execute(sql8) and
         consulta.execute(sql9) and consulta.execute(sql10) and consulta.execute(sql11) and
-        consulta.execute(sql2) and consulta.execute(sql5) and consulta.execute(sql12)
-        and consulta.execute(sql14) and consulta.execute(sql15)) and consulta.execute(sql2):
+        consulta.execute(sql2) and consulta.execute(sql5) and consulta.execute(sql12) and
+        consulta.execute(sql14) and consulta.execute(sql20) and consulta.execute(sql30) and
+        consulta.execute(sql40)):
     print("Tabla creada con éxito")
 else:
     print("Ha ocurrido un error al crear la tabla")
