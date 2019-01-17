@@ -80,14 +80,18 @@ def delete_Date():
     print("entroooo")
     return deleteDate()
 
+
 def updateDatee(date: str, origin: str, idents: str):
     updateDate(date, origin, idents)
+
 
 def obtener_Fecha(idents: str):
     return obtenerFechas(idents)
 
+
 def obtenerFechasP(idents: str, origin: str):
     return obtenerFechasHour(idents, origin)
+
 
 def obtener_Matter():
     return obtenerMatter()
@@ -116,7 +120,11 @@ def geneHoursPrimerS(semester, ciudad, horario: list):
     print("entro aquii")
     print(files)
     print(fileshor)
+    l: int = 0
+    aux: str = ""
     for file in files:
+
+        print(aux, " esto es aux")
         if file[2] == "Metodologia Educacion a Distancia":
             num: int = int(file[7])
             number: int = int(num / 4)
@@ -130,15 +138,18 @@ def geneHoursPrimerS(semester, ciudad, horario: list):
                     print(horario)
                 i = i + 2
         else:
-            num: int = int(file[7])
-            number: int = int(num / 4)
-            i = 0
-            while i <= number:
-                if i + 1 == number:
-                    horario.append(fileshor[0] + file[2])
-                else:
-                    horario.append(fileshor[0] + file[2] + fileshor[1] + file[2])
-                i = i + 2
+            if (l % 2) != 0:
+                if l < 5:
+                    aux = (files[l + 1])[2]
+                num: int = int(file[7])
+                print("numero", num)
+                number: int = int(num / 4)
+                print("number", number)
+                i = 0
+                while i < number:
+                    horario.append(fileshor[0] + file[2] + fileshor[1] + aux)
+                    i = i + 1
+        l = l + 1
     print("horario final:")
     print(horario)
     return horario
@@ -148,15 +159,15 @@ def geneHoursSegundoS(semester, ciudad, horario: list):
     files: list = buscarMaterPorSemester(semester)
     fileshor: list = buscarhorainiciofin()
     for file in files:
-            num: int = int(file[7])
-            number: int = int(num / 4)
-            i = 0
-            while i <= number:
-                if i + 1 == number:
-                    horario.append(fileshor[0] + file[2])
-                else:
-                    horario.append(fileshor[0] + file[2] + fileshor[1] + file[2])
-                i = i + 2
+        num: int = int(file[7])
+        number: int = int(num / 4)
+        i = 0
+        while i <= number:
+            if i + 1 == number:
+                horario.append(fileshor[0] + file[2])
+            else:
+                horario.append(fileshor[0] + file[2] + fileshor[1] + file[2])
+            i = i + 2
 
     return horario
 
@@ -195,7 +206,7 @@ def geneHoursCuartoS(semester, ciudad, horario: list):
     return horario
 
 
-def geneHoursQuintoS(semester, ciudad, horario:list):
+def geneHoursQuintoS(semester, ciudad, horario: list):
     files: list = buscarMaterPorSemester(semester)
     fileshor: list = buscarhorainiciofin()
     for file in files:

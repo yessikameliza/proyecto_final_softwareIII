@@ -433,6 +433,7 @@ class Ui_Form(object):
         QtCore.QMetaObject.connectSlotsByName(Form)
 
     def registrarFechas(self):
+        delete_Date()
         self.tabla1(0)
         self.tabla1(1)
         self.tabla1(2)
