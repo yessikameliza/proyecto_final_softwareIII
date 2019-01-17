@@ -284,11 +284,6 @@ class Ui_Form(object):
 
         self.groupBox_2.setObjectName("groupBox_2")
 
-
-
-
-
-
         self.pushButton = QtWidgets.QPushButton(self.groupBox_2)
         self.pushButton.setGeometry(QtCore.QRect(10, 70, 171, 51))
         self.pushButton.setStyleSheet("font: 75 10pt \"Segoe Print\";\n"

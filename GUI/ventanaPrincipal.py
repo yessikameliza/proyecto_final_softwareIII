@@ -7,6 +7,7 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QMessageBox
 from GUI.registroFechas import Ui_Form
 from GUI.registroDocentes import registroDocentes
 from GUI.registroAsignaturas import registroAsignaturas
@@ -402,6 +403,8 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.actionGenerar_reportes.triggered.connect(self.ventanaPrimerasFecha)
         self.actionVer_fechas_alternas.triggered.connect(self.ventanaFechasAlternas)
         self.actionVer_fechas_pereira.triggered.connect(self.ventanaFechasPereira)
+        self.btnGenerarHorArmen.clicked.connect(self.pruebaHorario)
+
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def ventanaFechasPereira(self):
@@ -465,7 +468,30 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.ui.setupUi(self.ventana)
         self.ventana.show()
 
+    def pruebaHorario(self):
+
+        """item = self.tablaHorario.item(0, 1)
+        //item.setText("ale")"""
+        self.mostrarMensaje("Información", "¡Funciona el botón!", "", QMessageBox.Warning, False)
+        semester: int = 1
+        hours: list = geneHours(semester, "Armenia")
+        i: int = 1
+        j: int = 0
+        for h in hours:
+            if i <= 6:
+                item = self.tablaHorario.item(i, j)
+                item.setText(h)
+                i = i + 2
+            else:
+                j = j + 1
+                i = 1
+                item = self.tablaHorario.item(i, j)
+                item.setText(h)
+                i = i + 2
+
+
     def generarHPrimerSA(self, _translate):
+
         semester: int = 1
         hours: list = geneHours(semester, "Armenia")
         i: int = 1
@@ -481,6 +507,27 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 item = self.tablaHorario.item(i, j)
                 item.setText(_translate("MainWindow", h))
                 i = i + 2
+
+    def mostrarMensaje(self, titulo: str, texto: str, texto_informativo: str, tipo_mensaje: QMessageBox,
+                           estado: bool):
+
+            self.message_box = QMessageBox()
+            self.message_box.setWindowTitle(titulo)
+            self.message_box.setText(texto)
+
+            if len(texto_informativo) > 0:
+                self.message_box.setInformativeText(texto_informativo)
+
+            if estado:
+                btn_si = self.message_box.addButton('Si', QMessageBox.ActionRole)
+                btn_no = self.message_box.addButton('No', QMessageBox.ActionRole)
+                self.message_box.setDefaultButton(btn_si, btn_no)
+            else:
+                btn_aceptar = self.message_box.addButton('Aceptar', QMessageBox.ActionRole)
+                self.message_box.setDefaultButton(btn_aceptar)
+            if tipo_mensaje is not None:
+                self.message_box.setIcon(tipo_mensaje)
+                self.message_box.exec_()
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
