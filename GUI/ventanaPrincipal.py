@@ -191,11 +191,21 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         item = QtWidgets.QTableWidgetItem()
         self.tablaHorario.setItem(1, 0, item)
         item = QtWidgets.QTableWidgetItem()
+        self.tablaHorario.setItem(1, 1, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tablaHorario.setItem(1, 2, item)
+        item = QtWidgets.QTableWidgetItem()
         self.tablaHorario.setItem(2, 0, item)
         item = QtWidgets.QTableWidgetItem()
         self.tablaHorario.setItem(2, 1, item)
         item = QtWidgets.QTableWidgetItem()
         self.tablaHorario.setItem(2, 2, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tablaHorario.setItem(3, 0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tablaHorario.setItem(3, 1, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tablaHorario.setItem(3, 2, item)
         item = QtWidgets.QTableWidgetItem()
         self.tablaHorario.setItem(4, 0, item)
         item = QtWidgets.QTableWidgetItem()
@@ -205,11 +215,21 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         item = QtWidgets.QTableWidgetItem()
         self.tablaHorario.setItem(5, 0, item)
         item = QtWidgets.QTableWidgetItem()
+        self.tablaHorario.setItem(5, 1, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tablaHorario.setItem(5, 2, item)
+        item = QtWidgets.QTableWidgetItem()
         self.tablaHorario.setItem(6, 0, item)
         item = QtWidgets.QTableWidgetItem()
         self.tablaHorario.setItem(6, 1, item)
         item = QtWidgets.QTableWidgetItem()
         self.tablaHorario.setItem(6, 2, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tablaHorario.setItem(7, 0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tablaHorario.setItem(7, 1, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tablaHorario.setItem(7, 2, item)
         item = QtWidgets.QTableWidgetItem()
         self.tablaHorario.setItem(8, 0, item)
         item = QtWidgets.QTableWidgetItem()
@@ -217,11 +237,24 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         item = QtWidgets.QTableWidgetItem()
         self.tablaHorario.setItem(8, 2, item)
         item = QtWidgets.QTableWidgetItem()
+        self.tablaHorario.setItem(9, 0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tablaHorario.setItem(9, 1, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tablaHorario.setItem(9, 2, item)
+        item = QtWidgets.QTableWidgetItem()
         self.tablaHorario.setItem(10, 0, item)
         item = QtWidgets.QTableWidgetItem()
         self.tablaHorario.setItem(10, 1, item)
         item = QtWidgets.QTableWidgetItem()
         self.tablaHorario.setItem(10, 2, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tablaHorario.setItem(11, 0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tablaHorario.setItem(11, 1, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tablaHorario.setItem(11, 2, item)
+
         self.tablaHorario.horizontalHeader().setDefaultSectionSize(256)
         self.tablaHorario.horizontalHeader().setMinimumSectionSize(50)
         self.tablaHorario.verticalHeader().setDefaultSectionSize(55)
@@ -474,17 +507,19 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         //item.setText("ale")"""
         semester: int = 1
         hours: list = geneHours(semester, "Armenia")
-        i = 1
-        j = 0
+        rows = 1
+        col = 0
         print("recibido en metodo prueba horario")
         print(hours)
         for h in hours:
-            item = self.tablaHorario.item(i, j)
+            item = self.tablaHorario.item(rows, col)
             item.setText(h)
-            if 11 == i:
-                j = j + 1
-                i = 1
-            i = i + 2
+
+            if 11 == rows:
+                col = col + 1
+                rows = -1
+            rows = rows + 2
+            print(rows)
         self.mostrarMensaje("Información", "¡Funciona el botón!", "", QMessageBox.Warning, False)
 
     def mostrarMensaje(self, titulo: str, texto: str, texto_informativo: str, tipo_mensaje: QMessageBox,
