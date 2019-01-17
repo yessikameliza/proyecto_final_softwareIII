@@ -54,29 +54,16 @@ def deleteDocent(identification: str):
     conexion.close()
     return id
 
-
 def deleteDate():
     conexion = sqlite3.connect("dataBases.sqlite3")
-
     consulta = conexion.cursor()
     # sql2 = """UPDATE matter
     # SET (codigo, name, ubi_Semester, numCredit, codRequisite, numHoursSem) WHERE codigo = 1 """
-    id: int = None
-    sql1 = "SELECT * FROM date"
+    id: int = 0
+    sql1 = "DELETE FROM date"
     if consulta.execute(sql1):
-        files = consulta.fetchall()
-        print(files, "holaaa")
-        if files is None:
-            id = -1
-        else:
-            id = 1
-
-    if not id == -1:
-        sql = "DELETE FROM date"
-        consulta.execute(sql)
-
-    print("actualizo")
+        print("elimino fechas")
+    print("entro aqui")
     consulta.close()
     conexion.commit()
     conexion.close()
-    return id

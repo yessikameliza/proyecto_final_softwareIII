@@ -54,3 +54,4 @@ def updateDocent(name, state, limitHours, contract, phone, identification):
     consulta.close()
     conexion.commit()
     conexion.close()
+

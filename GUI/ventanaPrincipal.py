@@ -474,22 +474,17 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         //item.setText("ale")"""
         semester: int = 1
         hours: list = geneHours(semester, "Armenia")
-        i: int = 1
-        j: int = 0
+        i = 1
+        j = 0
         print("recibido en metodo prueba horario")
         print(hours)
         for h in hours:
-            if i <= 6:
-                item = self.tablaHorario.item(i, j)
-                item.setText(str(h))
-                i = i + 2
-                print("entro")
-            else:
+            item = self.tablaHorario.item(i, j)
+            item.setText(h)
+            if 11 == i:
                 j = j + 1
                 i = 1
-                item = self.tablaHorario.item(i, j)
-                item.setText(str(h))
-                i = i + 2
+            i = i + 2
         self.mostrarMensaje("Información", "¡Funciona el botón!", "", QMessageBox.Warning, False)
 
     def mostrarMensaje(self, titulo: str, texto: str, texto_informativo: str, tipo_mensaje: QMessageBox,
