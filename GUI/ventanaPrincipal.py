@@ -454,6 +454,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.ventana.show()
 
     def ventanaRegistroFecha(self):
+
         self.ventana = QtWidgets.QMainWindow()
         self.ui = Ui_Form()
         self.ui.setupUi(self.ventana)

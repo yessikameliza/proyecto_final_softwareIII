@@ -452,6 +452,7 @@ class Ui_Form(object):
         self.tabla3(4)
         self.tabla3(5)
         self.mostrarMensaje("Información", "¡Fechas registradas exitosamente!", "", QMessageBox.Warning, False)
+        self.pushButton.setEnabled(False)
 
     def tabla1(self, column):
 
