@@ -5,7 +5,7 @@ from DB.InsertarDatos import insertDate
 
 
 def upDate_Matter(codigo: str, name: str, ubi_Semester: int, numCredit: str, codRequisite: str, numHoursSem: int):
-    conexion = sqlite3.connect("dataBases.sqlite3")
+    conexion = sqlite3.connect("dataBase.sqlite3")
 
     consulta = conexion.cursor()
     # sql2 = """UPDATE matter
@@ -30,7 +30,7 @@ def upDate_Matter(codigo: str, name: str, ubi_Semester: int, numCredit: str, cod
 
 
 def updateDocent(name, state, limitHours, contract, phone, identification):
-    conexion = sqlite3.connect("dataBases.sqlite3")
+    conexion = sqlite3.connect("dataBase.sqlite3")
     consulta = conexion.cursor()
     # sql2 = """UPDATE matter
     # SET (codigo, name, ubi_Semester, numCredit, codRequisite, numHoursSem) WHERE codigo = 1 """

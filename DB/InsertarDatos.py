@@ -3,7 +3,7 @@
 import sqlite3
 
 def insertMatter(codigo: str, name: str, ubi_Semester: int, numCredit: str, codRequisite: str, numHoursSem: int):
-    conexion = sqlite3.connect("dataBases.sqlite3")
+    conexion = sqlite3.connect("dataBase.sqlite3")
 
     # Seleccionar el cursor para iniciar una consulta
     consulta = conexion.cursor()
@@ -39,7 +39,7 @@ def insertMatter(codigo: str, name: str, ubi_Semester: int, numCredit: str, codR
 
 
 def insertDocent(name: str, state: str, limitHours: int, contract: str, phone: str, identification: str):
-    conexion = sqlite3.connect("dataBases.sqlite3")
+    conexion = sqlite3.connect("dataBase.sqlite3")
 
     # Seleccionar el cursor para iniciar una consulta
     consulta = conexion.cursor()
@@ -77,7 +77,7 @@ def insertDocent(name: str, state: str, limitHours: int, contract: str, phone: s
 
 
 def insertDate(date: str, origin: str, idBlock: int, idents: str):
-    conexion = sqlite3.connect("dataBases.sqlite3")
+    conexion = sqlite3.connect("dataBase.sqlite3")
 
     # Seleccionar el cursor para iniciar una consulta
     consulta = conexion.cursor()
@@ -107,7 +107,7 @@ def insertDate(date: str, origin: str, idBlock: int, idents: str):
     conexion.close()
 
 def insertHour():
-    conexion = sqlite3.connect("dataBases.sqlite3")
+    conexion = sqlite3.connect("dataBase.sqlite3")
 
     # Seleccionar el cursor para iniciar una consulta
     consulta = conexion.cursor()
@@ -134,7 +134,7 @@ def insertHour():
     conexion.close()
 
 def insertarB():
-    conexion = sqlite3.connect("dataBases.sqlite3")
+    conexion = sqlite3.connect("dataBase.sqlite3")
     # Seleccionar el cursor para iniciar una consulta
     consulta = conexion.cursor()
     print("**** Programa para insertar datos en bases de datos sqlite3 ****")
