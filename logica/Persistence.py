@@ -16,6 +16,7 @@ from DB.Seleccionar_Datos import obtenerMatter
 from DB.Seleccionar_Datos import buscarMaterPorSemester
 from DB.Seleccionar_Datos import buscarhorainiciofin
 from DB.ActualizarDatos import updateDate
+from DB.Seleccionar_Datos import obtenerFechasHour
 
 
 def register_Matter(codigo: str, name: str, ubi_Semester: int, numCredit: str, codRequisite: str, numHoursSem: int):
@@ -84,6 +85,8 @@ def updateDatee(date: str, origin: str, idents: str):
 def obtener_Fecha(idents: str):
     return obtenerFechas(idents)
 
+def obtenerFechasP(idents: str, origin: str):
+    return obtenerFechasHour(idents, origin)
 
 def obtener_Matter():
     return obtenerMatter()

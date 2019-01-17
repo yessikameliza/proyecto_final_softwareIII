@@ -18,7 +18,8 @@ from GUI.eliminarDocente import eliminarDocente
 from GUI.primerasFechas import PrimerasFechas
 from GUI.fechasAlternas import FechasAlternas
 from GUI.pereiraDomingos import FechasPereira
-from logica.Persistence import geneHours
+from logica.Persistence import geneHours, obtener_Fecha
+from logica.Persistence import obtenerFechasP
 
 
 class Ui_MainWindow(QtWidgets.QMainWindow):
@@ -502,15 +503,25 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.ventana.show()
 
     def pruebaHorario(self):
-
         """item = self.tablaHorario.item(0, 1)
         //item.setText("ale")"""
         semester: int = 1
         hours: list = geneHours(semester, "Armenia")
         rows = 1
         col = 0
+        i = 0
+        j = 0
         print("recibido en metodo prueba horario")
         print(hours)
+        date: list = obtenerFechasP("Primeras fechas", "Encuentros tutoriales")
+        for d in date:
+            print("entrooooo date", i, j)
+            item = self.tablaHorario.item(i, j)
+            item.setText(d)
+            if 10 == i:
+                j = j + 1
+                i = -2
+            i = i + 2
         for h in hours:
             item = self.tablaHorario.item(rows, col)
             item.setText(h)
