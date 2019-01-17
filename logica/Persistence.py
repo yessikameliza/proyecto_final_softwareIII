@@ -1,8 +1,8 @@
 # coding: utf-8
 
-from GUI.InsertarDatos import insertMatter
-from GUI.InsertarDatos import insertDocent
-from GUI.InsertarDatos import insertDate
+from DB.InsertarDatos import insertMatter
+from DB.InsertarDatos import insertDocent
+from DB.InsertarDatos import insertDate
 from DB.Seleccionar_Datos import searchMatter
 from DB.ActualizarDatos import upDate_Matter
 from DB.EliminarDatos import deleteMatter
@@ -44,11 +44,11 @@ def register_Docent(name: str, state: str, limitHours: int, contract: str, phone
     insertDocent(nom, stat, limitHour, contra, phonen, identi)
 
 
-def register_Date(date: str, origin: str, ident: str):
+def register_Date(date: str, origin: str, idBlock: int, ident: str):
     datee = str(date)
     orige = str(origin)
     idents = str(ident)
-    insertDate(datee, orige, idents)
+    insertDate(datee, orige, idBlock, idents)
 
 
 def searchhMatter(codigo: str):
@@ -80,8 +80,8 @@ def delete_Date():
     return deleteDate()
 
 
-def updateDatee(date: str, origin: str, idents: str):
-    updateDate(date, origin, idents)
+def updateDatee(date: str, origin: str, idBlock: int, idents: str):
+    updateDate(date, origin, idBlock, idents)
 
 
 def obtener_Fecha(idents: str):

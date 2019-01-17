@@ -76,7 +76,7 @@ def insertDocent(name: str, state: str, limitHours: int, contract: str, phone: s
     conexion.close()
 
 
-def insertDate(date: str, origin: str, idents: str):
+def insertDate(date: str, origin: str, idBlock: int, idents: str):
     conexion = sqlite3.connect("dataBases.sqlite3")
 
     # Seleccionar el cursor para iniciar una consulta
@@ -86,9 +86,9 @@ def insertDate(date: str, origin: str, idents: str):
     # Capturar excepciones para los números enteros y decimal
     # Sólo números enteros
     # Valor de los argumentos
-    argumentos = (date, origin, idents)
-    sql = """INSERT INTO date (Date, origin, idents)
-    VALUES (?, ?, ?)"""
+    argumentos = (date, origin, idBlock, idents)
+    sql = """INSERT INTO date (Date, origin, id_block, idents)
+    VALUES (?, ?, ?, ?)"""
 
     # Realizar la consulta
     if consulta.execute(sql, argumentos):
