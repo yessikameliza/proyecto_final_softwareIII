@@ -106,6 +106,9 @@ def geneHours(semester: int, ciudad: str) -> list:
 def geneHoursPrimerS(semester, ciudad, horario: list):
     files: list = buscarMaterPorSemester(semester)
     fileshor: list = buscarhorainiciofin()
+    print("entro aquii")
+    print(files)
+    print(fileshor)
     for file in files:
         if file[2] == "Metodologia Educacion a Distancia":
             num: int = int(file[7])
@@ -113,9 +116,11 @@ def geneHoursPrimerS(semester, ciudad, horario: list):
             i = 0
             while i <= number:
                 if i + 1 == number:
-                    horario.insert(0, fileshor[0] + file[2])
+                    horario.insert(1, fileshor[0] + file[2])
                 else:
                     horario.insert(0, fileshor[0] + file[2] + fileshor[1] + file[2])
+                    print("este")
+                    print(horario)
                 i = i + 2
         else:
             num: int = int(file[7])
@@ -127,7 +132,8 @@ def geneHoursPrimerS(semester, ciudad, horario: list):
                 else:
                     horario.append(fileshor[0] + file[2] + fileshor[1] + file[2])
                 i = i + 2
-
+    print("horario final:")
+    print(horario)
     return horario
 
 

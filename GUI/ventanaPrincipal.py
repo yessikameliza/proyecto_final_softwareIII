@@ -472,41 +472,25 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
 
         """item = self.tablaHorario.item(0, 1)
         //item.setText("ale")"""
+        semester: int = 1
+        hours: list = geneHours(semester, "Armenia")
+        i: int = 1
+        j: int = 0
+        print("recibido en metodo prueba horario")
+        print(hours)
+        for h in hours:
+            if i <= 6:
+                item = self.tablaHorario.item(i, j)
+                item.setText(str(h))
+                i = i + 2
+                print("entro")
+            else:
+                j = j + 1
+                i = 1
+                item = self.tablaHorario.item(i, j)
+                item.setText(str(h))
+                i = i + 2
         self.mostrarMensaje("Información", "¡Funciona el botón!", "", QMessageBox.Warning, False)
-        semester: int = 1
-        hours: list = geneHours(semester, "Armenia")
-        i: int = 1
-        j: int = 0
-        for h in hours:
-            if i <= 6:
-                item = self.tablaHorario.item(i, j)
-                item.setText(h)
-                i = i + 2
-            else:
-                j = j + 1
-                i = 1
-                item = self.tablaHorario.item(i, j)
-                item.setText(h)
-                i = i + 2
-
-
-    def generarHPrimerSA(self, _translate):
-
-        semester: int = 1
-        hours: list = geneHours(semester, "Armenia")
-        i: int = 1
-        j: int = 0
-        for h in hours:
-            if i <= 6:
-                item = self.tablaHorario.item(i, j)
-                item.setText(_translate("MainWindow", h))
-                i = i + 2
-            else:
-                j = j + 1
-                i = 1
-                item = self.tablaHorario.item(i, j)
-                item.setText(_translate("MainWindow", h))
-                i = i + 2
 
     def mostrarMensaje(self, titulo: str, texto: str, texto_informativo: str, tipo_mensaje: QMessageBox,
                            estado: bool):
@@ -543,7 +527,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.btnGenerarHorBuga.setText(_translate("MainWindow", "Generar horario Buga"))
         self.label_4.setText(_translate("MainWindow", "Semestre a generar:"))
         self.groupBox_4.setTitle(_translate("MainWindow", "Información de horario"))
-        self.btnGenerarHorArmen.clicked.connect(lambda: self.generarHPrimerSA(_translate))
+        self.btnGenerarHorArmen.clicked.connect(self.pruebaHorario)
         item = self.tablaHorario.horizontalHeaderItem(0)
         item.setText(_translate("MainWindow", "BLOQUE A"))
         item = self.tablaHorario.horizontalHeaderItem(1)

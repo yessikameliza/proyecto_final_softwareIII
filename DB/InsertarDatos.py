@@ -2,11 +2,6 @@
 # IMPORTANTE convertir el script a la codificación UTF-8
 import sqlite3
 
-from logica.Date import Date
-from logica.Matter import Matter
-from logica.Docent import Docent
-
-
 def insertMatter(codigo: str, name: str, ubi_Semester: int, numCredit: str, codRequisite: str, numHoursSem: int):
     conexion = sqlite3.connect("dataBases.sqlite3")
 
@@ -106,6 +101,33 @@ def insertDate(date: str, origin: str, idents: str):
     consulta.close()
 
     # Guardar los cambios en la base de datos
+    conexion.commit()
+
+    # Cerrar la conexión
+    conexion.close()
+
+def insertHour():
+    conexion = sqlite3.connect("dataBases.sqlite3")
+
+    # Seleccionar el cursor para iniciar una consulta
+    consulta = conexion.cursor()
+    print("**** Programa para insertar datos en bases de datos sqlite3 ****")
+    horaInicio = input("Introduzca la hora inicio: ")
+    horaFin = input("Introduzca la hora fin: ")
+    argumentos = (horaInicio, horaFin)
+    sql = """
+    INSERT
+    INTO
+    hour(hour_ini, hour_fin)
+    VALUES(?, ?)"""
+     # Realizar la consulta
+    if consulta.execute(sql, argumentos):
+        print("Tabla creada con éxito")
+    else:
+        print("Ha ocurrido un error al crear la tabla")
+    # Cerrar la consulta
+    consulta.close()
+    #Guardar los cambios en la base de datos
     conexion.commit()
 
     # Cerrar la conexión

@@ -95,9 +95,12 @@ def buscarMaterPorSemester(semester):
     sql = "SELECT * FROM matter"
     if consulta.execute(sql):
         files = consulta.fetchall()
+        print("hola")
+        print(files)
         for fila in files:
-            if str(fila[3]) == semester:
+            if int(fila[3]) == int(semester):
                 filaa.append(fila)
+                print(filaa)
 
     consulta.close()
 
