@@ -490,7 +490,7 @@ class Ui_Form(object):
         self.mostrarMensaje("Información", "¡Fechas eliminadas!", "", QMessageBox.Warning, False)
 
     def actualizarFechas(self):
-
+        delete_Date()
         self.tabla11(0)
         self.tabla11(1)
         self.tabla11(2)

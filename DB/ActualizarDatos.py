@@ -61,5 +61,4 @@ def updateDocent(name, state, limitHours, contract, phone, identification):
 
 
 def updateDate(date: str, origin: str, idents: str):
-    deleteDate()
     insertDate(date, origin, idents)
