@@ -9,8 +9,9 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from logica.Persistence import register_Date
 from logica.Persistence import delete_Date
-from logica.Persistence import updateDatee
 from PyQt5.QtWidgets import QMessageBox
+from logica.Persistence import updateDatee
+
 
 class Ui_Form(object):
     message_box: QMessageBox
