@@ -460,29 +460,53 @@ class Ui_Form(object):
         for row in range(self.tableWidget.rowCount()):
             text = self.tableWidget.item(row, column).text()
 
-            print(column, "colun")
-            if column == 0 or column == 2 or column == 4:
-                register_Date(text, "Encuentros tutoriales", "Primeras fechas")
-            else:
-                register_Date(text, "Habilitaciones", "Primeras fechas")
+            if column == 0:
+                register_Date(text, "Encuentros tutoriales", "1", "Primeras fechas")
+            if column == 2:
+                register_Date(text, "Encuentros tutoriales", "2", "Primeras fechas")
+            if column == 4:
+                register_Date(text, "Encuentros tutoriales", "3", "Primeras fechas")
+            if column == 1:
+                register_Date(text, "Habilitaciones", "1", "Primeras fechas")
+            if column == 3:
+                register_Date(text, "Habilitaciones", "2", "Primeras fechas")
+            if column == 5:
+                register_Date(text, "Habilitaciones", "3", "Primeras fechas")
 
     def tabla2(self, column):
 
         for row2 in range(self.tableWidget_2.rowCount()):
             text2 = self.tableWidget_2.item(row2, column).text()
-            if column == 0 or column == 2 or column == 4:
-                register_Date(text2, "Encuentros tutoriales", "Fechas alternas")
-            else:
-                register_Date(text2, "Habilitaciones", "Fechas alternas")
+            if column == 0:
+                register_Date(text2, "Encuentros tutoriales", "1", "Fechas alternas")
+            if column == 2:
+                register_Date(text2, "Encuentros tutoriales", "2", "Fechas alternas")
+            if column == 4:
+                register_Date(text2, "Encuentros tutoriales", "3", "Fechas alternas")
+            if column == 1:
+                register_Date(text2, "Habilitaciones", "1", "Fechas alternas")
+            if column == 3:
+                register_Date(text2, "Habilitaciones", "2", "Fechas alternas")
+            if column == 5:
+                register_Date(text2, "Habilitaciones", "3", "Fechas alternas")
 
     def tabla3(self, column):
         for row3 in range(self.tableWidget_3.rowCount()):
             text3 = self.tableWidget_3.item(row3, column).text()
 
-            if column == 0 or column == 2 or column == 4:
-                 register_Date(text3, "Encuentros tutoriales", "Pereira domingos")
-            else:
-                 register_Date(text3, "Habilitaciones", "Pereira domingos")
+            if column == 0:
+                 register_Date(text3, "Encuentros tutoriales", "1", "Pereira domingos")
+            if column == 2:
+                register_Date(text3, "Encuentros tutoriales", "2", "Pereira domingos")
+            if column == 4:
+                register_Date(text3, "Encuentros tutoriales", "3", "Pereira domingos")
+            if column == 1:
+                 register_Date(text3, "Habilitaciones", "1", "Pereira domingos")
+            if column == 3:
+                 register_Date(text3, "Habilitaciones", "2", "Pereira domingos")
+            if column == 5:
+                 register_Date(text3, "Habilitaciones", "3", "Pereira domingos")
+
 
     def eliminarFechas(self):
         delete_Date()
