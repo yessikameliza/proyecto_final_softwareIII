@@ -13,7 +13,7 @@ from PyQt5.QtWidgets import QMessageBox
 from logica.Persistence import updateDatee
 
 
-class Ui_Form(object):
+class registroFechas(object):
     message_box: QMessageBox
 
     def setupUi(self, Form):
@@ -429,6 +429,7 @@ class Ui_Form(object):
         self.retranslateUi(Form)
         self.pushButton.clicked.connect(self.registrarFechas)
         self.pushButton_3.clicked.connect(self.eliminarFechas)
+        self.pushButton_2.clicked.connect(self.actualizarFechas)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
     def registrarFechas(self):
@@ -489,8 +490,53 @@ class Ui_Form(object):
         self.mostrarMensaje("Información", "¡Fechas eliminadas!", "", QMessageBox.Warning, False)
 
     def actualizarFechas(self):
-        self.mostrarMensaje("Información", "¡Fechas eliminadas!", "", QMessageBox.Warning, False)
-        # updateDate(
+
+        self.tabla11(0)
+        self.tabla11(1)
+        self.tabla11(2)
+        self.tabla11(3)
+        self.tabla11(4)
+        self.tabla11(5)
+        self.tabla22(0)
+        self.tabla22(1)
+        self.tabla22(2)
+        self.tabla22(3)
+        self.tabla22(4)
+        self.tabla22(5)
+        self.tabla33(0)
+        self.tabla33(1)
+        self.tabla33(2)
+        self.tabla33(3)
+        self.tabla33(4)
+        self.tabla33(5)
+        self.mostrarMensaje("Información", "¡Fechas actualizadas!", "", QMessageBox.Warning, False)
+
+    def tabla11(self, column):
+        for row in range(self.tableWidget.rowCount()):
+            text = self.tableWidget.item(row, column).text()
+
+            print(column, "colun")
+            if column == 0 or column == 2 or column == 4:
+                updateDatee(text, "Encuentros tutoriales", "Primeras fechas")
+            else:
+                updateDatee(text, "Habilitaciones", "Primeras fechas")
+
+    def tabla22(self, column):
+        for row2 in range(self.tableWidget_2.rowCount()):
+            text2 = self.tableWidget_2.item(row2, column).text()
+            if column == 0 or column == 2 or column == 4:
+                updateDatee(text2, "Encuentros tutoriales", "Fechas alternas")
+            else:
+                updateDatee(text2, "Habilitaciones", "Fechas alternas")
+
+    def tabla33(self, column):
+        for row3 in range(self.tableWidget_3.rowCount()):
+            text3 = self.tableWidget_3.item(row3, column).text()
+
+            if column == 0 or column == 2 or column == 4:
+                 updateDatee(text3, "Encuentros tutoriales", "Pereira domingos")
+            else:
+                 updateDatee(text3, "Habilitaciones", "Pereira domingos")
 
     def mostrarMensaje(self, titulo: str, texto: str, texto_informativo: str, tipo_mensaje: QMessageBox,
                        estado: bool):
