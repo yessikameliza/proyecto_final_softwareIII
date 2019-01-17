@@ -13,7 +13,7 @@ from PyQt5.QtWidgets import QMessageBox
 from logica.Persistence import updateDatee
 
 
-class registroFechas(object):
+class Ui_Form(object):
     message_box: QMessageBox
 
     def setupUi(self, Form):
