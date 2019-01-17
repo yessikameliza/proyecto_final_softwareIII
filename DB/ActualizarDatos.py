@@ -1,8 +1,7 @@
 # enconding: utf-8
 # IMPORTANTE codificar el script en UTF-8
 import sqlite3
-from DB.EliminarDatos import deleteDate
-from DB.InsertarDatos import insertDate
+from GUI.InsertarDatos import insertDate
 
 
 def upDate_Matter(codigo: str, name: str, ubi_Semester: int, numCredit: str, codRequisite: str, numHoursSem: int):

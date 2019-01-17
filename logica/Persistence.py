@@ -1,9 +1,8 @@
 # coding: utf-8
-from _ctypes import Array
 
-from DB.InsertarDatos import insertMatter
-from DB.InsertarDatos import insertDocent
-from DB.InsertarDatos import insertDate
+from GUI.InsertarDatos import insertMatter
+from GUI.InsertarDatos import insertDocent
+from GUI.InsertarDatos import insertDate
 from DB.Seleccionar_Datos import searchMatter
 from DB.ActualizarDatos import upDate_Matter
 from DB.EliminarDatos import deleteMatter
