@@ -1,7 +1,6 @@
 # enconding: utf-8
 # IMPORTANTE codificar el script en UTF-8
 import sqlite3
-from DB.EliminarDatos import deleteDate
 from DB.InsertarDatos import insertDate
 
 
@@ -60,6 +59,5 @@ def updateDocent(name, state, limitHours, contract, phone, identification):
     conexion.close()
 
 
-def updateDate(date: str, origin: str, idents: str):
-    deleteDate()
-    insertDate(date, origin, idents)
+def updateDate(date: str, origin: str, idBlock: int, idents: str):
+    insertDate(date, origin, idBlock, idents)

@@ -510,11 +510,12 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         hours: list = geneHours(semester, "Armenia")
         rows = 1
         col = 0
-        i = 0
+        i = 4
         j = 0
         print("recibido en metodo prueba horario")
         print(hours)
         date: list = obtenerFechasP("Primeras fechas", "Encuentros tutoriales")
+        print(date, "arreglo date")
         for d in date:
             print("entrooooo date", i, j)
             item = self.tablaHorario.item(i, j)

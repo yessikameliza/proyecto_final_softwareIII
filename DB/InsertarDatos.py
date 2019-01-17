@@ -76,7 +76,7 @@ def insertDocent(name: str, state: str, limitHours: int, contract: str, phone: s
     conexion.close()
 
 
-def insertDate(date: str, origin: str, idents: str):
+def insertDate(date: str, origin: str, idBlock: int, idents: str):
     conexion = sqlite3.connect("dataBases.sqlite3")
 
     # Seleccionar el cursor para iniciar una consulta
@@ -86,9 +86,9 @@ def insertDate(date: str, origin: str, idents: str):
     # Capturar excepciones para los números enteros y decimal
     # Sólo números enteros
     # Valor de los argumentos
-    argumentos = (date, origin, idents)
-    sql = """INSERT INTO date (Date, origin, idents)
-    VALUES (?, ?, ?)"""
+    argumentos = (date, origin, idBlock, idents)
+    sql = """INSERT INTO date (Date, origin, id_block, idents)
+    VALUES (?, ?, ?, ?)"""
 
     # Realizar la consulta
     if consulta.execute(sql, argumentos):
@@ -128,6 +128,29 @@ def insertHour():
     # Cerrar la consulta
     consulta.close()
     #Guardar los cambios en la base de datos
+    conexion.commit()
+
+    # Cerrar la conexión
+    conexion.close()
+
+def insertarB():
+    conexion = sqlite3.connect("dataBases.sqlite3")
+    # Seleccionar el cursor para iniciar una consulta
+    consulta = conexion.cursor()
+    print("**** Programa para insertar datos en bases de datos sqlite3 ****")
+    num = input("Introduzca el id ")
+    horaInicio = input("Introduzca el bloque ")
+    argumentos = (num, horaInicio)
+    sql = """INSERT INTO block(id_block, TypeBlock)
+        VALUES(?, ?)"""
+    # Realizar la consulta
+    if consulta.execute(sql, argumentos):
+        print("Tabla creada con éxito")
+    else:
+        print("Ha ocurrido un error al crear la tabla")
+    # Cerrar la consulta
+    consulta.close()
+    # Guardar los cambios en la base de datos
     conexion.commit()
 
     # Cerrar la conexión

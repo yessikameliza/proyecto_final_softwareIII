@@ -81,7 +81,8 @@ def obtenerFechasHour(idents: str, origin: str):
         for fila in files:
             if str(fila[4]) == idents:
                 if str(fila[2]) == origin:
-                    filaa.append(fila[1])
+                    if str(fila[1]) != "0":
+                        filaa.append(fila[1])
 
     consulta.close()
     conexion.commit()
