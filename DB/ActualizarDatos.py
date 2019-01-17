@@ -1,6 +1,8 @@
 # enconding: utf-8
 # IMPORTANTE codificar el script en UTF-8
 import sqlite3
+from DB.EliminarDatos import deleteDate
+from DB.InsertarDatos import insertDate
 
 
 def upDate_Matter(codigo: str, name: str, ubi_Semester: int, numCredit: str, codRequisite: str, numHoursSem: int):
@@ -26,6 +28,8 @@ def upDate_Matter(codigo: str, name: str, ubi_Semester: int, numCredit: str, cod
     consulta.close()
     conexion.commit()
     conexion.close()
+
+
 def updateDocent(name, state, limitHours, contract, phone, identification):
     conexion = sqlite3.connect("dataBases.sqlite3")
     consulta = conexion.cursor()
@@ -55,3 +59,7 @@ def updateDocent(name, state, limitHours, contract, phone, identification):
     conexion.commit()
     conexion.close()
 
+
+def updateDate(date: str, origin: str, idents: str):
+    deleteDate()
+    insertDate(date, origin, idents)

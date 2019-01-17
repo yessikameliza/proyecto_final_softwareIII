@@ -10,6 +10,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from logica.Persistence import register_Date
 from logica.Persistence import delete_Date
 from PyQt5.QtWidgets import QMessageBox
+from logica.Persistence import updateDate
 
 
 class Ui_Form(object):
@@ -486,6 +487,10 @@ class Ui_Form(object):
         self.tableWidget_2.clear()
         self.tableWidget_3.clear()
         self.mostrarMensaje("Información", "¡Fechas eliminadas!", "", QMessageBox.Warning, False)
+
+    def actualizarFechas(self):
+        self.mostrarMensaje("Información", "¡Fechas eliminadas!", "", QMessageBox.Warning, False)
+        # updateDate(
 
     def mostrarMensaje(self, titulo: str, texto: str, texto_informativo: str, tipo_mensaje: QMessageBox,
                        estado: bool):
