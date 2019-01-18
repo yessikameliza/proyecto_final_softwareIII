@@ -519,10 +519,11 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         s: list = obtenerdatosProfe(semester, city)
         col: int = 0
         rows: int = 0
-        for it in s:
-             print(it, "contenidoo")
+        for i in s:
+            for j in i:
+             print(j, "contenidoo")
         item = self.tablaInfoAcademica.item(rows, col)
-        
+
     def pruebaHorario(self):
         self.setearTabla()
         semester: int = int(self.spinSemestre.text())
