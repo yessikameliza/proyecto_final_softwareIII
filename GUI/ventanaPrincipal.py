@@ -438,7 +438,8 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.actionVer_fechas_alternas.triggered.connect(self.ventanaFechasAlternas)
         self.actionVer_fechas_pereira.triggered.connect(self.ventanaFechasPereira)
         self.btnGenerarHorArmen.clicked.connect(self.pruebaHorario)
-
+       # self.btnGenerarHorBuga.clicked.connect(self.pruebaHorario2)
+       #self.btnGenerarHorPer.clicked.connect(self.pruebaHorario3)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def ventanaFechasPereira(self):

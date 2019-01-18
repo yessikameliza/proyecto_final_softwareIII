@@ -311,12 +311,12 @@ class Ui_Form(object):
 
         self.pushButton_3.setObjectName("pushButton_3")
         self.label_4 = QtWidgets.QLabel(Form)
-        self.label_4.setGeometry(QtCore.QRect(480, 70, 251, 41))
+        self.label_4.setGeometry(QtCore.QRect(510, 40, 251, 41))
         self.label_4.setStyleSheet("font: 75 20pt \"Segoe Print\";\n"
                                    "color: rgb(0, 0, 0);")
         self.label_4.setObjectName("label_4")
         self.label_5 = QtWidgets.QLabel(Form)
-        self.label_5.setGeometry(QtCore.QRect(380, 30, 501, 41))
+        self.label_5.setGeometry(QtCore.QRect(410, 0, 501, 41))
         self.label_5.setStyleSheet("font: 75 20pt \"Segoe Print\";\n"
                                    "color: rgb(0, 0, 0);")
         self.label_5.setObjectName("label_5")
@@ -425,6 +425,54 @@ class Ui_Form(object):
         item = QtWidgets.QTableWidgetItem()
         self.tableWidget_2.setItem(5, 5, item)
         self.tableWidget_2.horizontalHeader().setDefaultSectionSize(137)
+
+        self.comboBoxDia1 = QtWidgets.QComboBox(Form)
+        self.comboBoxDia1.setGeometry(QtCore.QRect(400, 90, 69, 22))
+        self.comboBoxDia1.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.comboBoxDia1.setObjectName("comboBoxDia1")
+        self.comboBoxMes1 = QtWidgets.QComboBox(Form)
+        self.comboBoxMes1.setGeometry(QtCore.QRect(540, 90, 69, 22))
+        self.comboBoxMes1.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.comboBoxMes1.setObjectName("comboBoxMes1")
+        self.comboBoxDia2 = QtWidgets.QComboBox(Form)
+        self.comboBoxDia2.setGeometry(QtCore.QRect(760, 90, 69, 22))
+        self.comboBoxDia2.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.comboBoxDia2.setObjectName("comboBoxDia2")
+        self.comboBoxMes2 = QtWidgets.QComboBox(Form)
+        self.comboBoxMes2.setGeometry(QtCore.QRect(900, 90, 69, 22))
+        self.comboBoxMes2.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.comboBoxMes2.setObjectName("comboBoxMes2")
+        self.label_13 = QtWidgets.QLabel(Form)
+        self.label_13.setGeometry(QtCore.QRect(200, 90, 151, 31))
+        self.label_13.setStyleSheet("color: rgb(255, 255, 255);\n"
+                                    "font: 9pt \"Segoe Print\";")
+        self.label_13.setObjectName("label_13")
+        self.label_14 = QtWidgets.QLabel(Form)
+        self.label_14.setGeometry(QtCore.QRect(340, 90, 47, 20))
+        self.label_14.setStyleSheet("font: 8pt \"Segoe Print\";\n"
+                                    "color: rgb(255, 255, 255);")
+        self.label_14.setObjectName("label_14")
+        self.label_15 = QtWidgets.QLabel(Form)
+        self.label_15.setGeometry(QtCore.QRect(490, 90, 47, 21))
+        self.label_15.setStyleSheet("font: 8pt \"Segoe Print\";\n"
+                                    "color: rgb(255, 255, 255);")
+        self.label_15.setObjectName("label_15")
+        self.label_16 = QtWidgets.QLabel(Form)
+        self.label_16.setGeometry(QtCore.QRect(650, 90, 31, 21))
+        self.label_16.setStyleSheet("font: 8pt \"Segoe Print\";\n"
+                                    "color: rgb(255, 255, 255);")
+        self.label_16.setObjectName("label_16")
+        self.label_17 = QtWidgets.QLabel(Form)
+        self.label_17.setGeometry(QtCore.QRect(700, 90, 41, 20))
+        self.label_17.setStyleSheet("font: 8pt \"Segoe Print\";\n"
+                                    "color: rgb(255, 255, 255);")
+        self.label_17.setObjectName("label_17")
+        self.label_18 = QtWidgets.QLabel(Form)
+        self.label_18.setGeometry(QtCore.QRect(850, 90, 47, 21))
+        self.label_18.setStyleSheet("font: 8pt \"Segoe Print\";\n"
+                                    "color: rgb(255, 255, 255);")
+        self.label_18.setObjectName("label_18")
+
 
         self.retranslateUi(Form)
         self.pushButton.clicked.connect(self.registrarFechas)
@@ -821,8 +869,8 @@ class Ui_Form(object):
         self.pushButton.setText(_translate("Form", "REGISTRAR FECHAS"))
         self.pushButton_2.setText(_translate("Form", "ACTUALIZAR FECHAS"))
         self.pushButton_3.setText(_translate("Form", "ELIMINAR FECHAS"))
-        self.label_4.setText(_translate("Form", "<html><head/><body><p align=\"center\"><span style=\"  font-weight:600; color:#000000;\">Registro de fechas</span></p></body></html>"))
-        self.label_5.setText(_translate("Form", "<html><head/><body><p align=\"center\"><span style=\"  font-weight:600; color:#000000;\">Programación encuentros tutoriales</span></p></body></html>"))
+        self.label_4.setText(_translate("Form", "<html><head/><body><p align=\"center\"><span style=\"  font-size:16pt; color:#000000;\">Registro de fechas</span></p></body></html>"))
+        self.label_5.setText(_translate("Form", "<html><head/><body><p align=\"center\"><span style=\"  font-size:16pt; color:#000000;\">Programación encuentros tutoriales</span></p></body></html>"))
         item = self.tableWidget_2.verticalHeaderItem(0)
         item.setText(_translate("Form", "1"))
         item = self.tableWidget_2.verticalHeaderItem(1)
@@ -922,3 +970,16 @@ class Ui_Form(object):
         item = self.tableWidget_2.item(5, 5)
         item.setText(_translate("Form", "0"))
         self.tableWidget_2.setSortingEnabled(__sortingEnabled)
+        self.label_13.setText(_translate("Form", "<html><head/><body><p><span style=\" color:#000000\">INTRODUCTORIO:</span></p></body></html>"))
+        self.label_14.setText(
+            _translate("Form", "<html><head/><body><p><span style=\" font-size:10pt; color:#000000\">Dia:</span></p></body></html>"))
+        self.label_15.setText(
+            _translate("Form", "<html><head/><body><p><span style=\" font-size:10pt; color:#000000\">Mes:</span></p></body></html>"))
+        self.label_16.setText(
+            _translate("Form", "<html><head/><body><p><span style=\" font-size:10pt; color:#000000\">Y</span></p></body></html>"))
+        self.label_17.setText(
+            _translate("Form", "<html><head/><body><p><span style=\" font-size:10pt; color:#000000\">Dia:</span></p></body></html>"))
+        self.label_18.setText(
+            _translate("Form", "<html><head/><body><p><span style=\" font-size:10pt; color:#000000\">Mes:</span></p></body></html>"))
+
+
