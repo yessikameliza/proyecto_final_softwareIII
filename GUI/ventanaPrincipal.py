@@ -506,12 +506,15 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
     def pruebaHorario(self):
         """item = self.tablaHorario.item(0, 1)
         //item.setText("ale")"""
-        semester: int = 1
+        semester: int = int(self.spinSemestre.text())
+        print("este es el semestre", semester)
         hours: list = geneHours(semester, "Armenia")
         rows = 1
-        col = 0
-        i = 4
-        j = 0
+        i = 0
+        if semester == 1:
+            i = 4
+        else:
+            i = 0
         n = 1
         o = 1
         print("recibido en metodo prueba horario")
