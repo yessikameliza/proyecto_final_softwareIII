@@ -517,11 +517,13 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
 
     def llenartabla(self, semester, city):
         s: list = obtenerdatosProfe(semester, city)
+        col: int = 0
+        rows: int = 0
+        for it in s:
+          print(it, "contenidoo")
 
     def pruebaHorario(self):
         self.setearTabla()
-        """item = self.tablaHorario.item(0, 1)
-        //item.setText("ale")"""
         semester: int = int(self.spinSemestre.text())
         print("este es el semestre", semester)
         hours: list = geneHours(semester, "Armenia")
