@@ -503,7 +503,19 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.ui.setupUi(self.ventana)
         self.ventana.show()
 
+    def setearTabla(self):
+        i = 0
+        j = 0
+        while j < 3:
+            while i < 12:
+                item = self.tablaHorario.item(i, j)
+                item.setText("")
+                i = i + 1
+            j = j + 1
+            i = 0
+
     def pruebaHorario(self):
+        self.setearTabla()
         """item = self.tablaHorario.item(0, 1)
         //item.setText("ale")"""
         semester: int = int(self.spinSemestre.text())
