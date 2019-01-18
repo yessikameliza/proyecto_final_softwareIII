@@ -332,6 +332,25 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         font.setWeight(75)
         item.setFont(font)
         self.tablaInfoAcademica.setHorizontalHeaderItem(4, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tablaInfoAcademica.setItem(0, 0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tablaInfoAcademica.setItem(0, 1, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tablaInfoAcademica.setItem(0, 2, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tablaInfoAcademica.setItem(0, 3, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tablaInfoAcademica.setItem(1, 0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tablaInfoAcademica.setItem(1, 1, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tablaInfoAcademica.setItem(1, 2, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tablaInfoAcademica.setItem(2, 0, item)
+        item = QtWidgets.QTableWidgetItem()
+
+
         self.tablaInfoAcademica.horizontalHeader().setDefaultSectionSize(207)
         self.tablaInfoAcademica.horizontalHeader().setMinimumSectionSize(46)
         self.tablaInfoAcademica.verticalHeader().setDefaultSectionSize(26)
@@ -517,12 +536,18 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
 
     def llenartabla(self, semester, city):
         s: list = obtenerdatosProfe(semester, city)
+        a = [[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15]]
         col: int = 0
         rows: int = 0
-        for i in s:
+        for i in a:
             for j in i:
              print(j, "contenidoo")
-        item = self.tablaInfoAcademica.item(rows, col)
+             item = self.tablaInfoAcademica.item(rows, col)
+             item.setText(j)
+             if rows < 5:
+                   rows = rows+1
+            else:
+                   col = col+1
 
     def pruebaHorario(self):
         self.setearTabla()
