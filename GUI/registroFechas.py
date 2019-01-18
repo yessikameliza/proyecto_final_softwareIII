@@ -426,22 +426,38 @@ class Ui_Form(object):
         self.tableWidget_2.setItem(5, 5, item)
         self.tableWidget_2.horizontalHeader().setDefaultSectionSize(137)
 
-        self.comboBoxDia1 = QtWidgets.QComboBox(Form)
-        self.comboBoxDia1.setGeometry(QtCore.QRect(400, 90, 69, 22))
-        self.comboBoxDia1.setStyleSheet("background-color: rgb(255, 255, 255);")
-        self.comboBoxDia1.setObjectName("comboBoxDia1")
         self.comboBoxMes1 = QtWidgets.QComboBox(Form)
-        self.comboBoxMes1.setGeometry(QtCore.QRect(540, 90, 69, 22))
+        self.comboBoxMes1.setGeometry(QtCore.QRect(400, 90, 69, 22))
         self.comboBoxMes1.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.comboBoxMes1.setObjectName("comboBoxMes1")
-        self.comboBoxDia2 = QtWidgets.QComboBox(Form)
-        self.comboBoxDia2.setGeometry(QtCore.QRect(760, 90, 69, 22))
-        self.comboBoxDia2.setStyleSheet("background-color: rgb(255, 255, 255);")
-        self.comboBoxDia2.setObjectName("comboBoxDia2")
+        items1 = ('', 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre')
+        self.comboBoxMes1.addItems(items1)
+        self.comboBoxDia1 = QtWidgets.QComboBox(Form)
+        self.comboBoxDia1.setGeometry(QtCore.QRect(540, 90, 69, 22))
+        self.comboBoxDia1.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.comboBoxDia1.setObjectName("comboBoxDia1")
+        items2 = ('', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10',
+                  '11', '12', '13', '14', '15', '16', '17', '18', '19', '20',
+                  '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31')
+        self.comboBoxDia1.addItems(items2)
+
         self.comboBoxMes2 = QtWidgets.QComboBox(Form)
-        self.comboBoxMes2.setGeometry(QtCore.QRect(900, 90, 69, 22))
+        self.comboBoxMes2.setGeometry(QtCore.QRect(760, 90, 69, 22))
         self.comboBoxMes2.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.comboBoxMes2.setObjectName("comboBoxMes2")
+        items3 = ('', 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre',
+                  'Noviembre', 'Diciembre')
+        self.comboBoxMes2.addItems(items3)
+
+        self.comboBoxDia2 = QtWidgets.QComboBox(Form)
+        self.comboBoxDia2.setGeometry(QtCore.QRect(900, 90, 69, 22))
+        self.comboBoxDia2.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.comboBoxDia2.setObjectName("comboBoxDia2")
+        items4 = ('', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10',
+                  '11', '12', '13', '14', '15', '16', '17', '18', '19', '20',
+                  '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31')
+        self.comboBoxDia2.addItems(items4)
+
         self.label_13 = QtWidgets.QLabel(Form)
         self.label_13.setGeometry(QtCore.QRect(200, 90, 151, 31))
         self.label_13.setStyleSheet("color: rgb(255, 255, 255);\n"
@@ -500,6 +516,14 @@ class Ui_Form(object):
         self.tabla3(3)
         self.tabla3(4)
         self.tabla3(5)
+        dia1 = str(self.comboBoxDia1.currentText())
+        dia2 = str(self.comboBoxDia2.currentText())
+        mes1 = str(self.comboBoxMes1.currentText())
+        mes2 = str(self.comboBoxMes2.currentText())
+        fecha1 = mes1 + dia1
+        fecha2 = mes2 + dia2
+        register_Date(fecha1, "Encuentro tutoriales", 1, "inductorio")
+        register_Date(fecha2, "Encuentros tutoriales", 1, "inductorio")
         self.mostrarMensaje("Información", "¡Fechas registradas exitosamente!", "", QMessageBox.Warning, False)
         self.pushButton.setEnabled(False)
 
@@ -604,6 +628,14 @@ class Ui_Form(object):
         self.tabla33(3)
         self.tabla33(4)
         self.tabla33(5)
+        dia1 = str(self.comboBoxDia1.currentText())
+        dia2 = str(self.comboBoxDia2.currentText())
+        mes1 = str(self.comboBoxMes1.currentText())
+        mes2 = str(self.comboBoxMes2.currentText())
+        fecha1 = mes1 + dia1
+        fecha2 = mes2 + dia2
+        register_Date(fecha1, "Encuentro tutoriales", 1, "inductorio")
+        register_Date(fecha2, "Encuentros tutoriales", 1, "inductorio")
         self.mostrarMensaje("Información", "¡Fechas actualizadas!", "", QMessageBox.Warning, False)
 
     def tabla11(self, column):
@@ -972,14 +1004,14 @@ class Ui_Form(object):
         self.tableWidget_2.setSortingEnabled(__sortingEnabled)
         self.label_13.setText(_translate("Form", "<html><head/><body><p><span style=\" color:#000000\">INTRODUCTORIO:</span></p></body></html>"))
         self.label_14.setText(
-            _translate("Form", "<html><head/><body><p><span style=\" font-size:10pt; color:#000000\">Dia:</span></p></body></html>"))
-        self.label_15.setText(
             _translate("Form", "<html><head/><body><p><span style=\" font-size:10pt; color:#000000\">Mes:</span></p></body></html>"))
+        self.label_15.setText(
+            _translate("Form", "<html><head/><body><p><span style=\" font-size:10pt; color:#000000\">Dia:</span></p></body></html>"))
         self.label_16.setText(
             _translate("Form", "<html><head/><body><p><span style=\" font-size:10pt; color:#000000\">Y</span></p></body></html>"))
         self.label_17.setText(
-            _translate("Form", "<html><head/><body><p><span style=\" font-size:10pt; color:#000000\">Dia:</span></p></body></html>"))
-        self.label_18.setText(
             _translate("Form", "<html><head/><body><p><span style=\" font-size:10pt; color:#000000\">Mes:</span></p></body></html>"))
+        self.label_18.setText(
+            _translate("Form", "<html><head/><body><p><span style=\" font-size:10pt; color:#000000\">Dia:</span></p></body></html>"))
 
 
