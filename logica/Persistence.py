@@ -16,6 +16,7 @@ from DB.Seleccionar_Datos import buscarMaterPorSemester
 from DB.Seleccionar_Datos import buscarhorainiciofin
 from DB.ActualizarDatos import updateDate
 from DB.Seleccionar_Datos import obtenerFechasHour
+from DB.ActualizarDatos import updateBMa
 
 
 def register_Matter(codigo: str, name: str, ubi_Semester: int, numCredit: str, codRequisite: str, numHoursSem: int):
@@ -116,38 +117,61 @@ def geneHours(semester: int, ciudad: str) -> list:
 def geneHoursPrimerS(semester, ciudad, horario: list):
     files: list = buscarMaterPorSemester(semester)
     fileshor: list = buscarhorainiciofin()
+    auxlist: list = []
     print("entro aquii")
     print(files)
     print(fileshor)
-    l: int = 0
+    l = 0
     aux: str = ""
     for file in files:
-
-        print(aux, " esto es aux")
+        if l <= 2:
+            updateBMa(file[2], l)
+        elif 2 < l <= 4:
+            updateBMa(file[2], 2)
+        elif l > 4:
+            updateBMa(file[2], 3)
+        print(file[2], " esto es aux")
+        print(file[6], "esto es el bloque")
         if file[2] == "Metodologia Educacion a Distancia":
             num: int = int(file[7])
             number: int = int(num / 4)
             i = 0
             while i <= number:
                 if i + 1 == number:
-                    horario.insert(1, fileshor[0] + file[2])
+                    auxlist.append(fileshor[0] + file[2])
+                    auxlist.append(1)
+                    horario.insert(1, auxlist)
+                    auxlist = []
                 else:
-                    horario.insert(0, fileshor[0] + file[2] + fileshor[1] + file[2])
+                    auxlist.append(fileshor[0] + file[2] + "\t" + fileshor[1] + file[2])
+                    auxlist.append(1)
+                    horario.insert(0, auxlist)
+                    auxlist = []
                     print("este")
                     print(horario)
                 i = i + 2
         else:
+            # el if es para coger los valores intercalados
             if (l % 2) != 0:
                 if l < 5:
                     aux = (files[l + 1])[2]
+                else:
+                    aux = file[2]
                 num: int = int(file[7])
                 print("numero", num)
                 number: int = int(num / 4)
                 print("number", number)
                 i = 0
                 while i < number:
-                    horario.append(fileshor[0] + file[2] + fileshor[1] + aux)
-                    i = i + 1
+                    auxlist.append(fileshor[0] + file[2] + "\n" + fileshor[1] + aux)
+                    auxlist.append(file[6])
+                    horario.append(auxlist)
+                    auxlist = []
+                    if aux == file[2]:
+                        i = i + 2
+                    else:
+                        i = i + 1
+        aux = ""
         l = l + 1
     print("horario final:")
     print(horario)

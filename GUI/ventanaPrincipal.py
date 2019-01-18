@@ -512,25 +512,42 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         col = 0
         i = 4
         j = 0
+        n = 1
+        o = 1
         print("recibido en metodo prueba horario")
         print(hours)
         date: list = obtenerFechasP("Primeras fechas", "Encuentros tutoriales")
         print(date, "arreglo date")
         for d in date:
-            print("entrooooo date", i, j)
-            item = self.tablaHorario.item(i, j)
-            item.setText(d)
-            if 10 == i:
-                j = j + 1
-                i = -2
+            print("entrooooo date", d[3])
+            if d[3] != n:
+                i = 0
+            if d[3] == 1:
+                item = self.tablaHorario.item(i, 0)
+                item.setText(d[1])
+            elif d[3] == 2:
+                n = 2
+                item = self.tablaHorario.item(i, 1)
+                item.setText(d[1])
+            elif d[3] == 3:
+                n = 3
+                item = self.tablaHorario.item(i, 2)
+                item.setText(d[1])
             i = i + 2
         for h in hours:
-            item = self.tablaHorario.item(rows, col)
-            item.setText(h)
-
-            if 11 == rows:
-                col = col + 1
-                rows = -1
+            if h[1] != o:
+                rows = 1
+            if h[1] == 1:
+                item = self.tablaHorario.item(rows, 0)
+                item.setText(h[0])
+            elif h[1] == 2:
+                o = 2
+                item = self.tablaHorario.item(rows, 1)
+                item.setText(h[0])
+            elif h[1] == 3:
+                o = 3
+                item = self.tablaHorario.item(rows, 2)
+                item.setText(h[0])
             rows = rows + 2
             print(rows)
 

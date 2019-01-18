@@ -58,6 +58,29 @@ def updateDocent(name, state, limitHours, contract, phone, identification):
     conexion.commit()
     conexion.close()
 
+def updateBMa(nombre: str, idBlock: int):
+    conexion = sqlite3.connect("dataBase.sqlite3")
+    consulta = conexion.cursor()
+    # sql2 = """UPDATE matter
+    # SET (codigo, name, ubi_Semester, numCredit, codRequisite, numHoursSem) WHERE codigo = 1 """
+    sql1 = "SELECT * FROM matter"
+    if consulta.execute(sql1):
+        files = consulta.fetchall()
+        for fila in files:
+
+            if str(fila[2]) == nombre:
+                arg = (idBlock, fila[0])
+                sql = """UPDATE matter SET id_block = ?
+                          WHERE id_Matter = ? """
+                if consulta.execute(sql, arg):
+                    print("se actualizo el docente")
+                else:
+                    print("no actualizo")
+
+    print("actualizo")
+    consulta.close()
+    conexion.commit()
+    conexion.close()
 
 def updateDate(date: str, origin: str, idBlock: int, idents: str):
     insertDate(date, origin, idBlock, idents)
