@@ -138,12 +138,12 @@ def geneHoursPrimerS(semester, ciudad, horario: list):
             i = 0
             while i <= number:
                 if i + 1 == number:
-                    auxlist.append(fileshor[0] + file[2])
+                    auxlist.append(fileshor[0] + " " + file[2])
                     auxlist.append(file[6])
                     horario.insert(1, auxlist)
                     auxlist = []
                 else:
-                    auxlist.append(fileshor[0] + file[2] + "\t" + fileshor[1] + file[2])
+                    auxlist.append(fileshor[0] + " " + file[2] + "\t" + fileshor[1] + " " + file[2])
                     auxlist.append(file[6])
                     horario.insert(0, auxlist)
                     auxlist = []
@@ -163,7 +163,7 @@ def geneHoursPrimerS(semester, ciudad, horario: list):
                 print("number", number)
                 i = 0
                 while i < number:
-                    auxlist.append(fileshor[0] + file[2] + "\n" + fileshor[1] + aux)
+                    auxlist.append(fileshor[0] + " " + file[2] + "\n" + fileshor[1] + " " + aux)
                     auxlist.append(file[6])
                     horario.append(auxlist)
                     auxlist = []
@@ -210,7 +210,7 @@ def geneHoursSegundoS(semester, ciudad, horario: list):
             print("number", number)
             i = 0
             while i < number:
-                auxlist.append(fileshor[0] + file[2] + "\n" + fileshor[1] + aux)
+                auxlist.append(fileshor[0] + " " + file[2] + "\n" + fileshor[1] + " " + aux)
                 auxlist.append(file[6])
                 horario.append(auxlist)
                 auxlist = []
@@ -228,34 +228,86 @@ def geneHoursSegundoS(semester, ciudad, horario: list):
 def geneHoursTercerS(semester, ciudad, horario: list):
     files: list = buscarMaterPorSemester(semester)
     fileshor: list = buscarhorainiciofin()
+    auxlist: list = []
+    print("entro aquii")
+    print(files)
+    print(fileshor)
+    l = 0
+    aux: str = ""
     for file in files:
-        num: int = int(file[7])
-        number: int = int(num / 4)
-        i = 0
-        while i <= number:
-            if i + 1 == number:
-                horario.append(fileshor[0] + file[2])
+        # el if es para coger los valores intercalados
+        if (l % 2) == 0:
+            if l < 3:
+                aux = (files[l + 1])[2]
             else:
-                horario.append(fileshor[0] + file[2] + fileshor[1] + file[2])
-            i = i + 2
-
+                aux = file[2]
+            num: int = int(file[7])
+            print("numero", num)
+            number: int = int(num / 4)
+            print("number", number)
+            i = 0
+            while i < number:
+                if i < number/2:
+                    auxlist.append(fileshor[0] + " " + file[2] + "\n" + fileshor[1] + " " + aux)
+                    auxlist.append(1)
+                    horario.append(auxlist)
+                    auxlist = []
+                else:
+                    aux = (files[l+2])[2]
+                    print("este es el segunndo aux", aux)
+                    auxlist.append(fileshor[0] + " " + file[2] + "\n" + fileshor[1] + " " + aux)
+                    auxlist.append(2)
+                    horario.append(auxlist)
+                    auxlist = []
+                if aux == file[2]:
+                    i = i + 2
+                else:
+                    i = i + 1
+        return horario
+    print("horario final:")
+    print(horario)
     return horario
 
 
 def geneHoursCuartoS(semester, ciudad, horario: list):
     files: list = buscarMaterPorSemester(semester)
     fileshor: list = buscarhorainiciofin()
+    auxlist: list = []
+    print("entro aquii")
+    print(files)
+    print(fileshor)
+    l = 0
+    aux: str = ""
     for file in files:
+        if l <= 2:
+            updateBMa(file[2], 1)
+            print("entroo primera vez")
+        elif 2 < l < 4:
+            updateBMa(file[2], 2)
+        elif l >= 4:
+            updateBMa(file[2], 3)
         num: int = int(file[7])
+        print("numero", num)
         number: int = int(num / 4)
-        i = 0
-        while i <= number:
-            if i + 1 == number:
-                horario.append(fileshor[0] + file[2])
-            else:
-                horario.append(fileshor[0] + file[2] + fileshor[1] + file[2])
-            i = i + 2
-
+        if num == 12 or num == 16:
+            aux = (files[0])[2]
+            k = 0
+            while k < number:
+                print("entro condi", file[2])
+                auxlist.append(fileshor[0] + " " + aux + "\n" + fileshor[1] + " " + file[2])
+                auxlist.append(file[6])
+                horario.append(auxlist)
+                auxlist = []
+                k = k + 1
+        elif num == 8:
+            auxlist.append(fileshor[0] + " " + file[2] + "\n" + fileshor[1] + " " + file[2])
+            auxlist.append(file[6])
+            horario.append(auxlist)
+            auxlist = []
+        aux = ""
+        l = l + 1
+    print("horario final:")
+    print(horario)
     return horario
 
 
