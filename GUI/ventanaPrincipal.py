@@ -520,7 +520,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         col: int = 0
         rows: int = 0
         for it in s:
-          print(it, "contenidoo")
+             print(it, "contenidoo")
 
     def pruebaHorario(self):
         self.setearTabla()
