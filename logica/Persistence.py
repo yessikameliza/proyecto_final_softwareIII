@@ -126,10 +126,13 @@ def obtenerdatosProfe(semester: int, ciudad: str):
         auxx.append(f[1])
         auxx.append(f[2])
         auxx.append(f[5])
-        profe = searchDocentMatter(f[2], ciudad)
-        auxx.append(profe[1])
-        auxx.append(profe[5])
-        aux2.append(auxx)
+        profe: list = searchDocentMatter(f[2], ciudad)
+        print(profe, " este profe persis")
+
+        if profe is not None:
+            auxx.append(profe[1])
+            auxx.append(profe[5])
+            aux2.append(auxx)
         auxx = []
     return aux2
 
