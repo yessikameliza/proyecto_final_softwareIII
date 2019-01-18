@@ -78,7 +78,7 @@ class registroDocentes(object):
                                       "background-color: rgb(0, 51, 51);")
         self.btnLimpiar.setObjectName("btnLimpiar")
         self.comboAsignatura = QtWidgets.QComboBox(self.centralwidget)
-        self.comboAsignatura.setGeometry(QtCore.QRect(250, 480, 171, 31))
+        self.comboAsignatura.setGeometry(QtCore.QRect(250, 480, 241, 31))
         self.comboAsignatura.setStyleSheet("background-color: rgb(255, 255, 255);\n"
                                            "color: rgb(0, 0, 0);")
         self.comboAsignatura.setObjectName("comboAsignatura")
@@ -89,13 +89,13 @@ class registroDocentes(object):
             print(aux2)
             self.comboAsignatura.addItem(aux2)
 
-
-        self.btnAgregar = QtWidgets.QPushButton(self.centralwidget)
-        self.btnAgregar.setGeometry(QtCore.QRect(430, 480, 61, 31))
-        self.btnAgregar.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
-                                      "color: rgb(255, 255, 255);\n"
-                                      "background-color: rgb(0, 204, 102);")
-        self.btnAgregar.setObjectName("btnAgregar")
+        self.comboCiudad = QtWidgets.QComboBox(self.centralwidget)
+        self.comboCiudad.setGeometry(QtCore.QRect(250, 540, 241, 31))
+        self.comboCiudad.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+                                           "color: rgb(0, 0, 0);")
+        self.comboCiudad.setObjectName("comboCiudad")
+        itemsa = ('', 'Armenia', 'Pereira', 'Buga')
+        self.comboCiudad.addItems(itemsa)
         self.btnRegresar = QtWidgets.QPushButton(self.centralwidget)
         self.btnRegresar.setGeometry(QtCore.QRect(60, 640, 101, 31))
         self.btnRegresar.setStyleSheet("font: 75 10pt \"Segoe Print\";\n"
@@ -125,11 +125,15 @@ class registroDocentes(object):
         self.asignatura_4 = QtWidgets.QLabel(self.centralwidget)
         self.asignatura_4.setGeometry(QtCore.QRect(60, 480, 131, 31))
         self.asignatura_4.setStyleSheet("font: 75 8pt \"Segoe Print\";")
-        self.asignatura_4.setObjectName("asignatura_4")
+        self.asignatura_4.setObjectName("asignatura")
         self.asignatura_5 = QtWidgets.QLabel(self.centralwidget)
         self.asignatura_5.setGeometry(QtCore.QRect(60, 420, 131, 31))
         self.asignatura_5.setStyleSheet("font: 75 8pt \"Segoe Print\";")
-        self.asignatura_5.setObjectName("asignatura_5")
+        self.asignatura_5.setObjectName("Estado")
+        self.labelCiudad = QtWidgets.QLabel(self.centralwidget)
+        self.labelCiudad.setGeometry(QtCore.QRect(60, 540, 131, 31))
+        self.labelCiudad.setStyleSheet("font: 75 8pt \"Segoe Print\";")
+        self.labelCiudad.setObjectName("Ciudad")
         self.comboEstado = QtWidgets.QComboBox(self.centralwidget)
         self.comboEstado.setGeometry(QtCore.QRect(250, 420, 241, 31))
         self.comboEstado.setStyleSheet("background-color: rgb(255, 255, 255);\n"
@@ -173,6 +177,7 @@ class registroDocentes(object):
         iden = self.txtIdent.toPlainText()
         esta = str(self.comboEstado.currentText())
         asig = str(self.comboAsignatura.currentText())
+        ciudad = str(self.comboCiudad.currentText())
         limit = int(lim)
         name = str(nomb)
         type = str(tipo)
@@ -231,7 +236,6 @@ class registroDocentes(object):
                                      "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#000000;\">Tipo:</span></p></body></html>"))
         self.btnAceptar.setText(_translate("MainWindow", "ACEPTAR"))
         self.btnLimpiar.setText(_translate("MainWindow", "LIMPIAR"))
-        self.btnAgregar.setText(_translate("MainWindow", "+"))
         self.btnRegresar.setText(_translate("MainWindow", "REGRESAR"))
         self.asignatura_2.setText(_translate("MainWindow",
                                              "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#000000;\">Limite de horas:</span></p><p><br/></p></body></html>"))
@@ -241,3 +245,5 @@ class registroDocentes(object):
                                              "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#000000;\">Asignatura:</span></p></body></html>"))
         self.asignatura_5.setText(_translate("MainWindow",
                                              "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#000000;\">Estado:</span></p><p><br/></p></body></html>"))
+        self.labelCiudad.setText(_translate("MainWindow",
+                                             "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#000000;\">Ciudad:</span></p><p><br/></p></body></html>"))
