@@ -18,6 +18,7 @@ from DB.ActualizarDatos import updateDate
 from DB.Seleccionar_Datos import obtenerFechasHour
 from DB.ActualizarDatos import updateBMa
 from DB.Seleccionar_Datos import obtenerFechaInduc
+from DB.Seleccionar_Datos import searchDocentMatter
 
 def register_Matter(codigo: str, name: str, ubi_Semester: int, numCredit: str, codRequisite: str, numHoursSem: int):
     cod = str(codigo)
@@ -29,7 +30,8 @@ def register_Matter(codigo: str, name: str, ubi_Semester: int, numCredit: str, c
     insertMatter(cod, nam, ubi_Semeste, numCredi, codRequisit, numHoursSema)
 
 
-def register_Docent(name: str, state: str, limitHours: int, contract: str, phone: str, identification: str, matter: str):
+def register_Docent(name: str, state: str, limitHours: int, contract: str, phone: str, identification: str,
+                    matter: str, city: str):
     nom: str = name
     stat: str = state
     limitHour: int = limitHours
@@ -42,7 +44,7 @@ def register_Docent(name: str, state: str, limitHours: int, contract: str, phone
     print(phonen)
     print(nom)
     print(identi)
-    insertDocent(nom, stat, limitHour, contra, phonen, identi, matter)
+    insertDocent(nom, stat, limitHour, contra, phonen, identi, matter, city)
 
 
 def register_Date(date: str, origin: str, idBlock: int, ident: str):
@@ -68,8 +70,9 @@ def search_Docent(ident: str):
     return searchDocent(ident)
 
 
-def update_Docent(name: str, state: str, limitHours: int, contract: str, phone: str, identification: str):
-    updateDocent(name, state, limitHours, contract, phone, identification)
+def update_Docent(name: str, state: str, limitHours: int, contract: str, phone: str, identification: str, matter: str,
+                  city: str):
+    updateDocent(name, state, limitHours, contract, phone, identification, matter, city)
 
 
 def delete_Docent(identification: str):
@@ -114,6 +117,19 @@ def geneHours(semester: int, ciudad: str) -> list:
     elif semester == 6:
         return geneHoursSextoS(semester, ciudad, hours)
     return None
+
+def obtenerdatosProfe(semester: int):
+    auxx: list = []
+    files: list = buscarMaterPorSemester(semester)
+    aux2: list = []
+    for f in files:
+        auxx.append(f[1])
+        auxx.append(f[2])
+        profe = searchDocentMatter(f[2])
+        auxx.append(profe[1])
+        auxx.append(profe[5])
+        aux2.append(auxx)
+        auxx = []
 
 
 def geneHoursPrimerS(semester, ciudad, horario: list):

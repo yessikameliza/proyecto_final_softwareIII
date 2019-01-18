@@ -29,7 +29,7 @@ def upDate_Matter(codigo: str, name: str, ubi_Semester: int, numCredit: str, cod
     conexion.close()
 
 
-def updateDocent(name, state, limitHours, contract, phone, identification):
+def updateDocent(name, state, limitHours, contract, phone, identification, matter, city):
     conexion = sqlite3.connect("dataBase.sqlite3")
     consulta = conexion.cursor()
     # sql2 = """UPDATE matter
@@ -44,8 +44,9 @@ def updateDocent(name, state, limitHours, contract, phone, identification):
                 id = int(fila[0])
                 print(id)
 
-    arg = (name, state, limitHours, contract, phone, identification, id)
-    sql = """UPDATE docent SET name = ?, estate = ?, limitHoras = ?, contract = ?, phone = ?, identification = ?
+    arg = (name, state, limitHours, contract, phone, identification, matter, city, id)
+    sql = """UPDATE docent SET name = ?, estate = ?, limitHoras = ?, contract = ?, phone = ?, identification = ?,
+     matter= ?, city= ?
       WHERE id_Docent = ? """
 
     if consulta.execute(sql, arg):

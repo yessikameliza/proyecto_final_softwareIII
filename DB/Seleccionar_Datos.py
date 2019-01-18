@@ -45,6 +45,25 @@ def searchDocent(ident: str):
     conexion.close()
     return filaa
 
+def searchDocentMatter(matter: str):
+    conexion = sqlite3.connect("dataBase.sqlite3")
+    consulta = conexion.cursor()
+
+    # Extrayendo todas las filas
+    filaa: Any = None
+    sql = "SELECT * FROM docent"
+    if consulta.execute(sql):
+        files = consulta.fetchall()
+        for fila in files:
+            if str(fila[7]) == matter:
+                print("entro aquí")
+                return fila
+
+    consulta.close()
+
+    conexion.commit()
+    conexion.close()
+    return filaa
 
 def obtenerFechas(idents: str):
     conexion = sqlite3.connect("dataBase.sqlite3")
