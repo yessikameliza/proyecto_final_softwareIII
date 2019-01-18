@@ -314,32 +314,91 @@ def geneHoursCuartoS(semester, ciudad, horario: list):
 def geneHoursQuintoS(semester, ciudad, horario: list):
     files: list = buscarMaterPorSemester(semester)
     fileshor: list = buscarhorainiciofin()
+    auxlist: list = []
+    print("entro aquii")
+    print(files)
+    print(fileshor)
+    l = 0
+    aux: str = ""
     for file in files:
-        num: int = int(file[7])
-        number: int = int(num / 4)
-        i = 0
-        while i <= number:
-            if i + 1 == number:
-                horario.append(fileshor[0] + file[2])
+        if l < 2:
+            updateBMa(file[2], 1)
+            print("entroo primera vez")
+        elif 2 <= l < 4:
+            updateBMa(file[2], 2)
+        elif l >= 4:
+            updateBMa(file[2], 3)
+        print(file[2], " esto es aux")
+        print(file[6], "esto es el bloque")
+        print(file)
+        # el if es para coger los valores intercalados
+        if (l % 2) == 0:
+            if l < 4:
+                aux = (files[l + 1])[2]
             else:
-                horario.append(fileshor[0] + file[2] + fileshor[1] + file[2])
-            i = i + 2
-
+                aux = file[2]
+            num: int = int(file[7])
+            print("numero", num)
+            number: int = int(num / 4)
+            print("number", number)
+            i = 0
+            while i < number:
+                auxlist.append(fileshor[0] + " " + file[2] + "\n" + fileshor[1] + " " + aux)
+                auxlist.append(file[6])
+                horario.append(auxlist)
+                auxlist = []
+                if aux == file[2]:
+                    i = i + 2
+                else:
+                    i = i + 1
+        aux = ""
+        l = l + 1
+    print("horario final:")
+    print(horario)
     return horario
-
 
 def geneHoursSextoS(semester, ciudad, horario: list):
     files: list = buscarMaterPorSemester(semester)
     fileshor: list = buscarhorainiciofin()
+    auxlist: list = []
+    print("entro aquii")
+    print(files)
+    print(fileshor)
+    l = 0
+    aux: str = ""
     for file in files:
-        num: int = int(file[7])
-        number: int = int(num / 4)
-        i = 0
-        while i <= number:
-            if i + 1 == number:
-                horario.append(fileshor[0] + file[2])
+        if l < 2:
+            updateBMa(file[2], 1)
+            print("entroo primera vez")
+        elif 2 <= l < 4:
+            updateBMa(file[2], 2)
+        elif l >= 4:
+            updateBMa(file[2], 3)
+        print(file[2], " esto es aux")
+        print(file[6], "esto es el bloque")
+        print(file)
+        # el if es para coger los valores intercalados
+        if (l % 2) == 0:
+            if l < 4:
+                aux = (files[l + 1])[2]
             else:
-                horario.append(fileshor[0] + file[2] + fileshor[1] + file[2])
-            i = i + 2
-
+                aux = file[2]
+            num: int = int(file[7])
+            print("numero", num)
+            number: int = int(num / 4)
+            print("number", number)
+            i = 0
+            while i < number:
+                auxlist.append(fileshor[0] + " " + file[2] + "\n" + fileshor[1] + " " + aux)
+                auxlist.append(file[6])
+                horario.append(auxlist)
+                auxlist = []
+                if aux == file[2]:
+                    i = i + 2
+                else:
+                    i = i + 1
+        aux = ""
+        l = l + 1
+    print("horario final:")
+    print(horario)
     return horario
