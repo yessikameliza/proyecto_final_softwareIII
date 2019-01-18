@@ -54,12 +54,11 @@ def searchDocentMatter(matter: str, ciudad: str):
     sql = "SELECT * FROM docent"
     if consulta.execute(sql):
         files = consulta.fetchall()
+        print(files, " profes")
         for fila in files:
             if str(fila[7]) == matter:
                 if str(fila[8]) == ciudad:
-                    print("entro aquí")
                     return fila
-
     consulta.close()
 
     conexion.commit()
