@@ -438,8 +438,8 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.actionVer_fechas_alternas.triggered.connect(self.ventanaFechasAlternas)
         self.actionVer_fechas_pereira.triggered.connect(self.ventanaFechasPereira)
         self.btnGenerarHorArmen.clicked.connect(self.pruebaHorario)
-       # self.btnGenerarHorBuga.clicked.connect(self.pruebaHorario2)
-       #self.btnGenerarHorPer.clicked.connect(self.pruebaHorario3)
+        self.btnGenerarHorBuga.clicked.connect(self.pruebaHorario2)
+        self.btnGenerarHorPer.clicked.connect(self.pruebaHorario3)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def ventanaFechasPereira(self):
@@ -571,6 +571,109 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 item.setText(h[0])
             rows = rows + 2
             print(rows)
+
+    def pruebaHorario2(self):
+        self.setearTabla()
+        semester: int = int(self.spinSemestre.text())
+        hours: list = geneHours(semester, "Armenia")
+        rows = 1
+        i = 0
+        if semester == 1:
+            i = 4
+            dateInduc: list = obtenerFInduct("inductorio")
+            item = self.tablaHorario.item(0, 0)
+            item.setText((dateInduc[0])[1])
+            item = self.tablaHorario.item(2, 0)
+            item.setText((dateInduc[1])[1])
+        else:
+            i = 0
+        n = 1
+        o = 1
+        print("recibido en metodo prueba horario")
+        print(hours)
+        date: list = obtenerFechasP("Fechas alternas", "Encuentros tutoriales")
+        print(date, "arreglo date")
+        for d in date:
+            print("entrooooo date", d[3])
+            if d[3] != n:
+                i = 0
+            if d[3] == 1:
+                item = self.tablaHorario.item(i, 0)
+                item.setText(d[1])
+            elif d[3] == 2:
+                n = 2
+                item = self.tablaHorario.item(i, 1)
+                item.setText(d[1])
+            elif d[3] == 3:
+                n = 3
+                item = self.tablaHorario.item(i, 2)
+                item.setText(d[1])
+            i = i + 2
+        for h in hours:
+            if h[1] != o:
+                rows = 1
+            if h[1] == 1:
+                item = self.tablaHorario.item(rows, 0)
+                item.setText(h[0])
+            elif h[1] == 2:
+                o = 2
+                item = self.tablaHorario.item(rows, 1)
+                item.setText(h[0])
+            elif h[1] == 3:
+                o = 3
+                item = self.tablaHorario.item(rows, 2)
+                item.setText(h[0])
+            rows = rows + 2
+            print(rows)
+
+    def pruebaHorario3(self):
+        self.setearTabla()
+        semester: int = int(self.spinSemestre.text())
+        hours: list = geneHours(semester, "Armenia")
+        rows = 1
+        i = 0
+        if semester == 1:
+            i = 4
+            dateInduc: list = obtenerFInduct("inductorio")
+            item = self.tablaHorario.item(0, 0)
+            item.setText((dateInduc[0])[1])
+            item = self.tablaHorario.item(2, 0)
+            item.setText((dateInduc[1])[1])
+        else:
+            i = 0
+        n = 1
+        o = 1
+        date: list = obtenerFechasP("Fechas alternas", "Encuentros tutoriales")
+        for d in date:
+            if d[3] != n:
+                i = 0
+            if d[3] == 1:
+                item = self.tablaHorario.item(i, 0)
+                item.setText(d[1])
+            elif d[3] == 2:
+                n = 2
+                item = self.tablaHorario.item(i, 1)
+                item.setText(d[1])
+            elif d[3] == 3:
+                n = 3
+                item = self.tablaHorario.item(i, 2)
+                item.setText(d[1])
+            i = i + 2
+        for h in hours:
+            if h[1] != o:
+                rows = 1
+            if h[1] == 1:
+                item = self.tablaHorario.item(rows, 0)
+                item.setText(h[0])
+            elif h[1] == 2:
+                o = 2
+                item = self.tablaHorario.item(rows, 1)
+                item.setText(h[0])
+            elif h[1] == 3:
+                o = 3
+                item = self.tablaHorario.item(rows, 2)
+                item.setText(h[0])
+            rows = rows + 2
 
     def mostrarMensaje(self, titulo: str, texto: str, texto_informativo: str, tipo_mensaje: QMessageBox,
                            estado: bool):
