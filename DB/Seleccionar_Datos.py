@@ -68,6 +68,26 @@ def obtenerFechas(idents: str):
     conexion.close()
     return filaa
 
+def obtenerFechaInduc(idents: str):
+    conexion = sqlite3.connect("dataBase.sqlite3")
+    consulta = conexion.cursor()
+
+    # Extrayendo todas las filas
+    filaa = []
+
+    sql = "SELECT * FROM date"
+    if consulta.execute(sql):
+        files = consulta.fetchall()
+        for fila in files:
+            if str(fila[4]) == idents:
+                    if str(fila[1]) != "0":
+                        filaa.append(fila)
+
+    consulta.close()
+    conexion.commit()
+    conexion.close()
+    return filaa
+
 def obtenerFechasHour(idents: str, origin: str):
     conexion = sqlite3.connect("dataBase.sqlite3")
     consulta = conexion.cursor()

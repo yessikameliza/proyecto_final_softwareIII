@@ -20,7 +20,7 @@ from GUI.fechasAlternas import FechasAlternas
 from GUI.pereiraDomingos import FechasPereira
 from logica.Persistence import geneHours, obtener_Fecha
 from logica.Persistence import obtenerFechasP
-
+from logica.Persistence import obtenerFInduct
 
 class Ui_MainWindow(QtWidgets.QMainWindow):
     def setupUi(self, MainWindow):
@@ -526,6 +526,11 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         i = 0
         if semester == 1:
             i = 4
+            dateInduc: list = obtenerFInduct("inductorio")
+            item = self.tablaHorario.item(0, 0)
+            item.setText((dateInduc[0])[1])
+            item = self.tablaHorario.item(2, 0)
+            item.setText((dateInduc[1])[1])
         else:
             i = 0
         n = 1

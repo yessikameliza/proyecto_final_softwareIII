@@ -17,7 +17,7 @@ from DB.Seleccionar_Datos import buscarhorainiciofin
 from DB.ActualizarDatos import updateDate
 from DB.Seleccionar_Datos import obtenerFechasHour
 from DB.ActualizarDatos import updateBMa
-
+from DB.Seleccionar_Datos import obtenerFechaInduc
 
 def register_Matter(codigo: str, name: str, ubi_Semester: int, numCredit: str, codRequisite: str, numHoursSem: int):
     cod = str(codigo)
@@ -96,6 +96,8 @@ def obtenerFechasP(idents: str, origin: str):
 def obtener_Matter():
     return obtenerMatter()
 
+def obtenerFInduct(idents: str):
+    return obtenerFechaInduc(idents)
 
 def geneHours(semester: int, ciudad: str) -> list:
     hours: list = []
