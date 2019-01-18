@@ -172,6 +172,7 @@ class registroDocentes(object):
         tel = self.txtTelefono.toPlainText()
         iden = self.txtIdent.toPlainText()
         esta = str(self.comboEstado.currentText())
+        asig = str(self.comboAsignatura.currentText())
         limit = int(lim)
         name = str(nomb)
         type = str(tipo)
@@ -181,7 +182,7 @@ class registroDocentes(object):
         if len(nomb) == 0 | len(tipo) == 0 | len(lim) == 0 | len(tel) == 0 | len(iden) == 0 | len(esta) == 0:
             self.mostrarMensaje("Alerta", "¡Hay campos vacios!", "", QMessageBox.Warning, False)
         else:
-            register_Docent(name, esta, limit, type, phone, ident)
+            register_Docent(name, esta, limit, type, phone, ident, asig)
             self.mostrarMensaje("Información", "¡Datos registrados con exito!", "", QMessageBox.Warning, False)
 
     # Back up the reference to the exceptionhook
