@@ -29,7 +29,7 @@ def register_Matter(codigo: str, name: str, ubi_Semester: int, numCredit: str, c
     insertMatter(cod, nam, ubi_Semeste, numCredi, codRequisit, numHoursSema)
 
 
-def register_Docent(name: str, state: str, limitHours: int, contract: str, phone: str, identification: str):
+def register_Docent(name: str, state: str, limitHours: int, contract: str, phone: str, identification: str, matter: str):
     nom: str = name
     stat: str = state
     limitHour: int = limitHours
@@ -42,7 +42,7 @@ def register_Docent(name: str, state: str, limitHours: int, contract: str, phone
     print(phonen)
     print(nom)
     print(identi)
-    insertDocent(nom, stat, limitHour, contra, phonen, identi)
+    insertDocent(nom, stat, limitHour, contra, phonen, identi, matter)
 
 
 def register_Date(date: str, origin: str, idBlock: int, ident: str):

@@ -38,7 +38,7 @@ def insertMatter(codigo: str, name: str, ubi_Semester: int, numCredit: str, codR
     conexion.close()
 
 
-def insertDocent(name: str, state: str, limitHours: int, contract: str, phone: str, identification: str):
+def insertDocent(name: str, state: str, limitHours: int, contract: str, phone: str, identification: str, matter: str):
     conexion = sqlite3.connect("dataBase.sqlite3")
 
     # Seleccionar el cursor para iniciar una consulta
@@ -48,13 +48,13 @@ def insertDocent(name: str, state: str, limitHours: int, contract: str, phone: s
     # Capturar excepciones para los números enteros y decimal
     # Sólo números enteros
     # Valor de los argumentos
-    argumentos = (name, state, limitHours, contract, phone, identification)
+    argumentos = (name, state, limitHours, contract, phone, identification, matter)
     # argumentos2 = TypeBlock
     # consulta SQL con argumentos ?, ?, ?, ?, ?
     # sql2 = """INSERT INTO block (TypeBlock)
     # VALUES (?)"""
-    sql = """INSERT INTO docent (name, estate, limitHoras, contract, phone, identification)
-    VALUES (?, ?, ?, ?, ?, ?)"""
+    sql = """INSERT INTO docent (name, estate, limitHoras, contract, phone, identification, matter)
+    VALUES (?, ?, ?, ?, ?, ?, ?)"""
     #sql2 = """SELECT * FROM docent WHERE identification = identification """
     # consulta.execute(sql2)
 
