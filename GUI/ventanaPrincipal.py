@@ -518,7 +518,6 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
     def llenartabla(self, semester, city):
         s: list = obtenerdatosProfe(semester, city)
 
-
     def pruebaHorario(self):
         self.setearTabla()
         """item = self.tablaHorario.item(0, 1)
@@ -581,6 +580,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.setearTabla()
         semester: int = int(self.spinSemestre.text())
         hours: list = geneHours(semester, "Armenia")
+        self.llenartabla(semester, "Buga")
         rows = 1
         i = 0
         if semester == 1:
@@ -635,6 +635,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.setearTabla()
         semester: int = int(self.spinSemestre.text())
         hours: list = geneHours(semester, "Armenia")
+        self.llenartabla(semester, "Pereira")
         rows = 1
         i = 0
         if semester == 1:
