@@ -567,17 +567,17 @@ class Ui_Form(object):
             text3 = self.tableWidget_3.item(row3, column).text()
 
             if column == 0:
-                 register_Date(text3, "Encuentros tutoriales", 1, "Pereira domingos")
+                register_Date(text3, "Encuentros tutoriales", 1, "Pereira domingos")
             if column == 2:
                 register_Date(text3, "Encuentros tutoriales", 2, "Pereira domingos")
             if column == 4:
                 register_Date(text3, "Encuentros tutoriales", 3, "Pereira domingos")
             if column == 1:
-                 register_Date(text3, "Habilitaciones", 1, "Pereira domingos")
+                register_Date(text3, "Habilitaciones", 1, "Pereira domingos")
             if column == 3:
-                 register_Date(text3, "Habilitaciones", 2, "Pereira domingos")
+                register_Date(text3, "Habilitaciones", 2, "Pereira domingos")
             if column == 5:
-                 register_Date(text3, "Habilitaciones", 3, "Pereira domingos")
+                register_Date(text3, "Habilitaciones", 3, "Pereira domingos")
 
     def eliminarFechas(self):
         delete_Date()
@@ -634,36 +634,59 @@ class Ui_Form(object):
         mes2 = str(self.comboBoxMes2.currentText())
         fecha1 = mes1 + dia1
         fecha2 = mes2 + dia2
-        register_Date(fecha1, "Encuentro tutoriales", 1, "inductorio")
-        register_Date(fecha2, "Encuentros tutoriales", 1, "inductorio")
+        updateDatee(fecha1, "Encuentro tutoriales", 1, "inductorio")
+        updateDatee(fecha2, "Encuentros tutoriales", 1, "inductorio")
         self.mostrarMensaje("Información", "¡Fechas actualizadas!", "", QMessageBox.Warning, False)
 
     def tabla11(self, column):
         for row in range(self.tableWidget.rowCount()):
             text = self.tableWidget.item(row, column).text()
 
-            print(column, "colun")
-            if column == 0 or column == 2 or column == 4:
-                updateDatee(text, "Encuentros tutoriales", "Primeras fechas")
-            else:
-                updateDatee(text, "Habilitaciones", "Primeras fechas")
+            if column == 0:
+                updateDatee(text, "Encuentros tutoriales", 1, "Primeras fechas")
+            if column == 2:
+                updateDatee(text, "Encuentros tutoriales", 2, "Primeras fechas")
+            if column == 4:
+                updateDatee(text, "Encuentros tutoriales", 3, "Primeras fechas")
+            if column == 1:
+                updateDatee(text, "Habilitaciones", 1, "Primeras fechas")
+            if column == 3:
+                updateDatee(text, "Habilitaciones", 2, "Primeras fechas")
+            if column == 5:
+                updateDatee(text, "Habilitaciones", 3, "Primeras fechas")
 
     def tabla22(self, column):
         for row2 in range(self.tableWidget_2.rowCount()):
             text2 = self.tableWidget_2.item(row2, column).text()
-            if column == 0 or column == 2 or column == 4:
-                updateDatee(text2, "Encuentros tutoriales", "Fechas alternas")
-            else:
-                updateDatee(text2, "Habilitaciones", "Fechas alternas")
+            if column == 0:
+                updateDatee(text2, "Encuentros tutoriales", 1, "Fechas alternas")
+            if column == 2:
+                updateDatee(text2, "Encuentros tutoriales", 2, "Fechas alternas")
+            if column == 4:
+                updateDatee(text2, "Encuentros tutoriales", 3, "Fechas alternas")
+            if column == 1:
+                updateDatee(text2, "Habilitaciones", 1, "Fechas alternas")
+            if column == 3:
+                updateDatee(text2, "Habilitaciones", 2, "Fechas alternas")
+            if column == 5:
+                updateDatee(text2, "Habilitaciones", 3, "Fechas alternas")
 
     def tabla33(self, column):
         for row3 in range(self.tableWidget_3.rowCount()):
             text3 = self.tableWidget_3.item(row3, column).text()
 
-            if column == 0 or column == 2 or column == 4:
-                 updateDatee(text3, "Encuentros tutoriales", "Pereira domingos")
-            else:
-                 updateDatee(text3, "Habilitaciones", "Pereira domingos")
+            if column == 0:
+                updateDatee(text3, "Encuentros tutoriales", 1, "Pereira domingos")
+            if column == 2:
+                updateDatee(text3, "Encuentros tutoriales", 2, "Pereira domingos")
+            if column == 4:
+                updateDatee(text3, "Encuentros tutoriales", 3, "Pereira domingos")
+            if column == 1:
+                updateDatee(text3, "Habilitaciones", 1, "Pereira domingos")
+            if column == 3:
+                updateDatee(text3, "Habilitaciones", 2, "Pereira domingos")
+            if column == 5:
+                updateDatee(text3, "Habilitaciones", 3, "Pereira domingos")
 
     def mostrarMensaje(self, titulo: str, texto: str, texto_informativo: str, tipo_mensaje: QMessageBox,
                        estado: bool):
