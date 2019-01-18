@@ -521,7 +521,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         rows: int = 0
         for it in s:
              print(it, "contenidoo")
-
+        item = self.tablaInfoAcademica.item(rows, col)
     def pruebaHorario(self):
         self.setearTabla()
         semester: int = int(self.spinSemestre.text())
