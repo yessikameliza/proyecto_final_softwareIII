@@ -517,7 +517,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
 
     def llenartabla(self, semester, city):
         s: list = obtenerdatosProfe(semester, city)
-        
+
 
     def pruebaHorario(self):
         self.setearTabla()

@@ -125,6 +125,7 @@ def obtenerdatosProfe(semester: int, ciudad: str):
     for f in files:
         auxx.append(f[1])
         auxx.append(f[2])
+        auxx.append(f[5])
         profe = searchDocentMatter(f[2], ciudad)
         auxx.append(profe[1])
         auxx.append(profe[5])
