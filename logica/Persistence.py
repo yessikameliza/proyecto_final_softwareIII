@@ -118,18 +118,19 @@ def geneHours(semester: int, ciudad: str) -> list:
         return geneHoursSextoS(semester, ciudad, hours)
     return None
 
-def obtenerdatosProfe(semester: int):
+def obtenerdatosProfe(semester: int, ciudad: str):
     auxx: list = []
     files: list = buscarMaterPorSemester(semester)
     aux2: list = []
     for f in files:
         auxx.append(f[1])
         auxx.append(f[2])
-        profe = searchDocentMatter(f[2])
+        profe = searchDocentMatter(f[2], ciudad)
         auxx.append(profe[1])
         auxx.append(profe[5])
         aux2.append(auxx)
         auxx = []
+    return aux2
 
 
 def geneHoursPrimerS(semester, ciudad, horario: list):

@@ -45,7 +45,7 @@ def searchDocent(ident: str):
     conexion.close()
     return filaa
 
-def searchDocentMatter(matter: str):
+def searchDocentMatter(matter: str, ciudad: str):
     conexion = sqlite3.connect("dataBase.sqlite3")
     consulta = conexion.cursor()
 
@@ -56,8 +56,9 @@ def searchDocentMatter(matter: str):
         files = consulta.fetchall()
         for fila in files:
             if str(fila[7]) == matter:
-                print("entro aquí")
-                return fila
+                if str(fila[8]) == ciudad:
+                    print("entro aquí")
+                    return fila
 
     consulta.close()
 
