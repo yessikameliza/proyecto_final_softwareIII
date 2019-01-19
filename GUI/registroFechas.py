@@ -11,7 +11,7 @@ from logica.Persistence import register_Date
 from logica.Persistence import delete_Date
 from PyQt5.QtWidgets import QMessageBox
 from logica.Persistence import updateDatee
-
+from logica.Persistence import obtener_Fecha
 
 class Ui_Form(object):
     message_box: QMessageBox
@@ -488,9 +488,10 @@ class Ui_Form(object):
         self.label_18.setStyleSheet("font: 8pt \"Segoe Print\";\n"
                                     "color: rgb(255, 255, 255);")
         self.label_18.setObjectName("label_18")
-
-
         self.retranslateUi(Form)
+        self.rellenarcuadro1()
+        self.rellenarcuadro2()
+        self.rellenarcuadro3()
         self.pushButton.clicked.connect(self.registrarFechas)
         self.pushButton_3.clicked.connect(self.eliminarFechas)
         self.pushButton_2.clicked.connect(self.actualizarFechas)
@@ -526,6 +527,49 @@ class Ui_Form(object):
         register_Date(fecha2, "Encuentros tutoriales", 1, "inductorio")
         self.mostrarMensaje("Información", "¡Fechas registradas exitosamente!", "", QMessageBox.Warning, False)
         self.pushButton.setEnabled(False)
+
+    def rellenarcuadro1(self):
+        res = obtener_Fecha("Primeras fechas")
+        print(res)
+        col: int = 0
+        rows: int = 0
+        for it in res:
+            item = self.tableWidget.item(rows, col)
+            item.setText(it)
+            print("rows", rows, "col ", col)
+            if 5 == rows:
+                col = col + 1
+                rows = -1
+            rows = rows + 1
+
+    def rellenarcuadro2(self):
+        res = obtener_Fecha("Fechas alternas")
+        col: int = 0
+        rows: int = 0
+        for it in res:
+            print(it, "fechas ver")
+            item = self.tableWidget_2.item(rows, col)
+            item.setText(it)
+            print("rows", rows, "col ", col)
+            if 5 == rows:
+                col = col + 1
+                rows = -1
+            rows = rows + 1
+
+    def rellenarcuadro3(self):
+        res = obtener_Fecha("Pereira domingos")
+        print(res)
+        col: int = 0
+        rows: int = 0
+        for it in res:
+            print(it, "fechas ver")
+            item = self.tableWidget_3.item(rows, col)
+            item.setText(it)
+            print("rows", rows, "col ", col)
+            if 5 == rows:
+                col = col + 1
+                rows = -1
+            rows = rows + 1
 
     def tabla1(self, column):
 
