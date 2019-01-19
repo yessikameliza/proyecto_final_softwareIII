@@ -341,15 +341,27 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         item = QtWidgets.QTableWidgetItem()
         self.tablaInfoAcademica.setItem(0, 3, item)
         item = QtWidgets.QTableWidgetItem()
+        self.tablaInfoAcademica.setItem(0, 4, item)
+        item = QtWidgets.QTableWidgetItem()
         self.tablaInfoAcademica.setItem(1, 0, item)
         item = QtWidgets.QTableWidgetItem()
         self.tablaInfoAcademica.setItem(1, 1, item)
         item = QtWidgets.QTableWidgetItem()
         self.tablaInfoAcademica.setItem(1, 2, item)
         item = QtWidgets.QTableWidgetItem()
+        self.tablaInfoAcademica.setItem(1, 3, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tablaInfoAcademica.setItem(1, 4, item)
+        item = QtWidgets.QTableWidgetItem()
         self.tablaInfoAcademica.setItem(2, 0, item)
         item = QtWidgets.QTableWidgetItem()
-
+        self.tablaInfoAcademica.setItem(2, 1, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tablaInfoAcademica.setItem(2, 2, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tablaInfoAcademica.setItem(2, 3, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tablaInfoAcademica.setItem(2, 4, item)
 
         self.tablaInfoAcademica.horizontalHeader().setDefaultSectionSize(207)
         self.tablaInfoAcademica.horizontalHeader().setMinimumSectionSize(46)
@@ -536,18 +548,26 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
 
     def llenartabla(self, semester, city):
         s: list = obtenerdatosProfe(semester, city)
+        #item1 = self.tablaInfoAcademica.item(0, 1)
+        #item1.setText("hh")
         a = [[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15]]
-        col: int = 0
         rows: int = 0
-        for i in a:
+        col: int = 0
+        for i in s:
             for j in i:
              print(j, "contenidoo")
+             print(rows, col)
              item = self.tablaInfoAcademica.item(rows, col)
-             item.setText(j)
-             if rows < 5:
-                   rows = rows+1
-            else:
-                   col = col+1
+             item.setText(str(j))
+
+             if col < 4:
+                 print(rows, col)
+                 col = col+1
+             else:
+                 rows = rows+1
+                 col = 0
+
+
 
     def pruebaHorario(self):
         self.setearTabla()
