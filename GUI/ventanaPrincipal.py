@@ -362,7 +362,16 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.tablaInfoAcademica.setItem(2, 3, item)
         item = QtWidgets.QTableWidgetItem()
         self.tablaInfoAcademica.setItem(2, 4, item)
-
+        item = QtWidgets.QTableWidgetItem()
+        self.tablaInfoAcademica.setItem(3, 0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tablaInfoAcademica.setItem(3, 1, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tablaInfoAcademica.setItem(3, 2, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tablaInfoAcademica.setItem(3, 3, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tablaInfoAcademica.setItem(3, 4, item)
         self.tablaInfoAcademica.horizontalHeader().setDefaultSectionSize(207)
         self.tablaInfoAcademica.horizontalHeader().setMinimumSectionSize(46)
         self.tablaInfoAcademica.verticalHeader().setDefaultSectionSize(26)
@@ -555,17 +564,17 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         col: int = 0
         for i in s:
             for j in i:
-             print(j, "contenidoo")
-             print(rows, col)
-             item = self.tablaInfoAcademica.item(rows, col)
-             item.setText(str(j))
+                print(j, "contenidoo")
+                print(rows, col)
+                item = self.tablaInfoAcademica.item(rows, col)
+                item.setText(str(j))
 
-             if col < 4:
-                 print(rows, col)
-                 col = col+1
-             else:
-                 rows = rows+1
-                 col = 0
+                if col < 4:
+                    print(rows, col)
+                    col = col+1
+                else:
+                    rows = rows+1
+                    col = 0
 
 
 

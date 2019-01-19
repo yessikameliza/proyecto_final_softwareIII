@@ -134,6 +134,7 @@ def obtenerdatosProfe(semester: int, ciudad: str):
             auxx.append(profe[5])
             aux2.append(auxx)
         auxx = []
+    print("tabla completa", aux2)
     return aux2
 
 
