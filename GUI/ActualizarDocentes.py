@@ -177,6 +177,7 @@ class actualizarDocente(object):
         self.txtIdent.clear()
         self.comboEstado.clear()
     def actualiza(self):
+       try:
         nomb = str(self.txtNombre.toPlainText())
         tipo = str(self.txtTipo.toPlainText())
         lim = int(self.txtLimHoras.toPlainText())
@@ -189,7 +190,9 @@ class actualizarDocente(object):
         else:
             update_Docent(nomb, esta, lim, tipo, tel, iden)
             self.mostrarMensaje("Información", "¡Se han actualizado los datos correctamente!", "", QMessageBox.Warning, False)
-
+       except ValueError:
+        self.mostrarMensaje("Información", "¡La entrada es incorrecta, escriba un numero entero!",
+                        "", QMessageBox.Warning, False)
     def buscar(self):
         id = self.txtIdentBuscar.toPlainText()
         fila:Any = search_Docent(id)

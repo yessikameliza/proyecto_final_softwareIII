@@ -169,7 +169,7 @@ class registroDocentes(object):
         self.comboAsignatura.clear()
 
     def ventaAcep(self):
-
+       try:
         nomb = self.txtNombre.toPlainText()
         tipo = self.txtTipo.toPlainText()
         lim = self.txtLimHoras.toPlainText()
@@ -189,6 +189,10 @@ class registroDocentes(object):
         else:
             register_Docent(name, esta, limit, type, phone, ident, asig, ciudad)
             self.mostrarMensaje("Información", "¡Datos registrados con exito!", "", QMessageBox.Warning, False)
+       except ValueError:
+           self.mostrarMensaje("Información", "¡La entrada es incorrecta, escriba un numero entero!",
+                               "", QMessageBox.Warning, False)
+
 
     # Back up the reference to the exceptionhook
     sys._excepthook = sys.excepthook

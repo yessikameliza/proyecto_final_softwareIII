@@ -171,6 +171,7 @@ class actualizarAsignatura(object):
             print("no existe")
 
     def actualizar(self):
+       try:
         cod = str(self.txtCodigo.toPlainText())
         nom = str(self.txtNombre.toPlainText())
         ubiSemestre = int(self.boxSemestre.text())
@@ -186,7 +187,9 @@ class actualizarAsignatura(object):
             update_Matter(cod, nom, ubiSemestre, numCreditos, codRequisito, num)
 
         self.mostrarMensaje("Información", "¡Se han actualizado los datos correctamente!", "", QMessageBox.Warning, False)
-
+       except ValueError:
+           self.mostrarMensaje("Información", "¡La entrada es incorrecta, escriba un numero entero!",
+                               "", QMessageBox.Warning, False)
 
     def mostrarMensaje(self, titulo: str, texto: str, texto_informativo: str, tipo_mensaje: QMessageBox, estado: bool):
 

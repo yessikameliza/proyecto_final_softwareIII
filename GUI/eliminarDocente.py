@@ -73,6 +73,7 @@ class eliminarDocente(object):
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def eliminar(self):
+       try:
         iden = str(self.txtIdentBuscar.toPlainText())
         res = delete_Docent(iden)
         if not None == res:
@@ -81,6 +82,9 @@ class eliminarDocente(object):
         else:
             self.mostrarMensaje("Alerta", "¡Identificación no encontrada!", "", QMessageBox.Warning,
                                 False)
+       except ValueError:
+           self.mostrarMensaje("Información", "¡La entrada es incorrecta, verifique lo ingresado!",
+                               "", QMessageBox.Warning, False)
 
     def limpiar(self):
         self.txtIdentBuscar.clear()

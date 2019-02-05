@@ -5,6 +5,7 @@
 # Created by: PyQt5 UI code generator 5.11.2
 #
 # WARNING! All changes made in this file will be lost!
+from xml.dom import ValidationErr
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMessageBox
@@ -131,6 +132,7 @@ class registroAsignaturas(object):
         self.boxCreditos.clear()
 
     def registrarMaterias(self):
+      try:
         cod = str(self.txtCodigo.toPlainText())
         nombre = str(self.txtNombre.toPlainText())
         numCred = str(self.boxCreditos.text())
@@ -144,6 +146,13 @@ class registroAsignaturas(object):
         else:
             register_Matter(cod, nombre, semes, numCred, codReq, numHoras)
             self.mostrarMensaje("Información", "¡Datos registrados con exito!", "", QMessageBox.Warning, False)
+
+      except ValueError:
+        self.mostrarMensaje("Información", "¡La entrada es incorrecta, escriba un numero entero!",
+                            "", QMessageBox.Warning, False)
+
+
+
 
     def mostrarMensaje(self, titulo: str, texto: str, texto_informativo: str, tipo_mensaje: QMessageBox, estado: bool):
 
