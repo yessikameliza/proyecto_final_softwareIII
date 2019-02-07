@@ -3,22 +3,22 @@
 from DB.InsertarDatos import insertMatter
 from DB.InsertarDatos import insertDocent
 from DB.InsertarDatos import insertDate
-from DB.Seleccionar_Datos import searchMatter
+from DB.Seleccionar_Datos import search_matter
 from DB.ActualizarDatos import upDate_Matter
 from DB.EliminarDatos import deleteMatter
-from DB.Seleccionar_Datos import searchDocent
+from DB.Seleccionar_Datos import search_docent
 from DB.ActualizarDatos import updateDocent
 from DB.EliminarDatos import deleteDate
-from DB.Seleccionar_Datos import obtenerFechas
+from DB.Seleccionar_Datos import obtener_fechas
 from DB.EliminarDatos import deleteDocent
-from DB.Seleccionar_Datos import obtenerMatter
-from DB.Seleccionar_Datos import buscarMaterPorSemester
-from DB.Seleccionar_Datos import buscarhorainiciofin
+from DB.Seleccionar_Datos import obtener_matter
+from DB.Seleccionar_Datos import buscar_mater_por_semester
+from DB.Seleccionar_Datos import buscar_hora_inicio_fin
 from DB.ActualizarDatos import updateDate
-from DB.Seleccionar_Datos import obtenerFechasHour
+from DB.Seleccionar_Datos import obtener_fechas_hour
 from DB.ActualizarDatos import updateBMa
-from DB.Seleccionar_Datos import obtenerFechaInduc
-from DB.Seleccionar_Datos import searchDocentMatter
+from DB.Seleccionar_Datos import obtener_fecha_induc
+from DB.Seleccionar_Datos import search_docent_matter
 
 def register_matter(codigo: str, name: str, ubisemester: int, numcredit: str, codrequisite: str, numhourssem: int):
     insertMatter(codigo, name, ubisemester, numcredit, codrequisite, numhourssem)
@@ -37,7 +37,7 @@ def register_date(date: str, origin: str, idblock: int, ident: str):
 
 
 def search_matter(codigo: str):
-    return searchMatter(codigo)
+    return search_matter(codigo)
 
 
 def update_matter(codigo: str, name: str, ubisemester: int, numcredit: str, codrequisite: str, numhourssem: int):
@@ -49,7 +49,7 @@ def delete_matter(codigo: str):
 
 
 def search_docent(ident: str):
-    return searchDocent(ident)
+    return search_docent(ident)
 
 
 def update_docent(name: str, state: str, limithours: int, contract: str, phone: str, identification: str, matter: str,
@@ -71,18 +71,18 @@ def update_datee(date: str, origin: str, idblock: int, idents: str):
 
 
 def obtener_fecha(idents: str):
-    return obtenerFechas(idents)
+    return obtener_fechas(idents)
 
 
 def obtener_fechas_p(idents: str, origin: str):
-    return obtenerFechasHour(idents, origin)
+    return obtener_fechas_hour(idents, origin)
 
 
 def obtener_matter():
-    return obtenerMatter()
+    return obtener_matter()
 
 def obtener_f_induct(idents: str):
-    return obtenerFechaInduc(idents)
+    return obtener_fecha_induc(idents)
 
 def gene_hours(semester: int, ciudad: str) -> list:
     hours: list = []
@@ -102,13 +102,13 @@ def gene_hours(semester: int, ciudad: str) -> list:
 
 def obtener_datos_profe(semester: int, ciudad: str):
     auxx: list = []
-    files: list = buscarMaterPorSemester(semester)
+    files: list = buscar_mater_por_semester(semester)
     aux2: list = []
     for f in files:
         auxx.append(f[1])
         auxx.append(f[2])
         auxx.append(f[5])
-        profe: list = searchDocentMatter(f[2], ciudad)
+        profe: list = search_docent_matter(f[2], ciudad)
         print(profe, " este profe persis")
 
         if profe is not None:
@@ -121,8 +121,8 @@ def obtener_datos_profe(semester: int, ciudad: str):
 
 
 def gene_hours_primer_s(semester, horario: list):
-    files: list = buscarMaterPorSemester(semester)
-    fileshor: list = buscarhorainiciofin()
+    files: list = buscar_mater_por_semester(semester)
+    fileshor: list = buscar_hora_inicio_fin()
     auxlist: list = []
     print("entro aquii")
     print(files)
@@ -185,8 +185,8 @@ def gene_hours_primer_s(semester, horario: list):
 
 
 def gene_hours_segundo_s(semester, horario: list):
-    files: list = buscarMaterPorSemester(semester)
-    fileshor: list = buscarhorainiciofin()
+    files: list = buscar_mater_por_semester(semester)
+    fileshor: list = buscar_hora_inicio_fin()
     auxlist: list = []
     print("entro aquii")
     print(files)
@@ -232,8 +232,8 @@ def gene_hours_segundo_s(semester, horario: list):
 
 
 def gene_hours_tercer_s(semester, horario: list):
-    files: list = buscarMaterPorSemester(semester)
-    fileshor: list = buscarhorainiciofin()
+    files: list = buscar_mater_por_semester(semester)
+    fileshor: list = buscar_hora_inicio_fin()
     auxlist: list = []
     print("entro aquii")
     print(files)
@@ -276,8 +276,8 @@ def gene_hours_tercer_s(semester, horario: list):
 
 
 def gene_hours_cuarto_s(semester, horario: list):
-    files: list = buscarMaterPorSemester(semester)
-    fileshor: list = buscarhorainiciofin()
+    files: list = buscar_mater_por_semester(semester)
+    fileshor: list = buscar_hora_inicio_fin()
     auxlist: list = []
     print("entro aquii")
     print(files)
@@ -318,8 +318,8 @@ def gene_hours_cuarto_s(semester, horario: list):
 
 
 def gene_hours_quinto_s(semester, horario: list):
-    files: list = buscarMaterPorSemester(semester)
-    fileshor: list = buscarhorainiciofin()
+    files: list = buscar_mater_por_semester(semester)
+    fileshor: list = buscar_hora_inicio_fin()
     auxlist: list = []
     print("entro aquii")
     print(files)
@@ -364,8 +364,8 @@ def gene_hours_quinto_s(semester, horario: list):
     return horario
 
 def gene_hours_sexto_s(semester, horario: list):
-    files: list = buscarMaterPorSemester(semester)
-    fileshor: list = buscarhorainiciofin()
+    files: list = buscar_mater_por_semester(semester)
+    fileshor: list = buscar_hora_inicio_fin()
     auxlist: list = []
     print("entro aquii")
     print(files)

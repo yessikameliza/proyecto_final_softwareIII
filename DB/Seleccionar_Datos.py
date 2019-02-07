@@ -4,7 +4,7 @@ import sqlite3
 from typing import Any, List
 
 
-def searchMatter(codi: str):
+def search_matter(codi: str):
     conexion = sqlite3.connect("dataBase.sqlite3")
     consulta = conexion.cursor()
 
@@ -25,7 +25,7 @@ def searchMatter(codi: str):
     return filaa
 
 
-def searchDocent(ident: str):
+def search_docent(ident: str):
     conexion = sqlite3.connect("dataBase.sqlite3")
     consulta = conexion.cursor()
 
@@ -45,7 +45,7 @@ def searchDocent(ident: str):
     conexion.close()
     return filaa
 
-def searchDocentMatter(matter: str, ciudad: str):
+def search_docent_matter(matter: str, ciudad: str):
     conexion = sqlite3.connect("dataBase.sqlite3")
     consulta = conexion.cursor()
 
@@ -65,7 +65,7 @@ def searchDocentMatter(matter: str, ciudad: str):
     conexion.close()
     return filaa
 
-def obtenerFechas(idents: str):
+def obtener_fechas(idents: str):
     conexion = sqlite3.connect("dataBase.sqlite3")
     consulta = conexion.cursor()
 
@@ -87,7 +87,7 @@ def obtenerFechas(idents: str):
     conexion.close()
     return filaa
 
-def obtenerFechaInduc(idents: str):
+def obtener_fecha_induc(idents: str):
     conexion = sqlite3.connect("dataBase.sqlite3")
     consulta = conexion.cursor()
 
@@ -107,7 +107,7 @@ def obtenerFechaInduc(idents: str):
     conexion.close()
     return filaa
 
-def obtenerFechasHour(idents: str, origin: str):
+def obtener_fechas_hour(idents: str, origin: str):
     conexion = sqlite3.connect("dataBase.sqlite3")
     consulta = conexion.cursor()
 
@@ -128,7 +128,7 @@ def obtenerFechasHour(idents: str, origin: str):
     conexion.close()
     return filaa
 
-def obtenerMatter():
+def obtener_matter():
     conexion = sqlite3.connect("dataBase.sqlite3")
     consulta = conexion.cursor()
 
@@ -145,7 +145,7 @@ def obtenerMatter():
     conexion.close()
     return filaa
 
-def buscarMaterPorSemester(semester):
+def buscar_mater_por_semester(semester):
     conexion = sqlite3.connect("dataBase.sqlite3")
     consulta = conexion.cursor()
 
@@ -167,7 +167,7 @@ def buscarMaterPorSemester(semester):
     conexion.close()
     return filaa
 
-def buscarhorainiciofin():
+def buscar_hora_inicio_fin():
     conexion = sqlite3.connect("dataBase.sqlite3")
     consulta = conexion.cursor()
 
