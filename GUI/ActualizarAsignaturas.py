@@ -17,11 +17,11 @@ from PyQt5.QtWidgets import QMessageBox
 class ActualizarAsignatura(object):
     message_box: QMessageBox
 
-    def setup_ui(self, Mainwindow):
-        Mainwindow.setObjectName("Actualizar Asignaturas")
-        Mainwindow.resize(722, 647)
-        Mainwindow.setStyleSheet("background-color: rgb(128, 195, 161)")
-        self.centralwidget = QtWidgets.QWidget(Mainwindow)
+    def setup_ui(self, main_window):
+        main_window.setObjectName("Actualizar Asignaturas")
+        main_window.resize(722, 647)
+        main_window.setStyleSheet("background-color: rgb(128, 195, 161)")
+        self.centralwidget = QtWidgets.QWidget(main_window)
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(190, 20, 381, 61))
@@ -133,20 +133,20 @@ class ActualizarAsignatura(object):
                                        "color: rgb(255, 255, 255);\n"
                                        "background-color: rgb(0, 55, 55);")
         self.btnregresar.setObjectName("btnRegresar")
-        Mainwindow.setCentralWidget(self.centralwidget)
-        self.menubar = QtWidgets.QMenuBar(Mainwindow)
+        main_window.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(main_window)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 722, 21))
         self.menubar.setObjectName("menubar")
-        Mainwindow.setMenuBar(self.menubar)
-        self.statusbar = QtWidgets.QStatusBar(Mainwindow)
+        main_window.setMenuBar(self.menubar)
+        self.statusbar = QtWidgets.QStatusBar(main_window)
         self.statusbar.setObjectName("statusbar")
-        Mainwindow.setStatusBar(self.statusbar)
+        main_window.setStatusBar(self.statusbar)
 
-        self.retranslate_ui(Mainwindow)
+        self.retranslate_ui(main_window)
         self.btnbuscar.clicked.connect(self.buscar)
         self.btnactualizar.clicked.connect(self.actualizar)
         self.btnlimpiar.clicked.connect(self.limpiar)
-        QtCore.QMetaObject.connectSlotsByName(Mainwindow)
+        QtCore.QMetaObject.connectSlotsByName(main_window)
 
     def limpiar(self):
         self.txtcodigo.clear()
@@ -213,9 +213,9 @@ class ActualizarAsignatura(object):
             self.message_box.setIcon(tipo_mensaje)
             self.message_box.exec_()
 
-    def retranslate_ui(self, Mainwindow):
+    def retranslate_ui(self, main_window):
         _translate = QtCore.QCoreApplication.translate
-        Mainwindow.setWindowTitle(_translate("MainWindow", "Actualizar asignaturas"))
+        main_window.setWindowTitle(_translate("MainWindow", "Actualizar asignaturas"))
         self.label.setText(_translate("MainWindow",
                                       "<html><head/><body><p align=\"center\"><span style=\" font-size:24pt; font-weight:600; color:#000000;\">Actualizar  asignaturas</span></p><p align=\"center\"><br/></p></body></html>"))
         self.codigo.setText(_translate("MainWindow",

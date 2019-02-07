@@ -14,11 +14,11 @@ from PyQt5.QtWidgets import QMessageBox
 class EliminarDocente(object):
     message_box = QMessageBox
 
-    def setup_Ui(self, MainWindow):
-        MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(534, 321)
-        MainWindow.setStyleSheet("background-color: rgb(128, 195, 161)")
-        self.centralwidget = QtWidgets.QWidget(MainWindow)
+    def setup_ui(self, main_window):
+        main_window.setObjectName("MainWindow")
+        main_window.resize(534, 321)
+        main_window.setStyleSheet("background-color: rgb(128, 195, 161)")
+        self.centralwidget = QtWidgets.QWidget(main_window)
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(100, 30, 381, 61))
@@ -59,18 +59,18 @@ class EliminarDocente(object):
                                        "color: rgb(255, 255, 255);\n"
                                        "background-color: rgb(0, 51, 51);")
         self.btnregresar.setObjectName("btnRegresar")
-        MainWindow.setCentralWidget(self.centralwidget)
-        self.menubar = QtWidgets.QMenuBar(MainWindow)
+        main_window.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(main_window)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 534, 21))
         self.menubar.setObjectName("menubar")
-        MainWindow.setMenuBar(self.menubar)
-        self.statusbar = QtWidgets.QStatusBar(MainWindow)
+        main_window.setMenuBar(self.menubar)
+        self.statusbar = QtWidgets.QStatusBar(main_window)
         self.statusbar.setObjectName("statusbar")
-        MainWindow.setStatusBar(self.statusbar)
+        main_window.setStatusBar(self.statusbar)
         self.btneliminar.clicked.connect(self.eliminar)
         self.btnlimpiar.clicked.connect(self.limpiar)
-        self.retranslateUi(MainWindow)
-        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+        self.retranslate_ui(main_window)
+        QtCore.QMetaObject.connectSlotsByName(main_window)
 
     def eliminar(self):
         try:
@@ -78,19 +78,19 @@ class EliminarDocente(object):
             res = delete_docent(iden)
 
             if not None == res:
-                self.mostrarMensaje("Información", "¡El docente se ha eliminado con exito!", "", QMessageBox.Warning,
+                self.mostrar_mensaje("Información", "¡El docente se ha eliminado con exito!", "", QMessageBox.Warning,
                                     False)
             else:
-                self.mostrarMensaje("Alerta", "¡Identificación no encontrada!", "", QMessageBox.Warning,
+                self.mostrar_mensaje("Alerta", "¡Identificación no encontrada!", "", QMessageBox.Warning,
                                     False)
         except ValueError:
-            self.mostrarMensaje("Información", "¡La entrada es incorrecta, verifique lo ingresado!",
+            self.mostrar_mensaje("Información", "¡La entrada es incorrecta, verifique lo ingresado!",
                                 "", QMessageBox.Warning, False)
 
     def limpiar(self):
         self.txtidentbuscar.clear()
 
-    def mostrarMensaje(self, titulo: str, texto: str, texto_informativo: str, tipo_mensaje: QMessageBox,
+    def mostrar_mensaje(self, titulo: str, texto: str, texto_informativo: str, tipo_mensaje: QMessageBox,
                        estado: bool):
 
         self.message_box = QMessageBox()
@@ -111,9 +111,9 @@ class EliminarDocente(object):
             self.message_box.setIcon(tipo_mensaje)
             self.message_box.exec_()
 
-    def retranslateUi(self, MainWindow):
+    def retranslate_ui(self, main_window):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Eliminar docente"))
+        main_window.setWindowTitle(_translate("MainWindow", "Eliminar docente"))
         self.label.setText(_translate("MainWindow",
                                       "<html><head/><body><p align=\"center\"><span style=\" font-size:24pt; font-weight:600; color:#000000;\">Eliminar docentes</span></p><p align=\"center\"><br/></p><p align=\"center\"><br/></p></body></html>"))
         self.codigo.setText(_translate("MainWindow",

@@ -14,11 +14,11 @@ from logica.Persistence import delete_matter
 class EliminarAsignatura(object):
     message_box: QMessageBox
 
-    def setup_ui(self, Mainwindow):
-        Mainwindow.setObjectName("Eliminar Asignaturas")
-        Mainwindow.resize(536, 328)
-        Mainwindow.setStyleSheet("background-color: rgb(128, 195, 161)")
-        self.centralwidget = QtWidgets.QWidget(Mainwindow)
+    def setup_ui(self, main_window):
+        main_window.setObjectName("Eliminar Asignaturas")
+        main_window.resize(536, 328)
+        main_window.setStyleSheet("background-color: rgb(128, 195, 161)")
+        self.centralwidget = QtWidgets.QWidget(main_window)
         self.centralwidget.setObjectName("centralwidget")
         self.txtcodtbuscar = QtWidgets.QTextEdit(self.centralwidget)
         self.txtcodtbuscar.setGeometry(QtCore.QRect(180, 180, 201, 31))
@@ -59,19 +59,19 @@ class EliminarAsignatura(object):
         self.codigo.setStyleSheet("font: 75 10pt \"Segoe Print\";\n"
                                   "color: rgb(255, 255, 255);")
         self.codigo.setObjectName("codigo")
-        Mainwindow.setCentralWidget(self.centralwidget)
-        self.menubar = QtWidgets.QMenuBar(Mainwindow)
+        main_window.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(main_window)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 536, 21))
         self.menubar.setObjectName("menubar")
-        Mainwindow.setMenuBar(self.menubar)
-        self.statusbar = QtWidgets.QStatusBar(Mainwindow)
+        main_window.setMenuBar(self.menubar)
+        self.statusbar = QtWidgets.QStatusBar(main_window)
         self.statusbar.setObjectName("statusbar")
-        Mainwindow.setStatusBar(self.statusbar)
+        main_window.setStatusBar(self.statusbar)
         self.btneliminar.clicked.connect(self.eliminar)
         self.btnlimpiar.clicked.connect(self.limpiar)
-        self.retranslate_ui(Mainwindow)
+        self.retranslate_ui(main_window)
 
-        QtCore.QMetaObject.connectSlotsByName(Mainwindow)
+        QtCore.QMetaObject.connectSlotsByName(main_window)
 
     def limpiar(self):
         self.txtcodtbuscar.clear()
@@ -112,9 +112,9 @@ class EliminarAsignatura(object):
             self.message_box.setIcon(tipo_mensaje)
             self.message_box.exec_()
 
-    def retranslate_ui(self, Mainwindow):
+    def retranslate_ui(self, main_window):
         _translate = QtCore.QCoreApplication.translate
-        Mainwindow.setWindowTitle(_translate("MainWindow", "Eliminar asignaturas"))
+        main_window.setWindowTitle(_translate("MainWindow", "Eliminar asignaturas"))
         self.label.setText(_translate("MainWindow",
                                       "<html><head/><body><p align=\"center\"><span style=\" font-size:24pt; font-weight:600; color:#000000;\">Eliminar asignaturas</span></p><p align=\"center\"><br/></p><p align=\"center\"><br/></p></body></html>"))
         self.btneliminar.setText(_translate("MainWindow", "ELIMINAR"))
