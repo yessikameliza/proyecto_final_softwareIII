@@ -22,7 +22,7 @@ from GUI.pereiraDomingos import FechasPereira
 from logica.Persistence import gene_hours, obtener_fecha
 from logica.Persistence import obtener_fechas_p
 from logica.Persistence import obtener_f_induct
-from logica.Persistence import obtenerDatosProfe
+from logica.Persistence import obtener_datos_profe
 
 
 class VentanaPrincipal(QtWidgets.QMainWindow):
@@ -559,7 +559,7 @@ class VentanaPrincipal(QtWidgets.QMainWindow):
             i = 0
 
     def llenartabla(self, semester, city):
-        s: list = obtenerDatosProfe(semester, city)
+        s: list = obtener_datos_profe(semester, city)
         # item1 = self.tablaInfoAcademica.item(0, 1)
         # item1.setText("hh")
         a = [[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15]]
