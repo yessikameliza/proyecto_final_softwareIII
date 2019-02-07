@@ -17,11 +17,11 @@ from PyQt5.QtWidgets import QMessageBox
 class ActualizarAsignatura(object):
     message_box: QMessageBox
 
-    def setup_Ui(self, MainWindow):
-        MainWindow.setObjectName("Actualizar Asignaturas")
-        MainWindow.resize(722, 647)
-        MainWindow.setStyleSheet("background-color: rgb(128, 195, 161)")
-        self.centralwidget = QtWidgets.QWidget(MainWindow)
+    def setup_ui(self, Mainwindow):
+        Mainwindow.setObjectName("Actualizar Asignaturas")
+        Mainwindow.resize(722, 647)
+        Mainwindow.setStyleSheet("background-color: rgb(128, 195, 161)")
+        self.centralwidget = QtWidgets.QWidget(Mainwindow)
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(190, 20, 381, 61))
@@ -133,20 +133,20 @@ class ActualizarAsignatura(object):
                                        "color: rgb(255, 255, 255);\n"
                                        "background-color: rgb(0, 55, 55);")
         self.btnregresar.setObjectName("btnRegresar")
-        MainWindow.setCentralWidget(self.centralwidget)
-        self.menubar = QtWidgets.QMenuBar(MainWindow)
+        Mainwindow.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(Mainwindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 722, 21))
         self.menubar.setObjectName("menubar")
-        MainWindow.setMenuBar(self.menubar)
-        self.statusbar = QtWidgets.QStatusBar(MainWindow)
+        Mainwindow.setMenuBar(self.menubar)
+        self.statusbar = QtWidgets.QStatusBar(Mainwindow)
         self.statusbar.setObjectName("statusbar")
-        MainWindow.setStatusBar(self.statusbar)
+        Mainwindow.setStatusBar(self.statusbar)
 
-        self.retranslateUi(MainWindow)
+        self.retranslate_ui(Mainwindow)
         self.btnbuscar.clicked.connect(self.buscar)
         self.btnactualizar.clicked.connect(self.actualizar)
         self.btnlimpiar.clicked.connect(self.limpiar)
-        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+        QtCore.QMetaObject.connectSlotsByName(Mainwindow)
 
     def limpiar(self):
         self.txtcodigo.clear()
@@ -157,8 +157,8 @@ class ActualizarAsignatura(object):
         self.txtnumhorsemestre.clear()
 
     def buscar(self):
-        codBuscar = str(self.txtcodigobuscar.toPlainText())
-        res: Any = search_matter(codBuscar)
+        codbuscar = str(self.txtcodigobuscar.toPlainText())
+        res: Any = search_matter(codbuscar)
         if not None == res:
             print(res[1], res[2])
             self.txtcodigo.setText(str(res[1]))
@@ -168,33 +168,33 @@ class ActualizarAsignatura(object):
             self.txtcodrequis.setText(str(res[5]))
             self.txtnumhorsemestre.setText(str(res[7]))
         else:
-            self.mostrarMensaje("Alerta", "¡El código ingresado no existe!", "", QMessageBox.Warning, False)
+            self.mostrar_mensaje("Alerta", "¡El código ingresado no existe!", "", QMessageBox.Warning, False)
             print("no existe")
 
     def actualizar(self):
         try:
             cod = str(self.txtcodigo.toPlainText())
             nom = str(self.txtnombre.toPlainText())
-            ubiSemestre = int(self.boxsemestre.text())
-            numCreditos = self.boxcreditos.text()
-            codRequisito = self.txtcodrequis.toPlainText()
-            numHoursSem: str = self.txtnumhorsemestre.toPlainText()
-            num: int = int(numHoursSem)
+            ubisemestre = int(self.boxsemestre.text())
+            numcreditos = self.boxcreditos.text()
+            codrequisito = self.txtcodrequis.toPlainText()
+            numhourssem: str = self.txtnumhorsemestre.toPlainText()
+            num: int = int(numhourssem)
 
-            if len(cod) == 0 | len(nom) == 0 | len(ubiSemestre) == 0 | len(numCreditos) == 0 | len(codRequisito) == 0 \
-                    | len(numHoursSem) == 0:
-                self.mostrarMensaje("Alerta", "¡Hay espacios vacios, digite todos los campos!", "", QMessageBox.Warning,
+            if len(cod) == 0 | len(nom) == 0 | len(ubisemestre) == 0 | len(numcreditos) == 0 | len(codrequisito) == 0 \
+                    | len(numhourssem) == 0:
+                self.mostrar_mensaje("Alerta", "¡Hay espacios vacios, digite todos los campos!", "", QMessageBox.Warning,
                                     False)
             else:
-                update_matter(cod, nom, ubiSemestre, numCreditos, codRequisito, num)
-                self.mostrarMensaje("Información", "¡Se han actualizado los datos correctamente!", "",
+                update_matter(cod, nom, ubisemestre, numcreditos, codrequisito, num)
+                self.mostrar_mensaje("Información", "¡Se han actualizado los datos correctamente!", "",
                                     QMessageBox.Warning,
                                     False)
         except ValueError: \
-                self.mostrarMensaje("Información", "¡La entrada es incorrecta, escriba un numero entero!",
+                self.mostrar_mensaje("Información", "¡La entrada es incorrecta, escriba un numero entero!",
                                     "", QMessageBox.Warning, False)
 
-    def mostrarMensaje(self, titulo: str, texto: str, texto_informativo: str, tipo_mensaje: QMessageBox, estado: bool):
+    def mostrar_mensaje(self, titulo: str, texto: str, texto_informativo: str, tipo_mensaje: QMessageBox, estado: bool):
         self.message_box = QMessageBox()
         self.message_box.setWindowTitle(titulo)
         self.message_box.setText(texto)
@@ -213,9 +213,9 @@ class ActualizarAsignatura(object):
             self.message_box.setIcon(tipo_mensaje)
             self.message_box.exec_()
 
-    def retranslateUi(self, MainWindow):
+    def retranslate_ui(self, Mainwindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Actualizar asignaturas"))
+        Mainwindow.setWindowTitle(_translate("MainWindow", "Actualizar asignaturas"))
         self.label.setText(_translate("MainWindow",
                                       "<html><head/><body><p align=\"center\"><span style=\" font-size:24pt; font-weight:600; color:#000000;\">Actualizar  asignaturas</span></p><p align=\"center\"><br/></p></body></html>"))
         self.codigo.setText(_translate("MainWindow",
