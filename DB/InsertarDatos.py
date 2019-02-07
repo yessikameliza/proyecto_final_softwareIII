@@ -2,7 +2,7 @@
 # IMPORTANTE convertir el script a la codificación UTF-8
 import sqlite3
 
-def insertMatter(codigo: str, name: str, ubi_Semester: int, numCredit: str, codRequisite: str, numHoursSem: int):
+def insertmatter(codigo: str, name: str, ubisemester: int, numcredit: str, codrequisite: str, numhourssem: int):
     conexion = sqlite3.connect("dataBase.sqlite3")
 
     # Seleccionar el cursor para iniciar una consulta
@@ -13,13 +13,13 @@ def insertMatter(codigo: str, name: str, ubi_Semester: int, numCredit: str, codR
     # Capturar excepciones para los números enteros y decimal
     # Sólo números enteros
     try:
-        ubi_Semester = int(ubi_Semester)
+        ubisemester = int(ubisemester)
     except ValueError:
-        print(ubi_Semester, "no es un número entero")
+        print(ubisemester, "no es un número entero")
         exit()
 
     # Valor de los argumentos
-    argumentos = (codigo, name, ubi_Semester, numCredit, codRequisite, numHoursSem)
+    argumentos = (codigo, name, ubisemester, numcredit, codrequisite, numhourssem)
 
     sql = """INSERT INTO matter (codigo, name, ubi_Semester, numCredit, codRequisite, numHoursSem)
     VALUES (?, ?, ?, ?, ?, ?)"""
@@ -38,7 +38,8 @@ def insertMatter(codigo: str, name: str, ubi_Semester: int, numCredit: str, codR
     conexion.close()
 
 
-def insertDocent(name: str, state: str, limitHours: int, contract: str, phone: str, identification: str, matter: str, city: str):
+def insert_docent(name: str, state: str, limithours: int, contract: str, phone: str, identification: str, matter: str,
+                  city: str):
     conexion = sqlite3.connect("dataBase.sqlite3")
 
     # Seleccionar el cursor para iniciar una consulta
@@ -48,7 +49,7 @@ def insertDocent(name: str, state: str, limitHours: int, contract: str, phone: s
     # Capturar excepciones para los números enteros y decimal
     # Sólo números enteros
     # Valor de los argumentos
-    argumentos = (name, state, limitHours, contract, phone, identification, matter, city)
+    argumentos = (name, state, limithours, contract, phone, identification, matter, city)
     # argumentos2 = TypeBlock
     # consulta SQL con argumentos ?, ?, ?, ?, ?
     # sql2 = """INSERT INTO block (TypeBlock)
@@ -76,7 +77,7 @@ def insertDocent(name: str, state: str, limitHours: int, contract: str, phone: s
     conexion.close()
 
 
-def insertDate(date: str, origin: str, idBlock: int, idents: str):
+def insert_date(date: str, origin: str, idblock: int, idents: str):
     conexion = sqlite3.connect("dataBase.sqlite3")
 
     # Seleccionar el cursor para iniciar una consulta
@@ -86,7 +87,7 @@ def insertDate(date: str, origin: str, idBlock: int, idents: str):
     # Capturar excepciones para los números enteros y decimal
     # Sólo números enteros
     # Valor de los argumentos
-    argumentos = (date, origin, idBlock, idents)
+    argumentos = (date, origin, idblock, idents)
     sql = """INSERT INTO date (Date, origin, id_block, idents)
     VALUES (?, ?, ?, ?)"""
 
@@ -110,9 +111,9 @@ def insertarhora():
     # Seleccionar el cursor para iniciar una consulta
     consulta = conexion.cursor()
     print("**** Programa para insertar datos en bases de datos sqlite3 ****")
-    horaInicio = input("Introduzca la hora inicio: ")
-    horaFin = input("Introduzca la hora fin: ")
-    argumentos = (horaInicio, horaFin)
+    horainicio = input("Introduzca la hora inicio: ")
+    horafin = input("Introduzca la hora fin: ")
+    argumentos = (horainicio, horafin)
     sql = """INSERT INTO hour(hour_ini, hour_fin)
     VALUES(?, ?)"""
     # Realizar la consulta
@@ -128,14 +129,14 @@ def insertarhora():
     # Cerrar la conexión
     conexion.close()
 
-def insertarBlock():
+def insertar_block():
     conexion = sqlite3.connect("dataBase.sqlite3")
     # Seleccionar el cursor para iniciar una consulta
     consulta = conexion.cursor()
     print("**** Programa para insertar datos en bases de datos sqlite3 ****")
     num = input("Introduzca el id ")
-    horaInicio = input("Introduzca el bloque ")
-    argumentos = (num, horaInicio)
+    horainicio = input("Introduzca el bloque ")
+    argumentos = (num, horainicio)
     sql = """INSERT INTO block(id_block, TypeBlock)
             VALUES(?, ?)"""
     # Realizar la consulta
