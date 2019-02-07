@@ -1,8 +1,8 @@
 # coding: utf-8
 
-from DB.InsertarDatos import insertMatter
-from DB.InsertarDatos import insertDocent
-from DB.InsertarDatos import insertDate
+from DB.InsertarDatos import insert_matter
+from DB.InsertarDatos import insert_docent
+from DB.InsertarDatos import insert_date
 from DB.Seleccionar_Datos import search_matter
 from DB.ActualizarDatos import upDate_Matter
 from DB.EliminarDatos import deleteMatter
@@ -21,19 +21,19 @@ from DB.Seleccionar_Datos import obtener_fecha_induc
 from DB.Seleccionar_Datos import search_docent_matter
 
 def register_matter(codigo: str, name: str, ubisemester: int, numcredit: str, codrequisite: str, numhourssem: int):
-    insertMatter(codigo, name, ubisemester, numcredit, codrequisite, numhourssem)
+    insert_matter(codigo, name, ubisemester, numcredit, codrequisite, numhourssem)
 
 
 def register_docent(name: str, state: str, limithours: int, contract: str, phone: str, identification: str,
                     matter: str, city: str):
-    insertDocent(name, state, limithours, contract, phone, identification, matter, city)
+    insert_docent(name, state, limithours, contract, phone, identification, matter, city)
 
 
 def register_date(date: str, origin: str, idblock: int, ident: str):
     datee = str(date)
     orige = str(origin)
     idents = str(ident)
-    insertDate(datee, orige, idblock, idents)
+    insert_date(datee, orige, idblock, idents)
 
 
 def search_matter(codigo: str):

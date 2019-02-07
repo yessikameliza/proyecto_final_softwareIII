@@ -471,14 +471,14 @@ class VentanaPrincipal(QtWidgets.QMainWindow):
         self.menubar.addAction(self.menuasignaturas.menuAction())
         self.menubar.addAction(self.menudocentes.menuAction())
         self.retranslate_ui(form)
-        self.btnregistrardocentes.clicked.connect(self.ventana_registro_Docente)
+        self.btnregistrardocentes.clicked.connect(self.ventana_registro_docente)
         self.btnregistrarfechas.clicked.connect(self.ventana_registro_fecha)
         self.actionRegistrar_Asignaturas_2.triggered.connect(self.ventana_reg_asi)
         self.actionModificar_Asignaturas.triggered.connect(self.ventana_mod_asig)
         self.actionEliminar_Asignaturas.triggered.connect(self.ventana_elim_asig)
         self.actionActualizar_Docente.triggered.connect(self.ventana_act_doc)
         self.actionEliminar_docente.triggered.connect(self.ventana_elim_doc)
-        self.actionGenerar_reportes.triggered.connect(self.ventana_primeras_fecha)
+        self.actionGenerar_reportes.triggered.connect(self.ventana_primeras_Fecha)
         self.actionVer_fechas_alternas.triggered.connect(self.ventana_fechas_alternas)
         self.actionVer_fechas_pereira.triggered.connect(self.ventana_fechas_pereira)
         self.btngenerarhorarmen.clicked.connect(self.prueba_horario)
@@ -489,63 +489,63 @@ class VentanaPrincipal(QtWidgets.QMainWindow):
     def ventana_fechas_pereira(self):
         self.ventana = QtWidgets.QMainWindow()
         self.ui = FechasPereira()
-        self.ui.setup_Ui(self.ventana)
+        self.ui.setup_ui(self.ventana)
         self.ventana.show()
 
     def ventana_registro_docente(self):
         self.ventana = QtWidgets.QMainWindow()
         self.ui = RegistroDocentes()
-        self.ui.setup_Ui(self.ventana)
+        self.ui.setup_ui(self.ventana)
         self.ventana.show()
 
     def ventana_registro_fecha(self):
 
         self.ventana = QtWidgets.QMainWindow()
         self.ui = Ui_Form()
-        self.ui.setup_Ui(self.ventana)
+        self.ui.setup_ui(self.ventana)
         self.ventana.show()
         self.close()
 
     def ventana_reg_asi(self):
         self.ventana = QtWidgets.QMainWindow()
         self.ui = RegistroAsignaturas()
-        self.ui.setup_Ui(self.ventana)
+        self.ui.setup_ui(self.ventana)
         self.ventana.show()
 
     def ventana_mod_asig(self):
         self.ventana = QtWidgets.QMainWindow()
         self.ui = ActualizarAsignatura()
-        self.ui.setup_Ui(self.ventana)
+        self.ui.setup_ui(self.ventana)
         self.ventana.show()
 
     def ventana_elim_asig(self):
         self.ventana = QtWidgets.QMainWindow()
         self.ui = EliminarAsignatura()
-        self.ui.setup_Ui(self.ventana)
+        self.ui.setup_ui(self.ventana)
         self.ventana.show()
 
     def ventana_act_doc(self):
         self.ventana = QtWidgets.QMainWindow()
         self.ui = ActualizarDocente()
-        self.ui.setup_Ui(self.ventana)
+        self.ui.setup_ui(self.ventana)
         self.ventana.show()
 
     def ventana_elim_doc(self):
         self.ventana = QtWidgets.QMainWindow()
         self.ui = EliminarDocente()
-        self.ui.setup_Ui(self.ventana)
+        self.ui.setup_ui(self.ventana)
         self.ventana.show()
 
     def ventana_primeras_Fecha(self):
         self.ventana = QtWidgets.QMainWindow()
         self.ui = PrimerasFechas()
-        self.ui.setup_Ui(self.ventana)
+        self.ui.setup_ui(self.ventana)
         self.ventana.show()
 
     def ventana_fechas_alternas(self):
         self.ventana = QtWidgets.QMainWindow()
         self.ui = FechasAlternas()
-        self.ui.setup_Ui(self.ventana)
+        self.ui.setup_ui(self.ventana)
         self.ventana.show()
 
     def setear_tabla(self):

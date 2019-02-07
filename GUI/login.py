@@ -72,7 +72,7 @@ class Login(QMainWindow):
                 print('alex')
                 self.ventana = QtWidgets.QMainWindow()
                 self.ui = VentanaPrincipal()
-                self.ui.setup_Ui(self.ventana)
+                self.ui.setup_ui(self.ventana)
                 self.ventana.show()
             else:
                 self.mostrarMensaje("Alerta", "El usuario o la contraseña son incorrectos", "", QMessageBox.Warning,
