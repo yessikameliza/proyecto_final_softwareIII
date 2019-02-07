@@ -20,32 +20,26 @@ from DB.ActualizarDatos import updateBMa
 from DB.Seleccionar_Datos import obtenerFechaInduc
 from DB.Seleccionar_Datos import searchDocentMatter
 
-def register_matter(codigo: str, name: str, ubi_Semester: int, numCredit: str, codRequisite: str, numHoursSem: int):
-    cod = str(codigo)
-    nam = str(name)
-    ubi_Semeste = int(ubi_Semester)
-    numCredi = str(numCredit)
-    codRequisit = str(codRequisite)
-    numHoursSema = int(numHoursSem)
-    insertMatter(cod, nam, ubi_Semeste, numCredi, codRequisit, numHoursSema)
+def register_matter(codigo: str, name: str, ubisemester: int, numcredit: str, codrequisite: str, numhourssem: int):
+    insertMatter(codigo, name, ubisemester, numcredit, codrequisite, numhourssem)
 
 
 def register_docent(name: str, state: str, limitHours: int, contract: str, phone: str, identification: str,
                     matter: str, city: str):
     nom: str = name
     stat: str = state
-    limitHour: int = limitHours
+    limithour: int = limitHours
     contra: str = contract
     phonen: str = phone
     identi: str = identification
-    insertDocent(nom, stat, limitHour, contra, phonen, identi, matter, city)
+    insertDocent(nom, stat, limithour, contra, phonen, identi, matter, city)
 
 
-def register_date(date: str, origin: str, idBlock: int, ident: str):
+def register_date(date: str, origin: str, idblock: int, ident: str):
     datee = str(date)
     orige = str(origin)
     idents = str(ident)
-    insertDate(datee, orige, idBlock, idents)
+    insertDate(datee, orige, idblock, idents)
 
 
 def search_matter(codigo: str):
