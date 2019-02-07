@@ -2,7 +2,7 @@
 # IMPORTANTE convertir el script a la codificación UTF-8
 import sqlite3
 
-def insertmatter(codigo: str, name: str, ubisemester: int, numcredit: str, codrequisite: str, numhourssem: int):
+def insert_matter(codigo: str, name: str, ubisemester: int, numcredit: str, codrequisite: str, numhourssem: int):
     conexion = sqlite3.connect("dataBase.sqlite3")
 
     # Seleccionar el cursor para iniciar una consulta
@@ -106,7 +106,7 @@ def insert_date(date: str, origin: str, idblock: int, idents: str):
 
     # Cerrar la conexión
     conexion.close()
-def insertarhora():
+def insertar_hora():
     conexion = sqlite3.connect("dataBase.sqlite3")
     # Seleccionar el cursor para iniciar una consulta
     consulta = conexion.cursor()
