@@ -56,8 +56,7 @@ def search_docent_matter(matter: str, ciudad: str):
         files = consulta.fetchall()
         print(files, " profes")
         for fila in files:
-            if str(fila[7]) == matter:
-                if str(fila[8]) == ciudad:
+            if str(fila[7]) == matter and str(fila[8]) == ciudad:
                     return fila
     consulta.close()
 
@@ -98,8 +97,7 @@ def obtener_fecha_induc(idents: str):
     if consulta.execute(sql):
         files = consulta.fetchall()
         for fila in files:
-            if str(fila[4]) == idents:
-                    if str(fila[1]) != "0":
+            if str(fila[4]) == idents and str(fila[1]) != "0":
                         filaa.append(fila)
 
     consulta.close()
@@ -119,8 +117,7 @@ def obtener_fechas_hour(idents: str, origin: str):
         files = consulta.fetchall()
         for fila in files:
             if str(fila[4]) == idents:
-                if str(fila[2]) == origin:
-                    if str(fila[1]) != "0":
+                if str(fila[2]) == origin and str(fila[1]) != "0":
                         filaa.append(fila)
 
     consulta.close()
