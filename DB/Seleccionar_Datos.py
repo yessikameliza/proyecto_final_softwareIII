@@ -116,8 +116,7 @@ def obtener_fechas_hour(idents: str, origin: str):
     if consulta.execute(sql):
         files = consulta.fetchall()
         for fila in files:
-            if str(fila[4]) == idents:
-                if str(fila[2]) == origin and str(fila[1]) != "0":
+            if str(fila[4]) == idents and str(fila[2]) == origin and str(fila[1]) != "0":
                         filaa.append(fila)
 
     consulta.close()
