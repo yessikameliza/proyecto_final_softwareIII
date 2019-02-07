@@ -9,8 +9,8 @@ import sys
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMessageBox
-from logica.Persistence import register_Docent
-from logica.Persistence import obtener_Matter
+from logica.Persistence import register_docent
+from logica.Persistence import obtener_matter
 
 class registroDocentes(object):
     message_box: QMessageBox
@@ -82,7 +82,7 @@ class registroDocentes(object):
         self.comboAsignatura.setStyleSheet("background-color: rgb(255, 255, 255);\n"
                                            "color: rgb(0, 0, 0);")
         self.comboAsignatura.setObjectName("comboAsignatura")
-        res = obtener_Matter()
+        res = obtener_matter()
 
         for aux in res:
             aux2 = str((aux[2]))
@@ -187,7 +187,7 @@ class registroDocentes(object):
         if len(nomb) == 0 | len(tipo) == 0 | len(lim) == 0 | len(tel) == 0 | len(iden) == 0 | len(esta) == 0:
             self.mostrarMensaje("Alerta", "¡Hay campos vacios!", "", QMessageBox.Warning, False)
         else:
-            register_Docent(name, esta, limit, type, phone, ident, asig, ciudad)
+            register_docent(name, esta, limit, type, phone, ident, asig, ciudad)
             self.mostrarMensaje("Información", "¡Datos registrados con exito!", "", QMessageBox.Warning, False)
        except ValueError:
            self.mostrarMensaje("Información", "¡La entrada es incorrecta, escriba un numero entero!",

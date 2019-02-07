@@ -7,7 +7,7 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from logica.Persistence import obtener_Fecha
+from logica.Persistence import obtener_fecha
 
 
 class PrimerasFechas(object):
@@ -157,7 +157,7 @@ class PrimerasFechas(object):
         self.tabla1()
 
     def tabla1(self):
-        res = obtener_Fecha("Primeras fechas")
+        res = obtener_fecha("Primeras fechas")
 
         print(res)
         col: int = 0

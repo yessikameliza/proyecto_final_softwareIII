@@ -20,7 +20,7 @@ from DB.ActualizarDatos import updateBMa
 from DB.Seleccionar_Datos import obtenerFechaInduc
 from DB.Seleccionar_Datos import searchDocentMatter
 
-def register_Matter(codigo: str, name: str, ubi_Semester: int, numCredit: str, codRequisite: str, numHoursSem: int):
+def register_matter(codigo: str, name: str, ubi_Semester: int, numCredit: str, codRequisite: str, numHoursSem: int):
     cod = str(codigo)
     nam = str(name)
     ubi_Semeste = int(ubi_Semester)
@@ -30,7 +30,7 @@ def register_Matter(codigo: str, name: str, ubi_Semester: int, numCredit: str, c
     insertMatter(cod, nam, ubi_Semeste, numCredi, codRequisit, numHoursSema)
 
 
-def register_Docent(name: str, state: str, limitHours: int, contract: str, phone: str, identification: str,
+def register_docent(name: str, state: str, limitHours: int, contract: str, phone: str, identification: str,
                     matter: str, city: str):
     nom: str = name
     stat: str = state
@@ -38,87 +38,81 @@ def register_Docent(name: str, state: str, limitHours: int, contract: str, phone
     contra: str = contract
     phonen: str = phone
     identi: str = identification
-    print(stat)
-    print(limitHour)
-    print(contra)
-    print(phonen)
-    print(nom)
-    print(identi)
     insertDocent(nom, stat, limitHour, contra, phonen, identi, matter, city)
 
 
-def register_Date(date: str, origin: str, idBlock: int, ident: str):
+def register_date(date: str, origin: str, idBlock: int, ident: str):
     datee = str(date)
     orige = str(origin)
     idents = str(ident)
     insertDate(datee, orige, idBlock, idents)
 
 
-def searchhMatter(codigo: str):
+def search_matter(codigo: str):
     return searchMatter(codigo)
 
 
-def update_Matter(codigo: str, name: str, ubi_Semester: int, numCredit: str, codRequisite: str, numHoursSem: int):
+def update_matter(codigo: str, name: str, ubi_Semester: int, numCredit: str, codRequisite: str, numHoursSem: int):
     upDate_Matter(codigo, name, ubi_Semester, numCredit, codRequisite, numHoursSem)
 
 
-def delete_Matter(codigo: str):
+def delete_matter(codigo: str):
     return deleteMatter(codigo)
 
 
-def search_Docent(ident: str):
+def search_docent(ident: str):
     return searchDocent(ident)
 
 
-def update_Docent(name: str, state: str, limitHours: int, contract: str, phone: str, identification: str, matter: str,
+def update_docent(name: str, state: str, limitHours: int, contract: str, phone: str, identification: str, matter: str,
                   city: str):
     updateDocent(name, state, limitHours, contract, phone, identification, matter, city)
 
 
-def delete_Docent(identification: str):
+def delete_docent(identification: str):
     return deleteDocent(identification)
 
 
-def delete_Date():
+def delete_date():
     print("entroooo")
     return deleteDate()
 
 
-def updateDatee(date: str, origin: str, idBlock: int, idents: str):
+def update_datee(date: str, origin: str, idBlock: int, idents: str):
     updateDate(date, origin, idBlock, idents)
 
 
-def obtener_Fecha(idents: str):
+def obtener_fecha(idents: str):
     return obtenerFechas(idents)
 
 
-def obtenerFechasP(idents: str, origin: str):
+def obtener_fechas_p(idents: str, origin: str):
     return obtenerFechasHour(idents, origin)
 
 
-def obtener_Matter():
+def obtener_matter():
     return obtenerMatter()
 
-def obtenerFInduct(idents: str):
+def obtener_f_induct(idents: str):
     return obtenerFechaInduc(idents)
 
-def geneHours(semester: int, ciudad: str) -> list:
+def gene_hours(semester: int, ciudad: str) -> list:
     hours: list = []
     if semester == 1:
-        return geneHoursPrimerS(semester, ciudad, hours)
+        return geneHoursPrimerS(semester, hours)
     elif semester == 2:
-        return geneHoursSegundoS(semester, ciudad, hours)
+        return geneHoursSegundoS(semester, hours)
     elif semester == 3:
-        return geneHoursTercerS(semester, ciudad, hours)
+        return geneHoursTercerS(semester, hours)
     elif semester == 4:
-        return geneHoursCuartoS(semester, ciudad, hours)
+        return geneHoursCuartoS(semester, hours)
     elif semester == 5:
-        return geneHoursQuintoS(semester, ciudad, hours)
+        return geneHoursQuintoS(semester, hours)
     elif semester == 6:
-        return geneHoursSextoS(semester, ciudad, hours)
+        return geneHoursSextoS(semester, hours)
     return None
 
-def obtenerdatosProfe(semester: int, ciudad: str):
+def obtenerDatosProfe(semester: int, ciudad: str):
     auxx: list = []
     files: list = buscarMaterPorSemester(semester)
     aux2: list = []
@@ -138,7 +132,7 @@ def obtenerdatosProfe(semester: int, ciudad: str):
     return aux2
 
 
-def geneHoursPrimerS(semester, ciudad, horario: list):
+def geneHoursPrimerS(semester, horario: list):
     files: list = buscarMaterPorSemester(semester)
     fileshor: list = buscarhorainiciofin()
     auxlist: list = []
@@ -202,7 +196,7 @@ def geneHoursPrimerS(semester, ciudad, horario: list):
     return horario
 
 
-def geneHoursSegundoS(semester, ciudad, horario: list):
+def geneHoursSegundoS(semester, horario: list):
     files: list = buscarMaterPorSemester(semester)
     fileshor: list = buscarhorainiciofin()
     auxlist: list = []
@@ -249,7 +243,7 @@ def geneHoursSegundoS(semester, ciudad, horario: list):
     return horario
 
 
-def geneHoursTercerS(semester, ciudad, horario: list):
+def geneHoursTercerS(semester, horario: list):
     files: list = buscarMaterPorSemester(semester)
     fileshor: list = buscarhorainiciofin()
     auxlist: list = []
@@ -293,7 +287,7 @@ def geneHoursTercerS(semester, ciudad, horario: list):
     return horario
 
 
-def geneHoursCuartoS(semester, ciudad, horario: list):
+def geneHoursCuartoS(semester, horario: list):
     files: list = buscarMaterPorSemester(semester)
     fileshor: list = buscarhorainiciofin()
     auxlist: list = []
@@ -335,7 +329,7 @@ def geneHoursCuartoS(semester, ciudad, horario: list):
     return horario
 
 
-def geneHoursQuintoS(semester, ciudad, horario: list):
+def geneHoursQuintoS(semester, horario: list):
     files: list = buscarMaterPorSemester(semester)
     fileshor: list = buscarhorainiciofin()
     auxlist: list = []
@@ -381,7 +375,7 @@ def geneHoursQuintoS(semester, ciudad, horario: list):
     print(horario)
     return horario
 
-def geneHoursSextoS(semester, ciudad, horario: list):
+def geneHoursSextoS(semester, horario: list):
     files: list = buscarMaterPorSemester(semester)
     fileshor: list = buscarhorainiciofin()
     auxlist: list = []

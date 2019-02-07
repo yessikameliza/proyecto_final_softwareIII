@@ -18,10 +18,10 @@ from GUI.eliminarDocente import eliminarDocente
 from GUI.primerasFechas import PrimerasFechas
 from GUI.fechasAlternas import FechasAlternas
 from GUI.pereiraDomingos import FechasPereira
-from logica.Persistence import geneHours, obtener_Fecha
-from logica.Persistence import obtenerFechasP
-from logica.Persistence import obtenerFInduct
-from logica.Persistence import obtenerdatosProfe
+from logica.Persistence import gene_hours, obtener_fecha
+from logica.Persistence import obtener_fechas_p
+from logica.Persistence import obtener_f_induct
+from logica.Persistence import obtenerDatosProfe
 class Ui_MainWindow(QtWidgets.QMainWindow):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -556,7 +556,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             i = 0
 
     def llenartabla(self, semester, city):
-        s: list = obtenerdatosProfe(semester, city)
+        s: list = obtenerDatosProfe(semester, city)
         #item1 = self.tablaInfoAcademica.item(0, 1)
         #item1.setText("hh")
         a = [[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15]]
@@ -582,13 +582,13 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.setearTabla()
         semester: int = int(self.spinSemestre.text())
         print("este es el semestre", semester)
-        hours: list = geneHours(semester, "Armenia")
+        hours: list = gene_hours(semester, "Armenia")
         self.llenartabla(semester, "Armenia")
         rows = 1
         i = 0
         if semester == 1:
             i = 4
-            dateInduc: list = obtenerFInduct("inductorio")
+            dateInduc: list = obtener_f_induct("inductorio")
             item = self.tablaHorario.item(0, 0)
             item.setText((dateInduc[0])[1])
             item = self.tablaHorario.item(2, 0)
@@ -599,7 +599,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         o = 1
         print("recibido en metodo prueba horario")
         print(hours)
-        date: list = obtenerFechasP("Primeras fechas", "Encuentros tutoriales")
+        date: list = obtener_fechas_p("Primeras fechas", "Encuentros tutoriales")
         print(date, "arreglo date")
         for d in date:
             print("entrooooo date", d[3])
@@ -637,13 +637,13 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
     def pruebaHorario2(self):
         self.setearTabla()
         semester: int = int(self.spinSemestre.text())
-        hours: list = geneHours(semester, "Armenia")
+        hours: list = gene_hours(semester, "Armenia")
         self.llenartabla(semester, "Buga")
         rows = 1
         i = 0
         if semester == 1:
             i = 4
-            dateInduc: list = obtenerFInduct("inductorio")
+            dateInduc: list = obtener_f_induct("inductorio")
             item = self.tablaHorario.item(0, 0)
             item.setText((dateInduc[0])[1])
             item = self.tablaHorario.item(2, 0)
@@ -654,7 +654,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         o = 1
         print("recibido en metodo prueba horario")
         print(hours)
-        date: list = obtenerFechasP("Fechas alternas", "Encuentros tutoriales")
+        date: list = obtener_fechas_p("Fechas alternas", "Encuentros tutoriales")
         print(date, "arreglo date")
         for d in date:
             print("entrooooo date", d[3])
@@ -692,13 +692,13 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
     def pruebaHorario3(self):
         self.setearTabla()
         semester: int = int(self.spinSemestre.text())
-        hours: list = geneHours(semester, "Armenia")
+        hours: list = gene_hours(semester, "Armenia")
         self.llenartabla(semester, "Pereira")
         rows = 1
         i = 0
         if semester == 1:
             i = 4
-            dateInduc: list = obtenerFInduct("inductorio")
+            dateInduc: list = obtener_f_induct("inductorio")
             item = self.tablaHorario.item(0, 0)
             item.setText((dateInduc[0])[1])
             item = self.tablaHorario.item(2, 0)
@@ -707,7 +707,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             i = 0
         n = 1
         o = 1
-        date: list = obtenerFechasP("Fechas alternas", "Encuentros tutoriales")
+        date: list = obtener_fechas_p("Fechas alternas", "Encuentros tutoriales")
         for d in date:
             if d[3] != n:
                 i = 0

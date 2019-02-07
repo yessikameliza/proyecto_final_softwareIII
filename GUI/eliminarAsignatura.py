@@ -8,7 +8,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMessageBox
-from logica.Persistence import delete_Matter
+from logica.Persistence import delete_matter
 class eliminarAsignatura(object):
     message_box: QMessageBox
     def setupUi(self, MainWindow):
@@ -76,7 +76,7 @@ class eliminarAsignatura(object):
     def eliminar(self):
        try:
         cod = self.txtCodtBuscar.toPlainText()
-        res = delete_Matter(cod)
+        res = delete_matter(cod)
         if not None == res:
           self.mostrarMensaje("Información", "¡La asignatura se ha eliminado con exito!", "", QMessageBox.Warning, False)
         else:

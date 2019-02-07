@@ -8,8 +8,8 @@
 from typing import Any
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from logica.Persistence import searchhMatter
-from logica.Persistence import update_Matter
+from logica.Persistence import search_matter
+from logica.Persistence import update_matter
 
 from PyQt5.QtWidgets import QMessageBox
 
@@ -156,7 +156,7 @@ class actualizarAsignatura(object):
         self.txtNumHorSemestre.clear()
     def buscar(self):
         codBuscar = str(self.txtCodigoBuscar.toPlainText())
-        res: Any = searchhMatter(codBuscar)
+        res: Any = search_matter(codBuscar)
 
         if not None == res:
             print(res[1], res[2])
@@ -184,7 +184,7 @@ class actualizarAsignatura(object):
             self.mostrarMensaje("Alerta", "¡Hay espacios vacios, digite todos los campos!", "", QMessageBox.Warning,
                                 False)
         else:
-            update_Matter(cod, nom, ubiSemestre, numCreditos, codRequisito, num)
+            update_matter(cod, nom, ubiSemestre, numCreditos, codRequisito, num)
 
         self.mostrarMensaje("Información", "¡Se han actualizado los datos correctamente!", "", QMessageBox.Warning, False)
        except ValueError:

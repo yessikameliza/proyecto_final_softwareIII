@@ -9,7 +9,7 @@ from xml.dom import ValidationErr
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMessageBox
-from logica.Persistence import register_Matter
+from logica.Persistence import register_matter
 
 class registroAsignaturas(object):
     message_box: QMessageBox
@@ -144,7 +144,7 @@ class registroAsignaturas(object):
         if len(cod) == 0 | len(nombre) == 0 | len(numCred) == 0 | len(numHoras) == 0 | len(codReq) == 0 | len(sem) == 0:
             self.mostrarMensaje("Alerta", "¡Hay campos vacios!", "", QMessageBox.Warning, False)
         else:
-            register_Matter(cod, nombre, semes, numCred, codReq, numHoras)
+            register_matter(cod, nombre, semes, numCred, codReq, numHoras)
             self.mostrarMensaje("Información", "¡Datos registrados con exito!", "", QMessageBox.Warning, False)
 
       except ValueError:

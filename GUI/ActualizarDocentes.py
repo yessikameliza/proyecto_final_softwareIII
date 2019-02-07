@@ -9,9 +9,9 @@ from typing import Any
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMessageBox
-from logica.Persistence import search_Docent
-from logica.Persistence import update_Docent
-from logica.Persistence import obtener_Matter
+from logica.Persistence import search_docent
+from logica.Persistence import update_docent
+from logica.Persistence import obtener_matter
 class actualizarDocente(object):
     message_box: QMessageBox
     def setupUi(self, MainWindow):
@@ -35,7 +35,7 @@ class actualizarDocente(object):
         self.comboAsignatura.setStyleSheet("background-color: rgb(255, 255, 255);\n"
 "color: rgb(0, 0, 0);")
 
-        res = obtener_Matter()
+        res = obtener_matter()
         for aux in res:
             aux2 = str((aux[2]))
             print(aux2)
@@ -188,14 +188,14 @@ class actualizarDocente(object):
         if len(nomb) == 0 | len(tipo) == 0 | len(lim) == 0 | len(tel) ==0 | len(iden) == 0 | len(esta) == 0:
             self.mostrarMensaje("Alerta", "¡Hay espacios vacios, digite todos los campos!", "", QMessageBox.Warning, False)
         else:
-            update_Docent(nomb, esta, lim, tipo, tel, iden)
+            update_docent(nomb, esta, lim, tipo, tel, iden)
             self.mostrarMensaje("Información", "¡Se han actualizado los datos correctamente!", "", QMessageBox.Warning, False)
        except ValueError:
         self.mostrarMensaje("Información", "¡La entrada es incorrecta, escriba un numero entero!",
                         "", QMessageBox.Warning, False)
     def buscar(self):
         id = self.txtIdentBuscar.toPlainText()
-        fila:Any = search_Docent(id)
+        fila:Any = search_docent(id)
         if not None == fila:
             self.txtIdent.setText(str(fila[6]))
             self.txtNombre.setText(str(fila[1]))

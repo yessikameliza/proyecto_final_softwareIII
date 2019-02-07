@@ -7,7 +7,7 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from logica.Persistence import obtener_Fecha
+from logica.Persistence import obtener_fecha
 class FechasAlternas(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
@@ -155,7 +155,7 @@ class FechasAlternas(object):
         self.tabla1()
 
     def tabla1(self):
-        res = obtener_Fecha("Fechas alternas")
+        res = obtener_fecha("Fechas alternas")
         col: int = 0
         rows: int = 0
         for it in res:

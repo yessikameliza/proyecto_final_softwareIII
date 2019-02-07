@@ -7,7 +7,7 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from logica.Persistence import delete_Docent
+from logica.Persistence import delete_docent
 from PyQt5.QtWidgets import QMessageBox
 
 
@@ -75,7 +75,7 @@ class eliminarDocente(object):
     def eliminar(self):
        try:
         iden = str(self.txtIdentBuscar.toPlainText())
-        res = delete_Docent(iden)
+        res = delete_docent(iden)
         if not None == res:
             self.mostrarMensaje("Información", "¡El docente se ha eliminado con exito!", "", QMessageBox.Warning,
                                 False)
