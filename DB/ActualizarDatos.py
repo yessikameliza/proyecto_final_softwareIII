@@ -1,7 +1,7 @@
 # enconding: utf-8
 # IMPORTANTE codificar el script en UTF-8
 import sqlite3
-from DB.InsertarDatos import insertDate
+from DB.InsertarDatos import insert_date
 
 
 def upDate_Matter(codigo: str, name: str, ubi_Semester: int, numCredit: str, codRequisite: str, numHoursSem: int):
@@ -84,4 +84,4 @@ def updateBMa(nombre: str, idBlock: int):
     conexion.close()
 
 def updateDate(date: str, origin: str, idBlock: int, idents: str):
-    insertDate(date, origin, idBlock, idents)
+    insert_date(date, origin, idBlock, idents)

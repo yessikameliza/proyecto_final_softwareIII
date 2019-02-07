@@ -3,5 +3,5 @@ projectKey=yessikameliza_proyecto_final_softwareIII
 serverUrl=https://sonarcloud.io
 serverVersion=7.7.0.21686
 dashboardUrl=https://sonarcloud.io/dashboard?id=yessikameliza_proyecto_final_softwareIII
-ceTaskId=AWjJpY3vrgUWdm-Arn6V
-ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AWjJpY3vrgUWdm-Arn6V
+ceTaskId=AWjKHeO71T0eadXyTXpq
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AWjKHeO71T0eadXyTXpq

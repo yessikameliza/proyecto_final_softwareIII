@@ -159,7 +159,7 @@ class ActualizarDocente(object):
                                     "color: rgb(255, 255, 255);")
         self.codigo_2.setObjectName("codigo_2")
         main_window.setCentralWidget(self.centralwidget)
-        self.menubar = QtWidgets.QMenuBar(MainWindow)
+        self.menubar = QtWidgets.QMenuBar(main_window)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 687, 21))
         self.menubar.setObjectName("menubar")
         main_window.setMenuBar(self.menubar)
