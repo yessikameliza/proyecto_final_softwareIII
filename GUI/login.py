@@ -11,7 +11,7 @@ from GUI.ventanaPrincipal import VentanaPrincipal
 from PyQt5.QtWidgets import QMessageBox, QMainWindow, QApplication
 class Login(QMainWindow):
     message_box: QMessageBox
-    def setupUi(self, Form):
+    def setup_Ui(self, Form):
         Form.setObjectName("Form")
         Form.resize(376, 373)
         Form.setStyleSheet("background-color: rgb(128, 195, 161)")

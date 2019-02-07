@@ -16,7 +16,7 @@ from logica.Persistence import obtener_Fecha
 class Ui_Form(object):
     message_box: QMessageBox
 
-    def setupUi(self, Form):
+    def setup_Ui(self, Form):
         Form.setObjectName("Form")
         Form.resize(1379, 743)
         Form.setStyleSheet("background-color: rgb(128, 195, 161)")

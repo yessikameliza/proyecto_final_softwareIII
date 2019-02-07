@@ -11,7 +11,7 @@ from logica.Persistence import obtener_Fecha
 
 
 class PrimerasFechas(object):
-    def setupUi(self, Form):
+    def setup_Ui(self, Form):
         Form.setObjectName("Form")
         Form.resize(926, 440)
         Form.setStyleSheet("background-color: rgb(128, 195, 161)")

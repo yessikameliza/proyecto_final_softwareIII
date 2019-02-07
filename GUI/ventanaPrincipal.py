@@ -9,12 +9,12 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMessageBox
 from GUI.registroFechas import Ui_Form
-from GUI.registroDocentes import registroDocentes
-from GUI.registroAsignaturas import registroAsignaturas
-from GUI.ActualizarAsignaturas import actualizarAsignatura
-from GUI.eliminarAsignatura import eliminarAsignatura
-from GUI.ActualizarDocentes import actualizarDocente
-from GUI.eliminarDocente import eliminarDocente
+from GUI.registroDocentes import RegistroDocentes
+from GUI.registroAsignaturas import RegistroAsignaturas
+from GUI.ActualizarAsignaturas import ActualizarAsignatura
+from GUI.eliminarAsignatura import EliminarAsignatura
+from GUI.ActualizarDocentes import ActualizarDocente
+from GUI.eliminarDocente import EliminarDocente
 from GUI.primerasFechas import PrimerasFechas
 from GUI.fechasAlternas import FechasAlternas
 from GUI.pereiraDomingos import FechasPereira
@@ -23,7 +23,7 @@ from logica.Persistence import obtenerFechasP
 from logica.Persistence import obtenerFInduct
 from logica.Persistence import obtenerdatosProfe
 class VentanaPrincipal(QtWidgets.QMainWindow):
-    def setupUi(self, Form):
+    def setup_Ui(self, Form):
         Form.setObjectName("Form")
         Form.resize(1267, 854)
         Form.setStyleSheet("background-color: rgb(255, 255, 255);")
@@ -490,7 +490,7 @@ class VentanaPrincipal(QtWidgets.QMainWindow):
 
     def ventanaRegistroDocente(self):
         self.ventana = QtWidgets.QMainWindow()
-        self.ui = registroDocentes()
+        self.ui = RegistroDocentes()
         self.ui.setupUi(self.ventana)
         self.ventana.show()
 
@@ -504,31 +504,31 @@ class VentanaPrincipal(QtWidgets.QMainWindow):
 
     def ventanaRegAsi(self):
         self.ventana = QtWidgets.QMainWindow()
-        self.ui = registroAsignaturas()
+        self.ui = RegistroAsignaturas()
         self.ui.setupUi(self.ventana)
         self.ventana.show()
 
     def ventanaModAsig(self):
         self.ventana = QtWidgets.QMainWindow()
-        self.ui = actualizarAsignatura()
+        self.ui = ActualizarAsignatura()
         self.ui.setupUi(self.ventana)
         self.ventana.show()
 
     def ventanaElimAsig(self):
         self.ventana = QtWidgets.QMainWindow()
-        self.ui = eliminarAsignatura()
+        self.ui = EliminarAsignatura()
         self.ui.setupUi(self.ventana)
         self.ventana.show()
 
     def ventanaActDoc(self):
         self.ventana = QtWidgets.QMainWindow()
-        self.ui = actualizarDocente()
+        self.ui = ActualizarDocente()
         self.ui.setupUi(self.ventana)
         self.ventana.show()
 
     def ventanaElimDoc(self):
         self.ventana = QtWidgets.QMainWindow()
-        self.ui = eliminarDocente()
+        self.ui = EliminarDocente()
         self.ui.setupUi(self.ventana)
         self.ventana.show()
 

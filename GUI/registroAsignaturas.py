@@ -11,9 +11,9 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMessageBox
 from logica.Persistence import register_Matter
 
-class registroAsignaturas(object):
+class RegistroAsignaturas(object):
     message_box: QMessageBox
-    def setupUi(self, MainWindow):
+    def setup_Ui(self, MainWindow):
         MainWindow.setObjectName("Registro de asignaturas")
         MainWindow.resize(531, 573)
         MainWindow.setStyleSheet("background-color: rgb(128, 195, 161)")
@@ -24,12 +24,12 @@ class registroAsignaturas(object):
         self.label.setStyleSheet("\n"
 "font: 75 8pt \"Segoe Print\";")
         self.label.setObjectName("label")
-        self.txtCodigo = QtWidgets.QTextEdit(self.centralwidget)
-        self.txtCodigo.setGeometry(QtCore.QRect(260, 140, 221, 31))
-        self.txtCodigo.setStyleSheet("color: rgb(0, 0, 0);\n"
+        self.txtcodigo = QtWidgets.QTextEdit(self.centralwidget)
+        self.txtcodigo.setGeometry(QtCore.QRect(260, 140, 221, 31))
+        self.txtcodigo.setStyleSheet("color: rgb(0, 0, 0);\n"
 "font: 10pt \"MS Shell Dlg 2\";\n"
 "background-color: rgb(255, 255, 255);")
-        self.txtCodigo.setObjectName("txtCodigo")
+        self.txtcodigo.setObjectName("txtcodigo")
         self.nombre = QtWidgets.QLabel(self.centralwidget)
         self.nombre.setGeometry(QtCore.QRect(40, 190, 91, 21))
         self.nombre.setStyleSheet("font: 75 8pt \"Segoe Print\";")
@@ -38,26 +38,26 @@ class registroAsignaturas(object):
         self.codigo.setGeometry(QtCore.QRect(40, 140, 91, 31))
         self.codigo.setStyleSheet("font: 75 8pt \"Segoe Print\";")
         self.codigo.setObjectName("codigo")
-        self.txtNombre = QtWidgets.QTextEdit(self.centralwidget)
-        self.txtNombre.setGeometry(QtCore.QRect(260, 190, 221, 31))
-        self.txtNombre.setStyleSheet("color: rgb(0, 0, 0);\n"
+        self.txtnombre = QtWidgets.QTextEdit(self.centralwidget)
+        self.txtnombre.setGeometry(QtCore.QRect(260, 190, 221, 31))
+        self.txtnombre.setStyleSheet("color: rgb(0, 0, 0);\n"
 "font: 10pt \"MS Shell Dlg 2\";\n"
 "background-color: rgb(255, 255, 255);")
-        self.txtNombre.setObjectName("txtNombre")
-        self.numCreditos = QtWidgets.QLabel(self.centralwidget)
-        self.numCreditos.setGeometry(QtCore.QRect(40, 250, 171, 61))
-        self.numCreditos.setStyleSheet("font: 75 8pt \"Segoe Print\";")
-        self.numCreditos.setObjectName("numCreditos")
-        self.txtNumHorSemestre = QtWidgets.QTextEdit(self.centralwidget)
-        self.txtNumHorSemestre.setGeometry(QtCore.QRect(260, 290, 221, 31))
-        self.txtNumHorSemestre.setStyleSheet("color: rgb(0, 0, 0);\n"
+        self.txtnombre.setObjectName("txtnombre")
+        self.numcreditos = QtWidgets.QLabel(self.centralwidget)
+        self.numcreditos.setGeometry(QtCore.QRect(40, 250, 171, 61))
+        self.numcreditos.setStyleSheet("font: 75 8pt \"Segoe Print\";")
+        self.numcreditos.setObjectName("numcreditos")
+        self.txtnumhorsemestre = QtWidgets.QTextEdit(self.centralwidget)
+        self.txtnumhorsemestre.setGeometry(QtCore.QRect(260, 290, 221, 31))
+        self.txtnumhorsemestre.setStyleSheet("color: rgb(0, 0, 0);\n"
 "font: 10pt \"MS Shell Dlg 2\";\n"
 "background-color: rgb(255, 255, 255);")
-        self.txtNumHorSemestre.setObjectName("txtNumHorSemestre")
-        self.numHorasSemestre = QtWidgets.QLabel(self.centralwidget)
-        self.numHorasSemestre.setGeometry(QtCore.QRect(40, 300, 211, 41))
-        self.numHorasSemestre.setStyleSheet("font: 75 8pt \"Segoe Print\";")
-        self.numHorasSemestre.setObjectName("numHorasSemestre")
+        self.txtnumhorsemestre.setObjectName("txtNumHorSemestre")
+        self.numhorassemestre = QtWidgets.QLabel(self.centralwidget)
+        self.numhorassemestre.setGeometry(QtCore.QRect(40, 300, 211, 41))
+        self.numhorassemestre.setStyleSheet("font: 75 8pt \"Segoe Print\";")
+        self.numhorassemestre.setObjectName("numhorassemestre")
         self.btnAceptar = QtWidgets.QPushButton(self.centralwidget)
         self.btnAceptar.setGeometry(QtCore.QRect(260, 480, 101, 31))
         self.btnAceptar.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
@@ -80,22 +80,22 @@ class registroAsignaturas(object):
         self.semestre.setGeometry(QtCore.QRect(40, 410, 211, 31))
         self.semestre.setStyleSheet("font: 75 8pt \"Segoe Print\";")
         self.semestre.setObjectName("semestre")
-        self.boxSemestre = QtWidgets.QSpinBox(self.centralwidget)
-        self.boxSemestre.setGeometry(QtCore.QRect(260, 410, 71, 22))
-        self.boxSemestre.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+        self.boxsemestre = QtWidgets.QSpinBox(self.centralwidget)
+        self.boxsemestre.setGeometry(QtCore.QRect(260, 410, 71, 22))
+        self.boxsemestre.setStyleSheet("background-color: rgb(255, 255, 255);\n"
 "color: rgb(0, 0, 0);")
-        self.boxSemestre.setMinimum(1)
-        self.boxSemestre.setMaximum(6)
-        self.boxSemestre.setProperty("value", 1)
-        self.boxSemestre.setObjectName("boxSemestre")
-        self.boxCreditos = QtWidgets.QSpinBox(self.centralwidget)
-        self.boxCreditos.setGeometry(QtCore.QRect(260, 250, 71, 22))
-        self.boxCreditos.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+        self.boxsemestre.setMinimum(1)
+        self.boxsemestre.setMaximum(6)
+        self.boxsemestre.setProperty("value", 1)
+        self.boxsemestre.setObjectName("boxsemestre")
+        self.boxcreditos = QtWidgets.QSpinBox(self.centralwidget)
+        self.boxcreditos.setGeometry(QtCore.QRect(260, 250, 71, 22))
+        self.boxcreditos.setStyleSheet("background-color: rgb(255, 255, 255);\n"
 "color: rgb(0, 0, 0);")
-        self.boxCreditos.setMinimum(1)
-        self.boxCreditos.setMaximum(6)
-        self.boxCreditos.setProperty("value", 1)
-        self.boxCreditos.setObjectName("boxCreditos")
+        self.boxcreditos.setMinimum(1)
+        self.boxcreditos.setMaximum(6)
+        self.boxcreditos.setProperty("value", 1)
+        self.boxcreditos.setObjectName("boxcreditos")
         self.semestre_2 = QtWidgets.QLabel(self.centralwidget)
         self.semestre_2.setGeometry(QtCore.QRect(40, 350, 211, 31))
         self.semestre_2.setStyleSheet("font: 10pt \"Segoe Print\";\n"
@@ -124,12 +124,12 @@ class registroAsignaturas(object):
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def limpiar(self):
-        self.txtNombre.clear()
-        self.txtCodReq.clear()
-        self.txtNumHorSemestre.clear()
-        self.txtCodigo.clear()
-        self.boxSemestre.clear()
-        self.boxCreditos.clear()
+        self.txtnombre.clear()
+        self.txtcodReq.clear()
+        self.txtnumhorsemestre.clear()
+        self.txtcodigo.clear()
+        self.boxsemestre.clear()
+        self.boxcreditos.clear()
 
     def registrarMaterias(self):
       try:

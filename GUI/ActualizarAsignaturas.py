@@ -13,7 +13,7 @@ from logica.Persistence import update_Matter
 
 from PyQt5.QtWidgets import QMessageBox
 
-class actualizarAsignatura(object):
+class ActualizarAsignatura(object):
 
     message_box: QMessageBox
 

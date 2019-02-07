@@ -10,7 +10,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from logica.Persistence import obtener_Fecha
 
 class FechasPereira(object):
-    def setupUi(self, Form):
+    def setup_Ui(self, Form):
         Form.setObjectName("Form")
         Form.resize(906, 425)
         Form.setStyleSheet("background-color: rgb(128, 195, 161)")
