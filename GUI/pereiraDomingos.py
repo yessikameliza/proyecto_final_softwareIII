@@ -9,6 +9,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from logica.Persistence import obtener_fecha
 
+
 class FechasPereira(object):
     def setup_Ui(self, Form):
         Form.setObjectName("Form")
@@ -17,13 +18,13 @@ class FechasPereira(object):
         self.label_4 = QtWidgets.QLabel(Form)
         self.label_4.setGeometry(QtCore.QRect(410, 100, 200, 30))
         self.label_4.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
-"color: rgb(0, 0, 0);")
+                                   "color: rgb(0, 0, 0);")
         self.label_4.setObjectName("label_4")
         self.tableWidgetFechasPereira = QtWidgets.QTableWidget(Form)
         self.tableWidgetFechasPereira.setGeometry(QtCore.QRect(20, 130, 851, 211))
         self.tableWidgetFechasPereira.setStyleSheet("font: 9pt \"Segoe Print\";\n"
-"color: rgb(0, 0, 0);\n"
-"background-color: rgb(255, 255, 255);")
+                                                    "color: rgb(0, 0, 0);\n"
+                                                    "background-color: rgb(255, 255, 255);")
         self.tableWidgetFechasPereira.setInputMethodHints(QtCore.Qt.ImhNone)
         self.tableWidgetFechasPereira.setObjectName("tableWidgetFechasPereira")
         self.tableWidgetFechasPereira.setColumnCount(6)
@@ -128,24 +129,24 @@ class FechasPereira(object):
         self.label_5 = QtWidgets.QLabel(Form)
         self.label_5.setGeometry(QtCore.QRect(290, 30, 351, 41))
         self.label_5.setStyleSheet("font: 75 20pt \"Segoe Print\";\n"
-"color: rgb(0, 0, 0);")
+                                   "color: rgb(0, 0, 0);")
         self.label_5.setObjectName("label_5")
         self.label_3 = QtWidgets.QLabel(Form)
         self.label_3.setGeometry(QtCore.QRect(130, 100, 200, 30))
         self.label_3.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
-"color: rgb(0, 0, 0);")
+                                   "color: rgb(0, 0, 0);")
         self.label_3.setObjectName("label_3")
         self.btnVer = QtWidgets.QPushButton(Form)
         self.btnVer.setGeometry(QtCore.QRect(370, 360, 181, 41))
         self.btnVer.setStyleSheet("font: 11pt \"Segoe Print\";\n"
-"color: rgb(255, 255, 255);\n"
-"background-color: rgb(0, 51, 51);\n"
-"")
+                                  "color: rgb(255, 255, 255);\n"
+                                  "background-color: rgb(0, 51, 51);\n"
+                                  "")
         self.btnVer.setObjectName("btnVer")
         self.label_6 = QtWidgets.QLabel(Form)
         self.label_6.setGeometry(QtCore.QRect(680, 100, 200, 30))
         self.label_6.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
-"color: rgb(0, 0, 0);")
+                                   "color: rgb(0, 0, 0);")
         self.label_6.setObjectName("label_6")
 
         self.retranslateUi(Form)
@@ -174,7 +175,8 @@ class FechasPereira(object):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
         Form.setWhatsThis(_translate("Form", "<html><head/><body><p><br/></p><p><br/></p></body></html>"))
-        self.label_4.setText(_translate("Form", "<html><head/><body><p><span style=\" font-weight:600; color:#000000;\">BLOQUE B</span></p></body></html>"))
+        self.label_4.setText(_translate("Form",
+                                        "<html><head/><body><p><span style=\" font-weight:600; color:#000000;\">BLOQUE B</span></p></body></html>"))
         item = self.tableWidgetFechasPereira.verticalHeaderItem(0)
         item.setText(_translate("Form", "1"))
         item = self.tableWidgetFechasPereira.verticalHeaderItem(1)
@@ -274,8 +276,10 @@ class FechasPereira(object):
         item = self.tableWidgetFechasPereira.item(5, 5)
         item.setText(_translate("Form", "0"))
         self.tableWidgetFechasPereira.setSortingEnabled(__sortingEnabled)
-        self.label_5.setText(_translate("Form", "<html><head/><body><p><span style=\" font-size:20pt; font-weight:600; color:#000000;\">Fechas pereira domingos</span></p></body></html>"))
-        self.label_3.setText(_translate("Form", "<html><head/><body><p><span style=\" font-weight:600; color:#000000;\">BLOQUE A</span></p></body></html>"))
+        self.label_5.setText(_translate("Form",
+                                        "<html><head/><body><p><span style=\" font-size:20pt; font-weight:600; color:#000000;\">Fechas pereira domingos</span></p></body></html>"))
+        self.label_3.setText(_translate("Form",
+                                        "<html><head/><body><p><span style=\" font-weight:600; color:#000000;\">BLOQUE A</span></p></body></html>"))
         self.btnVer.setText(_translate("Form", "VER"))
-        self.label_6.setText(_translate("Form", "<html><head/><body><p><span style=\" font-weight:600; color:#000000;\">BLOQUE C</span></p></body></html>"))
-
+        self.label_6.setText(_translate("Form",
+                                        "<html><head/><body><p><span style=\" font-weight:600; color:#000000;\">BLOQUE C</span></p></body></html>"))

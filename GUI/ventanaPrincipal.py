@@ -24,6 +24,7 @@ from logica.Persistence import obtener_fechas_p
 from logica.Persistence import obtener_f_induct
 from logica.Persistence import obtenerDatosProfe
 
+
 class VentanaPrincipal(QtWidgets.QMainWindow):
     def setup_Ui(self, Form):
         Form.setObjectName("Form")
@@ -487,63 +488,63 @@ class VentanaPrincipal(QtWidgets.QMainWindow):
     def ventanaFechasPereira(self):
         self.ventana = QtWidgets.QMainWindow()
         self.ui = FechasPereira()
-        self.ui.setupUi(self.ventana)
+        self.ui.setup_Ui(self.ventana)
         self.ventana.show()
 
     def ventanaRegistroDocente(self):
         self.ventana = QtWidgets.QMainWindow()
         self.ui = RegistroDocentes()
-        self.ui.setupUi(self.ventana)
+        self.ui.setup_Ui(self.ventana)
         self.ventana.show()
 
     def ventanaRegistroFecha(self):
 
         self.ventana = QtWidgets.QMainWindow()
         self.ui = Ui_Form()
-        self.ui.setupUi(self.ventana)
+        self.ui.setup_Ui(self.ventana)
         self.ventana.show()
         self.close()
 
     def ventanaRegAsi(self):
         self.ventana = QtWidgets.QMainWindow()
         self.ui = RegistroAsignaturas()
-        self.ui.setupUi(self.ventana)
+        self.ui.setup_Ui(self.ventana)
         self.ventana.show()
 
     def ventanaModAsig(self):
         self.ventana = QtWidgets.QMainWindow()
         self.ui = ActualizarAsignatura()
-        self.ui.setupUi(self.ventana)
+        self.ui.setup_Ui(self.ventana)
         self.ventana.show()
 
     def ventanaElimAsig(self):
         self.ventana = QtWidgets.QMainWindow()
         self.ui = EliminarAsignatura()
-        self.ui.setupUi(self.ventana)
+        self.ui.setup_Ui(self.ventana)
         self.ventana.show()
 
     def ventanaActDoc(self):
         self.ventana = QtWidgets.QMainWindow()
         self.ui = ActualizarDocente()
-        self.ui.setupUi(self.ventana)
+        self.ui.setup_Ui(self.ventana)
         self.ventana.show()
 
     def ventanaElimDoc(self):
         self.ventana = QtWidgets.QMainWindow()
         self.ui = EliminarDocente()
-        self.ui.setupUi(self.ventana)
+        self.ui.setup_Ui(self.ventana)
         self.ventana.show()
 
     def ventanaPrimerasFecha(self):
         self.ventana = QtWidgets.QMainWindow()
         self.ui = PrimerasFechas()
-        self.ui.setupUi(self.ventana)
+        self.ui.setup_Ui(self.ventana)
         self.ventana.show()
 
     def ventanaFechasAlternas(self):
         self.ventana = QtWidgets.QMainWindow()
         self.ui = FechasAlternas()
-        self.ui.setupUi(self.ventana)
+        self.ui.setup_Ui(self.ventana)
         self.ventana.show()
 
     def setearTabla(self):
@@ -559,8 +560,8 @@ class VentanaPrincipal(QtWidgets.QMainWindow):
 
     def llenartabla(self, semester, city):
         s: list = obtenerDatosProfe(semester, city)
-        #item1 = self.tablaInfoAcademica.item(0, 1)
-        #item1.setText("hh")
+        # item1 = self.tablaInfoAcademica.item(0, 1)
+        # item1.setText("hh")
         a = [[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15]]
         rows: int = 0
         col: int = 0
@@ -573,12 +574,10 @@ class VentanaPrincipal(QtWidgets.QMainWindow):
 
                 if col < 4:
                     print(rows, col)
-                    col = col+1
+                    col = col + 1
                 else:
-                    rows = rows+1
+                    rows = rows + 1
                     col = 0
-
-
 
     def pruebaHorario(self):
         self.setearTabla()
@@ -742,25 +741,25 @@ class VentanaPrincipal(QtWidgets.QMainWindow):
             rows = rows + 2
 
     def mostrarMensaje(self, titulo: str, texto: str, texto_informativo: str, tipo_mensaje: QMessageBox,
-                           estado: bool):
+                       estado: bool):
 
-            self.message_box = QMessageBox()
-            self.message_box.setWindowTitle(titulo)
-            self.message_box.setText(texto)
+        self.message_box = QMessageBox()
+        self.message_box.setWindowTitle(titulo)
+        self.message_box.setText(texto)
 
-            if len(texto_informativo) > 0:
-                self.message_box.setInformativeText(texto_informativo)
+        if len(texto_informativo) > 0:
+            self.message_box.setInformativeText(texto_informativo)
 
-            if estado:
-                btn_si = self.message_box.addButton('Si', QMessageBox.ActionRole)
-                btn_no = self.message_box.addButton('No', QMessageBox.ActionRole)
-                self.message_box.setDefaultButton(btn_si, btn_no)
-            else:
-                btn_aceptar = self.message_box.addButton('Aceptar', QMessageBox.ActionRole)
-                self.message_box.setDefaultButton(btn_aceptar)
-            if tipo_mensaje is not None:
-                self.message_box.setIcon(tipo_mensaje)
-                self.message_box.exec_()
+        if estado:
+            btn_si = self.message_box.addButton('Si', QMessageBox.ActionRole)
+            btn_no = self.message_box.addButton('No', QMessageBox.ActionRole)
+            self.message_box.setDefaultButton(btn_si, btn_no)
+        else:
+            btn_aceptar = self.message_box.addButton('Aceptar', QMessageBox.ActionRole)
+            self.message_box.setDefaultButton(btn_aceptar)
+        if tipo_mensaje is not None:
+            self.message_box.setIcon(tipo_mensaje)
+            self.message_box.exec_()
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate

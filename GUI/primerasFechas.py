@@ -171,7 +171,6 @@ class PrimerasFechas(object):
                 rows = -1
             rows = rows + 1
 
-
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
@@ -274,8 +273,12 @@ class PrimerasFechas(object):
         item = self.tableWidgetPrimerasFechas.item(5, 5)
         item.setText(_translate("Form", "0"))
         self.tableWidgetPrimerasFechas.setSortingEnabled(__sortingEnabled)
-        self.label_5.setText(_translate("Form", "<html><head/><body><p><span style=\" font-size:20pt; font-weight:600; color:#000000;\">Primeras fechas</span></p></body></html>"))
-        self.label_3.setText(_translate("Form", "<html><head/><body><p><span style=\" font-size:10pt; font-weight:600; color:#000000;\">BLOQUE A</span></p></body></html>"))
-        self.label_4.setText(_translate("Form", "<html><head/><body><p><span style=\" font-size:10pt; font-weight:600; color:#000000;\">BLOQUE B</span></p></body></html>"))
-        self.label_6.setText(_translate("Form", "<html><head/><body><p><span style=\" font-size:10pt; font-weight:600; color:#000000;\">BLOQUE C</span></p></body></html>"))
+        self.label_5.setText(_translate("Form",
+                                        "<html><head/><body><p><span style=\" font-size:20pt; font-weight:600; color:#000000;\">Primeras fechas</span></p></body></html>"))
+        self.label_3.setText(_translate("Form",
+                                        "<html><head/><body><p><span style=\" font-size:10pt; font-weight:600; color:#000000;\">BLOQUE A</span></p></body></html>"))
+        self.label_4.setText(_translate("Form",
+                                        "<html><head/><body><p><span style=\" font-size:10pt; font-weight:600; color:#000000;\">BLOQUE B</span></p></body></html>"))
+        self.label_6.setText(_translate("Form",
+                                        "<html><head/><body><p><span style=\" font-size:10pt; font-weight:600; color:#000000;\">BLOQUE C</span></p></body></html>"))
         self.btnVer.setText(_translate("Form", "VER"))

@@ -11,8 +11,10 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMessageBox
 from logica.Persistence import register_matter
 
+
 class RegistroAsignaturas(object):
     message_box: QMessageBox
+
     def setup_Ui(self, MainWindow):
         MainWindow.setObjectName("Registro de asignaturas")
         MainWindow.resize(531, 573)
@@ -22,13 +24,13 @@ class RegistroAsignaturas(object):
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(70, 30, 381, 61))
         self.label.setStyleSheet("\n"
-"font: 75 8pt \"Segoe Print\";")
+                                 "font: 75 8pt \"Segoe Print\";")
         self.label.setObjectName("label")
         self.txtcodigo = QtWidgets.QTextEdit(self.centralwidget)
         self.txtcodigo.setGeometry(QtCore.QRect(260, 140, 221, 31))
         self.txtcodigo.setStyleSheet("color: rgb(0, 0, 0);\n"
-"font: 10pt \"MS Shell Dlg 2\";\n"
-"background-color: rgb(255, 255, 255);")
+                                     "font: 10pt \"MS Shell Dlg 2\";\n"
+                                     "background-color: rgb(255, 255, 255);")
         self.txtcodigo.setObjectName("txtcodigo")
         self.nombre = QtWidgets.QLabel(self.centralwidget)
         self.nombre.setGeometry(QtCore.QRect(40, 190, 91, 21))
@@ -41,8 +43,8 @@ class RegistroAsignaturas(object):
         self.txtnombre = QtWidgets.QTextEdit(self.centralwidget)
         self.txtnombre.setGeometry(QtCore.QRect(260, 190, 221, 31))
         self.txtnombre.setStyleSheet("color: rgb(0, 0, 0);\n"
-"font: 10pt \"MS Shell Dlg 2\";\n"
-"background-color: rgb(255, 255, 255);")
+                                     "font: 10pt \"MS Shell Dlg 2\";\n"
+                                     "background-color: rgb(255, 255, 255);")
         self.txtnombre.setObjectName("txtnombre")
         self.numcreditos = QtWidgets.QLabel(self.centralwidget)
         self.numcreditos.setGeometry(QtCore.QRect(40, 250, 171, 61))
@@ -51,31 +53,31 @@ class RegistroAsignaturas(object):
         self.txtnumhorsemestre = QtWidgets.QTextEdit(self.centralwidget)
         self.txtnumhorsemestre.setGeometry(QtCore.QRect(260, 290, 221, 31))
         self.txtnumhorsemestre.setStyleSheet("color: rgb(0, 0, 0);\n"
-"font: 10pt \"MS Shell Dlg 2\";\n"
-"background-color: rgb(255, 255, 255);")
+                                             "font: 10pt \"MS Shell Dlg 2\";\n"
+                                             "background-color: rgb(255, 255, 255);")
         self.txtnumhorsemestre.setObjectName("txtNumHorSemestre")
         self.numhorassemestre = QtWidgets.QLabel(self.centralwidget)
         self.numhorassemestre.setGeometry(QtCore.QRect(40, 300, 211, 41))
         self.numhorassemestre.setStyleSheet("font: 75 8pt \"Segoe Print\";")
         self.numhorassemestre.setObjectName("numhorassemestre")
-        self.btnAceptar = QtWidgets.QPushButton(self.centralwidget)
-        self.btnAceptar.setGeometry(QtCore.QRect(260, 480, 101, 31))
-        self.btnAceptar.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
-"color: rgb(255, 255, 255);\n"
-"background-color: rgb(0, 51, 51);")
-        self.btnAceptar.setObjectName("btnAceptar")
-        self.btnLimpiar = QtWidgets.QPushButton(self.centralwidget)
-        self.btnLimpiar.setGeometry(QtCore.QRect(370, 480, 111, 31))
-        self.btnLimpiar.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
-"color: rgb(255, 255, 255);\n"
-"background-color: rgb(0, 51, 51);")
-        self.btnLimpiar.setObjectName("btnLimpiar")
-        self.btnRegresar = QtWidgets.QPushButton(self.centralwidget)
-        self.btnRegresar.setGeometry(QtCore.QRect(40, 480, 101, 31))
-        self.btnRegresar.setStyleSheet("font: 75 10pt \"Segoe Print\";\n"
-"color: rgb(255, 255, 255);\n"
-"background-color: rgb(0, 51, 51);")
-        self.btnRegresar.setObjectName("btnRegresar")
+        self.btnaceptar = QtWidgets.QPushButton(self.centralwidget)
+        self.btnaceptar.setGeometry(QtCore.QRect(260, 480, 101, 31))
+        self.btnaceptar.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
+                                      "color: rgb(255, 255, 255);\n"
+                                      "background-color: rgb(0, 51, 51);")
+        self.btnaceptar.setObjectName("btnAceptar")
+        self.btnlimpiar = QtWidgets.QPushButton(self.centralwidget)
+        self.btnlimpiar.setGeometry(QtCore.QRect(370, 480, 111, 31))
+        self.btnlimpiar.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
+                                      "color: rgb(255, 255, 255);\n"
+                                      "background-color: rgb(0, 51, 51);")
+        self.btnlimpiar.setObjectName("btnLimpiar")
+        self.btnregresar = QtWidgets.QPushButton(self.centralwidget)
+        self.btnregresar.setGeometry(QtCore.QRect(40, 480, 101, 31))
+        self.btnregresar.setStyleSheet("font: 75 10pt \"Segoe Print\";\n"
+                                       "color: rgb(255, 255, 255);\n"
+                                       "background-color: rgb(0, 51, 51);")
+        self.btnregresar.setObjectName("btnRegresar")
         self.semestre = QtWidgets.QLabel(self.centralwidget)
         self.semestre.setGeometry(QtCore.QRect(40, 410, 211, 31))
         self.semestre.setStyleSheet("font: 75 8pt \"Segoe Print\";")
@@ -83,7 +85,7 @@ class RegistroAsignaturas(object):
         self.boxsemestre = QtWidgets.QSpinBox(self.centralwidget)
         self.boxsemestre.setGeometry(QtCore.QRect(260, 410, 71, 22))
         self.boxsemestre.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"color: rgb(0, 0, 0);")
+                                       "color: rgb(0, 0, 0);")
         self.boxsemestre.setMinimum(1)
         self.boxsemestre.setMaximum(6)
         self.boxsemestre.setProperty("value", 1)
@@ -91,7 +93,7 @@ class RegistroAsignaturas(object):
         self.boxcreditos = QtWidgets.QSpinBox(self.centralwidget)
         self.boxcreditos.setGeometry(QtCore.QRect(260, 250, 71, 22))
         self.boxcreditos.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"color: rgb(0, 0, 0);")
+                                       "color: rgb(0, 0, 0);")
         self.boxcreditos.setMinimum(1)
         self.boxcreditos.setMaximum(6)
         self.boxcreditos.setProperty("value", 1)
@@ -99,13 +101,13 @@ class RegistroAsignaturas(object):
         self.semestre_2 = QtWidgets.QLabel(self.centralwidget)
         self.semestre_2.setGeometry(QtCore.QRect(40, 350, 211, 31))
         self.semestre_2.setStyleSheet("font: 10pt \"Segoe Print\";\n"
-"color: rgb(255, 255, 255);")
+                                      "color: rgb(255, 255, 255);")
         self.semestre_2.setObjectName("semestre_2")
         self.txtCodReq = QtWidgets.QTextEdit(self.centralwidget)
         self.txtCodReq.setGeometry(QtCore.QRect(260, 350, 221, 31))
         self.txtCodReq.setStyleSheet("color: rgb(0, 0, 0);\n"
-"font: 10pt \"MS Shell Dlg 2\";\n"
-"background-color: rgb(255, 255, 255);")
+                                     "font: 10pt \"MS Shell Dlg 2\";\n"
+                                     "background-color: rgb(255, 255, 255);")
         self.txtCodReq.setObjectName("txtCodReq")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
@@ -115,9 +117,8 @@ class RegistroAsignaturas(object):
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
-        self.btnAceptar.clicked.connect(self.registrarMaterias)
-        self.btnLimpiar.clicked.connect(self.limpiar)
-
+        self.btnaceptar.clicked.connect(self.registrarMaterias)
+        self.btnlimpiar.clicked.connect(self.limpiar)
 
         self.retranslateUi(MainWindow)
 
@@ -132,27 +133,25 @@ class RegistroAsignaturas(object):
         self.boxcreditos.clear()
 
     def registrarMaterias(self):
-      try:
-        cod = str(self.txtCodigo.toPlainText())
-        nombre = str(self.txtNombre.toPlainText())
-        numCred = str(self.boxCreditos.text())
-        numHorSem = self.txtNumHorSemestre.toPlainText()
-        codReq = str(self.txtCodReq.toPlainText())
-        sem = self.boxSemestre.text()
-        semes = int(sem)
-        numHoras = int(numHorSem)
-        if len(cod) == 0 | len(nombre) == 0 | len(numCred) == 0 | len(numHoras) == 0 | len(codReq) == 0 | len(sem) == 0:
-            self.mostrarMensaje("Alerta", "¡Hay campos vacios!", "", QMessageBox.Warning, False)
-        else:
-            register_matter(cod, nombre, semes, numCred, codReq, numHoras)
-            self.mostrarMensaje("Información", "¡Datos registrados con exito!", "", QMessageBox.Warning, False)
+        try:
+            cod = str(self.txtCodigo.toPlainText())
+            nombre = str(self.txtNombre.toPlainText())
+            numCred = str(self.boxCreditos.text())
+            numHorSem = self.txtNumHorSemestre.toPlainText()
+            codReq = str(self.txtCodReq.toPlainText())
+            sem = self.boxSemestre.text()
+            semes = int(sem)
+            numHoras = int(numHorSem)
+            if len(cod) == 0 | len(nombre) == 0 | len(numCred) == 0 | len(numHoras) == 0 | len(codReq) == 0 | len(
+                    sem) == 0:
+                self.mostrarMensaje("Alerta", "¡Hay campos vacios!", "", QMessageBox.Warning, False)
+            else:
+                register_matter(cod, nombre, semes, numCred, codReq, numHoras)
+                self.mostrarMensaje("Información", "¡Datos registrados con exito!", "", QMessageBox.Warning, False)
 
-      except ValueError:
-        self.mostrarMensaje("Información", "¡La entrada es incorrecta, escriba un numero entero!",
-                            "", QMessageBox.Warning, False)
-
-
-
+        except ValueError:
+            self.mostrarMensaje("Información", "¡La entrada es incorrecta, escriba un numero entero!",
+                                "", QMessageBox.Warning, False)
 
     def mostrarMensaje(self, titulo: str, texto: str, texto_informativo: str, tipo_mensaje: QMessageBox, estado: bool):
 
@@ -173,17 +172,24 @@ class RegistroAsignaturas(object):
         if tipo_mensaje is not None:
             self.message_box.setIcon(tipo_mensaje)
             self.message_box.exec_()
+
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Registro asignaturas"))
-        self.label.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:24pt; font-weight:600; color:#000000;\">Registro de asignaturas</span></p><p align=\"center\"><br/></p></body></html>"))
-        self.nombre.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#000000;\">Nombre:</span></p></body></html>"))
-        self.codigo.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#000000;\">Codigo:</span></p><p><br/></p></body></html>"))
-        self.numCreditos.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#000000;\">Numero de creditos:</span></p><p><br/></p></body></html>"))
-        self.numHorasSemestre.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#000000;\">Num. horas por semestre:</span></p><p><br/></p></body></html>"))
-        self.btnAceptar.setText(_translate("MainWindow", "ACEPTAR"))
-        self.btnLimpiar.setText(_translate("MainWindow", "LIMPIAR"))
-        self.btnRegresar.setText(_translate("MainWindow", "REGRESAR"))
-        self.semestre.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#000000;\">Semestre:</span></p><p><br/></p><p><br/></p></body></html>"))
-        self.semestre_2.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:11pt; font-weight:600; color:#000000; \">Cod. Requisito:</span></p></body></html>"))
-
+        self.label.setText(_translate("MainWindow",
+                                      "<html><head/><body><p align=\"center\"><span style=\" font-size:24pt; font-weight:600; color:#000000;\">Registro de asignaturas</span></p><p align=\"center\"><br/></p></body></html>"))
+        self.nombre.setText(_translate("MainWindow",
+                                       "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#000000;\">Nombre:</span></p></body></html>"))
+        self.codigo.setText(_translate("MainWindow",
+                                       "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#000000;\">Codigo:</span></p><p><br/></p></body></html>"))
+        self.numcreditos.setText(_translate("MainWindow",
+                                            "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#000000;\">Numero de creditos:</span></p><p><br/></p></body></html>"))
+        self.numhorassemestre.setText(_translate("MainWindow",
+                                                 "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#000000;\">Num. horas por semestre:</span></p><p><br/></p></body></html>"))
+        self.btnaceptar.setText(_translate("MainWindow", "ACEPTAR"))
+        self.btnlimpiar.setText(_translate("MainWindow", "LIMPIAR"))
+        self.btnregresar.setText(_translate("MainWindow", "REGRESAR"))
+        self.semestre.setText(_translate("MainWindow",
+                                         "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#000000;\">Semestre:</span></p><p><br/></p><p><br/></p></body></html>"))
+        self.semestre_2.setText(_translate("MainWindow",
+                                           "<html><head/><body><p><span style=\" font-size:11pt; font-weight:600; color:#000000; \">Cod. Requisito:</span></p></body></html>"))

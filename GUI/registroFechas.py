@@ -13,6 +13,7 @@ from PyQt5.QtWidgets import QMessageBox
 from logica.Persistence import update_datee
 from logica.Persistence import obtener_fecha
 
+
 class Ui_Form(object):
     message_box: QMessageBox
 
@@ -288,26 +289,26 @@ class Ui_Form(object):
         self.pushButton = QtWidgets.QPushButton(self.groupBox_2)
         self.pushButton.setGeometry(QtCore.QRect(10, 70, 171, 51))
         self.pushButton.setStyleSheet("font: 75 10pt \"Segoe Print\";\n"
-"color: rgb(255, 255, 255);\n"
-"background-color: rgb(0, 51, 51);\n"
-"\n"
-"")
+                                      "color: rgb(255, 255, 255);\n"
+                                      "background-color: rgb(0, 51, 51);\n"
+                                      "\n"
+                                      "")
         self.pushButton.setObjectName("pushButton")
         self.pushButton_2 = QtWidgets.QPushButton(self.groupBox_2)
         self.pushButton_2.setGeometry(QtCore.QRect(10, 210, 171, 51))
         self.pushButton_2.setStyleSheet("font: 75 10pt \"Segoe Print\";\n"
-"color: rgb(255, 255, 255);\n"
-"background-color: rgb(0, 51, 51);\n"
-"\n"
-"")
+                                        "color: rgb(255, 255, 255);\n"
+                                        "background-color: rgb(0, 51, 51);\n"
+                                        "\n"
+                                        "")
         self.pushButton_2.setObjectName("pushButton_2")
         self.pushButton_3 = QtWidgets.QPushButton(self.groupBox_2)
         self.pushButton_3.setGeometry(QtCore.QRect(10, 140, 171, 51))
         self.pushButton_3.setStyleSheet("font: 75 10pt \"Segoe Print\";\n"
-"color: rgb(255, 255, 255);\n"
-"background-color: rgb(0, 51, 51);\n"
-"\n"
-"")
+                                        "color: rgb(255, 255, 255);\n"
+                                        "background-color: rgb(0, 51, 51);\n"
+                                        "\n"
+                                        "")
 
         self.pushButton_3.setObjectName("pushButton_3")
         self.label_4 = QtWidgets.QLabel(Form)
@@ -430,7 +431,8 @@ class Ui_Form(object):
         self.comboBoxMes1.setGeometry(QtCore.QRect(400, 90, 69, 22))
         self.comboBoxMes1.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.comboBoxMes1.setObjectName("comboBoxMes1")
-        items1 = ('', 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre')
+        items1 = ('', 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre',
+                  'Noviembre', 'Diciembre')
         self.comboBoxMes1.addItems(items1)
         self.comboBoxDia1 = QtWidgets.QComboBox(Form)
         self.comboBoxDia1.setGeometry(QtCore.QRect(540, 90, 69, 22))
@@ -636,21 +638,21 @@ class Ui_Form(object):
 
     def tabla111(self):
         for row in range(self.tableWidget.rowCount()):
-           for col in range(self.tableWidget.columnCount()):
-               item = self.tableWidget.item(row, col)
-               item.setText("0")
+            for col in range(self.tableWidget.columnCount()):
+                item = self.tableWidget.item(row, col)
+                item.setText("0")
 
     def tabla222(self):
         for row in range(self.tableWidget_2.rowCount()):
-           for col in range(self.tableWidget_2.columnCount()):
-               item = self.tableWidget_2.item(row, col)
-               item.setText("0")
+            for col in range(self.tableWidget_2.columnCount()):
+                item = self.tableWidget_2.item(row, col)
+                item.setText("0")
 
     def tabla333(self):
         for row in range(self.tableWidget_3.rowCount()):
-           for col in range(self.tableWidget_3.columnCount()):
-               item = self.tableWidget_3.item(row, col)
-               item.setText("0")
+            for col in range(self.tableWidget_3.columnCount()):
+                item = self.tableWidget_3.item(row, col)
+                item.setText("0")
 
     def actualizarFechas(self):
         delete_date()
@@ -968,8 +970,10 @@ class Ui_Form(object):
         self.pushButton.setText(_translate("Form", "REGISTRAR FECHAS"))
         self.pushButton_2.setText(_translate("Form", "ACTUALIZAR FECHAS"))
         self.pushButton_3.setText(_translate("Form", "ELIMINAR FECHAS"))
-        self.label_4.setText(_translate("Form", "<html><head/><body><p align=\"center\"><span style=\"  font-size:16pt; color:#000000;\">Registro de fechas</span></p></body></html>"))
-        self.label_5.setText(_translate("Form", "<html><head/><body><p align=\"center\"><span style=\"  font-size:16pt; color:#000000;\">Programación encuentros tutoriales</span></p></body></html>"))
+        self.label_4.setText(_translate("Form",
+                                        "<html><head/><body><p align=\"center\"><span style=\"  font-size:16pt; color:#000000;\">Registro de fechas</span></p></body></html>"))
+        self.label_5.setText(_translate("Form",
+                                        "<html><head/><body><p align=\"center\"><span style=\"  font-size:16pt; color:#000000;\">Programación encuentros tutoriales</span></p></body></html>"))
         item = self.tableWidget_2.verticalHeaderItem(0)
         item.setText(_translate("Form", "1"))
         item = self.tableWidget_2.verticalHeaderItem(1)
@@ -1069,16 +1073,20 @@ class Ui_Form(object):
         item = self.tableWidget_2.item(5, 5)
         item.setText(_translate("Form", "0"))
         self.tableWidget_2.setSortingEnabled(__sortingEnabled)
-        self.label_13.setText(_translate("Form", "<html><head/><body><p><span style=\" color:#000000\">INTRODUCTORIO:</span></p></body></html>"))
+        self.label_13.setText(_translate("Form",
+                                         "<html><head/><body><p><span style=\" color:#000000\">INTRODUCTORIO:</span></p></body></html>"))
         self.label_14.setText(
-            _translate("Form", "<html><head/><body><p><span style=\" font-size:10pt; color:#000000\">Mes:</span></p></body></html>"))
+            _translate("Form",
+                       "<html><head/><body><p><span style=\" font-size:10pt; color:#000000\">Mes:</span></p></body></html>"))
         self.label_15.setText(
-            _translate("Form", "<html><head/><body><p><span style=\" font-size:10pt; color:#000000\">Dia:</span></p></body></html>"))
+            _translate("Form",
+                       "<html><head/><body><p><span style=\" font-size:10pt; color:#000000\">Dia:</span></p></body></html>"))
         self.label_16.setText(
-            _translate("Form", "<html><head/><body><p><span style=\" font-size:10pt; color:#000000\">Y</span></p></body></html>"))
+            _translate("Form",
+                       "<html><head/><body><p><span style=\" font-size:10pt; color:#000000\">Y</span></p></body></html>"))
         self.label_17.setText(
-            _translate("Form", "<html><head/><body><p><span style=\" font-size:10pt; color:#000000\">Mes:</span></p></body></html>"))
+            _translate("Form",
+                       "<html><head/><body><p><span style=\" font-size:10pt; color:#000000\">Mes:</span></p></body></html>"))
         self.label_18.setText(
-            _translate("Form", "<html><head/><body><p><span style=\" font-size:10pt; color:#000000\">Dia:</span></p></body></html>"))
-
-
+            _translate("Form",
+                       "<html><head/><body><p><span style=\" font-size:10pt; color:#000000\">Dia:</span></p></body></html>"))
