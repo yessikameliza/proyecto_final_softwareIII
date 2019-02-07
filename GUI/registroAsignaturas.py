@@ -15,11 +15,11 @@ from logica.Persistence import register_matter
 class RegistroAsignaturas(object):
     message_box: QMessageBox
 
-    def setup_Ui(self, MainWindow):
-        MainWindow.setObjectName("Registro de asignaturas")
-        MainWindow.resize(531, 573)
-        MainWindow.setStyleSheet("background-color: rgb(128, 195, 161)")
-        self.centralwidget = QtWidgets.QWidget(MainWindow)
+    def setup_ui(self, main_window):
+        main_window.setObjectName("Registro de asignaturas")
+        main_window.resize(531, 573)
+        main_window.setStyleSheet("background-color: rgb(128, 195, 161)")
+        self.centralwidget = QtWidgets.QWidget(main_window)
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(70, 30, 381, 61))
@@ -103,57 +103,57 @@ class RegistroAsignaturas(object):
         self.semestre_2.setStyleSheet("font: 10pt \"Segoe Print\";\n"
                                       "color: rgb(255, 255, 255);")
         self.semestre_2.setObjectName("semestre_2")
-        self.txtCodReq = QtWidgets.QTextEdit(self.centralwidget)
-        self.txtCodReq.setGeometry(QtCore.QRect(260, 350, 221, 31))
-        self.txtCodReq.setStyleSheet("color: rgb(0, 0, 0);\n"
+        self.txtcodreq = QtWidgets.QTextEdit(self.centralwidget)
+        self.txtcodreq.setGeometry(QtCore.QRect(260, 350, 221, 31))
+        self.txtcodreq.setStyleSheet("color: rgb(0, 0, 0);\n"
                                      "font: 10pt \"MS Shell Dlg 2\";\n"
                                      "background-color: rgb(255, 255, 255);")
-        self.txtCodReq.setObjectName("txtCodReq")
-        MainWindow.setCentralWidget(self.centralwidget)
-        self.menubar = QtWidgets.QMenuBar(MainWindow)
+        self.txtcodreq.setObjectName("txtCodReq")
+        main_window.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(main_window)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 531, 21))
         self.menubar.setObjectName("menubar")
-        MainWindow.setMenuBar(self.menubar)
-        self.statusbar = QtWidgets.QStatusBar(MainWindow)
+        main_window.setMenuBar(self.menubar)
+        self.statusbar = QtWidgets.QStatusBar(main_window)
         self.statusbar.setObjectName("statusbar")
-        MainWindow.setStatusBar(self.statusbar)
-        self.btnaceptar.clicked.connect(self.registrarMaterias)
+        main_window.setStatusBar(self.statusbar)
+        self.btnaceptar.clicked.connect(self.registrar_materias)
         self.btnlimpiar.clicked.connect(self.limpiar)
 
-        self.retranslateUi(MainWindow)
+        self.retranslate_ui(main_window)
 
-        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+        QtCore.QMetaObject.connectSlotsByName(main_window)
 
     def limpiar(self):
         self.txtnombre.clear()
-        self.txtcodReq.clear()
+        self.txtcodreq.clear()
         self.txtnumhorsemestre.clear()
         self.txtcodigo.clear()
         self.boxsemestre.clear()
         self.boxcreditos.clear()
 
-    def registrarMaterias(self):
+    def registrar_materias(self):
         try:
-            cod = str(self.txtCodigo.toPlainText())
-            nombre = str(self.txtNombre.toPlainText())
-            numCred = str(self.boxCreditos.text())
-            numHorSem = self.txtNumHorSemestre.toPlainText()
-            codReq = str(self.txtCodReq.toPlainText())
-            sem = self.boxSemestre.text()
+            cod = str(self.txtcodigo.toPlainText())
+            nombre = str(self.txtnombre.toPlainText())
+            numcred = str(self.boxcreditos.text())
+            numhorsem = self.txtnumhorsemestre.toPlainText()
+            codreq = str(self.txtcodreq.toPlainText())
+            sem = self.boxsemestre.text()
             semes = int(sem)
-            numHoras = int(numHorSem)
-            if len(cod) == 0 | len(nombre) == 0 | len(numCred) == 0 | len(numHoras) == 0 | len(codReq) == 0 | len(
+            numhoras = int(numhorsem)
+            if len(cod) == 0 | len(nombre) == 0 | len(numcred) == 0 | len(numhoras) == 0 | len(codreq) == 0 | len(
                     sem) == 0:
-                self.mostrarMensaje("Alerta", "¡Hay campos vacios!", "", QMessageBox.Warning, False)
+                self.mostrar_mensaje("Alerta", "¡Hay campos vacios!", "", QMessageBox.Warning, False)
             else:
-                register_matter(cod, nombre, semes, numCred, codReq, numHoras)
-                self.mostrarMensaje("Información", "¡Datos registrados con exito!", "", QMessageBox.Warning, False)
+                register_matter(cod, nombre, semes, numcred, codreq, numhoras)
+                self.mostrar_mensaje("Información", "¡Datos registrados con exito!", "", QMessageBox.Warning, False)
 
         except ValueError:
-            self.mostrarMensaje("Información", "¡La entrada es incorrecta, escriba un numero entero!",
+            self.mostrar_mensaje("Información", "¡La entrada es incorrecta, escriba un numero entero!",
                                 "", QMessageBox.Warning, False)
 
-    def mostrarMensaje(self, titulo: str, texto: str, texto_informativo: str, tipo_mensaje: QMessageBox, estado: bool):
+    def mostrar_mensaje(self, titulo: str, texto: str, texto_informativo: str, tipo_mensaje: QMessageBox, estado: bool):
 
         self.message_box = QMessageBox()
         self.message_box.setWindowTitle(titulo)
@@ -173,9 +173,9 @@ class RegistroAsignaturas(object):
             self.message_box.setIcon(tipo_mensaje)
             self.message_box.exec_()
 
-    def retranslateUi(self, MainWindow):
+    def retranslate_ui(self, main_window):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Registro asignaturas"))
+        main_window.setWindowTitle(_translate("MainWindow", "Registro asignaturas"))
         self.label.setText(_translate("MainWindow",
                                       "<html><head/><body><p align=\"center\"><span style=\" font-size:24pt; font-weight:600; color:#000000;\">Registro de asignaturas</span></p><p align=\"center\"><br/></p></body></html>"))
         self.nombre.setText(_translate("MainWindow",

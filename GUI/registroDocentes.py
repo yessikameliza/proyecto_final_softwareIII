@@ -18,12 +18,12 @@ class RegistroDocentes(object):
     aux2 = " "
     con = 0
 
-    def setup_Ui(self, MainWindow):
-        MainWindow.setObjectName("Registro de docentes")
-        MainWindow.resize(538, 777)
-        MainWindow.setStyleSheet("background-color: rgb(128, 195, 161)")
+    def setup_ui(self, main_window):
+        main_window.setObjectName("Registro de docentes")
+        main_window.resize(538, 777)
+        main_window.setStyleSheet("background-color: rgb(128, 195, 161)")
         a = 540
-        self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget = QtWidgets.QWidget(main_window)
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(90, 50, 341, 61))
@@ -145,20 +145,20 @@ class RegistroDocentes(object):
         items = ('', 'ACTIVO', 'INACTIVO')
         self.comboestado.addItems(items)
 
-        MainWindow.setCentralWidget(self.centralwidget)
-        self.menubar = QtWidgets.QMenuBar(MainWindow)
+        main_window.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(main_window)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 538, 21))
         self.menubar.setObjectName("menubar")
-        MainWindow.setMenuBar(self.menubar)
-        self.statusbar = QtWidgets.QStatusBar(MainWindow)
+        main_window.setMenuBar(self.menubar)
+        self.statusbar = QtWidgets.QStatusBar(main_window)
         self.statusbar.setObjectName("statusbar")
-        MainWindow.setStatusBar(self.statusbar)
-        self.btnaceptar.clicked.connect(self.ventaAcep)
+        main_window.setStatusBar(self.statusbar)
+        self.btnaceptar.clicked.connect(self.venta_acep)
         self.btnlimpiar.clicked.connect(self.limpiar)
 
-        self.retranslateUi(MainWindow)
+        self.retranslate_ui(main_window)
 
-        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+        QtCore.QMetaObject.connectSlotsByName(main_window)
 
     def limpiar(self):
         self.txtnombre.clear()
@@ -169,7 +169,7 @@ class RegistroDocentes(object):
         self.comboestado.clear()
         self.comboasignatura.clear()
 
-    def ventaAcep(self):
+    def venta_acep(self):
         try:
             nomb = self.txtnombre.toPlainText()
             tipo = self.txttipo.toPlainText()
@@ -186,12 +186,12 @@ class RegistroDocentes(object):
             ident = str(iden)
             print(limit)
             if len(nomb) == 0 | len(tipo) == 0 | len(lim) == 0 | len(tel) == 0 | len(iden) == 0 | len(esta) == 0:
-                self.mostrarMensaje("Alerta", "¡Hay campos vacios!", "", QMessageBox.Warning, False)
+                self.mostrar_mensaje("Alerta", "¡Hay campos vacios!", "", QMessageBox.Warning, False)
             else:
                 register_docent(name, esta, limit, type, phone, ident, asig, ciudad)
-                self.mostrarMensaje("Información", "¡Datos registrados con exito!", "", QMessageBox.Warning, False)
+                self.mostrar_mensaje("Información", "¡Datos registrados con exito!", "", QMessageBox.Warning, False)
         except ValueError:
-            self.mostrarMensaje("Información", "¡La entrada es incorrecta, escriba un numero entero!",
+            self.mostrar_mensaje("Información", "¡La entrada es incorrecta, escriba un numero entero!",
                                 "", QMessageBox.Warning, False)
             # Back up the reference to the exceptionhook
             sys._excepthook = sys.excepthook
@@ -205,7 +205,7 @@ class RegistroDocentes(object):
         # Set the exception hook to our wrapping function
         sys.excepthook = my_exception_hook
 
-    def mostrarMensaje(self, titulo: str, texto: str, texto_informativo: str, tipo_mensaje: QMessageBox, estado: bool):
+    def mostrar_mensaje(self, titulo: str, texto: str, texto_informativo: str, tipo_mensaje: QMessageBox, estado: bool):
 
         self.message_box = QMessageBox()
         self.message_box.setWindowTitle(titulo)
@@ -225,9 +225,9 @@ class RegistroDocentes(object):
             self.message_box.setIcon(tipo_mensaje)
             self.message_box.exec_()
 
-    def retranslateUi(self, MainWindow):
+    def retranslate_ui(self, main_window):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Registro docentes"))
+        main_window.setWindowTitle(_translate("MainWindow", "Registro docentes"))
         self.label.setText(_translate("MainWindow",
                                       "<html><head/><body><p align=\"center\"><span style=\" font-size:24pt; font-weight:600; color:#000000;\">Registro de Docentes</span></p></body></html>"))
         self.nombre.setText(_translate("MainWindow",

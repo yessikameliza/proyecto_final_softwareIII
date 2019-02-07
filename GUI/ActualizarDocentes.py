@@ -17,11 +17,11 @@ from logica.Persistence import obtener_matter
 class ActualizarDocente(object):
     message_box: QMessageBox
 
-    def setup_ui(self, Mainwindow):
-        Mainwindow.setObjectName("MainWindow")
-        Mainwindow.resize(687, 640)
-        Mainwindow.setStyleSheet("background-color: rgb(128, 195, 161)")
-        self.centralwidget = QtWidgets.QWidget(Mainwindow)
+    def setup_ui(self, main_window):
+        main_window.setObjectName("MainWindow")
+        main_window.resize(687, 640)
+        main_window.setStyleSheet("background-color: rgb(128, 195, 161)")
+        self.centralwidget = QtWidgets.QWidget(main_window)
         self.centralwidget.setObjectName("centralwidget")
         self.groupbox = QtWidgets.QGroupBox(self.centralwidget)
         self.groupbox.setGeometry(QtCore.QRect(250, 90, 421, 501))
@@ -158,19 +158,19 @@ class ActualizarDocente(object):
         self.codigo_2.setStyleSheet("font: 75 10pt \"Segoe Print\";\n"
                                     "color: rgb(255, 255, 255);")
         self.codigo_2.setObjectName("codigo_2")
-        Mainwindow.setCentralWidget(self.centralwidget)
+        main_window.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 687, 21))
         self.menubar.setObjectName("menubar")
-        Mainwindow.setMenuBar(self.menubar)
-        self.statusbar = QtWidgets.QStatusBar(Mainwindow)
+        main_window.setMenuBar(self.menubar)
+        self.statusbar = QtWidgets.QStatusBar(main_window)
         self.statusbar.setObjectName("statusbar")
-        Mainwindow.setStatusBar(self.statusbar)
-        self.retranslate_ui(Mainwindow)
+        main_window.setStatusBar(self.statusbar)
+        self.retranslate_ui(main_window)
         self.btnbuscar.clicked.connect(self.buscar)
         self.btnactualizar.clicked.connect(self.actualiza)
         self.btnlimpiar.clicked.connect(self.limpiar)
-        QtCore.QMetaObject.connectSlotsByName(Mainwindow)
+        QtCore.QMetaObject.connectSlotsByName(main_window)
 
     def limpiar(self):
         self.txtnombre.clear()
@@ -238,9 +238,9 @@ class ActualizarDocente(object):
             self.message_box.setIcon(tipo_mensaje)
             self.message_box.exec_()
 
-    def retranslate_ui(self, Mainwindow):
+    def retranslate_ui(self, main_window):
         _translate = QtCore.QCoreApplication.translate
-        Mainwindow.setWindowTitle(_translate("MainWindow", "Actualizar docentes"))
+        main_window.setWindowTitle(_translate("MainWindow", "Actualizar docentes"))
         self.groupbox.setTitle(_translate("MainWindow", "Actualizar datos"))
         self.tipo.setText(_translate("MainWindow",
                                      "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#000000;\">Tipo:</span></p></body></html>"))
