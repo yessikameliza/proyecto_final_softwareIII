@@ -7,11 +7,11 @@
 # WARNING! All changes made in this file will be lost!
 import sys
 from PyQt5 import QtCore, QtGui, QtWidgets
-from GUI.ventanaPrincipal import Ui_MainWindow
+from GUI.ventanaPrincipal import VentanaPrincipal
 from PyQt5.QtWidgets import QMessageBox, QMainWindow, QApplication
 class Login(QMainWindow):
     message_box: QMessageBox
-    def setupUi(self, Form):
+    def setup_Ui(self, Form):
         Form.setObjectName("Form")
         Form.resize(376, 373)
         Form.setStyleSheet("background-color: rgb(128, 195, 161)")
@@ -68,7 +68,7 @@ class Login(QMainWindow):
          if usuario == 'admin' and contra == '12345':
             print('alex')
             self.ventana = QtWidgets.QMainWindow()
-            self.ui = Ui_MainWindow()
+            self.ui = VentanaPrincipal()
             self.ui.setupUi(self.ventana)
             self.ventana.show()
          else:

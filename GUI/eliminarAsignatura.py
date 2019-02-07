@@ -9,9 +9,10 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMessageBox
 from logica.Persistence import delete_matter
-class eliminarAsignatura(object):
+
+class EliminarAsignatura(object):
     message_box: QMessageBox
-    def setupUi(self, MainWindow):
+    def setup_Ui(self, MainWindow):
         MainWindow.setObjectName("Eliminar Asignaturas")
         MainWindow.resize(536, 328)
         MainWindow.setStyleSheet("background-color: rgb(128, 195, 161)")

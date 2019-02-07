@@ -11,10 +11,10 @@ from logica.Persistence import delete_docent
 from PyQt5.QtWidgets import QMessageBox
 
 
-class eliminarDocente(object):
+class EliminarDocente(object):
     message_box = QMessageBox
 
-    def setupUi(self, MainWindow):
+    def setup_Ui(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(534, 321)
         MainWindow.setStyleSheet("background-color: rgb(128, 195, 161)")

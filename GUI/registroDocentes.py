@@ -12,11 +12,11 @@ from PyQt5.QtWidgets import QMessageBox
 from logica.Persistence import register_docent
 from logica.Persistence import obtener_matter
 
-class registroDocentes(object):
+class RegistroDocentes(object):
     message_box: QMessageBox
     aux2 = " "
     con = 0
-    def setupUi(self, MainWindow):
+    def setup_Ui(self, MainWindow):
         MainWindow.setObjectName("Registro de docentes")
         MainWindow.resize(538, 777)
         MainWindow.setStyleSheet("background-color: rgb(128, 195, 161)")

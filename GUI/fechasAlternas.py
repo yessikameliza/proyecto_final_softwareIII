@@ -9,7 +9,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from logica.Persistence import obtener_fecha
 class FechasAlternas(object):
-    def setupUi(self, Form):
+    def setup_Ui(self, Form):
         Form.setObjectName("Form")
         Form.resize(906, 405)
         Form.setStyleSheet("background-color: rgb(128, 195, 161)")

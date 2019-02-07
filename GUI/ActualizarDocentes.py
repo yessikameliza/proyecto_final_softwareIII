@@ -12,9 +12,10 @@ from PyQt5.QtWidgets import QMessageBox
 from logica.Persistence import search_docent
 from logica.Persistence import update_docent
 from logica.Persistence import obtener_matter
-class actualizarDocente(object):
+
+class ActualizarDocente(object):
     message_box: QMessageBox
-    def setupUi(self, MainWindow):
+    def setup_Ui(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(687, 640)
         MainWindow.setStyleSheet("background-color: rgb(128, 195, 161)")
