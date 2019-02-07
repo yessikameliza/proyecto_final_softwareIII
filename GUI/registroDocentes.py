@@ -41,73 +41,73 @@ class RegistroDocentes(object):
         self.tipo.setStyleSheet("\n"
                                 "font: 75 8pt \"Segoe Print\";")
         self.tipo.setObjectName("tipo")
-        self.txtNombre = QtWidgets.QTextEdit(self.centralwidget)
-        self.txtNombre.setGeometry(QtCore.QRect(250, 170, 241, 31))
-        self.txtNombre.setStyleSheet("color: rgb(0, 0, 0);\n"
+        self.txtnombre = QtWidgets.QTextEdit(self.centralwidget)
+        self.txtnombre.setGeometry(QtCore.QRect(250, 170, 241, 31))
+        self.txtnombre.setStyleSheet("color: rgb(0, 0, 0);\n"
                                      "font: 10pt \"MS Shell Dlg 2\";\n"
                                      "background-color: rgb(255, 255, 255);")
-        self.txtNombre.setObjectName("txtNombre")
+        self.txtnombre.setObjectName("txtNombre")
 
-        self.txtIdent = QtWidgets.QTextEdit(self.centralwidget)
-        self.txtIdent.setGeometry(QtCore.QRect(250, 220, 241, 31))
-        self.txtIdent.setStyleSheet("color: rgb(0, 0, 0);\n"
+        self.txtident = QtWidgets.QTextEdit(self.centralwidget)
+        self.txtident.setGeometry(QtCore.QRect(250, 220, 241, 31))
+        self.txtident.setStyleSheet("color: rgb(0, 0, 0);\n"
                                     "font: 10pt \"MS Shell Dlg 2\";\n"
                                     "background-color: rgb(255, 255, 255);")
-        self.txtIdent.setObjectName("txtIdent")
-        self.txtTipo = QtWidgets.QTextEdit(self.centralwidget)
-        self.txtTipo.setGeometry(QtCore.QRect(250, 270, 241, 31))
-        self.txtTipo.setStyleSheet("color: rgb(0, 0, 0);\n"
+        self.txtident.setObjectName("txtIdent")
+        self.txttipo = QtWidgets.QTextEdit(self.centralwidget)
+        self.txttipo.setGeometry(QtCore.QRect(250, 270, 241, 31))
+        self.txttipo.setStyleSheet("color: rgb(0, 0, 0);\n"
                                    "font: 10pt \"MS Shell Dlg 2\";\n"
                                    "background-color: rgb(255, 255, 255);")
-        self.txtTipo.setObjectName("txtTipo")
+        self.txttipo.setObjectName("txtTipo")
         self.line = QtWidgets.QFrame(self.centralwidget)
         self.line.setGeometry(QtCore.QRect(150, 120, 221, 20))
         self.line.setFrameShape(QtWidgets.QFrame.HLine)
         self.line.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line.setObjectName("line")
-        self.btnAceptar = QtWidgets.QPushButton(self.centralwidget)
-        self.btnAceptar.setGeometry(QtCore.QRect(260, 640, 101, 31))
-        self.btnAceptar.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
+        self.btnaceptar = QtWidgets.QPushButton(self.centralwidget)
+        self.btnaceptar.setGeometry(QtCore.QRect(260, 640, 101, 31))
+        self.btnaceptar.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
                                       "color: rgb(255, 255, 255);\n"
                                       "background-color: rgb(0, 51, 51);")
-        self.btnAceptar.setObjectName("btnAceptar")
-        self.btnLimpiar = QtWidgets.QPushButton(self.centralwidget)
-        self.btnLimpiar.setGeometry(QtCore.QRect(390, 640, 101, 31))
-        self.btnLimpiar.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
+        self.btnaceptar.setObjectName("btnAceptar")
+        self.btnlimpiar = QtWidgets.QPushButton(self.centralwidget)
+        self.btnlimpiar.setGeometry(QtCore.QRect(390, 640, 101, 31))
+        self.btnlimpiar.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
                                       "color: rgb(255, 255, 255);\n"
                                       "background-color: rgb(0, 51, 51);")
-        self.btnLimpiar.setObjectName("btnLimpiar")
-        self.comboAsignatura = QtWidgets.QComboBox(self.centralwidget)
-        self.comboAsignatura.setGeometry(QtCore.QRect(250, 480, 241, 31))
-        self.comboAsignatura.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+        self.btnlimpiar.setObjectName("btnLimpiar")
+        self.comboasignatura = QtWidgets.QComboBox(self.centralwidget)
+        self.comboasignatura.setGeometry(QtCore.QRect(250, 480, 241, 31))
+        self.comboasignatura.setStyleSheet("background-color: rgb(255, 255, 255);\n"
                                            "color: rgb(0, 0, 0);")
-        self.comboAsignatura.setObjectName("comboAsignatura")
+        self.comboasignatura.setObjectName("comboAsignatura")
         res = obtener_Matter()
 
         for aux in res:
             aux2 = str((aux[2]))
             print(aux2)
-            self.comboAsignatura.addItem(aux2)
+            self.comboasignatura.addItem(aux2)
 
-        self.comboCiudad = QtWidgets.QComboBox(self.centralwidget)
-        self.comboCiudad.setGeometry(QtCore.QRect(250, 540, 241, 31))
-        self.comboCiudad.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+        self.combociudad = QtWidgets.QComboBox(self.centralwidget)
+        self.combociudad.setGeometry(QtCore.QRect(250, 540, 241, 31))
+        self.combociudad.setStyleSheet("background-color: rgb(255, 255, 255);\n"
                                            "color: rgb(0, 0, 0);")
-        self.comboCiudad.setObjectName("comboCiudad")
+        self.combociudad.setObjectName("comboCiudad")
         itemsa = ('', 'Armenia', 'Pereira', 'Buga')
-        self.comboCiudad.addItems(itemsa)
-        self.btnRegresar = QtWidgets.QPushButton(self.centralwidget)
-        self.btnRegresar.setGeometry(QtCore.QRect(60, 640, 101, 31))
-        self.btnRegresar.setStyleSheet("font: 75 10pt \"Segoe Print\";\n"
+        self.combociudad.addItems(itemsa)
+        self.btnregresar = QtWidgets.QPushButton(self.centralwidget)
+        self.btnregresar.setGeometry(QtCore.QRect(60, 640, 101, 31))
+        self.btnregresar.setStyleSheet("font: 75 10pt \"Segoe Print\";\n"
                                        "color: rgb(255, 255, 255);\n"
                                        "background-color: rgb(0, 51, 51);")
-        self.btnRegresar.setObjectName("btnRegresar")
-        self.txtLimHoras = QtWidgets.QTextEdit(self.centralwidget)
-        self.txtLimHoras.setGeometry(QtCore.QRect(250, 320, 241, 31))
-        self.txtLimHoras.setStyleSheet("color: rgb(0, 0, 0);\n"
+        self.btnregresar.setObjectName("btnRegresar")
+        self.txtlimhoras = QtWidgets.QTextEdit(self.centralwidget)
+        self.txtlimhoras.setGeometry(QtCore.QRect(250, 320, 241, 31))
+        self.txtlimhoras.setStyleSheet("color: rgb(0, 0, 0);\n"
                                        "font: 10pt \"MS Shell Dlg 2\";\n"
                                        "background-color: rgb(255, 255, 255);")
-        self.txtLimHoras.setObjectName("txtLimHoras")
+        self.txtlimhoras.setObjectName("txtLimHoras")
         self.asignatura_2 = QtWidgets.QLabel(self.centralwidget)
         self.asignatura_2.setGeometry(QtCore.QRect(60, 320, 131, 31))
         self.asignatura_2.setStyleSheet("font: 75 8pt \"Segoe Print\";")
@@ -116,12 +116,12 @@ class RegistroDocentes(object):
         self.asignatura_3.setGeometry(QtCore.QRect(60, 370, 131, 31))
         self.asignatura_3.setStyleSheet("font: 75 8pt \"Segoe Print\";")
         self.asignatura_3.setObjectName("asignatura_3")
-        self.txtTelefono = QtWidgets.QTextEdit(self.centralwidget)
-        self.txtTelefono.setGeometry(QtCore.QRect(250, 370, 241, 31))
-        self.txtTelefono.setStyleSheet("color: rgb(0, 0, 0);\n"
+        self.txttelefono = QtWidgets.QTextEdit(self.centralwidget)
+        self.txttelefono.setGeometry(QtCore.QRect(250, 370, 241, 31))
+        self.txttelefono.setStyleSheet("color: rgb(0, 0, 0);\n"
                                        "font: 10pt \"MS Shell Dlg 2\";\n"
                                        "background-color: rgb(255, 255, 255);")
-        self.txtTelefono.setObjectName("txtTelefono")
+        self.txttelefono.setObjectName("txtTelefono")
         self.asignatura_4 = QtWidgets.QLabel(self.centralwidget)
         self.asignatura_4.setGeometry(QtCore.QRect(60, 480, 131, 31))
         self.asignatura_4.setStyleSheet("font: 75 8pt \"Segoe Print\";")
@@ -130,18 +130,18 @@ class RegistroDocentes(object):
         self.asignatura_5.setGeometry(QtCore.QRect(60, 420, 131, 31))
         self.asignatura_5.setStyleSheet("font: 75 8pt \"Segoe Print\";")
         self.asignatura_5.setObjectName("Estado")
-        self.labelCiudad = QtWidgets.QLabel(self.centralwidget)
-        self.labelCiudad.setGeometry(QtCore.QRect(60, 540, 131, 31))
-        self.labelCiudad.setStyleSheet("font: 75 8pt \"Segoe Print\";")
-        self.labelCiudad.setObjectName("Ciudad")
-        self.comboEstado = QtWidgets.QComboBox(self.centralwidget)
-        self.comboEstado.setGeometry(QtCore.QRect(250, 420, 241, 31))
-        self.comboEstado.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+        self.labelciudad = QtWidgets.QLabel(self.centralwidget)
+        self.labelciudad.setGeometry(QtCore.QRect(60, 540, 131, 31))
+        self.labelciudad.setStyleSheet("font: 75 8pt \"Segoe Print\";")
+        self.labelciudad.setObjectName("Ciudad")
+        self.comboestado = QtWidgets.QComboBox(self.centralwidget)
+        self.comboestado.setGeometry(QtCore.QRect(250, 420, 241, 31))
+        self.comboestado.setStyleSheet("background-color: rgb(255, 255, 255);\n"
                                        "color: rgb(0, 0, 0);")
-        self.comboEstado.setCurrentText("")
-        self.comboEstado.setObjectName("comboEstado")
+        self.comboestado.setCurrentText("")
+        self.comboestado.setObjectName("comboEstado")
         items = ('', 'ACTIVO', 'INACTIVO')
-        self.comboEstado.addItems(items)
+        self.comboestado.addItems(items)
 
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
@@ -151,8 +151,8 @@ class RegistroDocentes(object):
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
-        self.btnAceptar.clicked.connect(self.ventaAcep)
-        self.btnLimpiar.clicked.connect(self.limpiar)
+        self.btnaceptar.clicked.connect(self.ventaAcep)
+        self.btnlimpiar.clicked.connect(self.limpiar)
 
 
         self.retranslateUi(MainWindow)
@@ -160,24 +160,24 @@ class RegistroDocentes(object):
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def limpiar(self):
-        self.txtNombre.clear()
-        self.txtIdent.clear()
-        self.txtTelefono.clear()
-        self.txtLimHoras.clear()
-        self.txtTipo.clear()
-        self.comboEstado.clear()
-        self.comboAsignatura.clear()
+        self.txtnombre.clear()
+        self.txtident.clear()
+        self.txttelefono.clear()
+        self.txtlimhoras.clear()
+        self.txttipo.clear()
+        self.comboestado.clear()
+        self.comboasignatura.clear()
 
     def ventaAcep(self):
        try:
-        nomb = self.txtNombre.toPlainText()
-        tipo = self.txtTipo.toPlainText()
-        lim = self.txtLimHoras.toPlainText()
-        tel = self.txtTelefono.toPlainText()
-        iden = self.txtIdent.toPlainText()
-        esta = str(self.comboEstado.currentText())
-        asig = str(self.comboAsignatura.currentText())
-        ciudad = str(self.comboCiudad.currentText())
+        nomb = self.txtnombre.toPlainText()
+        tipo = self.txttipo.toPlainText()
+        lim = self.txtlimhoras.toPlainText()
+        tel = self.txttelefono.toPlainText()
+        iden = self.txtident.toPlainText()
+        esta = str(self.comboestado.currentText())
+        asig = str(self.comboasignatura.currentText())
+        ciudad = str(self.combociudad.currentText())
         limit = int(lim)
         name = str(nomb)
         type = str(tipo)
@@ -238,9 +238,9 @@ class RegistroDocentes(object):
                                          "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#000000;\">Identificacíon:</span></p></body></html>"))
         self.tipo.setText(_translate("MainWindow",
                                      "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#000000;\">Tipo:</span></p></body></html>"))
-        self.btnAceptar.setText(_translate("MainWindow", "ACEPTAR"))
-        self.btnLimpiar.setText(_translate("MainWindow", "LIMPIAR"))
-        self.btnRegresar.setText(_translate("MainWindow", "REGRESAR"))
+        self.btnaceptar.setText(_translate("MainWindow", "ACEPTAR"))
+        self.btnlimpiar.setText(_translate("MainWindow", "LIMPIAR"))
+        self.btnregresar.setText(_translate("MainWindow", "REGRESAR"))
         self.asignatura_2.setText(_translate("MainWindow",
                                              "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#000000;\">Limite de horas:</span></p><p><br/></p></body></html>"))
         self.asignatura_3.setText(_translate("MainWindow",
@@ -249,5 +249,5 @@ class RegistroDocentes(object):
                                              "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#000000;\">Asignatura:</span></p></body></html>"))
         self.asignatura_5.setText(_translate("MainWindow",
                                              "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#000000;\">Estado:</span></p><p><br/></p></body></html>"))
-        self.labelCiudad.setText(_translate("MainWindow",
+        self.labelciudad.setText(_translate("MainWindow",
                                              "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#000000;\">Ciudad:</span></p><p><br/></p></body></html>"))

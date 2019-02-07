@@ -485,63 +485,63 @@ class VentanaPrincipal(QtWidgets.QMainWindow):
     def ventanaFechasPereira(self):
         self.ventana = QtWidgets.QMainWindow()
         self.ui = FechasPereira()
-        self.ui.setupUi(self.ventana)
+        self.ui.setup_Ui(self.ventana)
         self.ventana.show()
 
     def ventanaRegistroDocente(self):
         self.ventana = QtWidgets.QMainWindow()
         self.ui = RegistroDocentes()
-        self.ui.setupUi(self.ventana)
+        self.ui.setup_Ui(self.ventana)
         self.ventana.show()
 
     def ventanaRegistroFecha(self):
 
         self.ventana = QtWidgets.QMainWindow()
         self.ui = Ui_Form()
-        self.ui.setupUi(self.ventana)
+        self.ui.setup_Ui(self.ventana)
         self.ventana.show()
         self.close()
 
     def ventanaRegAsi(self):
         self.ventana = QtWidgets.QMainWindow()
         self.ui = RegistroAsignaturas()
-        self.ui.setupUi(self.ventana)
+        self.ui.setup_Ui(self.ventana)
         self.ventana.show()
 
     def ventanaModAsig(self):
         self.ventana = QtWidgets.QMainWindow()
         self.ui = ActualizarAsignatura()
-        self.ui.setupUi(self.ventana)
+        self.ui.setup_Ui(self.ventana)
         self.ventana.show()
 
     def ventanaElimAsig(self):
         self.ventana = QtWidgets.QMainWindow()
         self.ui = EliminarAsignatura()
-        self.ui.setupUi(self.ventana)
+        self.ui.setup_Ui(self.ventana)
         self.ventana.show()
 
     def ventanaActDoc(self):
         self.ventana = QtWidgets.QMainWindow()
         self.ui = ActualizarDocente()
-        self.ui.setupUi(self.ventana)
+        self.ui.setup_Ui(self.ventana)
         self.ventana.show()
 
     def ventanaElimDoc(self):
         self.ventana = QtWidgets.QMainWindow()
         self.ui = EliminarDocente()
-        self.ui.setupUi(self.ventana)
+        self.ui.setup_Ui(self.ventana)
         self.ventana.show()
 
     def ventanaPrimerasFecha(self):
         self.ventana = QtWidgets.QMainWindow()
         self.ui = PrimerasFechas()
-        self.ui.setupUi(self.ventana)
+        self.ui.setup_Ui(self.ventana)
         self.ventana.show()
 
     def ventanaFechasAlternas(self):
         self.ventana = QtWidgets.QMainWindow()
         self.ui = FechasAlternas()
-        self.ui.setupUi(self.ventana)
+        self.ui.setup_Ui(self.ventana)
         self.ventana.show()
 
     def setearTabla(self):

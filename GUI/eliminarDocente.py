@@ -25,12 +25,12 @@ class EliminarDocente(object):
         self.label.setStyleSheet("\n"
                                  "font: 75 8pt \"Segoe Print\";")
         self.label.setObjectName("label")
-        self.txtIdentBuscar = QtWidgets.QTextEdit(self.centralwidget)
-        self.txtIdentBuscar.setGeometry(QtCore.QRect(190, 180, 201, 31))
-        self.txtIdentBuscar.setStyleSheet("color: rgb(0, 0, 0);\n"
+        self.txtidentbuscar = QtWidgets.QTextEdit(self.centralwidget)
+        self.txtidentbuscar.setGeometry(QtCore.QRect(190, 180, 201, 31))
+        self.txtidentbuscar.setStyleSheet("color: rgb(0, 0, 0);\n"
                                           "font: 10pt \"MS Shell Dlg 2\";\n"
                                           "background-color: rgb(255, 255, 255);")
-        self.txtIdentBuscar.setObjectName("txtIdentBuscar")
+        self.txtidentbuscar.setObjectName("txtIdentBuscar")
         self.codigo = QtWidgets.QLabel(self.centralwidget)
         self.codigo.setGeometry(QtCore.QRect(200, 120, 191, 31))
         self.codigo.setStyleSheet("font: 75 10pt \"Segoe Print\";\n"
@@ -41,24 +41,24 @@ class EliminarDocente(object):
         self.codigo_2.setStyleSheet("font: 75 10pt \"Segoe Print\";\n"
                                     "color: rgb(255, 255, 255);")
         self.codigo_2.setObjectName("codigo_2")
-        self.btnEliminar = QtWidgets.QPushButton(self.centralwidget)
-        self.btnEliminar.setGeometry(QtCore.QRect(190, 250, 91, 31))
-        self.btnEliminar.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
+        self.btneliminar = QtWidgets.QPushButton(self.centralwidget)
+        self.btneliminar.setGeometry(QtCore.QRect(190, 250, 91, 31))
+        self.btneliminar.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
                                        "color: rgb(255, 255, 255);\n"
                                        "background-color: rgb(0, 51, 51);")
-        self.btnEliminar.setObjectName("btnEliminar")
-        self.btnLimpiar = QtWidgets.QPushButton(self.centralwidget)
-        self.btnLimpiar.setGeometry(QtCore.QRect(300, 250, 91, 31))
-        self.btnLimpiar.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
+        self.btneliminar.setObjectName("btnEliminar")
+        self.btnlimpiar = QtWidgets.QPushButton(self.centralwidget)
+        self.btnlimpiar.setGeometry(QtCore.QRect(300, 250, 91, 31))
+        self.btnlimpiar.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
                                       "color: rgb(255, 255, 255);\n"
                                       "background-color: rgb(0, 51, 51);")
-        self.btnLimpiar.setObjectName("btnLimpiar")
-        self.btnRegresar = QtWidgets.QPushButton(self.centralwidget)
-        self.btnRegresar.setGeometry(QtCore.QRect(20, 250, 101, 31))
-        self.btnRegresar.setStyleSheet("font: 75 10pt \"Segoe Print\";\n"
+        self.btnlimpiar.setObjectName("btnLimpiar")
+        self.btnregresar = QtWidgets.QPushButton(self.centralwidget)
+        self.btnregresar.setGeometry(QtCore.QRect(20, 250, 101, 31))
+        self.btnregresar.setStyleSheet("font: 75 10pt \"Segoe Print\";\n"
                                        "color: rgb(255, 255, 255);\n"
                                        "background-color: rgb(0, 51, 51);")
-        self.btnRegresar.setObjectName("btnRegresar")
+        self.btnregresar.setObjectName("btnRegresar")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 534, 21))
@@ -67,14 +67,14 @@ class EliminarDocente(object):
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
-        self.btnEliminar.clicked.connect(self.eliminar)
-        self.btnLimpiar.clicked.connect(self.limpiar)
+        self.btneliminar.clicked.connect(self.eliminar)
+        self.btnlimpiar.clicked.connect(self.limpiar)
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def eliminar(self):
        try:
-        iden = str(self.txtIdentBuscar.toPlainText())
+        iden = str(self.txtidentbuscar.toPlainText())
         res = delete_Docent(iden)
         if not None == res:
             self.mostrarMensaje("Información", "¡El docente se ha eliminado con exito!", "", QMessageBox.Warning,
@@ -87,7 +87,7 @@ class EliminarDocente(object):
                                "", QMessageBox.Warning, False)
 
     def limpiar(self):
-        self.txtIdentBuscar.clear()
+        self.txtidentbuscar.clear()
 
     def mostrarMensaje(self, titulo: str, texto: str, texto_informativo: str, tipo_mensaje: QMessageBox,
                            estado: bool):
@@ -118,6 +118,6 @@ class EliminarDocente(object):
         self.codigo.setText(_translate("MainWindow",
                                        "<html><head/><body><p><span style=\" font-size:9pt; font-weight:600; color:#000000;\">Ingrese identificación del</span></p></body></html>"))
         self.codigo_2.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:9pt; font-weight:600; color:#000000;\">docente</span></p></body></html>"))
-        self.btnEliminar.setText(_translate("MainWindow", "ELIMINAR"))
-        self.btnLimpiar.setText(_translate("MainWindow", "LIMPIAR"))
-        self.btnRegresar.setText(_translate("MainWindow", "REGRESAR"))
+        self.btneliminar.setText(_translate("MainWindow", "ELIMINAR"))
+        self.btnlimpiar.setText(_translate("MainWindow", "LIMPIAR"))
+        self.btnregresar.setText(_translate("MainWindow", "REGRESAR"))

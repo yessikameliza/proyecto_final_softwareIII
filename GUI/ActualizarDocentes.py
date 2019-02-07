@@ -30,18 +30,18 @@ class ActualizarDocente(object):
         self.tipo.setStyleSheet("\n"
 "font: 75 8pt \"Segoe Print\";")
         self.tipo.setObjectName("tipo")
-        self.comboAsignatura = QtWidgets.QComboBox(self.groupBox)
-        self.comboAsignatura.setGeometry(QtCore.QRect(180, 360, 171, 31))
-        self.comboAsignatura.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+        self.comboasignatura = QtWidgets.QComboBox(self.groupBox)
+        self.comboasignatura.setGeometry(QtCore.QRect(180, 360, 171, 31))
+        self.comboasignatura.setStyleSheet("background-color: rgb(255, 255, 255);\n"
 "color: rgb(0, 0, 0);")
 
         res = obtener_Matter()
         for aux in res:
             aux2 = str((aux[2]))
             print(aux2)
-            self.comboAsignatura.addItem(aux2)
+            self.comboasignatura.addItem(aux2)
 
-        self.comboAsignatura.setObjectName("comboAsignatura")
+        self.comboasignatura.setObjectName("comboAsignatura")
         self.identifi = QtWidgets.QLabel(self.groupBox)
         self.identifi.setGeometry(QtCore.QRect(10, 110, 141, 31))
         self.identifi.setStyleSheet("font: 75 8pt \"Segoe Print\";")
@@ -58,66 +58,66 @@ class ActualizarDocente(object):
         self.asignatura_4.setGeometry(QtCore.QRect(10, 360, 131, 31))
         self.asignatura_4.setStyleSheet("font: 75 8pt \"Segoe Print\";")
         self.asignatura_4.setObjectName("asignatura_4")
-        self.txtIdent = QtWidgets.QTextEdit(self.groupBox)
-        self.txtIdent.setGeometry(QtCore.QRect(180, 110, 221, 31))
-        self.txtIdent.setStyleSheet("color: rgb(0, 0, 0);\n"
+        self.txtident = QtWidgets.QTextEdit(self.groupBox)
+        self.txtident.setGeometry(QtCore.QRect(180, 110, 221, 31))
+        self.txtident.setStyleSheet("color: rgb(0, 0, 0);\n"
 "font: 10pt \"MS Shell Dlg 2\";\n"
 "background-color: rgb(255, 255, 255);")
-        self.txtIdent.setObjectName("txtIdent")
+        self.txtident.setObjectName("txtIdent")
         self.asignatura_3 = QtWidgets.QLabel(self.groupBox)
         self.asignatura_3.setGeometry(QtCore.QRect(10, 260, 131, 31))
         self.asignatura_3.setStyleSheet("font: 75 8pt \"Segoe Print\";")
         self.asignatura_3.setObjectName("asignatura_3")
-        self.txtTelefono = QtWidgets.QTextEdit(self.groupBox)
-        self.txtTelefono.setGeometry(QtCore.QRect(180, 260, 221, 31))
-        self.txtTelefono.setStyleSheet("color: rgb(0, 0, 0);\n"
+        self.txttelefono = QtWidgets.QTextEdit(self.groupBox)
+        self.txttelefono.setGeometry(QtCore.QRect(180, 260, 221, 31))
+        self.txttelefono.setStyleSheet("color: rgb(0, 0, 0);\n"
 "font: 10pt \"MS Shell Dlg 2\";\n"
 "background-color: rgb(255, 255, 255);")
-        self.txtTelefono.setObjectName("txtTelefono")
-        self.btnAgregar = QtWidgets.QPushButton(self.groupBox)
-        self.btnAgregar.setGeometry(QtCore.QRect(360, 360, 41, 31))
-        self.btnAgregar.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
+        self.txttelefono.setObjectName("txtTelefono")
+        self.btnagregar = QtWidgets.QPushButton(self.groupBox)
+        self.btnagregar.setGeometry(QtCore.QRect(360, 360, 41, 31))
+        self.btnagregar.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
 "color: rgb(255, 255, 255);\n"
 "background-color: rgb(0, 51, 51);")
-        self.btnAgregar.setObjectName("btnAgregar")
-        self.txtNombre = QtWidgets.QTextEdit(self.groupBox)
-        self.txtNombre.setGeometry(QtCore.QRect(180, 60, 221, 31))
-        self.txtNombre.setStyleSheet("color: rgb(0, 0, 0);\n"
+        self.btnagregar.setObjectName("btnAgregar")
+        self.txtnombre = QtWidgets.QTextEdit(self.groupBox)
+        self.txtnombre.setGeometry(QtCore.QRect(180, 60, 221, 31))
+        self.txtnombre.setStyleSheet("color: rgb(0, 0, 0);\n"
 "font: 10pt \"MS Shell Dlg 2\";\n"
 "background-color: rgb(255, 255, 255);")
-        self.txtNombre.setObjectName("txtNombre")
-        self.txtTipo = QtWidgets.QTextEdit(self.groupBox)
-        self.txtTipo.setGeometry(QtCore.QRect(180, 160, 221, 31))
-        self.txtTipo.setStyleSheet("color: rgb(0, 0, 0);\n"
+        self.txtnombre.setObjectName("txtNombre")
+        self.txttipo = QtWidgets.QTextEdit(self.groupBox)
+        self.txttipo.setGeometry(QtCore.QRect(180, 160, 221, 31))
+        self.txttipo.setStyleSheet("color: rgb(0, 0, 0);\n"
 "font: 10pt \"MS Shell Dlg 2\";\n"
 "background-color: rgb(255, 255, 255);")
-        self.txtTipo.setObjectName("txtTipo")
-        self.txtLimHoras = QtWidgets.QTextEdit(self.groupBox)
-        self.txtLimHoras.setGeometry(QtCore.QRect(180, 210, 221, 31))
-        self.txtLimHoras.setStyleSheet("color: rgb(0, 0, 0);\n"
+        self.txttipo.setObjectName("txtTipo")
+        self.txtlimhoras = QtWidgets.QTextEdit(self.groupBox)
+        self.txtlimhoras.setGeometry(QtCore.QRect(180, 210, 221, 31))
+        self.txtlimhoras.setStyleSheet("color: rgb(0, 0, 0);\n"
 "font: 10pt \"MS Shell Dlg 2\";\n"
 "background-color: rgb(255, 255, 255);")
-        self.txtLimHoras.setObjectName("txtLimHoras")
-        self.btnActualizar = QtWidgets.QPushButton(self.groupBox)
-        self.btnActualizar.setGeometry(QtCore.QRect(180, 450, 111, 31))
-        self.btnActualizar.setStyleSheet("font: 75 11pt \"Segoe Print\";\n"
+        self.txtlimhoras.setObjectName("txtLimHoras")
+        self.btnactualizar = QtWidgets.QPushButton(self.groupBox)
+        self.btnactualizar.setGeometry(QtCore.QRect(180, 450, 111, 31))
+        self.btnactualizar.setStyleSheet("font: 75 11pt \"Segoe Print\";\n"
 "color: rgb(255, 255, 255);\n"
 "background-color: rgb(0, 51, 51);")
-        self.btnActualizar.setObjectName("btnActualizar")
-        self.btnLimpiar = QtWidgets.QPushButton(self.groupBox)
-        self.btnLimpiar.setGeometry(QtCore.QRect(300, 450, 101, 31))
-        self.btnLimpiar.setStyleSheet("font: 75 11pt \"Segoe Print\";\n"
+        self.btnactualizar.setObjectName("btnActualizar")
+        self.btnlimpiar = QtWidgets.QPushButton(self.groupBox)
+        self.btnlimpiar.setGeometry(QtCore.QRect(300, 450, 101, 31))
+        self.btnlimpiar.setStyleSheet("font: 75 11pt \"Segoe Print\";\n"
 "color: rgb(255, 255, 255);\n"
 "background-color: rgb(0, 51, 51);")
-        self.btnLimpiar.setObjectName("btnLimpiar")
-        self.comboEstado = QtWidgets.QComboBox(self.groupBox)
-        self.comboEstado.setGeometry(QtCore.QRect(180, 310, 221, 31))
-        self.comboEstado.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+        self.btnlimpiar.setObjectName("btnLimpiar")
+        self.comboestado = QtWidgets.QComboBox(self.groupBox)
+        self.comboestado.setGeometry(QtCore.QRect(180, 310, 221, 31))
+        self.comboestado.setStyleSheet("background-color: rgb(255, 255, 255);\n"
 "color: rgb(0, 0, 0);")
-        self.comboEstado.setObjectName("comboEstado")
-        self.comboEstado.setCurrentText("")
+        self.comboestado.setObjectName("comboEstado")
+        self.comboestado.setCurrentText("")
         items = ('ACTIVO', 'INACTIVO')
-        self.comboEstado.addItems(items)
+        self.comboestado.addItems(items)
         self.asignatura_5 = QtWidgets.QLabel(self.groupBox)
         self.asignatura_5.setGeometry(QtCore.QRect(10, 310, 131, 31))
         self.asignatura_5.setStyleSheet("font: 75 8pt \"Segoe Print\";")
@@ -127,24 +127,24 @@ class ActualizarDocente(object):
         self.codigo.setStyleSheet("font: 75 10pt \"Segoe Print\";\n"
 "color: rgb(255, 255, 255);")
         self.codigo.setObjectName("codigo")
-        self.txtIdentBuscar = QtWidgets.QTextEdit(self.centralwidget)
-        self.txtIdentBuscar.setGeometry(QtCore.QRect(30, 170, 191, 31))
-        self.txtIdentBuscar.setStyleSheet("color: rgb(0, 0, 0);\n"
+        self.txtidentbuscar = QtWidgets.QTextEdit(self.centralwidget)
+        self.txtidentbuscar.setGeometry(QtCore.QRect(30, 170, 191, 31))
+        self.txtidentbuscar.setStyleSheet("color: rgb(0, 0, 0);\n"
 "font: 10pt \"MS Shell Dlg 2\";\n"
 "background-color: rgb(255, 255, 255);")
-        self.txtIdentBuscar.setObjectName("txtIdentBuscar")
-        self.btnBuscar = QtWidgets.QPushButton(self.centralwidget)
-        self.btnBuscar.setGeometry(QtCore.QRect(30, 230, 101, 31))
-        self.btnBuscar.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
+        self.txtidentbuscar.setObjectName("txtIdentBuscar")
+        self.btnbuscar = QtWidgets.QPushButton(self.centralwidget)
+        self.btnbuscar.setGeometry(QtCore.QRect(30, 230, 101, 31))
+        self.btnbuscar.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
 "color: rgb(255, 255, 255);\n"
 "background-color: rgb(0, 51, 51);")
-        self.btnBuscar.setObjectName("btnBuscar")
-        self.btnRegresar = QtWidgets.QPushButton(self.centralwidget)
-        self.btnRegresar.setGeometry(QtCore.QRect(40, 540, 101, 31))
-        self.btnRegresar.setStyleSheet("font: 75 10pt \"Segoe Print\";\n"
+        self.btnbuscar.setObjectName("btnBuscar")
+        self.btnregresar = QtWidgets.QPushButton(self.centralwidget)
+        self.btnregresar.setGeometry(QtCore.QRect(40, 540, 101, 31))
+        self.btnregresar.setStyleSheet("font: 75 10pt \"Segoe Print\";\n"
 "color: rgb(255, 255, 255);\n"
 "background-color: rgb(0, 51, 51);")
-        self.btnRegresar.setObjectName("btnRegresar")
+        self.btnregresar.setObjectName("btnRegresar")
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(170, 10, 381, 61))
         self.label.setStyleSheet("\n"
@@ -164,26 +164,26 @@ class ActualizarDocente(object):
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
         self.retranslateUi(MainWindow)
-        self.btnBuscar.clicked.connect(self.buscar)
-        self.btnActualizar.clicked.connect(self.actualiza)
-        self.btnLimpiar.clicked.connect(self.limpiar)
+        self.btnbuscar.clicked.connect(self.buscar)
+        self.btnactualizar.clicked.connect(self.actualiza)
+        self.btnlimpiar.clicked.connect(self.limpiar)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def limpiar(self):
-        self.txtNombre.clear()
-        self.txtTipo.clear()
-        self.txtLimHoras.clear()
-        self.txtTelefono.clear()
-        self.txtIdent.clear()
-        self.comboEstado.clear()
+        self.txtnombre.clear()
+        self.txttipo.clear()
+        self.txtlimhoras.clear()
+        self.txttelefono.clear()
+        self.txtident.clear()
+        self.comboestado.clear()
     def actualiza(self):
        try:
-        nomb = str(self.txtNombre.toPlainText())
-        tipo = str(self.txtTipo.toPlainText())
-        lim = int(self.txtLimHoras.toPlainText())
-        tel = str(self.txtTelefono.toPlainText())
-        iden = str(self.txtIdent.toPlainText())
-        esta = str(self.comboEstado.currentText())
+        nomb = str(self.txtnombre.toPlainText())
+        tipo = str(self.txttipo.toPlainText())
+        lim = int(self.txtlimhoras.toPlainText())
+        tel = str(self.txttelefono.toPlainText())
+        iden = str(self.txtident.toPlainText())
+        esta = str(self.comboestado.currentText())
 
         if len(nomb) == 0 | len(tipo) == 0 | len(lim) == 0 | len(tel) ==0 | len(iden) == 0 | len(esta) == 0:
             self.mostrarMensaje("Alerta", "¡Hay espacios vacios, digite todos los campos!", "", QMessageBox.Warning, False)
@@ -194,19 +194,19 @@ class ActualizarDocente(object):
         self.mostrarMensaje("Información", "¡La entrada es incorrecta, escriba un numero entero!",
                         "", QMessageBox.Warning, False)
     def buscar(self):
-        id = self.txtIdentBuscar.toPlainText()
+        id = self.txtidentbuscar.toPlainText()
         fila:Any = search_Docent(id)
         if not None == fila:
-            self.txtIdent.setText(str(fila[6]))
-            self.txtNombre.setText(str(fila[1]))
-            self.txtLimHoras.setText(str(fila[3]))
-            self.txtTipo.setText(str(fila[4]))
-            self.txtTelefono.setText(str(fila[5]))
+            self.txtident.setText(str(fila[6]))
+            self.txtnombre.setText(str(fila[1]))
+            self.txtlimhoras.setText(str(fila[3]))
+            self.txttipo.setText(str(fila[4]))
+            self.txttelefono.setText(str(fila[5]))
             if str(fila[2]) == "ACTIVO":
-             self.comboEstado.setItemText(1, str(fila[2]))
+             self.comboestado.setItemText(1, str(fila[2]))
 
             else:
-             self.comboEstado.setItemText(1, str(fila[2]))
+             self.comboestado.setItemText(1, str(fila[2]))
 
         else:
             print("no existe el docente")
@@ -242,13 +242,13 @@ class ActualizarDocente(object):
         self.nombre.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#000000;\">Nombre:</span></p></body></html>"))
         self.asignatura_4.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#000000;\">Asignatura:</span></p></body></html>"))
         self.asignatura_3.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#000000;\">Telefono:</span></p></body></html>"))
-        self.btnAgregar.setText(_translate("MainWindow", "+"))
-        self.btnActualizar.setText(_translate("MainWindow", "ACTUALIZAR"))
-        self.btnLimpiar.setText(_translate("MainWindow", "LIMPIAR"))
+        self.btnagregar.setText(_translate("MainWindow", "+"))
+        self.btnactualizar.setText(_translate("MainWindow", "ACTUALIZAR"))
+        self.btnlimpiar.setText(_translate("MainWindow", "LIMPIAR"))
         self.asignatura_5.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#000000;\">Estado:</span></p></body></html>"))
         self.codigo.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:9pt; font-weight:600; color:#000000;\">Ingrese identificación del</span></p></body></html>"))
-        self.btnBuscar.setText(_translate("MainWindow", "BUSCAR"))
-        self.btnRegresar.setText(_translate("MainWindow", "REGRESAR"))
+        self.btnbuscar.setText(_translate("MainWindow", "BUSCAR"))
+        self.btnregresar.setText(_translate("MainWindow", "REGRESAR"))
         self.label.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:24pt; font-weight:600; color:#000000;\">Actualizar docentes</span></p><p align=\"center\"><br/></p><p align=\"center\"><br/></p></body></html>"))
         self.codigo_2.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:9pt; font-weight:600; color:#000000;\">docente</span></p></body></html>"))
 
