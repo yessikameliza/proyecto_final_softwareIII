@@ -5,12 +5,12 @@ from DB.InsertarDatos import insert_docent
 from DB.InsertarDatos import insert_date
 from DB.Seleccionar_Datos import search_matter2
 from DB.ActualizarDatos import upDate_Matter
-from DB.EliminarDatos import deleteMatter
+from DB.EliminarDatos import delete_matter1
 from DB.Seleccionar_Datos import search_docent2
 from DB.ActualizarDatos import updateDocent
-from DB.EliminarDatos import deleteDate
+from DB.EliminarDatos import delete_date1
 from DB.Seleccionar_Datos import obtener_fechas2
-from DB.EliminarDatos import deleteDocent
+from DB.EliminarDatos import delete_docent1
 from DB.Seleccionar_Datos import obtener_matter2
 from DB.Seleccionar_Datos import buscar_mater_por_semester
 from DB.Seleccionar_Datos import buscar_hora_inicio_fin
@@ -45,7 +45,7 @@ def update_matter(codigo: str, name: str, ubisemester: int, numcredit: str, codr
 
 
 def delete_matter(codigo: str):
-    return deleteMatter(codigo)
+    return delete_matter1(codigo)
 
 
 def search_docent(ident: str):
@@ -58,12 +58,12 @@ def update_docent(name: str, state: str, limithours: int, contract: str, phone: 
 
 
 def delete_docent(identification: str):
-    return deleteDocent(identification)
+    return delete_docent1(identification)
 
 
 def delete_date():
     print("entroooo")
-    return deleteDate()
+    return delete_date1()
 
 
 def update_datee(date: str, origin: str, idblock: int, idents: str):
