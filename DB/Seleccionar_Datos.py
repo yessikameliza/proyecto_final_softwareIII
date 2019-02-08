@@ -4,7 +4,7 @@ import sqlite3
 from typing import Any, List
 
 
-def search_matter(codi: str):
+def search_matter2(codi: str):
     conexion = sqlite3.connect("dataBase.sqlite3")
     consulta = conexion.cursor()
 
@@ -25,7 +25,7 @@ def search_matter(codi: str):
     return filaa
 
 
-def search_docent(ident: str):
+def search_docent2(ident: str):
     conexion = sqlite3.connect("dataBase.sqlite3")
     consulta = conexion.cursor()
 
@@ -64,7 +64,7 @@ def search_docent_matter(matter: str, ciudad: str):
     conexion.close()
     return filaa
 
-def obtener_fechas(idents: str):
+def obtener_fechas2(idents: str):
     conexion = sqlite3.connect("dataBase.sqlite3")
     consulta = conexion.cursor()
 
@@ -86,7 +86,7 @@ def obtener_fechas(idents: str):
     conexion.close()
     return filaa
 
-def obtener_fecha_induc(idents: str):
+def obtener_fecha_indu2(idents: str):
     conexion = sqlite3.connect("dataBase.sqlite3")
     consulta = conexion.cursor()
 
@@ -105,7 +105,7 @@ def obtener_fecha_induc(idents: str):
     conexion.close()
     return filaa
 
-def obtener_fechas_hour(idents: str, origin: str):
+def obtener_fechas_hour2(idents: str, origin: str):
     conexion = sqlite3.connect("dataBase.sqlite3")
     consulta = conexion.cursor()
 
@@ -124,7 +124,7 @@ def obtener_fechas_hour(idents: str, origin: str):
     conexion.close()
     return filaa
 
-def obtener_matter():
+def obtener_matter2():
     conexion = sqlite3.connect("dataBase.sqlite3")
     consulta = conexion.cursor()
 
