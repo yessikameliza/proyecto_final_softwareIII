@@ -585,6 +585,7 @@ class VentanaPrincipal(QtWidgets.QMainWindow):
         semester: int = int(self.spinsemestre.text())
         print("este es el semestre", semester)
         hours: list = gene_hours(semester, "Armenia")
+        print("probando esto")
         self.llenartabla(semester, "Armenia")
         rows = 1
         i = 0

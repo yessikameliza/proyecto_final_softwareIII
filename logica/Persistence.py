@@ -131,11 +131,11 @@ def gene_hours_primer_s(semester, horario: list):
     aux: str = ""
     for file in files:
         if l <= 2:
-            updateBMa(file[2], 1)
+            update_b_ma1(file[2], 1)
         elif 2 < l <= 4:
-            updateBMa(file[2], 2)
+            update_b_ma1(file[2], 2)
         elif l > 4:
-            updateBMa(file[2], 3)
+            update_b_ma1(file[2], 3)
         print(file[2], " esto es aux")
         print(file[6], "esto es el bloque")
         if file[2] == "Metodologia Educacion a Distancia":
@@ -195,12 +195,12 @@ def gene_hours_segundo_s(semester, horario: list):
     aux: str = ""
     for file in files:
         if l < 2:
-            updateBMa(file[2], 1)
+            update_b_ma1(file[2], 1)
             print("entroo primera vez")
         elif 2 <= l < 4:
-            updateBMa(file[2], 2)
+            update_b_ma1(file[2], 2)
         elif l > 4:
-            updateBMa(file[2], 3)
+            update_b_ma1(file[2], 3)
         print(file[2], " esto es aux")
         print(file[6], "esto es el bloque")
         print(file)
@@ -286,12 +286,12 @@ def gene_hours_cuarto_s(semester, horario: list):
     aux: str = ""
     for file in files:
         if l <= 2:
-            updateBMa(file[2], 1)
+            update_b_ma1(file[2], 1)
             print("entroo primera vez")
         elif 2 < l < 4:
-            updateBMa(file[2], 2)
+            update_b_ma1(file[2], 2)
         elif l >= 4:
-            updateBMa(file[2], 3)
+            update_b_ma1(file[2], 3)
         num: int = int(file[7])
         print("numero", num)
         number: int = int(num / 4)
@@ -328,12 +328,12 @@ def gene_hours_quinto_s(semester, horario: list):
     aux: str = ""
     for file in files:
         if l < 2:
-            updateBMa(file[2], 1)
+            update_b_ma1(file[2], 1)
             print("entroo primera vez")
         elif 2 <= l < 4:
-            updateBMa(file[2], 2)
+            update_b_ma1(file[2], 2)
         elif l >= 4:
-            updateBMa(file[2], 3)
+            update_b_ma1(file[2], 3)
         print(file[2], " esto es aux")
         print(file[6], "esto es el bloque")
         print(file)
@@ -377,9 +377,9 @@ def gene_hours_sexto_s(semester, horario: list):
             updateBMa(file[2], 1)
             print("entroo primera vez")
         elif 2 <= l < 4:
-            updateBMa(file[2], 2)
+            update_b_ma1(file[2], 2)
         elif l >= 4:
-            updateBMa(file[2], 3)
+            update_b_ma1(file[2], 3)
         print(file[2], " esto es aux")
         print(file[6], "esto es el bloque")
         print(file)
