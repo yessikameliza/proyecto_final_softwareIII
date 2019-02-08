@@ -130,6 +130,7 @@ class Ui_Form(object):
         self.tablewidget_3.setItem(5, 4, item)
         item = QtWidgets.QTableWidgetItem()
         self.tablewidget_3.setItem(5, 5, item)
+
         self.tablewidget_3.horizontalHeader().setDefaultSectionSize(136)
         self.label_6 = QtWidgets.QLabel(self.groupbox)
         self.label_6.setGeometry(QtCore.QRect(20, 110, 111, 21))
@@ -159,6 +160,7 @@ class Ui_Form(object):
         self.tablewidget.setObjectName("tableWidget")
         self.tablewidget.setColumnCount(6)
         self.tablewidget.setRowCount(6)
+        print("paso esto 5")
         item = QtWidgets.QTableWidgetItem()
         self.tablewidget.setVerticalHeaderItem(0, item)
         item = QtWidgets.QTableWidgetItem()
@@ -174,6 +176,7 @@ class Ui_Form(object):
         item = QtWidgets.QTableWidgetItem()
         self.tablewidget.setHorizontalHeaderItem(0, item)
         item = QtWidgets.QTableWidgetItem()
+       #self.tablewidget.setHorizontalHem()
         self.tablewidget.setHorizontalHeaderItem(1, item)
         item = QtWidgets.QTableWidgetItem()
         self.tablewidget.setHorizontalHeaderItem(2, item)
@@ -261,6 +264,7 @@ class Ui_Form(object):
         self.label.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
                                  "color: rgb(0, 0, 0);")
         self.label.setObjectName("label")
+        print("paso esto 4")
         self.label_2 = QtWidgets.QLabel(self.groupbox)
         self.label_2.setGeometry(QtCore.QRect(500, 20, 121, 16))
         self.label_2.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
@@ -495,8 +499,8 @@ class Ui_Form(object):
         self.rellenarcuadro2()
         self.rellenarcuadro3()
         self.pushbutton.clicked.connect(self.registrar_fechas)
-        self.pushbutton_3.clicked.connect(self.eliminar_fechas)
-        self.pushbutton_2.clicked.connect(self.actualizar_fechas)
+        self.pushbutton_3.clicked.connect(self.eliminar_Fechas)
+        self.pushbutton_2.clicked.connect(self.actualizar_Fechas)
         QtCore.QMetaObject.connectSlotsByName(form)
 
     def registrar_fechas(self):
@@ -525,10 +529,12 @@ class Ui_Form(object):
         mes2 = str(self.comboboxmes2.currentText())
         fecha1 = mes1 + dia1
         fecha2 = mes2 + dia2
+        print("llego hasta aqui 1")
         register_date(fecha1, "Encuentro tutoriales", 1, "inductorio")
         register_date(fecha2, "Encuentros tutoriales", 1, "inductorio")
         self.mostrar_mensaje("Información", "¡Fechas registradas exitosamente!", "", QMessageBox.Warning, False)
         self.pushbutton.setEnabled(False)
+        print("llego hasta aquí dos")
 
     def rellenarcuadro1(self):
         res = obtener_fecha("Primeras fechas")
