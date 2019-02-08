@@ -4,19 +4,19 @@ from DB.InsertarDatos import insert_matter
 from DB.InsertarDatos import insert_docent
 from DB.InsertarDatos import insert_date
 from DB.Seleccionar_Datos import search_matter2
-from DB.ActualizarDatos import upDate_Matter
+from DB.ActualizarDatos import update_matter1
 from DB.EliminarDatos import delete_matter1
 from DB.Seleccionar_Datos import search_docent2
-from DB.ActualizarDatos import updateDocent
+from DB.ActualizarDatos import update_docent1
 from DB.EliminarDatos import delete_date1
 from DB.Seleccionar_Datos import obtener_fechas2
 from DB.EliminarDatos import delete_docent1
 from DB.Seleccionar_Datos import obtener_matter2
 from DB.Seleccionar_Datos import buscar_mater_por_semester
 from DB.Seleccionar_Datos import buscar_hora_inicio_fin
-from DB.ActualizarDatos import updateDate
+from DB.ActualizarDatos import update_date1
 from DB.Seleccionar_Datos import obtener_fechas_hour2
-from DB.ActualizarDatos import updateBMa
+from DB.ActualizarDatos import update_b_ma1
 from DB.Seleccionar_Datos import obtener_fecha_indu2
 from DB.Seleccionar_Datos import search_docent_matter
 
@@ -41,7 +41,7 @@ def search_matter(codigo: str):
 
 
 def update_matter(codigo: str, name: str, ubisemester: int, numcredit: str, codrequisite: str, numhourssem: int):
-    upDate_Matter(codigo, name, ubisemester, numcredit, codrequisite, numhourssem)
+    update_matter1(codigo, name, ubisemester, numcredit, codrequisite, numhourssem)
 
 
 def delete_matter(codigo: str):
@@ -54,7 +54,7 @@ def search_docent(ident: str):
 
 def update_docent(name: str, state: str, limithours: int, contract: str, phone: str, identification: str, matter: str,
                   city: str):
-    updateDocent(name, state, limithours, contract, phone, identification, matter, city)
+    update_docent1(name, state, limithours, contract, phone, identification, matter, city)
 
 
 def delete_docent(identification: str):
@@ -67,7 +67,7 @@ def delete_date():
 
 
 def update_datee(date: str, origin: str, idblock: int, idents: str):
-    updateDate(date, origin, idblock, idents)
+    update_date1(date, origin, idblock, idents)
 
 
 def obtener_fecha(idents: str):

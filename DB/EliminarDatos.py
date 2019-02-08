@@ -7,7 +7,6 @@ def delete_matter1(codigo: str):
     conexion = sqlite3.connect("dataBase.sqlite3")
 
     consulta = conexion.cursor()
-    # sql2 = """UPDATE matter
     # SET (codigo, name, ubi_Semester, numCredit, codRequisite, numHoursSem) WHERE codigo = 1 """
     id: int = None
     sql1 = "SELECT * FROM matter"
@@ -34,7 +33,6 @@ def delete_docent1(identification: str):
 
     consulta = conexion.cursor()
     # sql2 = """UPDATE matter
-    # SET (codigo, name, ubi_Semester, numCredit, codRequisite, numHoursSem) WHERE codigo = 1 """
     id: int = None
     sql1 = "SELECT * FROM docent"
     if consulta.execute(sql1):
@@ -57,9 +55,6 @@ def delete_docent1(identification: str):
 def delete_date1():
     conexion = sqlite3.connect("dataBase.sqlite3")
     consulta = conexion.cursor()
-    # sql2 = """UPDATE matter
-    # SET (codigo, name, ubi_Semester, numCredit, codRequisite, numHoursSem) WHERE codigo = 1 """
-    id: int = 0
     sql1 = "DELETE FROM date"
     if consulta.execute(sql1):
         print("elimino fechas")

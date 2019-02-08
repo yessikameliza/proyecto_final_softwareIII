@@ -4,7 +4,7 @@ import sqlite3
 from DB.InsertarDatos import insert_date
 
 
-def upDate_Matter(codigo: str, name: str, ubi_Semester: int, numCredit: str, codRequisite: str, numHoursSem: int):
+def update_matter1(codigo: str, name: str, ubisemester: int, numcredit: str, codrequisite: str, numhourssem: int):
     conexion = sqlite3.connect("dataBase.sqlite3")
 
     consulta = conexion.cursor()
@@ -17,7 +17,7 @@ def upDate_Matter(codigo: str, name: str, ubi_Semester: int, numCredit: str, cod
         for fila in files:
             if str(fila[1]) == codigo:
                 id = int(fila[0])
-    arg = (codigo, name, ubi_Semester, numCredit, codRequisite, numHoursSem, id)
+    arg = (codigo, name, ubisemester, numcredit, codrequisite, numhourssem, id)
     sql = """UPDATE matter SET codigo = ?, name = ?, ubi_Semester = ?, numCredit = ?, codRequisite = ?, numHoursSem = ?
       WHERE id_Matter = ? """
 
@@ -29,7 +29,7 @@ def upDate_Matter(codigo: str, name: str, ubi_Semester: int, numCredit: str, cod
     conexion.close()
 
 
-def updateDocent(name, state, limitHours, contract, phone, identification, matter, city):
+def update_docent1(name, state, limithours, contract, phone, identification, matter, city):
     conexion = sqlite3.connect("dataBase.sqlite3")
     consulta = conexion.cursor()
     # sql2 = """UPDATE matter
@@ -44,7 +44,7 @@ def updateDocent(name, state, limitHours, contract, phone, identification, matte
                 id = int(fila[0])
                 print(id)
 
-    arg = (name, state, limitHours, contract, phone, identification, matter, city, id)
+    arg = (name, state, limithours, contract, phone, identification, matter, city, id)
     sql = """UPDATE docent SET name = ?, estate = ?, limitHoras = ?, contract = ?, phone = ?, identification = ?,
      matter= ?, city= ?
       WHERE id_Docent = ? """
@@ -59,7 +59,7 @@ def updateDocent(name, state, limitHours, contract, phone, identification, matte
     conexion.commit()
     conexion.close()
 
-def updateBMa(nombre: str, idBlock: int):
+def update_b_ma1(nombre: str, idblock: int):
     conexion = sqlite3.connect("dataBase.sqlite3")
     consulta = conexion.cursor()
     # sql2 = """UPDATE matter
@@ -70,7 +70,7 @@ def updateBMa(nombre: str, idBlock: int):
         for fila in files:
 
             if str(fila[2]) == nombre:
-                arg = (idBlock, fila[0])
+                arg = (idblock, fila[0])
                 sql = """UPDATE matter SET id_block = ?
                           WHERE id_Matter = ? """
                 if consulta.execute(sql, arg):
@@ -83,5 +83,5 @@ def updateBMa(nombre: str, idBlock: int):
     conexion.commit()
     conexion.close()
 
-def updateDate(date: str, origin: str, idBlock: int, idents: str):
-    insert_date(date, origin, idBlock, idents)
+def update_date1(date: str, origin: str, idblock: int, idents: str):
+    insert_date(date, origin, idblock, idents)
