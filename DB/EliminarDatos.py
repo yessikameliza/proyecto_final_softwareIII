@@ -3,7 +3,7 @@
 import sqlite3
 
 
-def deleteMatter(codigo: str):
+def delete_matter1(codigo: str):
     conexion = sqlite3.connect("dataBase.sqlite3")
 
     consulta = conexion.cursor()
@@ -29,7 +29,7 @@ def deleteMatter(codigo: str):
     return id
 
 
-def deleteDocent(identification: str):
+def delete_docent1(identification: str):
     conexion = sqlite3.connect("dataBase.sqlite3")
 
     consulta = conexion.cursor()
@@ -54,7 +54,7 @@ def deleteDocent(identification: str):
     conexion.close()
     return id
 
-def deleteDate():
+def delete_date1():
     conexion = sqlite3.connect("dataBase.sqlite3")
     consulta = conexion.cursor()
     # sql2 = """UPDATE matter

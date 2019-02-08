@@ -20,6 +20,7 @@ class ActualizarDocente(object):
     def setup_ui(self, main_window):
         main_window.setObjectName("MainWindow")
         main_window.resize(687, 640)
+        print("paso esto 1")
         main_window.setStyleSheet("background-color: rgb(128, 195, 161)")
         self.centralwidget = QtWidgets.QWidget(main_window)
         self.centralwidget.setObjectName("centralwidget")
@@ -37,7 +38,7 @@ class ActualizarDocente(object):
         self.comboasignatura.setGeometry(QtCore.QRect(180, 360, 171, 31))
         self.comboasignatura.setStyleSheet("background-color: rgb(255, 255, 255);\n"
                                            "color: rgb(0, 0, 0);")
-
+        print("paso esto 6")
         res = obtener_matter()
         for aux in res:
             aux2 = str((aux[2]))
@@ -121,7 +122,9 @@ class ActualizarDocente(object):
                                        "color: rgb(0, 0, 0);")
         self.comboestado.setObjectName("comboEstado")
         self.comboestado.setCurrentText("")
+
         items = ('ACTIVO', 'INACTIVO')
+        print("paso esto 2")
         self.comboestado.addItems(items)
 
         self.combociudad = QtWidgets.QComboBox(self.groupbox)
@@ -186,6 +189,7 @@ class ActualizarDocente(object):
         self.statusbar.setObjectName("statusbar")
         main_window.setStatusBar(self.statusbar)
         self.retranslate_ui(main_window)
+        print("paso esto 3")
         self.btnbuscar.clicked.connect(self.buscar)
         self.btnactualizar.clicked.connect(self.actualiza)
         self.btnlimpiar.clicked.connect(self.limpiar)

@@ -56,12 +56,6 @@ def insert_docent(name: str, state: str, limithours: int, contract: str, phone: 
     # VALUES (?)"""
     sql = """INSERT INTO docent (name, estate, limitHoras, contract, phone, identification, matter, city)
     VALUES (?, ?, ?, ?, ?, ?, ?, ?)"""
-    #sql2 = """SELECT * FROM docent WHERE identification = identification """
-    # consulta.execute(sql2)
-
-    # Realizar la consulta
-    # filas = consulta.fetchall()
-    # if filas is None:
     if consulta.execute(sql, argumentos):
         print("docente insertado")
     else:
