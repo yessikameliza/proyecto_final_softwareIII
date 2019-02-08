@@ -8,6 +8,6 @@ if __name__ == "__main__":
     app = QApplication([])
     hola = QMainWindow()
     main_window = Login()
-    main_window.setup_Ui(hola)
+    main_window.setup_ui(hola)
     hola.show()
     sys.exit(app.exec_())
