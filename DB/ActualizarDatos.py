@@ -8,8 +8,6 @@ def update_matter1(codigo: str, name: str, ubisemester: int, numcredit: str, cod
     conexion = sqlite3.connect("dataBase.sqlite3")
 
     consulta = conexion.cursor()
-    # sql2 = """UPDATE matter
-    # SET (codigo, name, ubi_Semester, numCredit, codRequisite, numHoursSem) WHERE codigo = 1 """
     id: int
     sql1 = "SELECT * FROM matter"
     if consulta.execute(sql1):
@@ -32,8 +30,6 @@ def update_matter1(codigo: str, name: str, ubisemester: int, numcredit: str, cod
 def update_docent1(name, state, limithours, contract, phone, identification, matter, city):
     conexion = sqlite3.connect("dataBase.sqlite3")
     consulta = conexion.cursor()
-    # sql2 = """UPDATE matter
-    # SET (codigo, name, ubi_Semester, numCredit, codRequisite, numHoursSem) WHERE codigo = 1 """
     id: int = None
     sql1 = "SELECT * FROM docent"
     if consulta.execute(sql1):
@@ -62,8 +58,6 @@ def update_docent1(name, state, limithours, contract, phone, identification, mat
 def update_b_ma1(nombre: str, idblock: int):
     conexion = sqlite3.connect("dataBase.sqlite3")
     consulta = conexion.cursor()
-    # sql2 = """UPDATE matter
-    # SET (codigo, name, ubi_Semester, numCredit, codRequisite, numHoursSem) WHERE codigo = 1 """
     sql1 = "SELECT * FROM matter"
     if consulta.execute(sql1):
         files = consulta.fetchall()
