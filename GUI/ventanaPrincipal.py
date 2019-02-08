@@ -495,8 +495,11 @@ class VentanaPrincipal(QtWidgets.QMainWindow):
     def ventana_registro_docente(self):
         self.ventana = QtWidgets.QMainWindow()
         self.ui = RegistroDocentes()
+        print("aqui")
         self.ui.setup_ui(self.ventana)
+        print("aquii")
         self.ventana.show()
+
 
     def ventana_registro_fecha(self):
 

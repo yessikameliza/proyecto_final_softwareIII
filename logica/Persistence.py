@@ -3,21 +3,21 @@
 from DB.InsertarDatos import insert_matter
 from DB.InsertarDatos import insert_docent
 from DB.InsertarDatos import insert_date
-from DB.Seleccionar_Datos import search_matter
+from DB.Seleccionar_Datos import search_matter2
 from DB.ActualizarDatos import upDate_Matter
 from DB.EliminarDatos import deleteMatter
-from DB.Seleccionar_Datos import search_docent
+from DB.Seleccionar_Datos import search_docent2
 from DB.ActualizarDatos import updateDocent
 from DB.EliminarDatos import deleteDate
-from DB.Seleccionar_Datos import obtener_fechas
+from DB.Seleccionar_Datos import obtener_fechas2
 from DB.EliminarDatos import deleteDocent
-from DB.Seleccionar_Datos import obtener_matter
+from DB.Seleccionar_Datos import obtener_matter2
 from DB.Seleccionar_Datos import buscar_mater_por_semester
 from DB.Seleccionar_Datos import buscar_hora_inicio_fin
 from DB.ActualizarDatos import updateDate
-from DB.Seleccionar_Datos import obtener_fechas_hour
+from DB.Seleccionar_Datos import obtener_fechas_hour2
 from DB.ActualizarDatos import updateBMa
-from DB.Seleccionar_Datos import obtener_fecha_induc
+from DB.Seleccionar_Datos import obtener_fecha_indu2
 from DB.Seleccionar_Datos import search_docent_matter
 
 def register_matter(codigo: str, name: str, ubisemester: int, numcredit: str, codrequisite: str, numhourssem: int):
@@ -37,7 +37,7 @@ def register_date(date: str, origin: str, idblock: int, ident: str):
 
 
 def search_matter(codigo: str):
-    return search_matter(codigo)
+    return search_matter2(codigo)
 
 
 def update_matter(codigo: str, name: str, ubisemester: int, numcredit: str, codrequisite: str, numhourssem: int):
@@ -49,7 +49,7 @@ def delete_matter(codigo: str):
 
 
 def search_docent(ident: str):
-    return search_docent(ident)
+    return search_docent2(ident)
 
 
 def update_docent(name: str, state: str, limithours: int, contract: str, phone: str, identification: str, matter: str,
@@ -71,18 +71,18 @@ def update_datee(date: str, origin: str, idblock: int, idents: str):
 
 
 def obtener_fecha(idents: str):
-    return obtener_fechas(idents)
+    return obtener_fechas2(idents)
 
 
 def obtener_fechas_p(idents: str, origin: str):
-    return obtener_fechas_hour(idents, origin)
+    return obtener_fechas_hour2(idents, origin)
 
 
 def obtener_matter():
-    return obtener_matter()
+    return obtener_matter2()
 
 def obtener_f_induct(idents: str):
-    return obtener_fecha_induc(idents)
+    return obtener_fecha_indu2(idents)
 
 def gene_hours(semester: int, ciudad: str) -> list:
     hours: list = []

@@ -21,8 +21,8 @@ class RegistroDocentes(object):
     def setup_ui(self, main_window):
         main_window.setObjectName("Registro de docentes")
         main_window.resize(538, 777)
+        print("jajaj")
         main_window.setStyleSheet("background-color: rgb(128, 195, 161)")
-        a = 540
         self.centralwidget = QtWidgets.QWidget(main_window)
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
@@ -49,7 +49,7 @@ class RegistroDocentes(object):
                                      "font: 10pt \"MS Shell Dlg 2\";\n"
                                      "background-color: rgb(255, 255, 255);")
         self.txtnombre.setObjectName("txtNombre")
-
+        print("koi")
         self.txtident = QtWidgets.QTextEdit(self.centralwidget)
         self.txtident.setGeometry(QtCore.QRect(250, 220, 241, 31))
         self.txtident.setStyleSheet("color: rgb(0, 0, 0);\n"
@@ -84,8 +84,9 @@ class RegistroDocentes(object):
         self.comboasignatura.setStyleSheet("background-color: rgb(255, 255, 255);\n"
                                            "color: rgb(0, 0, 0);")
         self.comboasignatura.setObjectName("comboAsignatura")
+        print("lkljkljl")
         res = obtener_matter()
-
+        print("poi")
         for aux in res:
             aux2 = str((aux[2]))
             print(aux2)
@@ -153,11 +154,10 @@ class RegistroDocentes(object):
         self.statusbar = QtWidgets.QStatusBar(main_window)
         self.statusbar.setObjectName("statusbar")
         main_window.setStatusBar(self.statusbar)
+        print("jojo")
+        self.retranslate_ui(main_window)
         self.btnaceptar.clicked.connect(self.venta_acep)
         self.btnlimpiar.clicked.connect(self.limpiar)
-
-        self.retranslate_ui(main_window)
-
         QtCore.QMetaObject.connectSlotsByName(main_window)
 
     def limpiar(self):
@@ -237,6 +237,7 @@ class RegistroDocentes(object):
         self.tipo.setText(_translate("MainWindow",
                                      "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#000000;\">Tipo:</span></p></body></html>"))
         self.btnaceptar.setText(_translate("MainWindow", "ACEPTAR"))
+        print("jiji")
         self.btnlimpiar.setText(_translate("MainWindow", "LIMPIAR"))
         self.btnregresar.setText(_translate("MainWindow", "REGRESAR"))
         self.asignatura_2.setText(_translate("MainWindow",
