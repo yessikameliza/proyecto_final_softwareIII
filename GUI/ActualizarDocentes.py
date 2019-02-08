@@ -45,6 +45,7 @@ class ActualizarDocente(object):
             self.comboasignatura.addItem(aux2)
 
         self.comboasignatura.setObjectName("comboAsignatura")
+
         self.identifi = QtWidgets.QLabel(self.groupbox)
         self.identifi.setGeometry(QtCore.QRect(10, 110, 141, 31))
         self.identifi.setStyleSheet("font: 75 8pt \"Segoe Print\";")
@@ -61,6 +62,7 @@ class ActualizarDocente(object):
         self.asignatura_4.setGeometry(QtCore.QRect(10, 360, 131, 31))
         self.asignatura_4.setStyleSheet("font: 75 8pt \"Segoe Print\";")
         self.asignatura_4.setObjectName("asignatura_4")
+
         self.txtident = QtWidgets.QTextEdit(self.groupbox)
         self.txtident.setGeometry(QtCore.QRect(180, 110, 221, 31))
         self.txtident.setStyleSheet("color: rgb(0, 0, 0);\n"
@@ -121,10 +123,27 @@ class ActualizarDocente(object):
         self.comboestado.setCurrentText("")
         items = ('ACTIVO', 'INACTIVO')
         self.comboestado.addItems(items)
+
+        self.combociudad = QtWidgets.QComboBox(self.groupbox)
+        self.combociudad.setGeometry(QtCore.QRect(180, 410, 221, 31))
+        self.combociudad.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+                                       "color: rgb(0, 0, 0);")
+        self.combociudad.setObjectName("comboCiudad")
+        itemsa = ('', 'Armenia', 'Pereira', 'Buga')
+        self.combociudad.addItems(itemsa)
+
         self.asignatura_5 = QtWidgets.QLabel(self.groupbox)
         self.asignatura_5.setGeometry(QtCore.QRect(10, 310, 131, 31))
         self.asignatura_5.setStyleSheet("font: 75 8pt \"Segoe Print\";")
         self.asignatura_5.setObjectName("asignatura_5")
+
+        self.ciudad = QtWidgets.QLabel(self.groupbox)
+        self.ciudad.setGeometry(QtCore.QRect(10, 410, 141, 31))
+        self.ciudad.setStyleSheet("font: 75 8pt \"Segoe Print\";")
+        self.ciudad.setObjectName("ciudad")
+
+
+
         self.codigo = QtWidgets.QLabel(self.centralwidget)
         self.codigo.setGeometry(QtCore.QRect(30, 120, 191, 31))
         self.codigo.setStyleSheet("font: 75 10pt \"Segoe Print\";\n"
@@ -188,12 +207,14 @@ class ActualizarDocente(object):
             tel = str(self.txttelefono.toPlainText())
             iden = str(self.txtident.toPlainText())
             esta = str(self.comboestado.currentText())
+            materia = str(self.comboasignatura.currentText())
+            ciudad = str(self.comboestado.currentText())
 
             if len(nomb) == 0 | len(tipo) == 0 | len(lim) == 0 | len(tel) == 0 | len(iden) == 0 | len(esta) == 0:
                 self.mostrar_mensaje("Alerta", "¡Hay espacios vacios, digite todos los campos!", "", QMessageBox.Warning,
                                     False)
             else:
-                update_docent(nomb, esta, lim, tipo, tel, iden)
+                update_docent(nomb, esta, lim, tipo, tel, iden, materia, ciudad)
                 self.mostrar_mensaje("Información", "¡Se han actualizado los datos correctamente!", "",
                                     QMessageBox.Warning, False)
         except ValueError:
@@ -267,3 +288,5 @@ class ActualizarDocente(object):
                                       "<html><head/><body><p align=\"center\"><span style=\" font-size:24pt; font-weight:600; color:#000000;\">Actualizar docentes</span></p><p align=\"center\"><br/></p><p align=\"center\"><br/></p></body></html>"))
         self.codigo_2.setText(_translate("MainWindow",
                                          "<html><head/><body><p><span style=\" font-size:9pt; font-weight:600; color:#000000;\">docente</span></p></body></html>"))
+        self.ciudad.setText(_translate("MainWindow",
+                                         "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#000000;\">Ciudad:</span></p></body></html>"))

@@ -84,9 +84,7 @@ class RegistroDocentes(object):
         self.comboasignatura.setStyleSheet("background-color: rgb(255, 255, 255);\n"
                                            "color: rgb(0, 0, 0);")
         self.comboasignatura.setObjectName("comboAsignatura")
-        print("lkljkljl")
         res = obtener_matter()
-        print("poi")
         for aux in res:
             aux2 = str((aux[2]))
             print(aux2)
