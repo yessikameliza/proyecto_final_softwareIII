@@ -20,7 +20,6 @@ class ActualizarDocente(object):
     def setup_ui(self, main_window):
         main_window.setObjectName("MainWindow")
         main_window.resize(687, 640)
-        print("paso esto 1")
         main_window.setStyleSheet("background-color: rgb(128, 195, 161)")
         self.centralwidget = QtWidgets.QWidget(main_window)
         self.centralwidget.setObjectName("centralwidget")
@@ -38,11 +37,12 @@ class ActualizarDocente(object):
         self.comboasignatura.setGeometry(QtCore.QRect(180, 360, 171, 31))
         self.comboasignatura.setStyleSheet("background-color: rgb(255, 255, 255);\n"
                                            "color: rgb(0, 0, 0);")
-        print("paso esto 6")
         res = obtener_matter()
+        self.comboasignatura.addItem('')
         for aux in res:
             aux2 = str((aux[2]))
             print(aux2)
+
             self.comboasignatura.addItem(aux2)
 
         self.comboasignatura.setObjectName("comboAsignatura")
@@ -122,8 +122,7 @@ class ActualizarDocente(object):
                                        "color: rgb(0, 0, 0);")
         self.comboestado.setObjectName("comboEstado")
         self.comboestado.setCurrentText("")
-
-        items = ('ACTIVO', 'INACTIVO')
+        items = ('','ACTIVO', 'INACTIVO')
         print("paso esto 2")
         self.comboestado.addItems(items)
 
@@ -234,12 +233,17 @@ class ActualizarDocente(object):
             self.txtlimhoras.setText(str(fila[3]))
             self.txttipo.setText(str(fila[4]))
             self.txttelefono.setText(str(fila[5]))
+            self.comboasignatura.setItemText(1, str(fila[7]))
+            self.combociudad.setItemText(1, str(fila[8]))
             if str(fila[2]) == "ACTIVO":
-                self.comboestado.setItemText(1, str(fila[2]))
-
+                self.comboestado.setItemText(0, str(fila[2]))
+                self.comboestado.setItemText(1, 'INACTIVO')
+                self.comboestado.setItemText(2, '')
             else:
-                self.comboestado.setItemText(1, str(fila[2]))
-
+                self.comboestado.setItemText(0, str(fila[2]))
+                self.comboestado.setItemText(1, 'ACTIVO')
+                self.comboestado.setItemText(2, '')
+           
         else:
             print("no existe el docente")
             self.mostrar_mensaje("Alerta", "¡La identificación ingresada no existe!", "", QMessageBox.Warning, False)
