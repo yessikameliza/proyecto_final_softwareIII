@@ -25,7 +25,7 @@ class Test(unittest.TestCase):
         register_docent("melisa", "activo", 100, "catedratico", "1094970", "324234", "calculo", "Armenia")
         a: str = search_docent("1233")[2]
         self.assertEqual(a, "activo")
-        
+
 
 if __name__ == "__main__":
     unittest.main()
