@@ -5,7 +5,7 @@ from logica.Persistence import search_matter
 
 class Test(unittest.TestCase):
 
-    def test_registrar_matterself):
+    def test_registrar_matter(self):
         register_matter("123", "calculo 1", 1, "3", "0", 16)
         a: str = search_matter("123")[2]
         self.assertEqual("calculo 1", a)
@@ -13,4 +13,3 @@ class Test(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-    }
