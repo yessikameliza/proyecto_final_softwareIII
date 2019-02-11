@@ -17,6 +17,7 @@ from logica.Persistence import obtener_matter
 class ActualizarDocente(object):
     message_box: QMessageBox
 
+
     def setup_ui(self, main_window):
         main_window.setObjectName("MainWindow")
         main_window.resize(687, 640)
@@ -123,7 +124,6 @@ class ActualizarDocente(object):
         self.comboestado.setObjectName("comboEstado")
         self.comboestado.setCurrentText("")
         items = ('','ACTIVO', 'INACTIVO')
-        print("paso esto 2")
         self.comboestado.addItems(items)
 
         self.combociudad = QtWidgets.QComboBox(self.groupbox)
@@ -189,6 +189,7 @@ class ActualizarDocente(object):
         main_window.setStatusBar(self.statusbar)
         self.retranslate_ui(main_window)
         print("paso esto 3")
+
         self.btnbuscar.clicked.connect(self.buscar)
         self.btnactualizar.clicked.connect(self.actualiza)
         self.btnlimpiar.clicked.connect(self.limpiar)
@@ -201,6 +202,20 @@ class ActualizarDocente(object):
         self.txttelefono.clear()
         self.txtident.clear()
         self.comboestado.clear()
+        self.combociudad.clear()
+        self.comboasignatura.clear()
+        items = ('', 'ACTIVO', 'INACTIVO')
+        self.comboestado.addItems(items)
+        itemsa = ('', 'Armenia', 'Pereira', 'Buga')
+        self.combociudad.addItems(itemsa)
+        res = obtener_matter()
+        self.comboasignatura.addItem('')
+        for aux in res:
+            aux2 = str((aux[2]))
+            print(aux2)
+
+            self.comboasignatura.addItem(aux2)
+
 
     def actualiza(self):
         try:
@@ -211,7 +226,7 @@ class ActualizarDocente(object):
             iden = str(self.txtident.toPlainText())
             esta = str(self.comboestado.currentText())
             materia = str(self.comboasignatura.currentText())
-            ciudad = str(self.comboestado.currentText())
+            ciudad = str(self.combociudad.currentText())
 
             if len(nomb) == 0 | len(tipo) == 0 | len(lim) == 0 | len(tel) == 0 | len(iden) == 0 | len(esta) == 0:
                 self.mostrar_mensaje("Alerta", "¡Hay espacios vacios, digite todos los campos!", "", QMessageBox.Warning,
@@ -220,6 +235,7 @@ class ActualizarDocente(object):
                 update_docent(nomb, esta, lim, tipo, tel, iden, materia, ciudad)
                 self.mostrar_mensaje("Información", "¡Se han actualizado los datos correctamente!", "",
                                     QMessageBox.Warning, False)
+                self.limpiar()
         except ValueError:
             self.mostrar_mensaje("Información", "¡La entrada es incorrecta, escriba un numero entero!",
                                 "", QMessageBox.Warning, False)
@@ -233,8 +249,8 @@ class ActualizarDocente(object):
             self.txtlimhoras.setText(str(fila[3]))
             self.txttipo.setText(str(fila[4]))
             self.txttelefono.setText(str(fila[5]))
-            self.comboasignatura.setItemText(1, str(fila[7]))
-            self.combociudad.setItemText(1, str(fila[8]))
+            self.comboasignatura.setItemText(0, str(fila[7]))
+
             if str(fila[2]) == "ACTIVO":
                 self.comboestado.setItemText(0, str(fila[2]))
                 self.comboestado.setItemText(1, 'INACTIVO')
@@ -243,10 +259,27 @@ class ActualizarDocente(object):
                 self.comboestado.setItemText(0, str(fila[2]))
                 self.comboestado.setItemText(1, 'ACTIVO')
                 self.comboestado.setItemText(2, '')
-           
+
+            if str(fila[8]) == "Armenia":
+                self.combociudad.setItemText(0, str(fila[8]))
+                self.combociudad.setItemText(1, 'Pereira')
+                self.combociudad.setItemText(2, 'Buga')
+                self.combociudad.setItemText(3, '')
+            else:
+                if str(fila[8]) == "Pereira":
+                    self.combociudad.setItemText(0, str(fila[8]))
+                    self.combociudad.setItemText(1, 'Armenia')
+                    self.combociudad.setItemText(2, 'Buga')
+                    self.combociudad.setItemText(3, '')
+                else:
+                    self.combociudad.setItemText(0, str(fila[8]))
+                    self.combociudad.setItemText(1, 'Armenia')
+                    self.combociudad.setItemText(2, 'Pereira')
+                    self.combociudad.setItemText(3, '')
         else:
             print("no existe el docente")
             self.mostrar_mensaje("Alerta", "¡La identificación ingresada no existe!", "", QMessageBox.Warning, False)
+
 
     def mostrar_mensaje(self, titulo: str, texto: str, texto_informativo: str, tipo_mensaje: QMessageBox, estado: bool):
         self.message_box = QMessageBox()
