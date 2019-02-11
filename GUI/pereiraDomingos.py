@@ -201,7 +201,7 @@ class FechasPereira(object):
         item.setText(_translate("Form", "Encuentros Tutoriales"))
         item = self.tablewidgetfechaspereira.horizontalHeaderItem(5)
         item.setText(_translate("Form", "Habilitaciones"))
-        __sortingEnabled = self.tablewidgetfechaspereira.isSortingEnabled()
+        __sortingenabled = self.tablewidgetfechaspereira.isSortingEnabled()
         self.tablewidgetfechaspereira.setSortingEnabled(False)
         item = self.tablewidgetfechaspereira.item(0, 0)
         item.setText(_translate("Form", "0"))

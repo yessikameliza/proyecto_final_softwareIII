@@ -198,7 +198,7 @@ class PrimerasFechas(object):
         item.setText(_translate("Form", "Encuentros Tutoriales"))
         item = self.tablewidgetprimerasfechas.horizontalHeaderItem(5)
         item.setText(_translate("Form", "Habilitaciones"))
-        __sortingEnabled = self.tablewidgetprimerasfechas.isSortingEnabled()
+        __sortingenabled = self.tablewidgetprimerasfechas.isSortingEnabled()
         self.tablewidgetprimerasfechas.setSortingEnabled(False)
         item = self.tablewidgetprimerasfechas.item(0, 0)
         item.setText(_translate("Form", "0"))

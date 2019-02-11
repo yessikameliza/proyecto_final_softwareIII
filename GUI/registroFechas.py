@@ -14,7 +14,7 @@ from logica.Persistence import update_datee
 from logica.Persistence import obtener_fecha
 
 
-class Ui_Form(object):
+class ui_form(object):
     message_box: QMessageBox
 
     def setup_ui(self, form):
@@ -499,7 +499,7 @@ class Ui_Form(object):
         self.rellenarcuadro2()
         self.rellenarcuadro3()
         self.pushbutton.clicked.connect(self.registrar_fechas)
-        self.pushbutton_3.clicked.connect(self.eliminar_Fechas)
+        self.pushbutton_3.clicked.connect(self.eliminar_fechas)
         self.pushbutton_2.clicked.connect(self.actualizar_Fechas)
         QtCore.QMetaObject.connectSlotsByName(form)
 
@@ -631,7 +631,7 @@ class Ui_Form(object):
             if column == 5:
                 register_date(text3, "Habilitaciones", 3, "Pereira domingos")
 
-    def eliminar_Fechas(self):
+    def eliminar_fechas(self):
         delete_date()
         self.poner_ceros()
         self.mostrar_mensaje("Información", "¡Fechas eliminadas!", "", QMessageBox.Warning, False)
