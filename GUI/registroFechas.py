@@ -14,7 +14,7 @@ from logica.Persistence import update_datee
 from logica.Persistence import obtener_fecha
 
 
-class ui_form(object):
+class RegistroFechas(object):
     message_box: QMessageBox
 
     def setup_ui(self, form):
@@ -500,7 +500,7 @@ class ui_form(object):
         self.rellenarcuadro3()
         self.pushbutton.clicked.connect(self.registrar_fechas)
         self.pushbutton_3.clicked.connect(self.eliminar_fechas)
-        self.pushbutton_2.clicked.connect(self.actualizar_Fechas)
+        self.pushbutton_2.clicked.connect(self.actualizar_fechas)
         QtCore.QMetaObject.connectSlotsByName(form)
 
     def registrar_fechas(self):
@@ -660,7 +660,7 @@ class ui_form(object):
                 item = self.tablewidget_3.item(row, col)
                 item.setText("0")
 
-    def actualizar_Fechas(self):
+    def actualizar_fechas(self):
         delete_date()
         self.tabla11(0)
         self.tabla11(1)
@@ -789,7 +789,7 @@ class ui_form(object):
         item.setText(_translate("Form", "Encuentros Tutoriales"))
         item = self.tablewidget_3.horizontalHeaderItem(5)
         item.setText(_translate("Form", "Habilitaciones"))
-        __sortingEnabled = self.tablewidget_3.isSortingEnabled()
+        __sortingenabled = self.tablewidget_3.isSortingEnabled()
         self.tablewidget_3.setSortingEnabled(False)
         item = self.tablewidget_3.item(0, 0)
         item.setText(_translate("Form", "0"))
@@ -863,7 +863,7 @@ class ui_form(object):
         item.setText(_translate("Form", "0"))
         item = self.tablewidget_3.item(5, 5)
         item.setText(_translate("Form", "0"))
-        self.tablewidget_3.setSortingEnabled(__sortingEnabled)
+        self.tablewidget_3.setSortingEnabled(__sortingenabled)
         self.label_6.setText(_translate("Form", "PRIMERAS"))
         self.label_7.setText(_translate("Form", "FECHAS"))
         self.label_8.setText(_translate("Form", "FECHAS"))
@@ -892,7 +892,7 @@ class ui_form(object):
         item.setText(_translate("Form", "Encuentros Tutoriales"))
         item = self.tablewidget.horizontalHeaderItem(5)
         item.setText(_translate("Form", "Habilitaciones"))
-        __sortingEnabled = self.tablewidget.isSortingEnabled()
+        __sortingenabled = self.tablewidget.isSortingEnabled()
         self.tablewidget.setSortingEnabled(False)
         item = self.tablewidget.item(0, 0)
         item.setText(_translate("Form", "0"))
@@ -966,7 +966,7 @@ class ui_form(object):
         item.setText(_translate("Form", "0"))
         item = self.tablewidget.item(5, 5)
         item.setText(_translate("Form", "0"))
-        self.tablewidget.setSortingEnabled(__sortingEnabled)
+        self.tablewidget.setSortingEnabled(__sortingenabled)
         self.label.setText(_translate("Form", "BLOQUE A"))
         self.label_2.setText(_translate("Form", "BLOQUE B"))
         self.label_3.setText(_translate("Form", "BLOQUE C"))
@@ -1004,7 +1004,7 @@ class ui_form(object):
         item.setText(_translate("Form", "Encuentros Tutoriales"))
         item = self.tablewidget_2.horizontalHeaderItem(5)
         item.setText(_translate("Form", "Habilitaciones"))
-        __sortingEnabled = self.tablewidget_2.isSortingEnabled()
+        __sortingenabled = self.tablewidget_2.isSortingEnabled()
         self.tablewidget_2.setSortingEnabled(False)
         item = self.tablewidget_2.item(0, 0)
         item.setText(_translate("Form", "0"))
@@ -1078,7 +1078,7 @@ class ui_form(object):
         item.setText(_translate("Form", "0"))
         item = self.tablewidget_2.item(5, 5)
         item.setText(_translate("Form", "0"))
-        self.tablewidget_2.setSortingEnabled(__sortingEnabled)
+        self.tablewidget_2.setSortingEnabled(__sortingenabled)
         self.label_13.setText(_translate("Form",
                                          "<html><head/><body><p><span style=\" color:#000000\">INTRODUCTORIO:</span></p></body></html>"))
         self.label_14.setText(
