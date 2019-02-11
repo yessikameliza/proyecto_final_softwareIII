@@ -97,11 +97,10 @@ sql12 = """ CREATE TABLE IF NOT EXISTS docent_city(
  ON DELETE CASCADE ON UPDATE NO ACTION)"""
 # Ejecutamos la consulta
 if (consulta.execute(sql) and consulta.execute(sql3) and consulta.execute(sql4) and consulta.execute(sql6) and
-        consulta.execute(sql7) and consulta.execute(sql8) and
-        consulta.execute(sql9) and consulta.execute(sql10) and consulta.execute(sql11) and
-        consulta.execute(sql2) and consulta.execute(sql5) and consulta.execute(sql12) and
+        consulta.execute(sql7) and consulta.execute(sql8) and consulta.execute(sql2) and
+        consulta.execute(sql5) and
         consulta.execute(sql14) and consulta.execute(sql20) and consulta.execute(sql30) and
-        consulta.execute(sql40)):
+        consulta.execute(sql40) and consulta.execute(sql50)):
     print("Tabla creada con éxito")
 else:
     print("Ha ocurrido un error al crear la tabla")
