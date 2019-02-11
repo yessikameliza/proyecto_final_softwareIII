@@ -3,7 +3,7 @@
 import sqlite3
 
 def insert_matter(codigo: str, name: str, ubisemester: int, numcredit: str, codrequisite: str, numhourssem: int):
-    conexion = sqlite3.connect("GUI/dataBases.sqlite3")
+    conexion = sqlite3.connect("dataBases.sqlite3")
 
     # Seleccionar el cursor para iniciar una consulta
     consulta = conexion.cursor()
