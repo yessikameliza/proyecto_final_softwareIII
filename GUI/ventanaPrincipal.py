@@ -8,7 +8,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMessageBox
-from GUI.registroFechas import ui_form
+from GUI.registroFechas import RegistroFechas
 from GUI.registroDocentes import RegistroDocentes
 from GUI.registroAsignaturas import RegistroAsignaturas
 from GUI.ActualizarAsignaturas import ActualizarAsignatura
@@ -470,9 +470,7 @@ class VentanaPrincipal(QtWidgets.QMainWindow):
         self.menubar.addAction(self.menuopciones.menuAction())
         self.menubar.addAction(self.menuasignaturas.menuAction())
         self.menubar.addAction(self.menudocentes.menuAction())
-        print("ñald")
         self.retranslate_ui(form)
-        print("hak")
         self.btnregistrardocentes.clicked.connect(self.ventana_registro_docente)
         self.btnregistrarfechas.clicked.connect(self.ventana_registro_fecha)
         self.actionRegistrar_Asignaturas_2.triggered.connect(self.ventana_reg_asi)
@@ -506,7 +504,7 @@ class VentanaPrincipal(QtWidgets.QMainWindow):
     def ventana_registro_fecha(self):
 
         self.ventana = QtWidgets.QMainWindow()
-        self.ui = ui_form()
+        self.ui = RegistroFechas()
         self.ui.setup_ui(self.ventana)
         self.ventana.show()
         self.close()
