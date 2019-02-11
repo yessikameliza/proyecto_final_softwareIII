@@ -272,7 +272,7 @@ class PrimerasFechas(object):
         item.setText(_translate("Form", "0"))
         item = self.tablewidgetprimerasfechas.item(5, 5)
         item.setText(_translate("Form", "0"))
-        self.tablewidgetprimerasfechas.setSortingEnabled(__sortingEnabled)
+        self.tablewidgetprimerasfechas.setSortingEnabled(__sortingenabled)
         self.label_5.setText(_translate("Form",
                                         "<html><head/><body><p><span style=\" font-size:20pt; font-weight:600; color:#000000;\">Primeras fechas</span></p></body></html>"))
         self.label_3.setText(_translate("Form",

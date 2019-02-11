@@ -275,7 +275,7 @@ class FechasPereira(object):
         item.setText(_translate("Form", "0"))
         item = self.tablewidgetfechaspereira.item(5, 5)
         item.setText(_translate("Form", "0"))
-        self.tablewidgetfechaspereira.setSortingEnabled(__sortingEnabled)
+        self.tablewidgetfechaspereira.setSortingEnabled(__sortingenabled)
         self.label_5.setText(_translate("Form",
                                         "<html><head/><body><p><span style=\" font-size:20pt; font-weight:600; color:#000000;\">Fechas pereira domingos</span></p></body></html>"))
         self.label_3.setText(_translate("Form",

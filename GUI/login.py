@@ -71,7 +71,9 @@ class Login(QMainWindow):
             if usuario == 'admin' and contra == '12345':
                 print('alex')
                 self.ventana = QtWidgets.QMainWindow()
+                print("alex")
                 self.ui = VentanaPrincipal()
+                print("hola")
                 self.ui.setup_ui(self.ventana)
                 self.ventana.show()
             else:
