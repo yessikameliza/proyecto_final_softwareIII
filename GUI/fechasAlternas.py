@@ -199,7 +199,7 @@ class FechasAlternas(object):
         item.setText(_translate("Form", "Encuentros Tutoriales"))
         item = self.tablewidgetfechasalternas.horizontalHeaderItem(5)
         item.setText(_translate("Form", "Habilitaciones"))
-        __sortingEnabled = self.tablewidgetfechasalternas.isSortingEnabled()
+        __sortingenabled = self.tablewidgetfechasalternas.isSortingEnabled()
         self.tablewidgetfechasalternas.setSortingEnabled(False)
         item = self.tablewidgetfechasalternas.item(0, 0)
         item.setText(_translate("Form", "0"))
@@ -273,7 +273,7 @@ class FechasAlternas(object):
         item.setText(_translate("Form", "0"))
         item = self.tablewidgetfechasalternas.item(5, 5)
         item.setText(_translate("Form", "0"))
-        self.tablewidgetfechasalternas.setSortingEnabled(__sortingEnabled)
+        self.tablewidgetfechasalternas.setSortingEnabled(__sortingenabled)
         self.label_4.setText(_translate("Form",
                                         "<html><head/><body><p><span style=\" font-weight:600; color:#000000;\">BLOQUE B</span></p></body></html>"))
         self.label_5.setText(_translate("Form",

@@ -8,7 +8,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMessageBox
-from GUI.registroFechas import Ui_Form
+from GUI.registroFechas import ui_form
 from GUI.registroDocentes import RegistroDocentes
 from GUI.registroAsignaturas import RegistroAsignaturas
 from GUI.ActualizarAsignaturas import ActualizarAsignatura
@@ -45,11 +45,11 @@ class VentanaPrincipal(QtWidgets.QMainWindow):
         self.label.setObjectName("label")
         self.frame_3 = QtWidgets.QFrame(self.centralwidget)
         self.frame_3.setGeometry(QtCore.QRect(0, 280, 1411, 541))
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
-        sizePolicy.setHorizontalStretch(10)
-        sizePolicy.setVerticalStretch(11)
-        sizePolicy.setHeightForWidth(self.frame_3.sizePolicy().hasHeightForWidth())
-        self.frame_3.setSizePolicy(sizePolicy)
+        sizepolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizepolicy.setHorizontalStretch(10)
+        sizepolicy.setVerticalStretch(11)
+        sizepolicy.setHeightForWidth(self.frame_3.sizePolicy().hasHeightForWidth())
+        self.frame_3.setSizePolicy(sizepolicy)
         self.frame_3.setStyleSheet("background-color: rgb(128, 195, 161);")
         self.frame_3.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_3.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -283,11 +283,11 @@ class VentanaPrincipal(QtWidgets.QMainWindow):
         self.groupbox_2.setObjectName("groupBox_2")
         self.tablainfoacademica = QtWidgets.QTableWidget(self.groupbox_2)
         self.tablainfoacademica.setGeometry(QtCore.QRect(60, 30, 1061, 101))
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Maximum)
-        sizePolicy.setHorizontalStretch(40)
-        sizePolicy.setVerticalStretch(19)
-        sizePolicy.setHeightForWidth(self.tablainfoacademica.sizePolicy().hasHeightForWidth())
-        self.tablainfoacademica.setSizePolicy(sizePolicy)
+        sizepolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Maximum)
+        sizepolicy.setHorizontalStretch(40)
+        sizepolicy.setVerticalStretch(19)
+        sizepolicy.setHeightForWidth(self.tablainfoacademica.sizePolicy().hasHeightForWidth())
+        self.tablainfoacademica.setSizePolicy(sizepolicy)
         self.tablainfoacademica.setStyleSheet("")
         self.tablainfoacademica.setObjectName("tablaInfoAcademica")
         self.tablainfoacademica.setColumnCount(5)
@@ -470,7 +470,9 @@ class VentanaPrincipal(QtWidgets.QMainWindow):
         self.menubar.addAction(self.menuopciones.menuAction())
         self.menubar.addAction(self.menuasignaturas.menuAction())
         self.menubar.addAction(self.menudocentes.menuAction())
+        print("ñald")
         self.retranslate_ui(form)
+        print("hak")
         self.btnregistrardocentes.clicked.connect(self.ventana_registro_docente)
         self.btnregistrarfechas.clicked.connect(self.ventana_registro_fecha)
         self.actionRegistrar_Asignaturas_2.triggered.connect(self.ventana_reg_asi)
@@ -478,7 +480,7 @@ class VentanaPrincipal(QtWidgets.QMainWindow):
         self.actionEliminar_Asignaturas.triggered.connect(self.ventana_elim_asig)
         self.actionActualizar_Docente.triggered.connect(self.ventana_act_doc)
         self.actionEliminar_docente.triggered.connect(self.ventana_elim_doc)
-        self.actionGenerar_reportes.triggered.connect(self.ventana_primeras_Fecha)
+        self.actionGenerar_reportes.triggered.connect(self.ventana_primeras_fecha)
         self.actionVer_fechas_alternas.triggered.connect(self.ventana_fechas_alternas)
         self.actionVer_fechas_pereira.triggered.connect(self.ventana_fechas_pereira)
         self.btngenerarhorarmen.clicked.connect(self.prueba_horario)
@@ -504,7 +506,7 @@ class VentanaPrincipal(QtWidgets.QMainWindow):
     def ventana_registro_fecha(self):
 
         self.ventana = QtWidgets.QMainWindow()
-        self.ui = Ui_Form()
+        self.ui = ui_form()
         self.ui.setup_ui(self.ventana)
         self.ventana.show()
         self.close()
@@ -539,7 +541,7 @@ class VentanaPrincipal(QtWidgets.QMainWindow):
         self.ui.setup_ui(self.ventana)
         self.ventana.show()
 
-    def ventana_primeras_Fecha(self):
+    def ventana_primeras_fecha(self):
         self.ventana = QtWidgets.QMainWindow()
         self.ui = PrimerasFechas()
         self.ui.setup_ui(self.ventana)
@@ -591,11 +593,11 @@ class VentanaPrincipal(QtWidgets.QMainWindow):
         i = 0
         if semester == 1:
             i = 4
-            dateInduc: list = obtener_f_induct("inductorio")
+            dateinduc: list = obtener_f_induct("inductorio")
             item = self.tablahorario.item(0, 0)
-            item.setText((dateInduc[0])[1])
+            item.setText((dateinduc[0])[1])
             item = self.tablahorario.item(2, 0)
-            item.setText((dateInduc[1])[1])
+            item.setText((dateinduc[1])[1])
         else:
             i = 0
         n = 1
@@ -646,11 +648,11 @@ class VentanaPrincipal(QtWidgets.QMainWindow):
         i = 0
         if semester == 1:
             i = 4
-            dateInduc: list = obtener_f_induct("inductorio")
+            dateinduc: list = obtener_f_induct("inductorio")
             item = self.tablahorario.item(0, 0)
-            item.setText((dateInduc[0])[1])
+            item.setText((dateinduc[0])[1])
             item = self.tablahorario.item(2, 0)
-            item.setText((dateInduc[1])[1])
+            item.setText((dateinduc[1])[1])
         else:
             i = 0
         n = 1
@@ -701,11 +703,11 @@ class VentanaPrincipal(QtWidgets.QMainWindow):
         i = 0
         if semester == 1:
             i = 4
-            dateInduc: list = obtener_f_induct("inductorio")
+            dateinduc: list = obtener_f_induct("inductorio")
             item = self.tablahorario.item(0, 0)
-            item.setText((dateInduc[0])[1])
+            item.setText((dateinduc[0])[1])
             item = self.tablahorario.item(2, 0)
-            item.setText((dateInduc[1])[1])
+            item.setText((dateinduc[1])[1])
         else:
             i = 0
         n = 1
@@ -777,14 +779,16 @@ class VentanaPrincipal(QtWidgets.QMainWindow):
         self.btngenerarhorbuga.setText(_translate("Form", "Generar horario Buga"))
         self.label_4.setText(_translate("Form", "Semestre a generar:"))
         self.groupbox_4.setTitle(_translate("Form", "Información de horario"))
-
+        print("jajajaj")
         item = self.tablahorario.horizontalHeaderItem(0)
         item.setText(_translate("Form", "BLOQUE A"))
         item = self.tablahorario.horizontalHeaderItem(1)
         item.setText(_translate("Form", "BLOQUE B"))
         item = self.tablahorario.horizontalHeaderItem(2)
         item.setText(_translate("Form", "BLOQUE C"))
-        __sortingEnabled = self.tablahorario.isSortingEnabled()
+        print("poli")
+        __sortingenabled = self.tablahorario.isSortingEnabled()
+        print("hhkk")
         self.tablahorario.setSortingEnabled(False)
         item = self.tablahorario.item(0, 0)
         item.setText(_translate("Form", "Fecha 1"))
@@ -822,7 +826,7 @@ class VentanaPrincipal(QtWidgets.QMainWindow):
         item.setText(_translate("Form", "Fecha 17"))
         item = self.tablahorario.item(10, 2)
         item.setText(_translate("Form", "Fecha 18"))
-        self.tablahorario.setSortingEnabled(__sortingEnabled)
+        self.tablahorario.setSortingEnabled(__sortingenabled)
         self.btnimprimir.setText(_translate("Form", "Imprimir"))
         self.groupbox_2.setTitle(_translate("Form", "Información "))
         item = self.tablainfoacademica.horizontalHeaderItem(0)

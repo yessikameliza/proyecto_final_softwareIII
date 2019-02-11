@@ -35,7 +35,7 @@ class ActualizarDocente(object):
                                 "font: 75 8pt \"Segoe Print\";")
         self.tipo.setObjectName("tipo")
         self.comboasignatura = QtWidgets.QComboBox(self.groupbox)
-        self.comboasignatura.setGeometry(QtCore.QRect(180, 360, 171, 31))
+        self.comboasignatura.setGeometry(QtCore.QRect(180, 360, 221, 31))
         self.comboasignatura.setStyleSheet("background-color: rgb(255, 255, 255);\n"
                                            "color: rgb(0, 0, 0);")
         res = obtener_matter()
@@ -81,12 +81,7 @@ class ActualizarDocente(object):
                                        "font: 10pt \"MS Shell Dlg 2\";\n"
                                        "background-color: rgb(255, 255, 255);")
         self.txttelefono.setObjectName("txtTelefono")
-        self.btnagregar = QtWidgets.QPushButton(self.groupbox)
-        self.btnagregar.setGeometry(QtCore.QRect(360, 360, 41, 31))
-        self.btnagregar.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
-                                      "color: rgb(255, 255, 255);\n"
-                                      "background-color: rgb(0, 51, 51);")
-        self.btnagregar.setObjectName("btnAgregar")
+
         self.txtnombre = QtWidgets.QTextEdit(self.groupbox)
         self.txtnombre.setGeometry(QtCore.QRect(180, 60, 221, 31))
         self.txtnombre.setStyleSheet("color: rgb(0, 0, 0);\n"
@@ -316,7 +311,7 @@ class ActualizarDocente(object):
                                              "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#000000;\">Asignatura:</span></p></body></html>"))
         self.asignatura_3.setText(_translate("MainWindow",
                                              "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#000000;\">Telefono:</span></p></body></html>"))
-        self.btnagregar.setText(_translate("MainWindow", "+"))
+
         self.btnactualizar.setText(_translate("MainWindow", "ACTUALIZAR"))
         self.btnlimpiar.setText(_translate("MainWindow", "LIMPIAR"))
         self.asignatura_5.setText(_translate("MainWindow",
