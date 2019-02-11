@@ -3,7 +3,7 @@
 import sqlite3
 
 def insert_matter(codigo: str, name: str, ubisemester: int, numcredit: str, codrequisite: str, numhourssem: int):
-    conexion = sqlite3.connect("dataBase.sqlite3")
+    conexion = sqlite3.connect("GUI/dataBases.sqlite3")
 
     # Seleccionar el cursor para iniciar una consulta
     consulta = conexion.cursor()
@@ -40,7 +40,7 @@ def insert_matter(codigo: str, name: str, ubisemester: int, numcredit: str, codr
 
 def insert_docent(name: str, state: str, limithours: int, contract: str, phone: str, identification: str, matter: str,
                   city: str):
-    conexion = sqlite3.connect("dataBase.sqlite3")
+    conexion = sqlite3.connect("dataBases.sqlite3")
 
     # Seleccionar el cursor para iniciar una consulta
     consulta = conexion.cursor()
@@ -72,7 +72,7 @@ def insert_docent(name: str, state: str, limithours: int, contract: str, phone: 
 
 
 def insert_date(date: str, origin: str, idblock: int, idents: str):
-    conexion = sqlite3.connect("dataBase.sqlite3")
+    conexion = sqlite3.connect("dataBases.sqlite3")
 
     # Seleccionar el cursor para iniciar una consulta
     consulta = conexion.cursor()
@@ -101,7 +101,7 @@ def insert_date(date: str, origin: str, idblock: int, idents: str):
     # Cerrar la conexión
     conexion.close()
 def insertar_hora():
-    conexion = sqlite3.connect("dataBase.sqlite3")
+    conexion = sqlite3.connect("dataBases.sqlite3")
     # Seleccionar el cursor para iniciar una consulta
     consulta = conexion.cursor()
     print("**** Programa para insertar datos en bases de datos sqlite3 ****")
@@ -124,7 +124,7 @@ def insertar_hora():
     conexion.close()
 
 def insertar_block():
-    conexion = sqlite3.connect("dataBase.sqlite3")
+    conexion = sqlite3.connect("dataBases.sqlite3")
     # Seleccionar el cursor para iniciar una consulta
     consulta = conexion.cursor()
     print("**** Programa para insertar datos en bases de datos sqlite3 ****")

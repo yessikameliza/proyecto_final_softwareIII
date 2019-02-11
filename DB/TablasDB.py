@@ -3,7 +3,7 @@
 import sqlite3
 
 # Conectamos a la base de datos
-conexion = sqlite3.connect("dataBase.sqlite3")
+conexion = sqlite3.connect("dataBases.sqlite3")
 
 # Seleccionamos el cursor para realizar la consulta
 consulta = conexion.cursor()
