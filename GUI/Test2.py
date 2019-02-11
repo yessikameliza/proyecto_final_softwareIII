@@ -4,7 +4,7 @@ from logica.Persistence import search_matter
 from logica.Persistence import delete_matter
 from logica.Persistence import register_docent
 from logica.Persistence import search_docent
-
+from logica.Persistence import delete_docent
 
 class Test(unittest.TestCase):
 
@@ -14,17 +14,18 @@ class Test(unittest.TestCase):
         self.assertEqual(a, "caalculo 1")
 
     def test_remove_matter(self):
-        print(search_matter("1233"))
         delete_matter("1233")
-        print(search_matter("1233"))
         a: str = search_matter("1233")
-
-        self.assertEquals(a[2], None)
+        self.assertEqual(None, a)
 
     def test_register_docent(self):
-        register_docent("melisa", "activo", 100, "catedratico", "1094970", "324234", "calculo", "Armenia")
-        a: str = search_docent("1233")[2]
+        register_docent("melisa", "activo", 100, "catedratico", "1094970", "32424", "calculo", "Armenia")
+        a: str = search_docent("324234")[2]
         self.assertEqual(a, "activo")
+
+    def test_remove_docente(self):
+        delete_docent("32424")
+        self.assertEqual(None)
 
 
 if __name__ == "__main__":

@@ -13,19 +13,11 @@ class Test(unittest.TestCase):
         a: str = search_matter("1233")[2]
         self.assertEqual(a, "caalculo 1")
 
-    def test_remove_matter(self):
-        print(search_matter("1233"))
-        delete_matter("1233")
-        print(search_matter("1233"))
-        a: str = search_matter("1233")
-
-        self.assertEquals(a[2], None)
-
     def test_register_docent(self):
         register_docent("melisa", "activo", 100, "catedratico", "1094970", "324234", "calculo", "Armenia")
         a: str = search_docent("1233")[2]
         self.assertEqual(a, "activo")
-        
+
 
 if __name__ == "__main__":
     unittest.main()
