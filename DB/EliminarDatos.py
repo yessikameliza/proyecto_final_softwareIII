@@ -4,7 +4,8 @@ import sqlite3
 
 
 def delete_matter1(codigo: str):
-    conexion = sqlite3.connect("dataBases.sqlite3")
+    conexion = sqlite3.connect("dataBase.sqlite3")
+
     consulta = conexion.cursor()
     # SET (codigo, name, ubi_Semester, numCredit, codRequisite, numHoursSem) WHERE codigo = 1 """
     ident: int = -1
@@ -15,10 +16,11 @@ def delete_matter1(codigo: str):
             print("entrp")
             if str(fila[1]) == codigo:
                 ident = fila[0]
-        if -1 != ident:
-            id: int = int(ident)
-            sql = "DELETE FROM matter WHERE id_Matter = ?"
-            consulta.execute(sql, id)
+    if -1 != ident:
+        id = int(ident)
+        sql = "DELETE FROM matter WHERE id_Matter = ? AND codigo = ?"
+        argumentos = (ident, codigo)
+        consulta.execute(sql, argumentos)
 
     print("actualizo")
     consulta.close()
@@ -28,7 +30,7 @@ def delete_matter1(codigo: str):
 
 
 def delete_docent1(identification: str):
-    conexion = sqlite3.connect("dataBases.sqlite3")
+    conexion = sqlite3.connect("dataBase.sqlite3")
 
     consulta = conexion.cursor()
     # sql2 = """UPDATE matter
@@ -42,8 +44,9 @@ def delete_docent1(identification: str):
 
     if not None == id:
         ident = str(id)
-        sql = "DELETE FROM docent WHERE id_Docent = ?"
-        consulta.execute(sql, ident)
+        sql = "DELETE FROM docent WHERE id_Docent = ? and identification = ?"
+        argumentos = (id, identification)
+        consulta.execute(sql, argumentos)
 
     print("actualizo")
     consulta.close()
@@ -53,7 +56,7 @@ def delete_docent1(identification: str):
 
 
 def delete_date1():
-    conexion = sqlite3.connect("dataBases.sqlite3")
+    conexion = sqlite3.connect("dataBase.sqlite3")
     consulta = conexion.cursor()
     sql1 = "DELETE FROM date"
     if consulta.execute(sql1):

@@ -5,7 +5,7 @@ from typing import Any, List
 
 
 def search_matter2(codi: str):
-    conexion = sqlite3.connect("dataBases.sqlite3")
+    conexion = sqlite3.connect("dataBase.sqlite3")
     consulta = conexion.cursor()
 
     # Extrayendo todas las filas
@@ -26,7 +26,7 @@ def search_matter2(codi: str):
 
 
 def search_docent2(ident: str):
-    conexion = sqlite3.connect("dataBases.sqlite3")
+    conexion = sqlite3.connect("dataBase.sqlite3")
     consulta = conexion.cursor()
 
     # Extrayendo todas las filas
@@ -46,7 +46,7 @@ def search_docent2(ident: str):
     return filaa
 
 def search_docent_matter(matter: str, ciudad: str):
-    conexion = sqlite3.connect("dataBases.sqlite3")
+    conexion = sqlite3.connect("dataBase.sqlite3")
     consulta = conexion.cursor()
 
     # Extrayendo todas las filas
@@ -65,7 +65,7 @@ def search_docent_matter(matter: str, ciudad: str):
     return filaa
 
 def obtener_fechas2(idents: str):
-    conexion = sqlite3.connect("dataBases.sqlite3")
+    conexion = sqlite3.connect("dataBase.sqlite3")
     consulta = conexion.cursor()
 
     # Extrayendo todas las filas
@@ -87,7 +87,7 @@ def obtener_fechas2(idents: str):
     return filaa
 
 def obtener_fecha_indu2(idents: str):
-    conexion = sqlite3.connect("dataBases.sqlite3")
+    conexion = sqlite3.connect("dataBase.sqlite3")
     consulta = conexion.cursor()
 
     # Extrayendo todas las filas
@@ -106,7 +106,7 @@ def obtener_fecha_indu2(idents: str):
     return filaa
 
 def obtener_fechas_hour2(idents: str, origin: str):
-    conexion = sqlite3.connect("dataBases.sqlite3")
+    conexion = sqlite3.connect("dataBase.sqlite3")
     consulta = conexion.cursor()
 
     # Extrayendo todas las filas
@@ -125,7 +125,7 @@ def obtener_fechas_hour2(idents: str, origin: str):
     return filaa
 
 def obtener_matter2():
-    conexion = sqlite3.connect("dataBases.sqlite3")
+    conexion = sqlite3.connect("dataBase.sqlite3")
     consulta = conexion.cursor()
 
     # Extrayendo todas las filas
@@ -142,7 +142,7 @@ def obtener_matter2():
     return filaa
 
 def buscar_mater_por_semester(semester):
-    conexion = sqlite3.connect("dataBases.sqlite3")
+    conexion = sqlite3.connect("dataBase.sqlite3")
     consulta = conexion.cursor()
 
     # Extrayendo todas las filas
@@ -164,7 +164,7 @@ def buscar_mater_por_semester(semester):
     return filaa
 
 def buscar_hora_inicio_fin():
-    conexion = sqlite3.connect("dataBases.sqlite3")
+    conexion = sqlite3.connect("dataBase.sqlite3")
     consulta = conexion.cursor()
 
     # Extrayendo todas las filas

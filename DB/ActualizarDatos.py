@@ -5,7 +5,7 @@ from DB.InsertarDatos import insert_date
 
 
 def update_matter1(codigo: str, name: str, ubisemester: int, numcredit: str, codrequisite: str, numhourssem: int):
-    conexion = sqlite3.connect("dataBases.sqlite3")
+    conexion = sqlite3.connect("dataBase.sqlite3")
 
     consulta = conexion.cursor()
     id: int
@@ -28,7 +28,7 @@ def update_matter1(codigo: str, name: str, ubisemester: int, numcredit: str, cod
 
 
 def update_docent1(name, state, limithours, contract, phone, identification, matter, city):
-    conexion = sqlite3.connect("dataBases.sqlite3")
+    conexion = sqlite3.connect("dataBase.sqlite3")
     consulta = conexion.cursor()
     id: int = None
     sql1 = "SELECT * FROM docent"
@@ -56,7 +56,7 @@ def update_docent1(name, state, limithours, contract, phone, identification, mat
     conexion.close()
 
 def update_b_ma1(nombre: str, idblock: int):
-    conexion = sqlite3.connect("dataBases.sqlite3")
+    conexion = sqlite3.connect("dataBase.sqlite3")
     consulta = conexion.cursor()
     sql1 = "SELECT * FROM matter"
     if consulta.execute(sql1):
