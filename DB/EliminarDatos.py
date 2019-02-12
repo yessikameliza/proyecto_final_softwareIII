@@ -17,7 +17,6 @@ def delete_matter1(codigo: str):
             if str(fila[1]) == codigo:
                 ident = fila[0]
     if -1 != ident:
-        id = int(ident)
         sql = "DELETE FROM matter WHERE id_Matter = ? AND codigo = ?"
         argumentos = (ident, codigo)
         consulta.execute(sql, argumentos)
@@ -43,7 +42,6 @@ def delete_docent1(identification: str):
                 id = int(fila[0])
 
     if not None == id:
-        ident = str(id)
         sql = "DELETE FROM docent WHERE id_Docent = ? and identification = ?"
         argumentos = (id, identification)
         consulta.execute(sql, argumentos)
