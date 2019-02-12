@@ -430,7 +430,7 @@ class RegistroFechas(object):
         item = QtWidgets.QTableWidgetItem()
         self.tablewidget_2.setItem(5, 5, item)
         self.tablewidget_2.horizontalHeader().setDefaultSectionSize(137)
-
+        print("error acá")
         self.comboboxmes1 = QtWidgets.QComboBox(form)
         self.comboboxmes1.setGeometry(QtCore.QRect(400, 90, 69, 22))
         self.comboboxmes1.setStyleSheet("background-color: rgb(255, 255, 255);")
@@ -463,7 +463,7 @@ class RegistroFechas(object):
                   '11', '12', '13', '14', '15', '16', '17', '18', '19', '20',
                   '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31')
         self.comboboxdia2.addItems(items4)
-
+        print("error acá3")
         self.label_13 = QtWidgets.QLabel(form)
         self.label_13.setGeometry(QtCore.QRect(200, 90, 151, 31))
         self.label_13.setStyleSheet("color: rgb(255, 255, 255);\n"
@@ -493,6 +493,7 @@ class RegistroFechas(object):
         self.label_18.setGeometry(QtCore.QRect(850, 90, 47, 21))
         self.label_18.setStyleSheet("font: 8pt \"Segoe Print\";\n"
                                     "color: rgb(255, 255, 255);")
+        print("error acá 4")
         self.label_18.setObjectName("label_18")
         print("assddghhjjkk")
         self.retranslate_ui(form)
@@ -503,12 +504,22 @@ class RegistroFechas(object):
         print("pola")
         self.pushbutton.clicked.connect(self.registrar_fechas)
         print("pallala")
+
+        print("error acá 6")
+        self.rellenarcuadro1()
+        self.rellenarcuadro2()
+        self.rellenarcuadro3()
+        print("error acá 5")
+        self.pushbutton.clicked.connect(self.registrar_fechas)
+        print("error acá 7")
         self.pushbutton_3.clicked.connect(self.eliminar_fechas)
         self.pushbutton_2.clicked.connect(self.actualizar_fechas)
         QtCore.QMetaObject.connectSlotsByName(form)
+        print("error acá 2")
 
     def registrar_fechas(self):
         delete_date()
+        print("error acá aaaaaa")
         self.tabla1(0)
         self.tabla1(1)
         self.tabla1(2)
