@@ -504,7 +504,9 @@ class VentanaPrincipal(QtWidgets.QMainWindow):
     def ventana_registro_fecha(self):
 
         self.ventana = QtWidgets.QMainWindow()
+        print("lpo")
         self.ui = RegistroFechas()
+        print("kajkda")
         self.ui.setup_ui(self.ventana)
         self.ventana.show()
         self.close()

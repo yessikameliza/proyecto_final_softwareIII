@@ -494,11 +494,15 @@ class RegistroFechas(object):
         self.label_18.setStyleSheet("font: 8pt \"Segoe Print\";\n"
                                     "color: rgb(255, 255, 255);")
         self.label_18.setObjectName("label_18")
+        print("assddghhjjkk")
         self.retranslate_ui(form)
+        print("ramiro")
         self.rellenarcuadro1()
         self.rellenarcuadro2()
         self.rellenarcuadro3()
+        print("pola")
         self.pushbutton.clicked.connect(self.registrar_fechas)
+        print("pallala")
         self.pushbutton_3.clicked.connect(self.eliminar_fechas)
         self.pushbutton_2.clicked.connect(self.actualizar_fechas)
         QtCore.QMetaObject.connectSlotsByName(form)
@@ -537,7 +541,9 @@ class RegistroFechas(object):
         print("llego hasta aquí dos")
 
     def rellenarcuadro1(self):
+        print("mariajose")
         res = obtener_fecha("Primeras fechas")
+        print("manan")
         print(res)
         col: int = 0
         rows: int = 0
@@ -789,8 +795,10 @@ class RegistroFechas(object):
         item.setText(_translate("Form", "Encuentros Tutoriales"))
         item = self.tablewidget_3.horizontalHeaderItem(5)
         item.setText(_translate("Form", "Habilitaciones"))
+        print("1")
         __sortingenabled = self.tablewidget_3.isSortingEnabled()
         self.tablewidget_3.setSortingEnabled(False)
+        print("2")
         item = self.tablewidget_3.item(0, 0)
         item.setText(_translate("Form", "0"))
         item = self.tablewidget_3.item(0, 1)
@@ -864,6 +872,7 @@ class RegistroFechas(object):
         item = self.tablewidget_3.item(5, 5)
         item.setText(_translate("Form", "0"))
         self.tablewidget_3.setSortingEnabled(__sortingenabled)
+        print("3")
         self.label_6.setText(_translate("Form", "PRIMERAS"))
         self.label_7.setText(_translate("Form", "FECHAS"))
         self.label_8.setText(_translate("Form", "FECHAS"))
@@ -893,6 +902,7 @@ class RegistroFechas(object):
         item = self.tablewidget.horizontalHeaderItem(5)
         item.setText(_translate("Form", "Habilitaciones"))
         __sortingenabled = self.tablewidget.isSortingEnabled()
+        print("4")
         self.tablewidget.setSortingEnabled(False)
         item = self.tablewidget.item(0, 0)
         item.setText(_translate("Form", "0"))
