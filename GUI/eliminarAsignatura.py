@@ -85,8 +85,7 @@ class EliminarAsignatura(object):
             cod = self.txtcodtbuscar.toPlainText()
             res = delete_matter(cod)
             if not None == res:
-                self.mostrar_mensaje("Información", "¡La asignatura se ha eliminado con exito!", "", QMessageBox.Warning,
-                                    False)
+                QMessageBox.information(self, "Informacion", "¡La asignatura se ha eliminado con exito!")
             else:
                 self.mostrar_mensaje("Alerta", "¡Codigo no encontrado¡", "", QMessageBox.Warning,
                                     False)
@@ -94,7 +93,7 @@ class EliminarAsignatura(object):
                print('Haz Clickeado No.')
 
         except ValueError:
-            self.mostrar_mensaje("Información", "¡La entrada es incorrecta, verifique lo ingresado!",
+            self.mostrar_mensaje("Alerta", "¡La entrada es incorrecta, verifique lo ingresado!",
                                 "", QMessageBox.Warning, False)
 
     def mostrar_mensaje(self, titulo: str, texto: str, texto_informativo: str, tipo_mensaje: QMessageBox,

@@ -82,13 +82,13 @@ class EliminarDocente(object):
              res = delete_docent(iden)
 
              if not None == res:
-                self.mostrar_mensaje("Información", "¡El docente se ha eliminado con exito!", "", QMessageBox.Warning,
-                                    False)
+                QMessageBox.information(self, "Informacion", "¡El docente se ha eliminado con exito!")
+
              else:
                 self.mostrar_mensaje("Alerta", "¡Identificación no encontrada!", "", QMessageBox.Warning,
                                     False)
         except ValueError:
-            self.mostrar_mensaje("Información", "¡La entrada es incorrecta, verifique lo ingresado!",
+            self.mostrar_mensaje("Alerta", "¡La entrada es incorrecta, verifique lo ingresado!",
                                 "", QMessageBox.Warning, False)
 
     def limpiar(self):

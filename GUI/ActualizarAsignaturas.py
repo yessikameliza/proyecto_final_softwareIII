@@ -187,11 +187,10 @@ class ActualizarAsignatura(object):
                                     False)
             else:
                 update_matter(cod, nom, ubisemestre, numcreditos, codrequisito, num)
-                self.mostrar_mensaje("Información", "¡Se han actualizado los datos correctamente!", "",
-                                    QMessageBox.Warning,
-                                    False)
+                QMessageBox.information(self, "Informacion", "¡Se han actualizado los datos correctamente!")
+
         except ValueError: \
-                self.mostrar_mensaje("Información", "¡La entrada es incorrecta, escriba un numero entero!",
+                self.mostrar_mensaje("Alerta", "¡La entrada es incorrecta, escriba un numero entero!",
                                     "", QMessageBox.Warning, False)
 
     def mostrar_mensaje(self, titulo: str, texto: str, texto_informativo: str, tipo_mensaje: QMessageBox, estado: bool):

@@ -187,9 +187,9 @@ class RegistroDocentes(object):
                 self.mostrar_mensaje("Alerta", "¡Hay campos vacios!", "", QMessageBox.Warning, False)
             else:
                 register_docent(name, esta, limit, type, phone, ident, asig, ciudad)
-                self.mostrar_mensaje("Información", "¡Datos registrados con exito!", "", QMessageBox.Warning, False)
+                QMessageBox.information(self, "Informacion","¡Datos registrados con exito!")
         except ValueError:
-            self.mostrar_mensaje("Información", "¡La entrada es incorrecta, escriba un numero entero!",
+            self.mostrar_mensaje("Alerta", "¡La entrada es incorrecta, escriba un numero entero!",
                                 "", QMessageBox.Warning, False)
             # Back up the reference to the exceptionhook
             sys._excepthook = sys.excepthook

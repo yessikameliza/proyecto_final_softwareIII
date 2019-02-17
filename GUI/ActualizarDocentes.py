@@ -228,11 +228,10 @@ class ActualizarDocente(object):
                                     False)
             else:
                 update_docent(nomb, esta, lim, tipo, tel, iden, materia, ciudad)
-                self.mostrar_mensaje("Información", "¡Se han actualizado los datos correctamente!", "",
-                                    QMessageBox.Warning, False)
+                QMessageBox.information(self, "Informacion", "¡Se han actualizado los datos correctamente!")
                 self.limpiar()
         except ValueError:
-            self.mostrar_mensaje("Información", "¡La entrada es incorrecta, escriba un numero entero!",
+            self.mostrar_mensaje("Alerta", "¡La entrada es incorrecta, escriba un numero entero!",
                                 "", QMessageBox.Warning, False)
 
     def buscar(self):
