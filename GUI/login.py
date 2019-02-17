@@ -6,7 +6,7 @@
 #
 # WARNING! All changes made in this file will be lost!
 import sys
-from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5 import QtGui, QtCore, QtWidgets
 from GUI.ventanaPrincipal import VentanaPrincipal
 from PyQt5.QtWidgets import QMessageBox, QMainWindow, QApplication
 
@@ -35,14 +35,17 @@ class Login(QMainWindow):
                                       "background-color: rgb(128, 195, 161)\n"
                                       "")
         self.txtusuario.setObjectName("nomUsuario")
-        self.txtusuario.setText("Ingrese nombre de usuario")
-        self.txtcontrasena = QtWidgets.QTextEdit(self.frame)
+        self.txtusuario.setToolTip('Ingrese nombre de usuario')
+        self.txtusuario.setPlaceholderText('Ingrese nombre de usuario')
+        self.txtcontrasena = QtWidgets.QLineEdit(self.frame)
         self.txtcontrasena.setGeometry(QtCore.QRect(30, 90, 211, 31))
-        self.txtcontrasena.setText("Ingrese contraseña")
+        self.txtcontrasena.setEchoMode(QtWidgets.QLineEdit.Password)
         self.txtcontrasena.setStyleSheet("color: rgb(0, 0, 0);\n"
                                          "background-color: rgb(128, 195, 161)\n"
                                          "")
         self.txtcontrasena.setObjectName("Contraseña")
+        self.txtcontrasena.setToolTip('Ingrese su contraseña')
+        self.txtcontrasena.setPlaceholderText('Ingrese contraseña')
         self.btnagregar = QtWidgets.QPushButton(self.frame)
         self.btnagregar.setGeometry(QtCore.QRect(30, 160, 211, 41))
         self.btnagregar.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
@@ -64,16 +67,14 @@ class Login(QMainWindow):
 
     def ingresar(self):
         usuario = self.txtusuario.toPlainText()
-        contra = self.txtcontrasena.toPlainText()
+        contra = self.txtcontrasena.text()
+        QMessageBox.Ok
         if len(usuario) == 0 | len(contra) == 0:
             self.mostrar_mensaje("Alerta", "Ingrese usuario y/o contraseña", "", QMessageBox.Warning, False)
         else:
             if usuario == 'admin' and contra == '12345':
-                print('alex')
                 self.ventana = QtWidgets.QMainWindow()
-                print("alex")
                 self.ui = VentanaPrincipal()
-                print("hola")
                 self.ui.setup_ui(self.ventana)
                 self.ventana.show()
             else:
