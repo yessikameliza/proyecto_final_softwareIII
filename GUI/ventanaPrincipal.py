@@ -18,7 +18,7 @@ from GUI.eliminarDocente import EliminarDocente
 from GUI.primerasFechas import PrimerasFechas
 from GUI.fechasAlternas import FechasAlternas
 from GUI.pereiraDomingos import FechasPereira
-
+from logica.Persistence import obtener_matter
 from logica.Persistence import gene_hours, obtener_fecha
 from logica.Persistence import obtener_fechas_p
 from logica.Persistence import obtener_f_induct
@@ -485,6 +485,8 @@ class VentanaPrincipal(QtWidgets.QMainWindow):
         self.btngenerarhorbuga.clicked.connect(self.prueba_horario2)
         self.btngenerarhorper.clicked.connect(self.prueba_horario3)
         QtCore.QMetaObject.connectSlotsByName(form)
+        au: list = obtener_matter()
+        print("materiaaas", au)
 
     def ventana_fechas_pereira(self):
         self.ventana = QtWidgets.QMainWindow()
