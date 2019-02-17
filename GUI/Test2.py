@@ -7,6 +7,9 @@ from logica.Persistence import obtener_fechas_p
 from logica.Persistence import update_docent
 from logica.Persistence import search_docent
 from logica.Persistence import update_matter
+
+from logica.Persistence import delete_docent
+
 from logica.Persistence import delete_matter
 from logica.Persistence import delete_docent
 from logica.Persistence import delete_date
@@ -18,6 +21,7 @@ class Test(unittest.TestCase):
         register_matter("1233", "caalculo 1", 11, "33", "00", 116)
         a: str = search_matter("1233")[2]
         self.assertEqual(a, "caalculo 1")
+
 
     def test_register_docent(self):
         register_docent("melisa", "activo", 100, "catedratico", "1094970", "324234", "calculo", "Armenia")
@@ -55,6 +59,13 @@ class Test(unittest.TestCase):
         aux: str = search_matter("1001")[2]
         self.assertEqual(aux, "Fundamentos en obras civiles")
         delete_matter("1001")
+
+
+    def test_eliminar_docente(self):
+         register_docent("Alberto José", "Activo", 200, "Catedratico", "3206697975", "1000","Calculo 2", "Armenia")
+         delete_docent("1000")
+         aux: str = search_docent("1000")[6]
+         self.assertEqual(aux, "1000")
 
 
 if __name__ == "__main__":

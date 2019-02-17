@@ -13,10 +13,15 @@ from logica.Persistence import obtener_fecha
 class PrimerasFechas(object):
     def setup_ui(self, form):
         form.setObjectName("Form")
-        form.resize(926, 440)
+        form.resize(906, 405)
         form.setStyleSheet("background-color: rgb(128, 195, 161)")
+        self.label_6 = QtWidgets.QLabel(form)
+        self.label_6.setGeometry(QtCore.QRect(690, 90, 200, 30))
+        self.label_6.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
+                                   "color: rgb(0, 0, 0);")
+        self.label_6.setObjectName("label_6")
         self.tablewidgetprimerasfechas = QtWidgets.QTableWidget(form)
-        self.tablewidgetprimerasfechas.setGeometry(QtCore.QRect(40, 130, 851, 211))
+        self.tablewidgetprimerasfechas.setGeometry(QtCore.QRect(30, 120, 851, 211))
         self.tablewidgetprimerasfechas.setStyleSheet("font: 9pt \"Segoe Print\";\n"
                                                      "color: rgb(0, 0, 0);\n"
                                                      "background-color: rgb(255, 255, 255);")
@@ -121,34 +126,28 @@ class PrimerasFechas(object):
         item = QtWidgets.QTableWidgetItem()
         self.tablewidgetprimerasfechas.setItem(5, 5, item)
         self.tablewidgetprimerasfechas.horizontalHeader().setDefaultSectionSize(137)
-        self.label_5 = QtWidgets.QLabel(form)
-        print("llego hastsa aquí")
-        self.label_5.setGeometry(QtCore.QRect(340, 30, 261, 41))
-        self.label_5.setStyleSheet("font: 75 20pt \"Segoe Print\";\n"
-                                   "color: rgb(0, 0, 0);")
-        self.label_5.setObjectName("label_5")
-        self.label_3 = QtWidgets.QLabel(form)
-        self.label_3.setGeometry(QtCore.QRect(150, 100, 200, 30))
-        self.label_3.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
-                                   "color: rgb(0, 0, 0);")
-        self.label_3.setObjectName("label_3")
         self.label_4 = QtWidgets.QLabel(form)
-        self.label_4.setGeometry(QtCore.QRect(430, 100, 200, 30))
+        self.label_4.setGeometry(QtCore.QRect(420, 90, 200, 30))
         self.label_4.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
                                    "color: rgb(0, 0, 0);")
         self.label_4.setObjectName("label_4")
-        self.label_6 = QtWidgets.QLabel(form)
-        self.label_6.setGeometry(QtCore.QRect(710, 100, 200, 30))
-        self.label_6.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
+        self.label_5 = QtWidgets.QLabel(form)
+        self.label_5.setGeometry(QtCore.QRect(370, 20, 261, 41))
+        self.label_5.setStyleSheet("font: 75 20pt \"Segoe Print\";\n"
                                    "color: rgb(0, 0, 0);")
-        self.label_6.setObjectName("label_6")
+        self.label_5.setObjectName("label_5")
         self.btnver = QtWidgets.QPushButton(form)
-        self.btnver.setGeometry(QtCore.QRect(390, 370, 181, 41))
+        self.btnver.setGeometry(QtCore.QRect(380, 350, 181, 41))
         self.btnver.setStyleSheet("font: 11pt \"Segoe Print\";\n"
                                   "color: rgb(255, 255, 255);\n"
                                   "background-color: rgb(0, 51, 51);\n"
                                   "")
         self.btnver.setObjectName("btnVer")
+        self.label_3 = QtWidgets.QLabel(form)
+        self.label_3.setGeometry(QtCore.QRect(140, 90, 200, 30))
+        self.label_3.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
+                                   "color: rgb(255, 255, 255);")
+        self.label_3.setObjectName("label_3")
 
         self.retranslate_ui(form)
         self.btnver.clicked.connect(self.mostrar)
@@ -159,11 +158,11 @@ class PrimerasFechas(object):
 
     def tabla1(self):
         res = obtener_fecha("Primeras fechas")
-
-        print(res)
+        print(res, "alexander")
         col: int = 0
         rows: int = 0
         for it in res:
+            print(it, "fechas ver")
             item = self.tablewidgetprimerasfechas.item(rows, col)
             item.setText(it)
             print("rows", rows, "col ", col)
@@ -175,6 +174,8 @@ class PrimerasFechas(object):
     def retranslate_ui(self, form):
         _translate = QtCore.QCoreApplication.translate
         form.setWindowTitle(_translate("Form", "Form"))
+        self.label_6.setText(_translate("Form",
+                                        "<html><head/><body><p><span style=\" font-weight:600; color:#000000;\">BLOQUE C</span></p></body></html>"))
         item = self.tablewidgetprimerasfechas.verticalHeaderItem(0)
         item.setText(_translate("Form", "1"))
         item = self.tablewidgetprimerasfechas.verticalHeaderItem(1)
@@ -274,12 +275,10 @@ class PrimerasFechas(object):
         item = self.tablewidgetprimerasfechas.item(5, 5)
         item.setText(_translate("Form", "0"))
         self.tablewidgetprimerasfechas.setSortingEnabled(__sortingenabled)
-        self.label_5.setText(_translate("Form",
-                                        "<html><head/><body><p><span style=\" font-size:20pt; font-weight:600; color:#000000;\">Primeras fechas</span></p></body></html>"))
-        self.label_3.setText(_translate("Form",
-                                        "<html><head/><body><p><span style=\" font-size:10pt; font-weight:600; color:#000000;\">BLOQUE A</span></p></body></html>"))
         self.label_4.setText(_translate("Form",
-                                        "<html><head/><body><p><span style=\" font-size:10pt; font-weight:600; color:#000000;\">BLOQUE B</span></p></body></html>"))
-        self.label_6.setText(_translate("Form",
-                                        "<html><head/><body><p><span style=\" font-size:10pt; font-weight:600; color:#000000;\">BLOQUE C</span></p></body></html>"))
+                                        "<html><head/><body><p><span style=\" font-weight:600; color:#000000;\">BLOQUE B</span></p></body></html>"))
+        self.label_5.setText(_translate("Form",
+                                        "<html><head/><body><p><span style=\" font-weight:600; color:#000000;\">Primeras fechas</span></p></body></html>"))
         self.btnver.setText(_translate("Form", "VER"))
+        self.label_3.setText(_translate("Form",
+                                        "<html><head/><body><p><span style=\" font-weight:600; color:#000000;\">BLOQUE A</span></p></body></html>"))
