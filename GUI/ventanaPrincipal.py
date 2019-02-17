@@ -495,18 +495,14 @@ class VentanaPrincipal(QtWidgets.QMainWindow):
     def ventana_registro_docente(self):
         self.ventana = QtWidgets.QMainWindow()
         self.ui = RegistroDocentes()
-        print("aqui")
         self.ui.setup_ui(self.ventana)
-        print("aquii")
         self.ventana.show()
 
 
     def ventana_registro_fecha(self):
 
         self.ventana = QtWidgets.QMainWindow()
-        print("lpo")
         self.ui = RegistroFechas()
-        print("kajkda")
         self.ui.setup_ui(self.ventana)
         self.ventana.show()
         self.close()
@@ -536,10 +532,11 @@ class VentanaPrincipal(QtWidgets.QMainWindow):
         self.ventana.show()
 
     def ventana_elim_doc(self):
-        self.ventana = QtWidgets.QMainWindow()
-        self.ui = EliminarDocente()
-        self.ui.setup_ui(self.ventana)
-        self.ventana.show()
+         self.ventana = QtWidgets.QMainWindow()
+         self.ui = EliminarDocente()
+         self.ui.setup_ui(self.ventana)
+         self.ventana.show()
+
 
     def ventana_primeras_fecha(self):
         self.ventana = QtWidgets.QMainWindow()
@@ -779,16 +776,13 @@ class VentanaPrincipal(QtWidgets.QMainWindow):
         self.btngenerarhorbuga.setText(_translate("Form", "Generar horario Buga"))
         self.label_4.setText(_translate("Form", "Semestre a generar:"))
         self.groupbox_4.setTitle(_translate("Form", "Información de horario"))
-        print("jajajaj")
         item = self.tablahorario.horizontalHeaderItem(0)
         item.setText(_translate("Form", "BLOQUE A"))
         item = self.tablahorario.horizontalHeaderItem(1)
         item.setText(_translate("Form", "BLOQUE B"))
         item = self.tablahorario.horizontalHeaderItem(2)
         item.setText(_translate("Form", "BLOQUE C"))
-        print("poli")
         __sortingenabled = self.tablahorario.isSortingEnabled()
-        print("hhkk")
         self.tablahorario.setSortingEnabled(False)
         item = self.tablahorario.item(0, 0)
         item.setText(_translate("Form", "Fecha 1"))

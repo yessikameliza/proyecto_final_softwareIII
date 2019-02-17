@@ -635,10 +635,14 @@ class RegistroFechas(object):
                 register_date(text3, "Habilitaciones", 3, "Pereira domingos")
 
     def eliminar_fechas(self):
-        delete_date()
-        self.poner_ceros()
-        self.mostrar_mensaje("Información", "¡Fechas eliminadas!", "", QMessageBox.Warning, False)
-        self.pushbutton.setEnabled(True)
+        buton = QMessageBox.question(self, 'Advertencia', "¿Esta seguro de eliminar las fechas?",
+                                     QMessageBox.Yes | QMessageBox.No,
+                                     QMessageBox.No)
+        if buton == QMessageBox.Yes:
+         delete_date()
+         self.poner_ceros()
+         self.mostrar_mensaje("Información", "¡Fechas eliminadas!", "", QMessageBox.Warning, False)
+         self.pushbutton.setEnabled(True)
 
     def poner_ceros(self):
         self.tabla111()

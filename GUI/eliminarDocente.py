@@ -74,13 +74,17 @@ class EliminarDocente(object):
 
     def eliminar(self):
         try:
-            iden = str(self.txtidentbuscar.toPlainText())
-            res = delete_docent(iden)
+            buton = QMessageBox.question(self, 'Advertencia', "¿Esta seguro de eliminar este docente?",
+                                         QMessageBox.Yes | QMessageBox.No,
+                                         QMessageBox.No)
+            if buton == QMessageBox.Yes:
+             iden = str(self.txtidentbuscar.toPlainText())
+             res = delete_docent(iden)
 
-            if not None == res:
+             if not None == res:
                 self.mostrar_mensaje("Información", "¡El docente se ha eliminado con exito!", "", QMessageBox.Warning,
                                     False)
-            else:
+             else:
                 self.mostrar_mensaje("Alerta", "¡Identificación no encontrada!", "", QMessageBox.Warning,
                                     False)
         except ValueError:
