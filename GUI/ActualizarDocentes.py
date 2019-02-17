@@ -181,8 +181,11 @@ class ActualizarDocente(QMainWindow):
         print("paso esto 3")
 
         self.btnbuscar.clicked.connect(self.buscar)
+        print("paso esto 4")
         self.btnactualizar.clicked.connect(self.actualiza)
+        print("paso esto 5")
         self.btnlimpiar.clicked.connect(self.limpiar)
+        print("paso esto 6")
         QtCore.QMetaObject.connectSlotsByName(main_window)
 
     def limpiar(self):
@@ -206,7 +209,6 @@ class ActualizarDocente(QMainWindow):
 
             self.comboasignatura.addItem(aux2)
 
-
     def actualiza(self):
         try:
             nomb = str(self.txtnombre.toPlainText())
@@ -217,17 +219,21 @@ class ActualizarDocente(QMainWindow):
             esta = str(self.comboestado.currentText())
             materia = str(self.comboasignatura.currentText())
             ciudad = str(self.combociudad.currentText())
-
-            if len(nomb) == 0 | len(tipo) == 0 | len(lim) == 0 | len(tel) == 0 | len(iden) == 0 | len(esta) == 0:
-                self.mostrar_mensaje("Alerta", "¡Hay espacios vacios, digite todos los campos!", "", QMessageBox.Warning,
-                                    False)
+            print("entrooooo", lim)
+            if len(nomb) == 0 or len(tipo) == 0 or len(tel) == 0 or len(iden) == 0 or len(esta) == 0:
+                print("entrooooo5")
+                self.mostrar_mensaje("Alerta", "¡Hay espacios vacios, digite todos los campos!", "",
+                                     QMessageBox.Warning, False)
+                print("entrooooo2")
             else:
+                print("entrooooo4")
                 update_docent(nomb, esta, lim, tipo, tel, iden, materia, ciudad)
                 QMessageBox.information(self, "Informacion", "¡Se han actualizado los datos correctamente!")
+                print("entrooooo3")
                 self.limpiar()
         except ValueError:
             self.mostrar_mensaje("Alerta", "¡La entrada es incorrecta, escriba un numero entero!",
-                                "", QMessageBox.Warning, False)
+                                 "", QMessageBox.Warning, False)
 
     def buscar(self):
         id = self.txtidentbuscar.toPlainText()
@@ -268,7 +274,6 @@ class ActualizarDocente(QMainWindow):
         else:
             print("no existe el docente")
             self.mostrar_mensaje("Alerta", "¡La identificación ingresada no existe!", "", QMessageBox.Warning, False)
-
 
     def mostrar_mensaje(self, titulo: str, texto: str, texto_informativo: str, tipo_mensaje: QMessageBox, estado: bool):
         self.message_box = QMessageBox()

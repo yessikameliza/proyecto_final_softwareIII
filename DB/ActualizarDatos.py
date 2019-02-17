@@ -40,9 +40,9 @@ def update_docent1(name, state, limithours, contract, phone, identification, mat
                 id = int(fila[0])
                 print(id)
 
-    arg = (name, state, limithours, contract, phone, identification, matter, city, id)
+    arg = (name, state, limithours, contract, phone, identification, city, matter, id)
     sql = """UPDATE docent SET name = ?, estate = ?, limitHoras = ?, contract = ?, phone = ?, identification = ?,
-     matter= ?, city= ?
+     city = ?, matter = ?
       WHERE id_Docent = ? """
 
     if consulta.execute(sql, arg):

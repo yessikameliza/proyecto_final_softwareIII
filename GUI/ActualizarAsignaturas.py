@@ -175,17 +175,18 @@ class ActualizarAsignatura(QMainWindow):
             numhourssem: str = self.txtnumhorsemestre.toPlainText()
             num: int = int(numhourssem)
 
-            if len(cod) == 0 | len(nom) == 0 | len(ubisemestre) == 0 | len(numcreditos) == 0 | len(codrequisito) == 0 \
-                    | len(numhourssem) == 0:
-                self.mostrar_mensaje("Alerta", "¡Hay espacios vacios, digite todos los campos!", "", QMessageBox.Warning,
-                                    False)
+            if len(cod) == 0 or len(nom) == 0 or len(numcreditos) == 0 or \
+                    len(codrequisito) == 0 or len(numhourssem) == 0:
+                self.mostrar_mensaje("Alerta", "¡Hay espacios vacios, digite todos los campos!", "",
+                                     QMessageBox.Warning,
+                                     False)
             else:
                 update_matter(cod, nom, ubisemestre, numcreditos, codrequisito, num)
                 QMessageBox.information(self, "Informacion", "¡Se han actualizado los datos correctamente!")
 
-        except ValueError: \
-                self.mostrar_mensaje("Alerta", "¡La entrada es incorrecta, escriba un numero entero!",
-                                    "", QMessageBox.Warning, False)
+        except ValueError:
+            self.mostrar_mensaje("Alerta", "¡La entrada es incorrecta, escriba un numero entero!",
+                                 "", QMessageBox.Warning, False)
 
     def mostrar_mensaje(self, titulo: str, texto: str, texto_informativo: str, tipo_mensaje: QMessageBox, estado: bool):
         self.message_box = QMessageBox()
@@ -229,4 +230,3 @@ class ActualizarAsignatura(QMainWindow):
         self.btnactualizar.setText(_translate("MainWindow", "ACTUALIZAR"))
         self.semestre_2.setText(_translate("MainWindow",
                                            "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#000000;\">Cod. Requisito:</span></p></body></html>"))
-

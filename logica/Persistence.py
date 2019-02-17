@@ -20,6 +20,7 @@ from DB.ActualizarDatos import update_b_ma1
 from DB.Seleccionar_Datos import obtener_fecha_indu2
 from DB.Seleccionar_Datos import search_docent_matter
 
+
 def register_matter(codigo: str, name: str, ubisemester: int, numcredit: str, codrequisite: str, numhourssem: int):
     insert_matter(codigo, name, ubisemester, numcredit, codrequisite, numhourssem)
 
@@ -81,8 +82,10 @@ def obtener_fechas_p(idents: str, origin: str):
 def obtener_matter():
     return obtener_matter2()
 
+
 def obtener_f_induct(idents: str):
     return obtener_fecha_indu2(idents)
+
 
 def gene_hours(semester: int, ciudad: str) -> list:
     hours: list = []
@@ -99,6 +102,7 @@ def gene_hours(semester: int, ciudad: str) -> list:
     elif semester == 6:
         return gene_hours_sexto_s(semester, hours)
     return None
+
 
 def obtener_datos_profe(semester: int, ciudad: str):
     auxx: list = []
@@ -256,13 +260,13 @@ def gene_hours_tercer_s(semester, horario: list):
             print("number", number)
             i = 0
             while i < number:
-                if i < number/2:
+                if i < number / 2:
                     auxlist.append(fileshor[0] + " " + file[2] + "\n" + fileshor[1] + " " + aux)
                     auxlist.append(1)
                     horario.append(auxlist)
                     auxlist = []
                 else:
-                    aux = (files[l+2])[2]
+                    aux = (files[l + 2])[2]
                     print("este es el segunndo aux", aux)
                     auxlist.append(fileshor[0] + " " + file[2] + "\n" + fileshor[1] + " " + aux)
                     auxlist.append(2)
@@ -366,6 +370,7 @@ def gene_hours_quinto_s(semester, horario: list):
     print(horario)
     return horario
 
+
 def gene_hours_sexto_s(semester, horario: list):
     files: list = buscar_mater_por_semester(semester)
     fileshor: list = buscar_hora_inicio_fin()
@@ -376,12 +381,13 @@ def gene_hours_sexto_s(semester, horario: list):
     l = 0
     aux: str = ""
     for file in files:
+        print("paso estooo")
         if l < 2:
-            updateBMa(file[2], 1)
+            update_b_ma1(file[2], 1)
             print("entroo primera vez")
         elif 2 <= l < 4:
             update_b_ma1(file[2], 2)
-        elif l >= 4:
+        elif 4 >= l:
             update_b_ma1(file[2], 3)
         print(file[2], " esto es aux")
         print(file[6], "esto es el bloque")
