@@ -8,10 +8,10 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from logica.Persistence import delete_docent
-from PyQt5.QtWidgets import QMessageBox
+from PyQt5.QtWidgets import QMessageBox, QMainWindow
 
 
-class EliminarDocente(object):
+class EliminarDocente(QMainWindow):
     message_box = QMessageBox
 
     def setup_ui(self, main_window):
@@ -67,35 +67,31 @@ class EliminarDocente(object):
         self.statusbar = QtWidgets.QStatusBar(main_window)
         self.statusbar.setObjectName("statusbar")
         main_window.setStatusBar(self.statusbar)
+        print("entrooo acá 2")
+        self.retranslate_ui(main_window)
         self.btneliminar.clicked.connect(self.eliminar)
         self.btnlimpiar.clicked.connect(self.limpiar)
-        self.retranslate_ui(main_window)
         QtCore.QMetaObject.connectSlotsByName(main_window)
 
     def eliminar(self):
-        try:
-            buton = QMessageBox.question(self, 'Advertencia', "¿Esta seguro de eliminar este docente?",
-                                         QMessageBox.Yes | QMessageBox.No,
-                                         QMessageBox.No)
-            if buton == QMessageBox.Yes:
-             iden = str(self.txtidentbuscar.toPlainText())
-             res = delete_docent(iden)
+        buton = QMessageBox.question(self, 'Advertencia', "¿Esta seguro de eliminar este docente?",
+                                     QMessageBox.Yes | QMessageBox.No,
+                                     QMessageBox.No)
+        print("entrooo acá2")
+        if buton == QMessageBox.Yes:
+           iden = str(self.txtidentbuscar.toPlainText())
+           res = delete_docent(iden)
 
-             if not None == res:
-                QMessageBox.information(self, "Informacion", "¡El docente se ha eliminado con exito!")
-
-             else:
-                self.mostrar_mensaje("Alerta", "¡Identificación no encontrada!", "", QMessageBox.Warning,
-                                    False)
-        except ValueError:
-            self.mostrar_mensaje("Alerta", "¡La entrada es incorrecta, verifique lo ingresado!",
-                                "", QMessageBox.Warning, False)
+           if not None == res:
+            QMessageBox.information(self, "Informacion", "¡El docente se ha eliminado con exito!")
+           else:
+            self.mostrar_mensaje("Alerta", "¡Identificación no encontrada!", "", QMessageBox.Warning, False)
 
     def limpiar(self):
         self.txtidentbuscar.clear()
 
     def mostrar_mensaje(self, titulo: str, texto: str, texto_informativo: str, tipo_mensaje: QMessageBox,
-                       estado: bool):
+                        estado: bool):
 
         self.message_box = QMessageBox()
         self.message_box.setWindowTitle(titulo)

@@ -56,7 +56,7 @@ def search_docent_matter(matter: str, ciudad: str):
         files = consulta.fetchall()
         print(files, " profes")
         for fila in files:
-            if str(fila[7]) == matter and str(fila[8]) == ciudad:
+            if str(fila[8]) == matter and str(fila[7]) == ciudad:
                     return fila
     consulta.close()
 

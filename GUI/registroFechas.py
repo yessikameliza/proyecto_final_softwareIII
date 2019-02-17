@@ -9,12 +9,12 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from logica.Persistence import register_date
 from logica.Persistence import delete_date
-from PyQt5.QtWidgets import QMessageBox
+from PyQt5.QtWidgets import QMessageBox, QMainWindow
 from logica.Persistence import update_datee
 from logica.Persistence import obtener_fecha
 
 
-class RegistroFechas(object):
+class RegistroFechas(QMainWindow):
     message_box: QMessageBox
 
     def setup_ui(self, form):
@@ -509,6 +509,7 @@ class RegistroFechas(object):
         QtCore.QMetaObject.connectSlotsByName(form)
 
     def registrar_fechas(self):
+        print("error acá aaaaaa")
         delete_date()
         self.tabla1(0)
         self.tabla1(1)

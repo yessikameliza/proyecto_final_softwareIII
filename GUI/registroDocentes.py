@@ -8,12 +8,12 @@
 import sys
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QMessageBox
+from PyQt5.QtWidgets import QMessageBox, QMainWindow
 from logica.Persistence import register_docent
 from logica.Persistence import obtener_matter
 
 
-class RegistroDocentes(object):
+class RegistroDocentes(QMainWindow):
     message_box: QMessageBox
     aux2 = " "
     con = 0

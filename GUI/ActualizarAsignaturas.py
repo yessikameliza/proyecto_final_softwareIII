@@ -11,15 +11,15 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from logica.Persistence import search_matter
 from logica.Persistence import update_matter
 
-from PyQt5.QtWidgets import QMessageBox
+from PyQt5.QtWidgets import QMessageBox, QMainWindow
 
 
-class ActualizarAsignatura(object):
+class ActualizarAsignatura(QMainWindow):
     message_box: QMessageBox
 
     def setup_ui(self, main_window):
-        main_window.setObjectName("Actualizar Asignaturas")
-        main_window.resize(722, 647)
+        main_window.setObjectName("MainWindow")
+        main_window.resize(687, 640)
         main_window.setStyleSheet("background-color: rgb(128, 195, 161)")
         self.centralwidget = QtWidgets.QWidget(main_window)
         self.centralwidget.setObjectName("centralwidget")
@@ -46,7 +46,7 @@ class ActualizarAsignatura(object):
                                      "background-color: rgb(0, 51, 51);")
         self.btnbuscar.setObjectName("btnBuscar")
         self.groupbox = QtWidgets.QGroupBox(self.centralwidget)
-        self.groupbox.setGeometry(QtCore.QRect(260, 110, 441, 421))
+        self.groupbox.setGeometry(QtCore.QRect(250, 110, 441, 421))
         self.groupbox.setStyleSheet("font: 75 14pt \"Segoe Print\";\n"
                                     "color: rgb(0, 0, 0);")
         self.groupbox.setObjectName("groupBox")

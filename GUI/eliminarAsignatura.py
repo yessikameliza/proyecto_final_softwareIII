@@ -7,11 +7,11 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QMessageBox
+from PyQt5.QtWidgets import QMessageBox, QMainWindow
 from logica.Persistence import delete_matter
 
 
-class EliminarAsignatura(object):
+class EliminarAsignatura(QMainWindow):
     message_box: QMessageBox
 
     def setup_ui(self, main_window):

@@ -8,11 +8,11 @@
 from xml.dom import ValidationErr
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QMessageBox
+from PyQt5.QtWidgets import QMessageBox, QMainWindow
 from logica.Persistence import register_matter
 
 
-class RegistroAsignaturas(object):
+class RegistroAsignaturas(QMainWindow):
     message_box: QMessageBox
 
     def setup_ui(self, main_window):

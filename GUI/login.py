@@ -67,6 +67,7 @@ class Login(QMainWindow):
 
 
     def ingresar(self):
+
         usuario = self.txtusuario.toPlainText()
         contra = self.txtcontrasena.text()
         if len(usuario) == 0 | len(contra) == 0:
