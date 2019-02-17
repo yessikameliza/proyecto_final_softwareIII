@@ -72,12 +72,6 @@ class RegistroAsignaturas(QMainWindow):
                                       "color: rgb(255, 255, 255);\n"
                                       "background-color: rgb(0, 51, 51);")
         self.btnlimpiar.setObjectName("btnLimpiar")
-        self.btnregresar = QtWidgets.QPushButton(self.centralwidget)
-        self.btnregresar.setGeometry(QtCore.QRect(40, 480, 101, 31))
-        self.btnregresar.setStyleSheet("font: 75 10pt \"Segoe Print\";\n"
-                                       "color: rgb(255, 255, 255);\n"
-                                       "background-color: rgb(0, 51, 51);")
-        self.btnregresar.setObjectName("btnRegresar")
         self.semestre = QtWidgets.QLabel(self.centralwidget)
         self.semestre.setGeometry(QtCore.QRect(40, 410, 211, 31))
         self.semestre.setStyleSheet("font: 75 8pt \"Segoe Print\";")
@@ -188,7 +182,6 @@ class RegistroAsignaturas(QMainWindow):
                                                  "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#000000;\">Num. horas por semestre:</span></p><p><br/></p></body></html>"))
         self.btnaceptar.setText(_translate("MainWindow", "ACEPTAR"))
         self.btnlimpiar.setText(_translate("MainWindow", "LIMPIAR"))
-        self.btnregresar.setText(_translate("MainWindow", "REGRESAR"))
         self.semestre.setText(_translate("MainWindow",
                                          "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#000000;\">Semestre:</span></p><p><br/></p><p><br/></p></body></html>"))
         self.semestre_2.setText(_translate("MainWindow",

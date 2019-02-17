@@ -127,12 +127,6 @@ class ActualizarAsignatura(QMainWindow):
                                         "font: 10pt \"MS Shell Dlg 2\";\n"
                                         "background-color: rgb(255, 255, 255);")
         self.txtcodrequis.setObjectName("txtCodRequis")
-        self.btnregresar = QtWidgets.QPushButton(self.centralwidget)
-        self.btnregresar.setGeometry(QtCore.QRect(40, 450, 101, 31))
-        self.btnregresar.setStyleSheet("font: 75 10pt \"Segoe Print\";\n"
-                                       "color: rgb(255, 255, 255);\n"
-                                       "background-color: rgb(0, 55, 55);")
-        self.btnregresar.setObjectName("btnRegresar")
         main_window.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(main_window)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 722, 21))
@@ -235,4 +229,4 @@ class ActualizarAsignatura(QMainWindow):
         self.btnactualizar.setText(_translate("MainWindow", "ACTUALIZAR"))
         self.semestre_2.setText(_translate("MainWindow",
                                            "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#000000;\">Cod. Requisito:</span></p></body></html>"))
-        self.btnregresar.setText(_translate("MainWindow", "REGRESAR"))
+

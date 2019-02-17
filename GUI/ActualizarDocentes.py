@@ -158,12 +158,7 @@ class ActualizarDocente(QMainWindow):
                                      "color: rgb(255, 255, 255);\n"
                                      "background-color: rgb(0, 51, 51);")
         self.btnbuscar.setObjectName("btnBuscar")
-        self.btnregresar = QtWidgets.QPushButton(self.centralwidget)
-        self.btnregresar.setGeometry(QtCore.QRect(40, 540, 101, 31))
-        self.btnregresar.setStyleSheet("font: 75 10pt \"Segoe Print\";\n"
-                                       "color: rgb(255, 255, 255);\n"
-                                       "background-color: rgb(0, 51, 51);")
-        self.btnregresar.setObjectName("btnRegresar")
+
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(170, 10, 381, 61))
         self.label.setStyleSheet("\n"
@@ -318,7 +313,6 @@ class ActualizarDocente(QMainWindow):
         self.codigo.setText(_translate("MainWindow",
                                        "<html><head/><body><p><span style=\" font-size:9pt; font-weight:600; color:#000000;\">Ingrese identificación del</span></p></body></html>"))
         self.btnbuscar.setText(_translate("MainWindow", "BUSCAR"))
-        self.btnregresar.setText(_translate("MainWindow", "REGRESAR"))
         self.label.setText(_translate("MainWindow",
                                       "<html><head/><body><p align=\"center\"><span style=\" font-size:24pt; font-weight:600; color:#000000;\">Actualizar docentes</span></p><p align=\"center\"><br/></p><p align=\"center\"><br/></p></body></html>"))
         self.codigo_2.setText(_translate("MainWindow",
