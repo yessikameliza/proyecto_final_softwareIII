@@ -158,6 +158,7 @@ class FechasAlternas(object):
 
     def tabla1(self):
         res = obtener_fecha("Fechas alternas")
+        print(res, "prueba")
         col: int = 0
         rows: int = 0
         for it in res:

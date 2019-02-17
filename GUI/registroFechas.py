@@ -493,33 +493,23 @@ class RegistroFechas(object):
         self.label_18.setGeometry(QtCore.QRect(850, 90, 47, 21))
         self.label_18.setStyleSheet("font: 8pt \"Segoe Print\";\n"
                                     "color: rgb(255, 255, 255);")
-        print("error acá 4")
         self.label_18.setObjectName("label_18")
-        print("assddghhjjkk")
         self.retranslate_ui(form)
-        print("ramiro")
         self.rellenarcuadro1()
         self.rellenarcuadro2()
         self.rellenarcuadro3()
-        print("pola")
         self.pushbutton.clicked.connect(self.registrar_fechas)
-        print("pallala")
 
-        print("error acá 6")
         self.rellenarcuadro1()
         self.rellenarcuadro2()
         self.rellenarcuadro3()
-        print("error acá 5")
         self.pushbutton.clicked.connect(self.registrar_fechas)
-        print("error acá 7")
         self.pushbutton_3.clicked.connect(self.eliminar_fechas)
         self.pushbutton_2.clicked.connect(self.actualizar_fechas)
         QtCore.QMetaObject.connectSlotsByName(form)
-        print("error acá 2")
 
     def registrar_fechas(self):
         delete_date()
-        print("error acá aaaaaa")
         self.tabla1(0)
         self.tabla1(1)
         self.tabla1(2)
@@ -544,17 +534,13 @@ class RegistroFechas(object):
         mes2 = str(self.comboboxmes2.currentText())
         fecha1 = mes1 + dia1
         fecha2 = mes2 + dia2
-        print("llego hasta aqui 1")
         register_date(fecha1, "Encuentro tutoriales", 1, "inductorio")
         register_date(fecha2, "Encuentros tutoriales", 1, "inductorio")
         self.mostrar_mensaje("Información", "¡Fechas registradas exitosamente!", "", QMessageBox.Warning, False)
         self.pushbutton.setEnabled(False)
-        print("llego hasta aquí dos")
 
     def rellenarcuadro1(self):
-        print("mariajose")
         res = obtener_fecha("Primeras fechas")
-        print("manan")
         print(res)
         col: int = 0
         rows: int = 0
