@@ -79,13 +79,13 @@ class EliminarDocente(QMainWindow):
                                      QMessageBox.No)
         print("entrooo acá2")
         if buton == QMessageBox.Yes:
-           iden = str(self.txtidentbuscar.toPlainText())
-           res = delete_docent(iden)
+            iden = str(self.txtidentbuscar.toPlainText())
+            res = delete_docent(iden)
 
-           if not None == res:
-            QMessageBox.information(self, "Informacion", "¡El docente se ha eliminado con exito!")
-           else:
-            self.mostrar_mensaje("Alerta", "¡Identificación no encontrada!", "", QMessageBox.Warning, False)
+            if None != res:
+                QMessageBox.information(self, "Informacion", "¡El docente se ha eliminado con exito!")
+            else:
+                self.mostrar_mensaje("Alerta", "¡Identificación no encontrada!", "", QMessageBox.Warning, False)
 
     def limpiar(self):
         self.txtidentbuscar.clear()

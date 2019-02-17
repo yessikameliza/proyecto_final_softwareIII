@@ -79,25 +79,27 @@ class EliminarAsignatura(QMainWindow):
     def eliminar(self):
 
         try:
-           buton = QMessageBox.question(self, 'Advertencia', "¿Esta seguro de eliminar esta asignatura?", QMessageBox.Yes | QMessageBox.No,
-                                 QMessageBox.No)
-           if buton == QMessageBox.Yes:
-            cod = self.txtcodtbuscar.toPlainText()
-            res = delete_matter(cod)
-            if not None == res:
-                QMessageBox.information(self, "Informacion", "¡La asignatura se ha eliminado con exito!")
+            buton = QMessageBox.question(self, 'Advertencia', "¿Esta seguro de eliminar esta asignatura?",
+                                         QMessageBox.Yes | QMessageBox.No,
+                                         QMessageBox.No)
+            if buton == QMessageBox.Yes:
+                cod = self.txtcodtbuscar.toPlainText()
+                res = delete_matter(cod)
+                print(res, "materia eliminada")
+                if (-1) != res:
+                    QMessageBox.information(self, "Informacion", "¡La asignatura se ha eliminado con exito!")
+                else:
+                    self.mostrar_mensaje("Alerta", "¡Codigo no encontrado¡", "", QMessageBox.Warning,
+                                         False)
             else:
-                self.mostrar_mensaje("Alerta", "¡Codigo no encontrado¡", "", QMessageBox.Warning,
-                                    False)
-           else:
-               print('Haz Clickeado No.')
+                print('Haz Clickeado No.')
 
         except ValueError:
             self.mostrar_mensaje("Alerta", "¡La entrada es incorrecta, verifique lo ingresado!",
-                                "", QMessageBox.Warning, False)
+                                 "", QMessageBox.Warning, False)
 
     def mostrar_mensaje(self, titulo: str, texto: str, texto_informativo: str, tipo_mensaje: QMessageBox,
-                       estado: bool):
+                        estado: bool):
 
         self.message_box = QMessageBox()
         self.message_box.setWindowTitle(titulo)
