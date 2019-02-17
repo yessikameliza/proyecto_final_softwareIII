@@ -8,13 +8,13 @@
 from typing import Any
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QMessageBox
+from PyQt5.QtWidgets import QMessageBox, QMainWindow
 from logica.Persistence import search_docent
 from logica.Persistence import update_docent
 from logica.Persistence import obtener_matter
 
 
-class ActualizarDocente(object):
+class ActualizarDocente(QMainWindow):
     message_box: QMessageBox
 
 
@@ -228,11 +228,10 @@ class ActualizarDocente(object):
                                     False)
             else:
                 update_docent(nomb, esta, lim, tipo, tel, iden, materia, ciudad)
-                self.mostrar_mensaje("Información", "¡Se han actualizado los datos correctamente!", "",
-                                    QMessageBox.Warning, False)
+                QMessageBox.information(self, "Informacion", "¡Se han actualizado los datos correctamente!")
                 self.limpiar()
         except ValueError:
-            self.mostrar_mensaje("Información", "¡La entrada es incorrecta, escriba un numero entero!",
+            self.mostrar_mensaje("Alerta", "¡La entrada es incorrecta, escriba un numero entero!",
                                 "", QMessageBox.Warning, False)
 
     def buscar(self):

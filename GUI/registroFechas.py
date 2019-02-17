@@ -9,12 +9,12 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from logica.Persistence import register_date
 from logica.Persistence import delete_date
-from PyQt5.QtWidgets import QMessageBox
+from PyQt5.QtWidgets import QMessageBox, QMainWindow
 from logica.Persistence import update_datee
 from logica.Persistence import obtener_fecha
 
 
-class RegistroFechas(object):
+class RegistroFechas(QMainWindow):
     message_box: QMessageBox
 
     def setup_ui(self, form):
@@ -537,7 +537,7 @@ class RegistroFechas(object):
         fecha2 = mes2 + dia2
         register_date(fecha1, "Encuentro tutoriales", 1, "inductorio")
         register_date(fecha2, "Encuentros tutoriales", 1, "inductorio")
-        self.mostrar_mensaje("Información", "¡Fechas registradas exitosamente!", "", QMessageBox.Warning, False)
+        QMessageBox.information(self, "Informacion", "¡Fechas registradas exitosamente!")
         self.pushbutton.setEnabled(False)
 
     def rellenarcuadro1(self):
@@ -642,7 +642,7 @@ class RegistroFechas(object):
         if buton == QMessageBox.Yes:
          delete_date()
          self.poner_ceros()
-         self.mostrar_mensaje("Información", "¡Fechas eliminadas!", "", QMessageBox.Warning, False)
+         QMessageBox.information(self, "Informacion", "¡Fechas eliminadas con exito!")
          self.pushbutton.setEnabled(True)
 
     def poner_ceros(self):
@@ -696,7 +696,7 @@ class RegistroFechas(object):
         fecha2 = mes2 + dia2
         update_datee(fecha1, "Encuentro tutoriales", 1, "inductorio")
         update_datee(fecha2, "Encuentros tutoriales", 1, "inductorio")
-        self.mostrar_mensaje("Información", "¡Fechas actualizadas!", "", QMessageBox.Warning, False)
+        QMessageBox.information(self, "Informacion", "¡Fechas actualizadas con exito!")
 
     def tabla11(self, column):
         for row in range(self.tablewidget.rowCount()):
