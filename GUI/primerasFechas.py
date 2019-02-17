@@ -122,6 +122,7 @@ class PrimerasFechas(object):
         self.tablewidgetprimerasfechas.setItem(5, 5, item)
         self.tablewidgetprimerasfechas.horizontalHeader().setDefaultSectionSize(137)
         self.label_5 = QtWidgets.QLabel(form)
+        print("llego hastsa aquí")
         self.label_5.setGeometry(QtCore.QRect(340, 30, 261, 41))
         self.label_5.setStyleSheet("font: 75 20pt \"Segoe Print\";\n"
                                    "color: rgb(0, 0, 0);")

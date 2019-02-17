@@ -509,6 +509,7 @@ class RegistroFechas(object):
         print("error acá 2")
 
     def registrar_fechas(self):
+        print("error acá aaaaaa")
         delete_date()
         print("error acá aaaaaa")
         self.tabla1(0)

@@ -103,11 +103,14 @@ def gene_hours(semester: int, ciudad: str) -> list:
 def obtener_datos_profe(semester: int, ciudad: str):
     auxx: list = []
     files: list = buscar_mater_por_semester(semester)
+    print("materiaas segun el seemestreprofe", files)
+    print("ciudad : ", ciudad)
     aux2: list = []
     for f in files:
         auxx.append(f[1])
         auxx.append(f[2])
         auxx.append(f[5])
+        print(f[2], " : nombre materia")
         profe: list = search_docent_matter(f[2], ciudad)
         print(profe, " este profe persis")
 
