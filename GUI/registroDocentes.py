@@ -20,8 +20,7 @@ class RegistroDocentes(QMainWindow):
 
     def setup_ui(self, main_window):
         main_window.setObjectName("Registro de docentes")
-        main_window.resize(538, 777)
-        print("jajaj")
+        main_window.resize(531, 700)
         main_window.setStyleSheet("background-color: rgb(128, 195, 161)")
         self.centralwidget = QtWidgets.QWidget(main_window)
         self.centralwidget.setObjectName("centralwidget")
@@ -97,12 +96,7 @@ class RegistroDocentes(QMainWindow):
         self.combociudad.setObjectName("comboCiudad")
         itemsa = ('', 'Armenia', 'Pereira', 'Buga')
         self.combociudad.addItems(itemsa)
-        self.btnregresar = QtWidgets.QPushButton(self.centralwidget)
-        self.btnregresar.setGeometry(QtCore.QRect(60, 640, 101, 31))
-        self.btnregresar.setStyleSheet("font: 75 10pt \"Segoe Print\";\n"
-                                       "color: rgb(255, 255, 255);\n"
-                                       "background-color: rgb(0, 51, 51);")
-        self.btnregresar.setObjectName("btnRegresar")
+
         self.txtlimhoras = QtWidgets.QTextEdit(self.centralwidget)
         self.txtlimhoras.setGeometry(QtCore.QRect(250, 320, 241, 31))
         self.txtlimhoras.setStyleSheet("color: rgb(0, 0, 0);\n"
@@ -237,7 +231,6 @@ class RegistroDocentes(QMainWindow):
         self.btnaceptar.setText(_translate("MainWindow", "ACEPTAR"))
         print("jiji")
         self.btnlimpiar.setText(_translate("MainWindow", "LIMPIAR"))
-        self.btnregresar.setText(_translate("MainWindow", "REGRESAR"))
         self.asignatura_2.setText(_translate("MainWindow",
                                              "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#000000;\">Limite de horas:</span></p><p><br/></p></body></html>"))
         self.asignatura_3.setText(_translate("MainWindow",

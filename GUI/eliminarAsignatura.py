@@ -37,12 +37,6 @@ class EliminarAsignatura(QMainWindow):
                                        "color: rgb(255, 255, 255);\n"
                                        "background-color: rgb(0, 51, 51);")
         self.btneliminar.setObjectName("btnEliminar")
-        self.btnregresar = QtWidgets.QPushButton(self.centralwidget)
-        self.btnregresar.setGeometry(QtCore.QRect(10, 260, 101, 31))
-        self.btnregresar.setStyleSheet("font: 75 10pt \"Segoe Print\";\n"
-                                       "color: rgb(255, 255, 255);\n"
-                                       "background-color: rgb(0, 51, 51);")
-        self.btnregresar.setObjectName("btnRegresar")
         self.btnlimpiar = QtWidgets.QPushButton(self.centralwidget)
         self.btnlimpiar.setGeometry(QtCore.QRect(290, 260, 91, 31))
         self.btnlimpiar.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
@@ -123,7 +117,6 @@ class EliminarAsignatura(QMainWindow):
         self.label.setText(_translate("MainWindow",
                                       "<html><head/><body><p align=\"center\"><span style=\" font-size:24pt; font-weight:600; color:#000000;\">Eliminar asignaturas</span></p><p align=\"center\"><br/></p><p align=\"center\"><br/></p></body></html>"))
         self.btneliminar.setText(_translate("MainWindow", "ELIMINAR"))
-        self.btnregresar.setText(_translate("MainWindow", "REGRESAR"))
         self.btnlimpiar.setText(_translate("MainWindow", "LIMPIAR"))
         self.codigo_2.setText(_translate("MainWindow",
                                          "<html><head/><body><p><span style=\" font-size:9pt; font-weight:600; color:#000000;\">asignatura</span></p></body></html>"))

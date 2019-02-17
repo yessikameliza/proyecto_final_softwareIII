@@ -263,14 +263,6 @@ class VentanaPrincipal(QtWidgets.QMainWindow):
         self.tablahorario.horizontalHeader().setDefaultSectionSize(256)
         self.tablahorario.horizontalHeader().setMinimumSectionSize(50)
         self.tablahorario.verticalHeader().setDefaultSectionSize(55)
-        self.btnimprimir = QtWidgets.QPushButton(self.groupbox_4)
-        self.btnimprimir.setGeometry(QtCore.QRect(770, 170, 81, 41))
-        self.btnimprimir.setStyleSheet("font: 75 12pt \"Segoe Print\";\n"
-                                       "color: rgb(255, 255, 255);\n"
-                                       "background-color: rgb(0, 51, 51);\n"
-                                       "\n""")
-
-        self.btnimprimir.setObjectName("btnImprimir")
         self.frame_2 = QtWidgets.QFrame(self.centralwidget)
         self.frame_2.setGeometry(QtCore.QRect(0, 120, 1411, 151))
         self.frame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
@@ -821,7 +813,6 @@ class VentanaPrincipal(QtWidgets.QMainWindow):
         item = self.tablahorario.item(10, 2)
         item.setText(_translate("Form", "Fecha 18"))
         self.tablahorario.setSortingEnabled(__sortingenabled)
-        self.btnimprimir.setText(_translate("Form", "Imprimir"))
         self.groupbox_2.setTitle(_translate("Form", "Información "))
         item = self.tablainfoacademica.horizontalHeaderItem(0)
         item.setText(_translate("Form", "CÓDIGO"))

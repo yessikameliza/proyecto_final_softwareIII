@@ -53,12 +53,6 @@ class EliminarDocente(QMainWindow):
                                       "color: rgb(255, 255, 255);\n"
                                       "background-color: rgb(0, 51, 51);")
         self.btnlimpiar.setObjectName("btnLimpiar")
-        self.btnregresar = QtWidgets.QPushButton(self.centralwidget)
-        self.btnregresar.setGeometry(QtCore.QRect(20, 250, 101, 31))
-        self.btnregresar.setStyleSheet("font: 75 10pt \"Segoe Print\";\n"
-                                       "color: rgb(255, 255, 255);\n"
-                                       "background-color: rgb(0, 51, 51);")
-        self.btnregresar.setObjectName("btnRegresar")
         main_window.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(main_window)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 534, 21))
@@ -122,4 +116,4 @@ class EliminarDocente(QMainWindow):
                                          "<html><head/><body><p><span style=\" font-size:9pt; font-weight:600; color:#000000;\">docente</span></p></body></html>"))
         self.btneliminar.setText(_translate("MainWindow", "ELIMINAR"))
         self.btnlimpiar.setText(_translate("MainWindow", "LIMPIAR"))
-        self.btnregresar.setText(_translate("MainWindow", "REGRESAR"))
+
