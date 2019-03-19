@@ -19,7 +19,7 @@ from GUI.primerasFechas import PrimerasFechas
 from GUI.fechasAlternas import FechasAlternas
 from GUI.pereiraDomingos import FechasPereira
 from logica.Persistence import obtener_matter
-from logica.Persistence import gene_hours, obtener_fecha
+from logica.Persistence import gene_hours
 from logica.Persistence import obtener_fechas_p
 from logica.Persistence import obtener_f_induct
 from logica.Persistence import obtener_datos_profe
@@ -56,7 +56,7 @@ class VentanaPrincipal(QtWidgets.QMainWindow):
         self.frame_3.setObjectName("frame_3")
         self.groupbox = QtWidgets.QGroupBox(self.frame_3)
         self.groupbox.setGeometry(QtCore.QRect(20, 10, 311, 381))
-        self.groupbox.setStyleSheet("font: 75 14pt \"Segoe Print\";\n"
+        self.groupbox.setStyleSheet("font: 70 9pt \"Segoe Print\";\n"
                                     "color: rgb(0, 0, 0);")
         self.groupbox.setObjectName("groupBox")
 
@@ -273,14 +273,24 @@ class VentanaPrincipal(QtWidgets.QMainWindow):
         self.groupbox_2.setStyleSheet("\n"
                                       "font: 75 12pt \"Segoe Print\";")
         self.groupbox_2.setObjectName("groupBox_2")
+
         self.tablainfoacademica = QtWidgets.QTableWidget(self.groupbox_2)
         self.tablainfoacademica.setGeometry(QtCore.QRect(60, 30, 1061, 101))
-        sizepolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Maximum)
-        sizepolicy.setHorizontalStretch(40)
-        sizepolicy.setVerticalStretch(19)
-        sizepolicy.setHeightForWidth(self.tablainfoacademica.sizePolicy().hasHeightForWidth())
-        self.tablainfoacademica.setSizePolicy(sizepolicy)
-        self.tablainfoacademica.setStyleSheet("")
+        self.tablainfoacademica.setSizeIncrement(QtCore.QSize(15, 8))
+        self.tablainfoacademica.setBaseSize(QtCore.QSize(22, 18))
+        self.tablainfoacademica.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+                                        "font: 75 9pt \"Segoe Print\";\n"
+                                        "color: rgb(0, 0, 0);")
+
+        self.tablainfoacademica.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.tablainfoacademica.setLineWidth(2)
+        self.tablainfoacademica.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustToContents)
+        self.tablainfoacademica.setIconSize(QtCore.QSize(19, 6))
+        self.tablainfoacademica.setShowGrid(True)
+        self.tablainfoacademica.setGridStyle(QtCore.Qt.SolidLine)
+        self.tablainfoacademica.setWordWrap(True)
+        self.tablainfoacademica.setCornerButtonEnabled(True)
+
         self.tablainfoacademica.setObjectName("tablaInfoAcademica")
         self.tablainfoacademica.setColumnCount(5)
         self.tablainfoacademica.setRowCount(4)
@@ -370,7 +380,7 @@ class VentanaPrincipal(QtWidgets.QMainWindow):
         self.tablainfoacademica.setItem(3, 4, item)
         self.tablainfoacademica.horizontalHeader().setDefaultSectionSize(207)
         self.tablainfoacademica.horizontalHeader().setMinimumSectionSize(46)
-        self.tablainfoacademica.verticalHeader().setDefaultSectionSize(26)
+        self.tablainfoacademica.verticalHeader().setDefaultSectionSize(40)
         form.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(form)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 1267, 21))
@@ -477,8 +487,7 @@ class VentanaPrincipal(QtWidgets.QMainWindow):
         self.btngenerarhorbuga.clicked.connect(self.prueba_horario2)
         self.btngenerarhorper.clicked.connect(self.prueba_horario3)
         QtCore.QMetaObject.connectSlotsByName(form)
-        au: list = obtener_matter()
-        print("materiaaas", au)
+
 
     def ventana_fechas_pereira(self):
         self.ventana = QtWidgets.QMainWindow()
@@ -629,6 +638,8 @@ class VentanaPrincipal(QtWidgets.QMainWindow):
                 item.setText(h[0])
             rows = rows + 2
             print(rows)
+        QMessageBox.information(self, "Informacion", "Se ha generado el horario para Armenia, con semestre: "+str(semester))
+
 
     def prueba_horario2(self):
         self.setear_tabla()
@@ -684,6 +695,7 @@ class VentanaPrincipal(QtWidgets.QMainWindow):
                 item.setText(h[0])
             rows = rows + 2
             print(rows)
+        QMessageBox.information(self, "Informacion", "Se ha generado el horario para Buga con semestre: "+str(semester))
 
     def prueba_horario3(self):
         self.setear_tabla()
@@ -734,6 +746,8 @@ class VentanaPrincipal(QtWidgets.QMainWindow):
                 item = self.tablahorario.item(rows, 2)
                 item.setText(h[0])
             rows = rows + 2
+        QMessageBox.information(self, "Informacion",
+                                "Se ha generado el horario para Pereira con semestre: " + str(semester))
 
     def mostrar_mensaje(self, titulo: str, texto: str, texto_informativo: str, tipo_mensaje: QMessageBox,
                        estado: bool):
