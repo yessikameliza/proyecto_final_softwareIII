@@ -7,7 +7,7 @@
 # WARNING! All changes made in this file will be lost!
 from typing import Any
 
-from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5 import QtCore, QtWidgets
 from logica.Persistence import search_matter
 from logica.Persistence import update_matter
 

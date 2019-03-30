@@ -40,6 +40,7 @@
         <list>
           <option value="logica.Persistence.*" />
           <option value="GUI.Login" />
+          <option value="setup.PYTHON_INSTALL_DIR" />
         </list>
       </option>
     </inspection_tool>
