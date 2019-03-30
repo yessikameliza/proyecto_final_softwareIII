@@ -41,8 +41,9 @@ def search_matter(codigo: str):
     return search_matter2(codigo)
 
 
-def update_matter(codigo: str, name: str, ubisemester: int, numcredit: str, codrequisite: str, numhourssem: int):
-    update_matter1(codigo, name, ubisemester, numcredit, codrequisite, numhourssem)
+def update_matter(codBus: str, codigo: str, name: str, ubisemester: int, numcredit: str, codrequisite: str,
+                  numhourssem: int):
+    update_matter1(codBus, codigo, name, ubisemester, numcredit, codrequisite, numhourssem)
 
 
 def delete_matter(codigo: str):

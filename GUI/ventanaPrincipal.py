@@ -555,7 +555,19 @@ class VentanaPrincipal(QtWidgets.QMainWindow):
             j = j + 1
             i = 0
 
+    def setear_tabla2(self):
+        i = 0
+        j = 0
+        while j < 5:
+            while i < 4:
+                item = self.tablainfoacademica.item(i, j)
+                item.setText("")
+                i = i + 1
+            j = j + 1
+            i = 0
+
     def llenartabla(self, semester, city):
+        self.setear_tabla2()
         s: list = obtener_datos_profe(semester, city)
         rows: int = 0
         col: int = 0

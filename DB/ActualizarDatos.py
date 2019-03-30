@@ -4,17 +4,19 @@ import sqlite3
 from DB.InsertarDatos import insert_date
 
 
-def update_matter1(codigo: str, name: str, ubisemester: int, numcredit: str, codrequisite: str, numhourssem: int):
+def update_matter1(codBus: str, codigo: str, name: str, ubisemester: int, numcredit: str, codrequisite: str,
+                   numhourssem: int):
     conexion = sqlite3.connect("dataBase.sqlite3")
 
     consulta = conexion.cursor()
-    id: int
+    id: int = -1
     sql1 = "SELECT * FROM matter"
     if consulta.execute(sql1):
         files = consulta.fetchall()
         for fila in files:
-            if str(fila[1]) == codigo:
+            if str(fila[1]) == codBus:
                 id = int(fila[0])
+                print("id ", id)
     arg = (codigo, name, ubisemester, numcredit, codrequisite, numhourssem, id)
     sql = """UPDATE matter SET codigo = ?, name = ?, ubi_Semester = ?, numCredit = ?, codRequisite = ?, numHoursSem = ?
       WHERE id_Matter = ? """

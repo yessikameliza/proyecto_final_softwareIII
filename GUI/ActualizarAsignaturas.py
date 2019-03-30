@@ -137,6 +137,7 @@ class ActualizarAsignatura(QMainWindow):
         main_window.setStatusBar(self.statusbar)
 
         self.retranslate_ui(main_window)
+
         self.btnbuscar.clicked.connect(self.buscar)
         self.btnactualizar.clicked.connect(self.actualizar)
         self.btnlimpiar.clicked.connect(self.limpiar)
@@ -152,6 +153,7 @@ class ActualizarAsignatura(QMainWindow):
 
     def buscar(self):
         codbuscar = str(self.txtcodigobuscar.toPlainText())
+        self.codbus = codbuscar
         res: Any = search_matter(codbuscar)
         if not None == res:
             print(res[1], res[2])
@@ -164,6 +166,7 @@ class ActualizarAsignatura(QMainWindow):
         else:
             self.mostrar_mensaje("Alerta", "¡El código ingresado no existe!", "", QMessageBox.Warning, False)
             print("no existe")
+        return codbuscar
 
     def actualizar(self):
         try:
@@ -181,7 +184,8 @@ class ActualizarAsignatura(QMainWindow):
                                      QMessageBox.Warning,
                                      False)
             else:
-                update_matter(cod, nom, ubisemestre, numcreditos, codrequisito, num)
+                print("codigo", self.codbus)
+                update_matter(self.codbus, cod, nom, ubisemestre, numcreditos, codrequisito, num)
                 QMessageBox.information(self, "Informacion", "¡Se han actualizado los datos correctamente!")
 
         except ValueError:
